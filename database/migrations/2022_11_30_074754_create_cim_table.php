@@ -30,12 +30,22 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // DB::statement("ALTER table cim add constraint check_hely_házszám check (isnumeric(substring(hely_házszám,2,len(hely_házjelleg)) LIKE '%[0-9]%'))");
+        DB::statement("ALTER table cim add constraint check_hely_házszám check (left(hely_házszám,1) in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))");
         DB::statement("ALTER table cim add constraint check_hely_ház_jelleg check (hely_ház_jelleg = 'hrsz' or hely_ház_jelleg = 'hsz')");
         // Cim::create(["irányítószám"=>1118, "város" => "Budapest", "közterület neve" => "Ménesi", "közterület jellege" => "út", "házszám" =>"77"]);
         Cim::create(["irányítószám"=>1041, "város" => "Budapest", "közterület neve" => "Lőrinc", "közterület jellege" => "utca", "hely_házszám" =>"10", "hely_ház_jelleg"=>"hsz"]);
+        
+        DB::raw("create function test () ( returns bit begin return 1 end)");
+        DB::create_function("create function test () returns bit begin return 1; end;");
+        // DB::statement("ALTER table cim add check (test()=1)");
 
     }
+
+    // public static function raw($ertek)
+    // {
+    //     create_function("test() returns bit begin return 1; end;");
+    // }
+
 
     /**
      * Reverse the migrations.

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -21,6 +22,9 @@ return new class extends Migration
             $table->decimal("nettó_ár");
             $table->timestamps();
         });
+
+        DB::statement("ALTER table rendeles_tetel add constraint check_mennyiség check ( mennyiség > 0)");
+        DB::statement("ALTER table rendeles_tetel add constraint check_nettó_ár check ( nettó_ár >= 0)");
     }
 
     /**

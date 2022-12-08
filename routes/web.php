@@ -10,4 +10,5 @@ Route::get('/', function () {
 });
 
 Route::get("/api/cimek", [CimController::class, "index"]);
+Route::get("/test", [CimController::class, "test"]);
 Route::get("teszt_mail", [MailController::class, "index"]);
