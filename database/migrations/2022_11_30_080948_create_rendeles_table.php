@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('rendeles', function (Blueprint $table) {
             $table->id("rendelés_szám");
             $table->date("dátum")->getdate();
-            $table->foreignId("felhasználó_id")->references("felhasználó_id")->on("felhasznalo");
+            $table->foreignId("felhasználó_id")->references("felhasználó_id")->on("users");
             $table->foreignId("szállítási_cím")->references("cím_id")->on("cim");
             $table->decimal("végösszeg");
             $table->integer("kedvezmény")->length(2)->default(0);
