@@ -36,7 +36,7 @@ return new class extends Migration
         Cim::create(["irányítószám"=>1041, "város" => "Budapest", "közterület neve" => "Lőrinc", "közterület jellege" => "utca", "hely_házszám" =>"10", "hely_ház_jelleg"=>"hsz"]);
         
         DB::raw("create function test () ( returns bit begin return 1 end)");
-        DB::create_function("create function test () returns bit begin return 1; end;");
+        // DB::create_function("create function test () returns bit begin return 1; end;");
         // DB::statement("ALTER table cim add check (test()=1)");
 
     }

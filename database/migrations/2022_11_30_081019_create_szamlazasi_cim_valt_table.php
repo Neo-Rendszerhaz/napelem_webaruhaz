@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('szamlazasi_cim_valt', function (Blueprint $table) {
             $table->primary(["felhasználó_id", "dátumig"]);
-            $table->foreignId("felhasználó_id")->references("felhasználó_id")->on("felhasznalo");
+            $table->foreignId("felhasználó_id")->references("felhasználó_id")->on("users");
             $table->date("dátumig");
             $table->foreignId("régi_számlázási_cím")->references("cím_id")->on("cim");
             $table->timestamps();

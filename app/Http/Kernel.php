@@ -63,5 +63,9 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        "admin" => \App\Http\Middleware\AdminReteg::class,
+        "rendszerAdmin" => \App\Http\Middleware\RendszerAdminReteg::class,
+        "felhasznalo" => \App\Http\Middleware\FelhasznaloReteg::class,
+        "kozos" => \App\Http\Middleware\KozosReteg::class,
     ];
 }
