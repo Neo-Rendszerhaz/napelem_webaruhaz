@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User;
 
-class Felhasznalo extends Model
+class Felhasznalo extends User
 {
     protected $table = 'felhasznalo';
     protected $primaryKey="felhasználó_id";
@@ -24,4 +24,14 @@ class Felhasznalo extends Model
         "jelleg",
         "jogosultság"
     ];
+
+    protected $hidden = [
+        'jelszó',
+        'remember_token',
+    ];
+
+    public function getAuthPassword()
+    {
+        return $this->jelszó;
+    }
 }

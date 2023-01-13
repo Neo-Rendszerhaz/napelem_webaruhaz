@@ -39,7 +39,7 @@ return new class extends Migration
         DB::statement("ALTER table felhasznalo add constraint check_jelleg check (jelleg = 'M' or jelleg = 'C')");
         DB::statement("ALTER table felhasznalo add constraint check_jogosultság check (jogosultság = 'R' or jogosultság = 'A' or jogosultság = 'F')");
 
-        Felhasznalo::create(["email" => "weinbergerpeti@gmail.com","jelszó" => Hash::make("Peti1999"), "vezetéknév" => "Weinberger", "keresztnév" => "Péter", "telefonszám" => 303696080, "jelleg" => "M", "jogosultság" => "R"]);
+        Felhasznalo::create(["email" => "weinbergerpeti@gmail.com","jelszó" => Hash::make("Aa123456"), "vezetéknév" => "Weinberger", "keresztnév" => "Péter", "telefonszám" => 303696080, "jelleg" => "M", "jogosultság" => "R"]);
     }
 
     /**

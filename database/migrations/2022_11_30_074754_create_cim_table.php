@@ -34,18 +34,7 @@ return new class extends Migration
         DB::statement("ALTER table cim add constraint check_hely_ház_jelleg check (hely_ház_jelleg = 'hrsz' or hely_ház_jelleg = 'hsz')");
         // Cim::create(["irányítószám"=>1118, "város" => "Budapest", "közterület neve" => "Ménesi", "közterület jellege" => "út", "házszám" =>"77"]);
         Cim::create(["irányítószám"=>1041, "város" => "Budapest", "közterület neve" => "Lőrinc", "közterület jellege" => "utca", "hely_házszám" =>"10", "hely_ház_jelleg"=>"hsz"]);
-        
-        DB::raw("create function test () ( returns bit begin return 1 end)");
-        DB::create_function("create function test () returns bit begin return 1; end;");
-        // DB::statement("ALTER table cim add check (test()=1)");
-
     }
-
-    // public static function raw($ertek)
-    // {
-    //     create_function("test() returns bit begin return 1; end;");
-    // }
-
 
     /**
      * Reverse the migrations.

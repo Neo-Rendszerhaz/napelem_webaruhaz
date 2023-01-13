@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'felhasznalo',
     ],
 
     /*
@@ -38,8 +38,14 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'felhasznalo',
         ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'felhasznalo',
+            'password' => 'jelszó',
+            'hash' => false
+        ]
     ],
 
     /*
@@ -60,9 +66,10 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'felhasznalo' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Felhasznalo::class,
+            'table' => 'felhasznalo'
         ],
 
         // 'users' => [
@@ -87,8 +94,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'felhasznalo' => [
+            'provider' => 'felhasznalo',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
