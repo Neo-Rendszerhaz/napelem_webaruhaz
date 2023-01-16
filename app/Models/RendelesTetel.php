@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class RendelesTetel extends Model
 {
     protected $table = 'rendeles_tetel';
-    
+
     protected function setKeysForSaveQuery($query)
     {
         $query
