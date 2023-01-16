@@ -17,11 +17,13 @@ class FelhasznaloReteg
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user() && (Auth::user()->jogosultság == 'R' or Auth::user()->jogosultság == 'A' or Auth::user()->jogosultság == 'F'))
+        if(Auth::user() && (Auth::user()->jogosultsag == 'R' or Auth::user()->jogosultsag == 'A' or Auth::user()->jogosultsag == 'F'))
         {
             return $next($request);
         }
-
+        // return $next($request);
+        
         return redirect("dashboard")->with("Hiba!", "Nincs felhasználó jogosultsága!");
+        // /bejelentkezes/felhasznaloBejelentkezes
     }
 }

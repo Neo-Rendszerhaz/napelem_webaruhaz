@@ -17,11 +17,11 @@ class AdminReteg
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user() && (Auth::user()->jogosultság == 'R' or Auth::user()->jogosultság == 'A'))
+        if(Auth::user() && (Auth::user()->jogosultsag == 'R' or Auth::user()->jogosultsag == 'A'))
         {
             return $next($request);
         }
 
-        return redirect("bejelentkezes/adminBejelentkezes")->with("Hiba!", "Nincs admin jogosultsága!");
+        return redirect("dashboard")->with("Hiba!", "Nincs admin jogosultsága!");
     }
 }

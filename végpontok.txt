@@ -1,0 +1,24 @@
+Route::middleware(["rendszerAdmin"])->group(function()
+{
+    Route::get("/cimek", [CimController::class, "index"]);
+    Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
+    Route::post("/cimek", [CimController::class, "store"]);
+    Route::post("/cimek/{cim_id}", [CimController::class, "update"]);
+    Route::post("/cimek/{cim_id}", [CimController::class, "delete"]);
+
+    Route::get("/felhasznalok", [FelhasznaloController::class, "index"]);
+    Route::get("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "show"]);
+    Route::post("/felhasznalok", [FelhasznaloController::class, "store"]);
+    Route::post("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "update"]);
+    Route::post("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "delete"]);
+});
+
+Route::middleware(["admin"])->group(function()
+{
+    
+});
+
+Route::middleware(["felhasznalo"])->group(function()
+{
+   
+});

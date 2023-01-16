@@ -17,11 +17,11 @@ class RendszerAdminReteg
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user() && Auth::user()->jogosultság == 'R')
+        if(Auth::user() && Auth::user()->jogosultsag == 'R')
         {
             return $next($request);
         }
 
-        return redirect("bejelentkezes/rendszerAdminBejelentkezes")->with("Hiba!", "Nincs Rendszer admin jogosultsága!");
+        return redirect("dashboard")->with("Hiba!", "Nincs Rendszer admin jogosultsága!");
     }
 }
