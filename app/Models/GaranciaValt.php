@@ -10,14 +10,14 @@ class GaranciaValt extends Model
     protected function setKeysForSaveQuery($query)
     {
         $query
-            ->where('termék_id', '=', $this->getAttribute('termék_id'))
-            ->where('dátumig', '=', $this->getAttribute('dátumig')); 
+            ->where('termek_id', '=', $this->getAttribute('termek_id'))
+            ->where('datumig', '=', $this->getAttribute('datumig')); 
         return $query;
     }
 
     protected $fillable=[
-        "termék_id",
-        "dátumig",
+        "termek_id",
+        "datumig",
         "garancia"
     ];
 }

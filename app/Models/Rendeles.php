@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Rendeles extends Model
 {
     protected $table = 'rendeles';
-    protected $primaryKey="rendelés_szám";
+    protected $primaryKey="rendeles_szam";
 
     protected $fillable=[
-        "dátum",
-        "felhasználó_id",
-        "szállítási_cím",
-        "végösszeg",
-        "kedvezmény",
-        "kedvezményes_ár",
-        "állapot",
+        "datum",
+        "felhasznalo_id",
+        "szallitasi_cim",
+        "vegosszeg",
+        "kedvezmeny",
+        "kedvezmenyes_ar",
+        "allapot",
     ];
 }

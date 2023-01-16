@@ -11,12 +11,12 @@ class Haszon extends Model
     protected function setKeysForSaveQuery($query)
     {
         $query
-            ->where('dátum', '=', $this->getAttribute('dátum'));
+            ->where('datum', '=', $this->getAttribute('datum'));
         return $query;
     } 
 
     protected $fillable=[
-        "haszon_százalék",
-        "áfa_százalék"
+        "haszon_szazalek",
+        "afa_szazalek"
     ];
 }

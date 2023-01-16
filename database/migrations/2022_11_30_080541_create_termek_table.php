@@ -15,13 +15,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('termek', function (Blueprint $table) {
-            $table->id("termék_id");
-            $table->string("megnevezés", 80);
-            $table->string("cikkszám", 10);
-            $table->string("gyártói cikkszám", 80);
-            $table->string("márka", 80);
+            $table->id("termek_id");
+            $table->string("megnevezes", 80);
+            $table->string("cikkszam", 10);
+            $table->string("gyartoi cikkszam", 80);
+            $table->string("marka", 80);
             $table->integer("garancia");
-            $table->string("leírás", 80);
+            $table->string("leiras", 80);
             $table->timestamps();
         });
 

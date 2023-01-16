@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('szamlazasi_cim_valt', function (Blueprint $table) {
-            $table->primary(["felhasználó_id", "dátumig"]);
-            $table->foreignId("felhasználó_id")->references("felhasználó_id")->on("users");
-            $table->date("dátumig");
-            $table->foreignId("régi_számlázási_cím")->references("cím_id")->on("cim");
+            $table->primary(["felhasznalo_id", "datumig"]);
+            $table->foreignId("felhasznalo_id")->references("felhasznalo_id")->on("users");
+            $table->date("datumig");
+            $table->foreignId("regi_szamlazasi_cim")->references("cim_id")->on("cim");
             $table->timestamps();
         });
     }

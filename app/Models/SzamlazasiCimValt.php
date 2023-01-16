@@ -10,14 +10,14 @@ class SzamlazasiCimValt extends Model
     protected function setKeysForSaveQuery($query)
     {
         $query
-            ->where('felhasználó_id', '=', $this->getAttribute('felhasználó_id'))
-            ->where('dátumig', '=', $this->getAttribute('dátumig')); 
+            ->where('felhasználo_id', '=', $this->getAttribute('felhasznalo_id'))
+            ->where('datumig', '=', $this->getAttribute('datumig')); 
         return $query;
     }
 
     protected $fillable=[
-        "felhasználó_id",
-        "dátumig",
-        "régi_számlázási_cím"
+        "felhasznalo_id",
+        "datumig",
+        "regi_szamlazasi_cim"
     ];
 }

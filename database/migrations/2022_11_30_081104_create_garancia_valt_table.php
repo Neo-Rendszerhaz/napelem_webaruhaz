@@ -15,9 +15,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('garancia_valt', function (Blueprint $table) {
-            $table->primary(["termék_id", "dátumig"]);
-            $table->foreignId("termék_id")->references("termék_id")->on("termek");
-            $table->date("dátumig");
+            $table->primary(["termek_id", "datumig"]);
+            $table->foreignId("termek_id")->references("termek_id")->on("termek");
+            $table->date("datumig");
             $table->integer("garancia");
             $table->timestamps();
         });

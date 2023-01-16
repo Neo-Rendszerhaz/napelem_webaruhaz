@@ -15,15 +15,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('haszon', function (Blueprint $table) {
-            $table->primary(["dátum"]);
-            $table->date("dátum");
-            $table->integer("haszon_százalék");
-            $table->integer("áfa_százalék");
+            $table->primary(["datum"]);
+            $table->date("datum");
+            $table->integer("haszon_szazalek");
+            $table->integer("afa_szazalek");
             $table->timestamps();
         });
 
-        DB::statement("ALTER table haszon add constraint check_haszon_százalék_nagyobb check ( haszon_százalék >= 0)");
-        DB::statement("ALTER table haszon add constraint check_áfa_százalék_nagyobb check ( áfa_százalék >= 0)");
+        DB::statement("ALTER table haszon add constraint check_haszon_szazalek_nagyobb check ( haszon_szazalek >= 0)");
+        DB::statement("ALTER table haszon add constraint check_afa_szazalek_nagyobb check ( afa_szazalek >= 0)");
     }
 
     /**

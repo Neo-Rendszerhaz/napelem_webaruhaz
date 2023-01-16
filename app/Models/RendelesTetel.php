@@ -10,14 +10,14 @@ class RendelesTetel extends Model
     protected function setKeysForSaveQuery($query)
     {
         $query
-            ->where('rendelés_szám', '=', $this->getAttribute('rendelés_szám'))
-            ->where('termék_id', '=', $this->getAttribute('termék_id')); 
+            ->where('rendelés_szam', '=', $this->getAttribute('rendeles_szam'))
+            ->where('termek_id', '=', $this->getAttribute('termek_id')); 
         return $query;
     } 
 
     protected $fillable=[
-        "termék_id",
-        "mennyiség",
-        "nettó_ár",
+        "termek_id",
+        "mennyiseg",
+        "netto_ar",
     ];
 }
