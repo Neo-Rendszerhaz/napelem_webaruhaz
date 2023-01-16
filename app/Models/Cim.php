@@ -8,18 +8,18 @@ class Cim extends Model
 {
     protected $table = 'cim';
     
-    protected $primaryKey="cím_id";
+    protected $primaryKey="cim_id";
     
     protected $fillable=[
-        "irányítószám",
-        "város",
-        "közterület neve",
-        "közterület jellege",
-        "hely_házszám",
-        "hely_ház_jelleg",
-        "épület",
+        "iranyitoszam",
+        "varos",
+        "kozterulet_neve",
+        "kozterulet_jellege",
+        "hely_hazszam",
+        "hely_haz_jelleg",
+        "epulet",
         "emelet",
-        "ajtó",
-        "kapucsengő"
+        "ajto",
+        "kapucsengo"
     ];
 }

@@ -16,24 +16,24 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cim', function (Blueprint $table) {
-            $table->id('cím_id');
-            $table->integer('irányítószám')->length(4);
-            $table->string("város", 30);
-            $table->string("közterület neve", 50);
-            $table->string("közterület jellege", 30);
-            $table->string("hely_házszám", 12);
-            $table->char("hely_ház_jelleg", 4);
-            $table->string("épület", 6)->nullable();
+            $table->id('cim_id');
+            $table->integer('iranyitoszam')->length(4);
+            $table->string("varos", 30);
+            $table->string("kozterulet_neve", 50);
+            $table->string("kozterulet_jellege", 30);
+            $table->string("hely_hazszam", 12);
+            $table->char("hely_haz_jelleg", 4);
+            $table->string("epulet", 6)->nullable();
             $table->integer("emelet")->nullable()->length(2);
-            $table->string("ajtó", 5)->nullable();
-            $table->integer("kapucsengő")->nullable()->length(3);
+            $table->string("ajto", 5)->nullable();
+            $table->integer("kapucsengo")->nullable()->length(3);
             $table->timestamps();
         });
 
-        DB::statement("ALTER table cim add constraint check_hely_házszám check (left(hely_házszám,1) in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))");
-        DB::statement("ALTER table cim add constraint check_hely_ház_jelleg check (hely_ház_jelleg = 'hrsz' or hely_ház_jelleg = 'hsz')");
+        DB::statement("ALTER table cim add constraint check_hely_hazszam check (left(hely_hazszam,1) in ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))");
+        DB::statement("ALTER table cim add constraint check_hely_ház_jelleg check (hely_haz_jelleg = 'hrsz' or hely_haz_jelleg = 'hsz')");
         // Cim::create(["irányítószám"=>1118, "város" => "Budapest", "közterület neve" => "Ménesi", "közterület jellege" => "út", "házszám" =>"77"]);
-        Cim::create(["irányítószám"=>1041, "város" => "Budapest", "közterület neve" => "Lőrinc", "közterület jellege" => "utca", "hely_házszám" =>"10", "hely_ház_jelleg"=>"hsz"]);
+        Cim::create(["iranyitoszam"=>1041, "varos" => "Budapest", "kozterulet_neve" => "Lőrinc", "kozterulet_jellege" => "utca", "hely_hazszam" =>"10", "hely_haz_jelleg"=>"hsz"]);
     }
 
     /**

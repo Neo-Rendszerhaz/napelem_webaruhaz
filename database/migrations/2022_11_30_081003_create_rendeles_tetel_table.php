@@ -15,16 +15,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rendeles_tetel', function (Blueprint $table) {
-            $table->primary(["rendelés_szám", "termék_id"]);
-            $table->foreignId("rendelés_szám")->references("rendelés_szám")->on("rendeles");
-            $table->foreignId("termék_id")->references("termék_id")->on("termek");
-            $table->integer("mennyiség");
-            $table->decimal("nettó_ár");
+            $table->primary(["rendeles_szam", "termek_id"]);
+            $table->foreignId("rendeles_szam")->references("rendeles_szam")->on("rendeles");
+            $table->foreignId("termek_id")->references("termek_id")->on("termek");
+            $table->integer("mennyiseg");
+            $table->decimal("netto_ar");
             $table->timestamps();
         });
 
-        DB::statement("ALTER table rendeles_tetel add constraint check_mennyiség check ( mennyiség > 0)");
-        DB::statement("ALTER table rendeles_tetel add constraint check_nettó_ár check ( nettó_ár >= 0)");
+        DB::statement("ALTER table rendeles_tetel add constraint check_mennyiseg check ( mennyiseg > 0)");
+        DB::statement("ALTER table rendeles_tetel add constraint check_netto_ar check ( netto_ar >= 0)");
     }
 
     /**

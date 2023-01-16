@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Termek extends Model
 {
     protected $table = 'termek';
-    protected $primaryKey="termék_id";
+    
+    protected $primaryKey="termek_id";
 
     protected $fillable=[
-        "megnevezés",
-        "cikkszám",
-        "gyártói cikkszám",
-        "márka",
+        "megnevezes",
+        "cikkszam",
+        "gyartoi cikkszam",
+        "marka",
         "garancia",
-        "leírás"
+        "leiras"
     ];
 }

@@ -7,31 +7,31 @@ use Illuminate\Foundation\Auth\User;
 class Felhasznalo extends User
 {
     protected $table = 'felhasznalo';
-    protected $primaryKey="felhasználó_id";
+    protected $primaryKey="felhasznalo_id";
 
     protected $fillable=[
         "email",
-        "jelszó",
-        "számlázási cím",
-        "szállítási cím 1",
-        "szállítási cím 2",
-        "szállítási cím 3",
-        "vezetéknév",
-        "keresztnév",
-        "telefonszám",
-        "cégnév",
-        "adószám",
+        "jelszo",
+        "szamlazasi_cim",
+        "szallitasi_cim_1",
+        "szallitasi_cim_2",
+        "szallitasi_cim_3",
+        "vezeteknev",
+        "keresztnev",
+        "telefonszam",
+        "cegnev",
+        "adoszam",
         "jelleg",
-        "jogosultság"
+        "jogosultsag"
     ];
 
     protected $hidden = [
-        'jelszó',
+        'jelszo',
         'remember_token',
     ];
 
     public function getAuthPassword()
     {
-        return $this->jelszó;
+        return $this->jelszo;
     }
 }

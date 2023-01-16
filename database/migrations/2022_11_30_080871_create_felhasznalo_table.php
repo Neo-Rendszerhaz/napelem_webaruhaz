@@ -17,29 +17,29 @@ return new class extends Migration
     public function up()
     {
         Schema::create('felhasznalo', function (Blueprint $table) {
-            $table->id("felhasználó_id");
+            $table->id("felhasznalo_id");
             $table->string("email", 80)->unique()->nullable(false);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('jelszó');
-            $table->foreignId("számlázási cím")->nullable()->references("cím_id")->on("cim");
-            $table->foreignId("szállítási cím 1")->nullable()->references("cím_id")->on("cim");
-            $table->foreignId("szállítási cím 2")->nullable()->references("cím_id")->on("cim");
-            $table->foreignId("szállítási cím 3")->nullable()->references("cím_id")->on("cim");
-            $table->string("vezetéknév", 80);
-            $table->string("keresztnév", 80);
-            $table->integer("telefonszám");
-            $table->string("cégnév", 80)->nullable();
-            $table->char("adószám", 13)->nullable();
+            $table->string('jelszo');
+            $table->foreignId("szamlazasi_cim")->nullable()->references("cim_id")->on("cim");
+            $table->foreignId("szallitasi_cim_1")->nullable()->references("cim_id")->on("cim");
+            $table->foreignId("szallitasi_cim_2")->nullable()->references("cim_id")->on("cim");
+            $table->foreignId("szallitasi_cim_3")->nullable()->references("cim_id")->on("cim");
+            $table->string("vezeteknev", 80);
+            $table->string("keresztnev", 80);
+            $table->integer("telefonszam");
+            $table->string("cegnev", 80)->nullable();
+            $table->char("adoszam", 13)->nullable();
             $table->char("jelleg", 1); // M: magánszemély, C:cég
-            $table->char("jogosultság", 1); //R: rendszer admin, A: általános admin, F: felhasználó
+            $table->char("jogosultsag", 1); //R: rendszer admin, A: általános admin, F: felhasználó
             $table->rememberToken();
             $table->timestamps();
         });
 
         DB::statement("ALTER table felhasznalo add constraint check_jelleg check (jelleg = 'M' or jelleg = 'C')");
-        DB::statement("ALTER table felhasznalo add constraint check_jogosultság check (jogosultság = 'R' or jogosultság = 'A' or jogosultság = 'F')");
+        DB::statement("ALTER table felhasznalo add constraint check_jogosultsag check (jogosultsag = 'R' or jogosultsag = 'A' or jogosultsag = 'F')");
 
-        Felhasznalo::create(["email" => "weinbergerpeti@gmail.com","jelszó" => Hash::make("Aa123456"), "vezetéknév" => "Weinberger", "keresztnév" => "Péter", "telefonszám" => 303696080, "jelleg" => "M", "jogosultság" => "R"]);
+        Felhasznalo::create(["email" => "weinbergerpeti@gmail.com","jelszo" => Hash::make("Aa123456"), "vezeteknev" => "Weinberger", "keresztnev" => "Péter", "telefonszam" => 303696080, "jelleg" => "M", "jogosultsag" => "R"]);
     }
 
     /**

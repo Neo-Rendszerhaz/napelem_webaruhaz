@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,16 +16,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('garancia_valt', function (Blueprint $table) {
-            $table->primary(["termek_id", "datumig"]);
-            $table->foreignId("termek_id")->references("termek_id")->on("termek");
-            $table->date("datumig");
-            $table->integer("garancia");
+        Schema::create('users', function (Blueprint $table) 
+        {
+            $table->id();
+            $table->string("name");
+            $table->string("email");
+            $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
-
-        DB::statement("ALTER table garancia_valt add constraint check_garancia_nagyobb check ( garancia >= 0)");
-
     }
 
     /**
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('garancia_valt');
+        Schema::dropIfExists('users');
     }
 };

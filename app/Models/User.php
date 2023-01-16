@@ -17,24 +17,11 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $primaryKey="felhasználó_id";
 
     protected $fillable=[
         "name",
         "email",
         "password",
-        // "jelszó",
-        "számlázási cím",
-        "szállítási cím 1",
-        "szállítási cím 2",
-        "szállítási cím 3",
-        "vezetéknév",
-        "keresztnév",
-        "telefonszám",
-        "cégnév",
-        "adószám",
-        "jelleg",
-        "jogosultság"
     ];
 
     /**

@@ -14,9 +14,16 @@ class CimController extends Controller
         return $cimek;
     }
 
-    public function test()
+    public function show($cim_id)
     {
-        $valami=DB::select(DB::raw("select test()"));
-        return $valami;
+        $cim=Cim::find($cim_id);
+        return $cim;
+    }
+
+    public function store(Request $request)
+    {
+        $cim= new Cim();
+        $cim->iranyitoszam = $request->iranyitoszam;
+        $cim->varos = $request->varos;
     }
 }
