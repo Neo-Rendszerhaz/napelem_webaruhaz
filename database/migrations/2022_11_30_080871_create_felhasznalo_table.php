@@ -40,6 +40,9 @@ return new class extends Migration
         DB::statement("ALTER table felhasznalo add constraint check_jogosultsag check (jogosultsag = 'R' or jogosultsag = 'A' or jogosultsag = 'F')");
 
         Felhasznalo::create(["email" => "weinbergerpeti@gmail.com","jelszo" => Hash::make("Aa123456"), "vezeteknev" => "Weinberger", "keresztnev" => "Péter", "telefonszam" => 303696080, "jelleg" => "M", "jogosultsag" => "R"]);
+        Felhasznalo::create(["email" => "folyekonyszilard@gmail.com","jelszo" => Hash::make("Aa123456"), "vezeteknev" => "Folyékony", "keresztnev" => "Szilárd", "telefonszam" => 301234567, "jelleg" => "M", "jogosultsag" => "F"]);
+        Felhasznalo::create(["email" => "batorjanos@gmail.com","jelszo" => Hash::make("Aa123456"), "vezeteknev" => "Bátor", "keresztnev" => "János", "telefonszam" => 209575324, "jelleg" => "M", "jogosultsag" => "A"]);
+        Felhasznalo::create(["email" => "kecskeikende@gmail.com","jelszo" => Hash::make("Aa123456"), "vezeteknev" => "Kecskei", "keresztnev" => "Kende", "telefonszam" => 709384235, "jelleg" => "M", "jogosultsag" => "F"]);
     }
 
     /**

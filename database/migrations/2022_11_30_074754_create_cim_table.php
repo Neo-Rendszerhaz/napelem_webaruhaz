@@ -34,6 +34,10 @@ return new class extends Migration
         DB::statement("ALTER table cim add constraint check_hely_ház_jelleg check (hely_haz_jelleg = 'hrsz' or hely_haz_jelleg = 'hsz')");
         // Cim::create(["irányítószám"=>1118, "város" => "Budapest", "közterület neve" => "Ménesi", "közterület jellege" => "út", "házszám" =>"77"]);
         Cim::create(["iranyitoszam"=>1041, "varos" => "Budapest", "kozterulet_neve" => "Lőrinc", "kozterulet_jellege" => "utca", "hely_hazszam" =>"10", "hely_haz_jelleg"=>"hsz"]);
+        Cim::create(["iranyitoszam"=>1223, "varos" => "Budapest", "kozterulet_neve" => "Kukac", "kozterulet_jellege" => "körút", "hely_hazszam" =>"21", "hely_haz_jelleg"=>"hsz"]);
+        Cim::create(["iranyitoszam"=>1211, "varos" => "Budapest", "kozterulet_neve" => "Terem", "kozterulet_jellege" => "tér", "hely_hazszam" =>"01", "hely_haz_jelleg"=>"hsz"]);
+        Cim::create(["iranyitoszam"=>1141, "varos" => "Budapest", "kozterulet_neve" => "Nyár", "kozterulet_jellege" => "körút", "hely_hazszam" =>"02", "hely_haz_jelleg"=>"hsz"]);
+        Cim::create(["iranyitoszam"=>1101, "varos" => "Budapest", "kozterulet_neve" => "Tél", "kozterulet_jellege" => "út", "hely_hazszam" =>"09", "hely_haz_jelleg"=>"hsz"]);
     }
 
     /**
