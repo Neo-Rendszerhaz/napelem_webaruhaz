@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id("termek_id");
             $table->string("megnevezes", 80);
             $table->string("cikkszam", 10);
-            $table->string("gyartoi cikkszam", 80);
+            $table->string("gyartoi_cikkszam", 80);
             $table->string("marka", 80);
             $table->integer("garancia");
             $table->string("leiras", 80);
