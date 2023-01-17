@@ -3,6 +3,7 @@
 use App\Http\Controllers\CimController;
 use App\Http\Controllers\FelhasznaloController;
 use App\Http\Controllers\GaranciaValtController;
+use App\Http\Controllers\HaszonController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RendelesController;
 use App\Http\Controllers\SzamlazasiCimValtController;
@@ -50,11 +51,11 @@ Route::middleware(["rendszerAdmin"])->group(function()
     Route::put("/garanciaValtozasok/{termek_id}/{datumig}", [GaranciaValtController::class, "update"]);
     Route::delete("/garanciaValtozasok/{termek_id}/{datumig}", [GaranciaValtController::class, "destroy"]);
 
-    Route::get("/haszon", [RendelesController::class, "index"]);
-    Route::get("/haszon/{datum}", [RendelesController::class, "show"]);
-    Route::post("/haszon", [RendelesController::class, "store"]);
-    Route::put("/haszon/{datum}", [RendelesController::class, "update"]);
-    Route::delete("/haszon/{datum}", [RendelesController::class, "destroy"]);
+    Route::get("/haszon", [HaszonController::class, "index"]);
+    Route::get("/haszon/{datum}", [HaszonController::class, "show"]);
+    Route::post("/haszon", [HaszonController::class, "store"]);
+    Route::put("/haszon/{datum}", [HaszonController::class, "update"]);
+    Route::delete("/haszon/{datum}", [HaszonController::class, "destroy"]);
 
     Route::get("/rendelesek", [RendelesController::class, "index"]);
     Route::get("/rendelesek/{rendeles_id}", [RendelesController::class, "show"]);
