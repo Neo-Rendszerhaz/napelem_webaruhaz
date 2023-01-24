@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () 
 {
-    return view('welcome');
+    return view('oldalak/index');
 });
 
 Route::get('/dashboard', function () 
@@ -32,6 +32,11 @@ Route::get('/dashboard', function ()
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(["rendszerAdmin"])->group(function()
+{
+    
+});
+
+Route::middleware(["admin"])->group(function()
 {
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
@@ -82,14 +87,12 @@ Route::middleware(["rendszerAdmin"])->group(function()
     Route::delete("/termekek/{termek_id}", [TermekController::class, "destroy"]);
 });
 
-Route::middleware(["admin"])->group(function()
-{
-    
-});
-
 Route::middleware(["felhasznalo"])->group(function()
 {
-   
+    Route::get("/profil", function()
+    {
+        return view("oldalak/felhasznalo/profil");
+    });
 });
 
 Route::middleware('auth')->group(function () {

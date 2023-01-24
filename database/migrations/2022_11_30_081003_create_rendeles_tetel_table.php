@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId("termek_id")->references("termek_id")->on("termek");
             $table->integer("mennyiseg");
             $table->decimal("netto_ar");
+            $table->decimal("ar");
             $table->timestamps();
         });
 
