@@ -93,6 +93,9 @@ Route::middleware(["felhasznalo"])->group(function()
     {
         return view("oldalak/felhasznalo/profil");
     });
+    Route::get("/felhasznalok", [FelhasznaloController::class, "index"]);
+    Route::get("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "show"]);
+    Route::get("akt_fel", [FelhasznaloController::class, "aktualisFelhasznalo"]);
 });
 
 Route::middleware('auth')->group(function () {

@@ -1,15 +1,41 @@
-class AdatBeolvasModell
+class AdatBeolvasModel
 {
     #adatokTomb=[];
     constructor(token)
     {
-        console.log("adatbeolvas modell");
+        // console.log("adatbeolvas modell");
         this.token=token;
+        
     }
 
     adatModosit(adat)
     {
         console.log("Modelben módosít",adat);
+    }
+
+    egyAdat(vegpont, myCallBack)
+    {
+    
+        console.log(vegpont);
+        fetch(vegpont, 
+        {
+            method: 'GET',
+            headers: 
+            {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': this.token,
+            }
+        })
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            console.log("adat: "+data);
+            myCallBack(data)
+        })
+        .catch((error) => 
+        {
+            console.error('Error:', error);
+        });
     }
 
     adatBe(vegpont, myCallBack) 
@@ -24,17 +50,17 @@ class AdatBeolvasModell
                 'X-CSRF-TOKEN': this.token,
             }
         })
-            .then((response) => response.json())
-            .then((data) => 
-            {
-                this.#adatokTomb = data;
-                console.log(this.#adatokTomb);
-                myCallBack(this.#adatokTomb);
-            })
-            .catch((error) => 
-            {
-                console.error('Error:', error);
-            });
+        .then((response) => response.json())
+        .then((data) => 
+        {
+            this.#adatokTomb = data;
+            console.log(this.#adatokTomb);
+            myCallBack(this.#adatokTomb);
+        })
+        .catch((error) => 
+        {
+            console.error('Error:', error);
+        });
     }
 
     adatUj(vegpont, adat)
@@ -112,4 +138,4 @@ class AdatBeolvasModell
     }
 }
 
-export default AdatBeolvasModell;
+export default AdatBeolvasModel;

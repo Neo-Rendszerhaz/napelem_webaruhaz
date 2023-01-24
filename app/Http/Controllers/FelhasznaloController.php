@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Felhasznalo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FelhasznaloController extends Controller
 {
@@ -60,5 +62,11 @@ class FelhasznaloController extends Controller
     public function destroy($id)
     {
         Felhasznalo::find($id)->delete();
+    }
+
+    public function aktualisFelhasznalo()
+    {
+        $id=Auth::user();
+        return $id;
     }
 }
