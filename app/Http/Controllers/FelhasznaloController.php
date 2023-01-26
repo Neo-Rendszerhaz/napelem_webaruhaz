@@ -64,9 +64,14 @@ class FelhasznaloController extends Controller
         Felhasznalo::find($id)->delete();
     }
 
-    public function aktualisFelhasznalo()
+    public function aktualisFelhasznaloAdatai()
     {
         $id=Auth::user();
-        return $id;
+        $felhasznalo=DB::table("cim as c")
+        ->select("*")
+        ->join("felhasznalo as f", "c.cim_id", "=", "f.szamlazasi_cim")
+        ->where("f.felhasznalo_id",  $id->felhasznalo_id)
+        ->get();
+        return $felhasznalo;
     }
 }

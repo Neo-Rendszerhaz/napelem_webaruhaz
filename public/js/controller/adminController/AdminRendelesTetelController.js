@@ -1,11 +1,11 @@
-import AdatBeolvasModell from "../../model/AdatBeolvasModell";
-import AdminRendTetelekV from "../../view/adminView/AdminRendelesTetelekView"
+import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
+import AdminRendTetelekV from "../../view/adminView/AdminRendelesTetelekView.js"
 
 class AdminRendTetelC{
     constructor(){
         const token = $(`meta[name="csrf-token"]`).attr("content");
-        const ABM = new AdatBeolvasModell(token);
-        const vegpont = "/rendeles_tetelek"
+        const ABM = new AdatFeldolgozModel(token);
+        const vegpont = "/r_tetelek"
         ABM.adatBe(vegpont,this.tetelMutat)
     }
     tetelMutat(tomb){

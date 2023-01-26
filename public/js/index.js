@@ -3,7 +3,6 @@ import FelhasznaloProfilController from "./controller/felhasznaloController/Felh
 
 $(function()
 {
-    console.log("index.js");
-    new FelhasznaloProfilController();
+    // new FelhasznaloProfilController();
     new AdminRendTetelC();
 });

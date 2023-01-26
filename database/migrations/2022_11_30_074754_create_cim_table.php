@@ -23,10 +23,10 @@ return new class extends Migration
             $table->string("kozterulet_jellege", 30);
             $table->string("hely_hazszam", 12);
             $table->char("hely_haz_jelleg", 4);
-            $table->string("epulet", 6)->nullable();
-            $table->integer("emelet")->nullable()->length(2);
-            $table->string("ajto", 5)->nullable();
-            $table->integer("kapucsengo")->nullable()->length(3);
+            $table->string("epulet", 6)->nullable()->default("");
+            $table->string("emelet")->nullable()->length(2)->default("");
+            $table->string("ajto", 5)->nullable()->default("");
+            $table->string("kapucsengo")->nullable()->length(3)->default("");
             $table->timestamps();
         });
 

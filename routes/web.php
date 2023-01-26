@@ -38,6 +38,11 @@ Route::middleware(["rendszerAdmin"])->group(function()
 
 Route::middleware(["admin"])->group(function()
 {
+    Route::get("/r_tetelek", function()
+    {
+        return view("oldalak/admin/admin_web_adatok");
+    });
+
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
     Route::post("/cimek", [CimController::class, "store"]);
@@ -95,7 +100,7 @@ Route::middleware(["felhasznalo"])->group(function()
     });
     Route::get("/felhasznalok", [FelhasznaloController::class, "index"]);
     Route::get("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "show"]);
-    Route::get("akt_fel", [FelhasznaloController::class, "aktualisFelhasznalo"]);
+    Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
 });
 
 Route::middleware('auth')->group(function () {

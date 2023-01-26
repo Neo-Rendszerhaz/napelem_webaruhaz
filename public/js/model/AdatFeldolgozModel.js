@@ -3,9 +3,7 @@ class AdatBeolvasModel
     #adatokTomb=[];
     constructor(token)
     {
-        // console.log("adatbeolvas modell");
         this.token=token;
-        
     }
 
     adatModosit(adat)
@@ -15,7 +13,6 @@ class AdatBeolvasModel
 
     egyAdat(vegpont, myCallBack)
     {
-    
         console.log(vegpont);
         fetch(vegpont, 
         {
@@ -29,7 +26,6 @@ class AdatBeolvasModel
         .then((response) => response.json())
         .then((data) => 
         {
-            console.log("adat: "+data);
             myCallBack(data)
         })
         .catch((error) => 
@@ -54,7 +50,7 @@ class AdatBeolvasModel
         .then((data) => 
         {
             this.#adatokTomb = data;
-            console.log(this.#adatokTomb);
+            // console.log(this.#adatokTomb);
             myCallBack(this.#adatokTomb);
         })
         .catch((error) => 

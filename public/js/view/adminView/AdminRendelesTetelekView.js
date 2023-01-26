@@ -1,4 +1,4 @@
-import AdminRendTetelV from "./AdminRendelesTetelView";
+import AdminRendTetelV from "./AdminRendelesTetelView.js";
 
 class AdminRendTetelekV{
     constructor(tomb,szuloElem){

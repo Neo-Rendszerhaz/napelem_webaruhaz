@@ -1,0 +1,43 @@
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: snow;
+}
+
+main
+{
+    width: 90%;
+    margin: auto;
+}
+
+footer
+{
+    text-align: center;
+}
+
+article
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0px 0px 15px 0px rgba(44,44,44,0.5);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+
+}
+
+article div
+{
+    margin: 10px;
+}
+
+#profil, #cim
+{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}

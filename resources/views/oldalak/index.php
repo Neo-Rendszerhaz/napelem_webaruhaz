@@ -14,8 +14,8 @@
             <nav>
                 <ul>
                     <li><a href="/profil">Profil</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <li><a href="/r_tetelek">Rendelés tételek</a></li>
+                    <li><a href="/">Kezdőlap</a></li>
                 </ul>
             </nav>
         </header>
