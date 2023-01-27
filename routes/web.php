@@ -6,6 +6,7 @@ use App\Http\Controllers\GaranciaValtController;
 use App\Http\Controllers\HaszonController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RendelesController;
+use App\Http\Controllers\RendelesTetelController;
 use App\Http\Controllers\SzamlazasiCimValtController;
 use App\Http\Controllers\TermekController;
 use Illuminate\Support\Facades\Route;
@@ -26,9 +27,10 @@ Route::get('/', function ()
     return view('oldalak/index');
 });
 
-Route::get('/dashboard', function () 
+Route::get("/dashboard"/* '/be_reg_felulet' */, function () 
 {
     return view('dashboard');
+    // return view('oldalak/bejelentkezes_regisztracio');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(["rendszerAdmin"])->group(function()

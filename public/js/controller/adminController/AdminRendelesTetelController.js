@@ -4,9 +4,9 @@ import AdminRendTetelekV from "../../view/adminView/AdminRendelesTetelekView.js"
 class AdminRendTetelC{
     constructor(){
         const token = $(`meta[name="csrf-token"]`).attr("content");
-        const ABM = new AdatFeldolgozModel(token);
-        const vegpont = "/r_tetelek"
-        ABM.adatBe(vegpont,this.tetelMutat)
+        const AFM = new AdatFeldolgozModel(token);
+        const vegpont = "/rendeles_tetelek"
+        AFM.adatBe(vegpont,this.tetelMutat)
     }
     tetelMutat(tomb){
         const szuloElem = ""

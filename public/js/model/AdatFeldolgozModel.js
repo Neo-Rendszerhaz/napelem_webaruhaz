@@ -50,7 +50,7 @@ class AdatBeolvasModel
         .then((data) => 
         {
             this.#adatokTomb = data;
-            // console.log(this.#adatokTomb);
+            console.log(this.#adatokTomb);
             myCallBack(this.#adatokTomb);
         })
         .catch((error) => 
