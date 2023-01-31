@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\RendelesTetel;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +27,10 @@ return new class extends Migration
 
         DB::statement("ALTER table rendeles_tetel add constraint check_mennyiseg check ( mennyiseg > 0)");
         DB::statement("ALTER table rendeles_tetel add constraint check_netto_ar check ( netto_ar >= 0)");
+
+        RendelesTetel::create(["rendeles_szam"=>1, "termek_id"=>1,"mennyiseg"=>3, "netto_ar"=>10000, "ar"=>1030]);
+        RendelesTetel::create(["rendeles_szam"=>2, "termek_id"=>2,"mennyiseg"=>3, "netto_ar"=>10000, "ar"=>1030]);
+        RendelesTetel::create(["rendeles_szam"=>1, "termek_id"=>3,"mennyiseg"=>3, "netto_ar"=>10000, "ar"=>1030]);
     }
 
     /**

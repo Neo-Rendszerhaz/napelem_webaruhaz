@@ -9,7 +9,7 @@ class AdminRendTetelC{
         AFM.adatBe(vegpont,this.tetelMutat)
     }
     tetelMutat(tomb){
-        const szuloElem = ""
+        const szuloElem = "article"
         new AdminRendTetelekV(tomb, szuloElem);
     }
 }

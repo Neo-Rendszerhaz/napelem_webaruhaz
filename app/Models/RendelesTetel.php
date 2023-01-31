@@ -17,6 +17,7 @@ class RendelesTetel extends Model
     } 
 
     protected $fillable=[
+        'rendeles_szam',
         "termek_id",
         "mennyiseg",
         "netto_ar",
