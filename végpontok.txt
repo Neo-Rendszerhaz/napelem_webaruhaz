@@ -1,5 +1,39 @@
+use App\Http\Controllers\CimController;
+use App\Http\Controllers\FelhasznaloController;
+use App\Http\Controllers\GaranciaValtController;
+use App\Http\Controllers\HaszonController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RendelesController;
+use App\Http\Controllers\RendelesTetelController;
+use App\Http\Controllers\SzamlazasiCimValtController;
+use App\Http\Controllers\TermekController;
+
+
+
+Route::get('/', function () 
+{
+    return view('oldalak/index');
+});
+
+Route::get("/profil"/* "/dashboard" *//* '/be_reg_felulet' */, function () 
+{
+    // return view('dashboard');
+    return view('profil');
+    // return view('oldalak/bejelentkezes_regisztracio');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware(["rendszerAdmin"])->group(function()
 {
+    
+});
+
+Route::middleware(["admin"])->group(function()
+{
+    Route::get("/r_tetelek", function()
+    {
+        return view("oldalak/admin/admin_web_adatok");
+    });
+
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
     Route::post("/cimek", [CimController::class, "store"]);
@@ -18,11 +52,11 @@ Route::middleware(["rendszerAdmin"])->group(function()
     Route::put("/garanciaValtozasok/{termek_id}/{datumig}", [GaranciaValtController::class, "update"]);
     Route::delete("/garanciaValtozasok/{termek_id}/{datumig}", [GaranciaValtController::class, "destroy"]);
 
-    Route::get("/haszon", [RendelesController::class, "index"]);
-    Route::get("/haszon/{datum}", [RendelesController::class, "show"]);
-    Route::post("/haszon", [RendelesController::class, "store"]);
-    Route::put("/haszon/{datum}", [RendelesController::class, "update"]);
-    Route::delete("/haszon/{datum}", [RendelesController::class, "destroy"]);
+    Route::get("/haszon", [HaszonController::class, "index"]);
+    Route::get("/haszon/{datum}", [HaszonController::class, "show"]);
+    Route::post("/haszon", [HaszonController::class, "store"]);
+    Route::put("/haszon/{datum}", [HaszonController::class, "update"]);
+    Route::delete("/haszon/{datum}", [HaszonController::class, "destroy"]);
 
     Route::get("/rendelesek", [RendelesController::class, "index"]);
     Route::get("/rendelesek/{rendeles_id}", [RendelesController::class, "show"]);
@@ -49,12 +83,21 @@ Route::middleware(["rendszerAdmin"])->group(function()
     Route::delete("/termekek/{termek_id}", [TermekController::class, "destroy"]);
 });
 
-Route::middleware(["admin"])->group(function()
-{
-    
-});
-
 Route::middleware(["felhasznalo"])->group(function()
 {
-   
+    Route::get("/profil", function()
+    {
+        return view("oldalak/felhasznalo/profil");
+    });
+    Route::get("/felhasznalok", [FelhasznaloController::class, "index"]);
+    Route::get("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "show"]);
+    Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+ /* VÉGPONTOK */

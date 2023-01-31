@@ -37,13 +37,9 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
+            'name' => $request->name,
             'email' => $request->email,
-            'jelszó' => Hash::make($request->password),
-            "vezetéknév" => "Vezetéknév",
-            "keresztnév" => "Keresztnév",
-            "telefonszám" => 01234567,
-            "jelleg" => "M",
-            "jogosultság" => "F",
+            'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
