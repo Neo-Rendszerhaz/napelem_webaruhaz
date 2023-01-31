@@ -1,3 +1,5 @@
+<?php
+
 use App\Http\Controllers\CimController;
 use App\Http\Controllers\FelhasznaloController;
 use App\Http\Controllers\GaranciaValtController;
@@ -7,8 +9,7 @@ use App\Http\Controllers\RendelesController;
 use App\Http\Controllers\RendelesTetelController;
 use App\Http\Controllers\SzamlazasiCimValtController;
 use App\Http\Controllers\TermekController;
-
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () 
 {
