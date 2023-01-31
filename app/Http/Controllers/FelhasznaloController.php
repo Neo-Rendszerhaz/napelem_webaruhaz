@@ -83,17 +83,17 @@ class FelhasznaloController extends Controller
         ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szamlazasi_cim")
         ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
         $szallitas1=DB::table("cim as c")
-        ->selectRaw("c.*, 'szallitas1' as tipus")
+        ->selectRaw("*, 'szallitas1' as tipus")
         ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_1")
         ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
         $szallitas1->union($szamlazas)->get();
         $szallitas2=DB::table("cim as c")
-        ->selectRaw("c.*, 'szallitas2' as tipus")
+        ->selectRaw("*, 'szallitas2' as tipus")
         ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_2")
         ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
         $szallitas2->union($szallitas1)->get();
         $szallitas3=DB::table("cim as c")
-        ->selectRaw("c.*, 'szallitas3' as tipus")
+        ->selectRaw("*, 'szallitas3' as tipus")
         ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_3")
         ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
         return $szallitas3->union($szallitas2)->get();
