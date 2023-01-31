@@ -66,12 +66,37 @@ class FelhasznaloController extends Controller
 
     public function aktualisFelhasznaloAdatai()
     {
-        $id=Auth::user();
-        $felhasznalo=DB::table("cim as c")
-        ->select("*")
-        ->join("felhasznalo as f", "c.cim_id", "=", "f.szamlazasi_cim")
-        ->where("f.felhasznalo_id",  $id->felhasznalo_id)
-        ->get();
-        return $felhasznalo;
+        $felhasznalo=Auth::user();
+
+        if($felhasznalo->szamlazasi_cim==null)
+        {
+            $felhasznaloTabla=DB::table("felhasznalo")
+            ->select("*")
+            ->where("felhasznalo_id",  $felhasznalo->felhasznalo_id)
+            ->get();
+            return $felhasznaloTabla;
+        }
+        else if($felhasznalo->szamlazasi_cim!=null)
+        {
+            $szamlazas=DB::table("cim as c")
+            ->selectRaw("*, 'szamlazas' as tipus")
+        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szamlazasi_cim")
+        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+        $szallitas1=DB::table("cim as c")
+        ->selectRaw("c.*, 'szallitas1' as tipus")
+        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_1")
+        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+        $szallitas1->union($szamlazas)->get();
+        $szallitas2=DB::table("cim as c")
+        ->selectRaw("c.*, 'szallitas2' as tipus")
+        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_2")
+        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+        $szallitas2->union($szallitas1)->get();
+        $szallitas3=DB::table("cim as c")
+        ->selectRaw("c.*, 'szallitas3' as tipus")
+        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_3")
+        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+        return $szallitas3->union($szallitas2)->get();
+        }
     }
 }
