@@ -4,5 +4,5 @@ import FelhasznaloProfilController from "./controller/felhasznaloController/Felh
 $(function()
 {
     // new FelhasznaloProfilController();
-    new AdminRendTetelC();
+    //new AdminRendTetelC();
 });
