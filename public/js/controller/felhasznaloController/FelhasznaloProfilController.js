@@ -1,4 +1,4 @@
-import ProfilokView from "../../view/felhasznaloView/ProfilView.js";
+import ProfilokView from "../../view/felhasznaloView/ProfilokView.js";
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 
 class FelhasznaloProfilController

@@ -78,25 +78,46 @@ class FelhasznaloController extends Controller
         }
         else if($felhasznalo->szamlazasi_cim!=null)
         {
-            $szamlazas=DB::table("cim as c")
+            // $szamlazas=DB::table("cim as c")
+            // ->selectRaw("*, 'szamlazas' as tipus")
+            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szamlazasi_cim")
+            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+            // // return $szamlazas->get();
+            // $szallitas1=DB::table("cim as c")
+            // ->selectRaw("*, 'szallitas1' as tipus")
+            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szallitasi_cim_1")
+            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+            // $szallitas1->union($szamlazas);
+            // $szallitas2=DB::table("cim as c")
+            // ->selectRaw("*, 'szallitas2' as tipus")
+            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szallitasi_cim_2")
+            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+            // return $szallitas2->union($szallitas1)->get();
+            // $szallitas3=DB::table("cim as c")
+            // ->selectRaw("*, 'szallitas3' as tipus")
+            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szallitasi_cim_3")
+            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
+            // return $szallitas3->union($szallitas1)->get();
+            $szamlazas = DB::table("cim as c")
             ->selectRaw("*, 'szamlazas' as tipus")
-        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szamlazasi_cim")
-        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-        $szallitas1=DB::table("cim as c")
-        ->selectRaw("*, 'szallitas1' as tipus")
-        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_1")
-        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-        $szallitas1->union($szamlazas)->get();
-        $szallitas2=DB::table("cim as c")
-        ->selectRaw("*, 'szallitas2' as tipus")
-        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_2")
-        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-        $szallitas2->union($szallitas1)->get();
-        $szallitas3=DB::table("cim as c")
-        ->selectRaw("*, 'szallitas3' as tipus")
-        ->rightJoin("felhasznalo as fsz", "c.cim_id", "=", "fsz.szallitasi_cim_3")
-        ->where("fsz.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-        return $szallitas3->union($szallitas2)->get();
+            ->rightJoin("felhasznalo as f", "f.szamlazasi_cim", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $felhasznalo->felhasznalo_id);
+             $szallitas1 = DB::table("cim as c")
+            ->selectRaw("*, 'szallitas1'")
+            ->rightJoin("felhasznalo as f", "szallitasi_cim_1", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $felhasznalo->felhasznalo_id);
+            $szamlazas = $szamlazas->union($szallitas1);
+            $szallitas2 = DB::table("cim as c")
+            ->selectRaw("*, 'szallitas2'")
+            ->rightJoin("felhasznalo as f", "szallitasi_cim_2", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $felhasznalo->felhasznalo_id);
+            $szamlazas = $szamlazas->union($szallitas2);
+            $szallitas3 = DB::table("cim as c")
+            ->selectRaw("*, 'szallitas3'")
+            ->rightJoin("felhasznalo as f", "szallitasi_cim_3", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $felhasznalo->felhasznalo_id);
+            $szamlazas = $szamlazas->union($szallitas3)->get();
+            return $szamlazas;
         }
     }
 }

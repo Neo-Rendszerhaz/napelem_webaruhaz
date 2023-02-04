@@ -1,63 +1,58 @@
-class ProfilokView
+class ProfilView
 {
-    constructor(adat, szuloElem)
+    #elem
+    constructor(elem, cimDiv, profilDiv)
     {
-        let profilAdatTxt=`<div id="profil">`;
-        let cimTxt=`<div id="cim">`;
+        this.#elem=elem
 
-        szuloElem.append(`<div id="profil"></div>`)
+        const cimzes=`<p>${elem.iranyitoszam+" "+elem.varos+" "+elem.kozterulet_neve+" "+elem.kozterulet_jellege+" "+elem.hely_hazszam+" "+elem.epulet+" "+elem.emelet+" "+elem.ajto+" "+elem.kapucsengo}</p>`;
 
-        // for (let i = 0; i < adat.length; i++)
-        // {
-        //     // console.log(adat[i]);
-        //     // for (let j = 0; j < adat[i].length; j++) 
-        //     // {
-        //         //     console.log(adat[j]);    
-        //         // }
-                
-        //     console.log(adat[0].szamlazasi_cim);
-        //     if(adat[i].tipus=="szamlazas")
-        //     {
-        //         profilAdatTxt+=`
-        //         <p>Teljes név: ${adat[i].vezeteknev +" "+adat[i].keresztnev}</p>
-        //         <p>Email cím: ${adat[i].email}</p>
-        //         <p>Telefonszám: +36${adat[i].telefonszam}</p>
-        //         </div>`;
+        
+        const profilAdat = `<p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>
+        <p>Email cím: ${elem.email}</p>
+        <p>Telefonszám: +36${elem.telefonszam}</p>`;
 
-        //         console.log(adat[i]);
-        //         cimTxt+=`
-        //         <p>Cím: ${adat[i].iranyitoszam+" "+adat[i].varos+" "+adat[i].kozterulet_neve+" "+adat[i].kozterulet_jellege+" "+adat[i].hely_hazszam+" "+adat[i].epulet+" "+adat[i].emelet+" "+adat[i].ajto+" "+adat[i].kapucsengo}</p>
-        //         </div>`;
-        //     }
-        //     // else
-        //     // {
-        //     //     cimTxt+="</div>"
-        //     // }
-            
+        if(elem.szamlazasi_cim==null)
+        {
+            $(profilDiv).append(profilAdat);
+        }
 
-        //     // // console.log(adat[i].szamlazasi_cim);
-        //     // if(adat[i].szamlazasi_cim!=null)
-        //     // {
-        //     //     cimTxt+=`
-        //     // <p>Cím: ${adat[i].iranyitoszam+" "+adat[i].varos+" "+adat[i].kozterulet_neve+" "+adat[i].kozterulet_jellege+" "+adat[i].hely_hazszam+" "+adat[i].epulet+" "+adat[i].emelet+" "+adat[i].ajto+" "+adat[i].kapucsengo}</p>
-        //     // </div>`;
-        //     // }
-        //     // else if(adat[i].szallitasi_cim_1!=null)
-        //     // {
-        //     //     szallitasicim1Txt+=`
-        //     // <p>Cím: ${adat[i].iranyitoszam+" "+adat[i].varos+" "+adat[i].kozterulet_neve+" "+adat[i].kozterulet_jellege+" "+adat[i].hely_hazszam+" "+adat[i].epulet+" "+adat[i].emelet+" "+adat[i].ajto+" "+adat[i].kapucsengo}</p>
-        //     // </div>`;
-        //     // }
-            
-        // }
-        console.log(profilAdatTxt);
-        console.log(cimTxt);
-        this.cimDiv=cimTxt;
-        this.profilDiv=profilAdatTxt;
-            
-        szuloElem.append(this.profilDiv);
-        szuloElem.append(this.cimDiv);
-        // szuloElem.append(szallitasicim1Txt);
+        if(elem.tipus=="szamlazas")
+        {
+            $(cimDiv).append(`<div id=szamlazas>
+            <h3>Számlázási cím:</h3>${cimzes}</div>`);
+            $(profilDiv).append(profilAdat);
+        }
+        
+        if(elem.tipus=="szallitas1" && elem.szallitasi_cim_1!=null)
+        {
+            $(cimDiv).append(`<div id=szallitas1>
+            <h3>1. Szállítási cím:</h3>${cimzes}</div>`);
+        }
+        else
+        {
+            $(cimDiv).append("");
+        }
+
+        if(elem.tipus=="szallitas2" && elem.szallitasi_cim_2!=null)
+        {
+            $(cimDiv).append(`<div id=szallitas2>
+            <h3>2. Szállítási cím:</h3>${cimzes}</div>`);
+        }
+        else
+        {
+            $(cimDiv).append("");
+        }
+
+        if(elem.tipus=="szallitas3" && elem.szallitasi_cim_3!=null)
+        {
+            $(cimDiv).append(`<div id=szallitas3>
+            <h3>3. Szállítási cím:</h3>${cimzes}</div>`);
+        }
+        else
+        {
+            $(cimDiv).append("");
+        }
     }
 }
-    export default ProfilokView;
+export default ProfilView;
