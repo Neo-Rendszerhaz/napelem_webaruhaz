@@ -16,16 +16,18 @@
             <nav>
                 <ul>
                     <li><a href="/profil">Profil</a></li>
-                    <li><a href="/r_tetelek">Rendelés tételek</a></li>
+                    <li><a href="/admin_felulet">Admin Felület</a></li>
                     <li><a href="/">Kezdőlap</a></li>
                     <li><a href="/be_reg_felulet">Bejelentkezés & Regisztráció</a></li>
                 </ul>
             </nav>
         </header>
         <article>
-            <!-- <div id="profilAdatok"></div> -->
+
         </article>
-        <footer></footer>
+        <footer>
+            
+        </footer>
     </main>
 </body>
 </html>

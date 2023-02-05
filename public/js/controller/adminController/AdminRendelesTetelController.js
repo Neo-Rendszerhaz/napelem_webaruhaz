@@ -9,7 +9,8 @@ class AdminRendTetelC{
         AFM.adatBe(vegpont,this.tetelMutat)
     }
     tetelMutat(tomb){
-        const szuloElem = "article"
+        // const szuloElem = "article"
+        const szuloElem = "#adminMenupontok"
         new AdminRendTetelekV(tomb, szuloElem);
     }
 }

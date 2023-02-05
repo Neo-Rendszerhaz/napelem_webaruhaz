@@ -22,12 +22,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () 
+{
+    // return view('welcome');
+    return view("oldalak/index");
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
+    // return view('oldalak/felhasznalo/profil');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -43,7 +46,7 @@ Route::middleware(["rendszerAdmin"])->group(function()
 
 Route::middleware(["admin"])->group(function()
 {
-    Route::get("/r_tetelek", function()
+    Route::get("/admin_felulet", function()
     {
         return view("oldalak/admin/admin_web_adatok");
     });
@@ -103,8 +106,6 @@ Route::middleware(["felhasznalo"])->group(function()
     {
         return view("oldalak/felhasznalo/profil");
     });
-    Route::get("/felhasznalok", [FelhasznaloController::class, "index"]);
-    Route::get("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "show"]);
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
 });
 
