@@ -1,5 +1,6 @@
 import ProfilokView from "../../view/felhasznaloView/ProfilokView.js";
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
+import ProfilRendelesekView from "../../view/felhasznaloView/ProfilRendelesekView.js";
 
 class FelhasznaloProfilController
 {
@@ -12,12 +13,21 @@ class FelhasznaloProfilController
         this.felhasznaloAdatok="/adatok"
         console.log(this.felhasznaloAdatok);
         adatFeldolgozModel.egyAdat(this.felhasznaloAdatok, this.profilAdatok);
+
+        this.felhasznaloRendelesek="f_rendelesek";
+        adatFeldolgozModel.adatBe(this.felhasznaloRendelesek, this.profilRendelesek);
     }
 
     profilAdatok(adat)
     {
         const szuloElem = $("article");
         new ProfilokView(adat, szuloElem)
+    }
+
+    profilRendelesek(tomb)
+    {
+        const szuloElem = $("article");
+        new ProfilRendelesekView(tomb, szuloElem)
     }
 
 }

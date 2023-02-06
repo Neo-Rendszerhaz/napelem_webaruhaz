@@ -33,6 +33,7 @@ return new class extends Migration
 
         Rendeles::create(["felhasznalo_id" => 2, "szallitasi_cim" => 2, "vegosszeg" => 2345]);
         Rendeles::create(["felhasznalo_id" => 1, "szallitasi_cim" => 3, "vegosszeg" => 10000, "kedvezmeny" => 10]);
+        Rendeles::create(["felhasznalo_id" => 1, "szallitasi_cim" => 1, "vegosszeg" => 5500, "kedvezmeny" => 5]);
         
     }
 

@@ -78,26 +78,6 @@ class FelhasznaloController extends Controller
         }
         else if($felhasznalo->szamlazasi_cim!=null)
         {
-            // $szamlazas=DB::table("cim as c")
-            // ->selectRaw("*, 'szamlazas' as tipus")
-            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szamlazasi_cim")
-            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-            // // return $szamlazas->get();
-            // $szallitas1=DB::table("cim as c")
-            // ->selectRaw("*, 'szallitas1' as tipus")
-            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szallitasi_cim_1")
-            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-            // $szallitas1->union($szamlazas);
-            // $szallitas2=DB::table("cim as c")
-            // ->selectRaw("*, 'szallitas2' as tipus")
-            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szallitasi_cim_2")
-            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-            // return $szallitas2->union($szallitas1)->get();
-            // $szallitas3=DB::table("cim as c")
-            // ->selectRaw("*, 'szallitas3' as tipus")
-            // ->rightJoin("felhasznalo as f", "c.cim_id", "=", "f.szallitasi_cim_3")
-            // ->where("f.felhasznalo_id",  $felhasznalo->felhasznalo_id);
-            // return $szallitas3->union($szallitas1)->get();
             $szamlazas = DB::table("cim as c")
             ->selectRaw("*, 'szamlazas' as tipus")
             ->rightJoin("felhasznalo as f", "f.szamlazasi_cim", "=", "c.cim_id")
@@ -119,5 +99,18 @@ class FelhasznaloController extends Controller
             $szamlazas = $szamlazas->union($szallitas3)->get();
             return $szamlazas;
         }
+    }
+
+    public function aktualisFelhasznaloRendelesei()
+    {
+        $felhasznalo=Auth::user();
+        $felhasznaloTabla=DB::table("felhasznalo as f")
+        ->select("*")
+        ->join("rendeles as r", "r.felhasznalo_id", "=", "f.felhasznalo_id")
+        ->join("rendeles_tetel as rt", "rt.rendeles_szam", "=", "r.rendeles_szam")
+        ->where("f.felhasznalo_id", $felhasznalo->felhasznalo_id)
+        ->get();
+
+        return $felhasznaloTabla;
     }
 }
