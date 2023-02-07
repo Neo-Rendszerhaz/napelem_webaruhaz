@@ -107,7 +107,6 @@ Route::middleware(["felhasznalo"])->group(function()
         return view("oldalak/felhasznalo/profil");
     });
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
-    Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
 });
 
  /* VÉGPONTOK */

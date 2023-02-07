@@ -1,8 +1,7 @@
-import AdminRendTetelC from "./controller/adminController/AdminRendelesTetelController.js";
-import FelhasznaloProfilController from "./controller/felhasznaloController/FelhasznaloProfilController.js";
+import AdatFeldolgozModel from "./model/AdatFeldolgozModel.js";
 
 $(function()
 {
-    // new FelhasznaloProfilController();
-    //new AdminRendTetelC();
+    const adatFeldolgozModel = new AdatFeldolgozModel();
+    adatFeldolgozModel.jsonadatokBe();
 });

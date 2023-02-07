@@ -1,4 +1,4 @@
-class AdatBeolvasModel
+class AdatFeldolgozModel
 {
     #adatokTomb=[];
     constructor(token)
@@ -57,6 +57,12 @@ class AdatBeolvasModel
         {
             console.error('Error:', error);
         });
+    }
+    jsonadatokBe() 
+    {
+        fetch("./termekek.json")
+            .then((response) => response.json())
+            .then((json) => console.log(json));
     }
 
     adatUj(vegpont, adat)
