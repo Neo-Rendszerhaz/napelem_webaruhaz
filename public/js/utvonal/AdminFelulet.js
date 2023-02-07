@@ -12,17 +12,17 @@ $(function(){
     <button id="termekGomb">Termék</button>
     <div id="adatTarolo"></div>
     `);
-    $(document).on("click", "#felhasznaloGomb", ()=>
+    $("#felhasznaloGomb").on("click", ()=>
     {
         new AdminProfilController();
     });
 
-    $(document).on("click", "#rendelesTetelGomb", ()=>
+    $("#rendelesTetelGomb").on("click", ()=>
     {
         new AdminRendTetelC();
     });
 
-    $(document).on("click", "#cimGomb", ()=>
+    $("#cimGomb").on("click", ()=>
     {
        new AdminCimController();
     });
