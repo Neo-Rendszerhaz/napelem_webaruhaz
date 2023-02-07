@@ -1,7 +1,8 @@
-import AdminController from "../controller/adminController/AdminController.js";
+import AdminCimController from "../controller/adminController/AdminCimController.js";
+import AdminProfilController from "../controller/adminController/AdminProfilController.js";
+import AdminRendTetelC from "../controller/adminController/AdminRendelesTetelController.js";
 
 $(function(){
-    new AdminController();
     $("article").html(`
     <button id="cimGomb">Címek</button>
     <button id="felhasznaloGomb">Felhasználok</button>
@@ -11,4 +12,18 @@ $(function(){
     <button id="termekGomb">Termék</button>
     <div id="adatTarolo"></div>
     `);
+    $("#felhasznaloGomb").on("click", ()=>
+    {
+        new AdminProfilController();
+    });
+
+    $("#rendelesTetelGomb").on("click", ()=>
+    {
+        new AdminRendTetelC();
+    });
+
+    $("#cimGomb").on("click", ()=>
+    {
+       new AdminCimController();
+    });
 })

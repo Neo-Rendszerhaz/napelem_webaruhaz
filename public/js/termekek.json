@@ -7,7 +7,8 @@
             "marka": "Risen",
             "garancia": 12,
             "leiras": "A Risen Energy a nagy teljesítményű napelemes fotovoltaikus termékek vezető, első osztályú globális gyártója, valamint teljeskörű üzleti megoldásokat kínál a lakossági, kereskedelmi és közüzemi szintű energiatermeléshez.",
-            "kep": "https://www.chs.hu/Risen_Energy_Napelem_RSM40-8-405M_Black_Mono_405w-i1015190.png"
+            "kep": "https://www.chs.hu/Risen_Energy_Napelem_RSM40-8-405M_Black_Mono_405w-i1015190.png",
+            "ar": 75770
         },
         {
             "megnevezes": "Huawei Wifi Modul FE (gyors ethernet) napelemhez",
@@ -16,7 +17,8 @@
             "marka": "Huawei",
             "garancia": 2,
             "leiras": "",
-            "kep": "https://www.chs.hu/Huawei_Wifi_Modul_FE_gyors_ethernet-i675918.png"
+            "kep": "https://www.chs.hu/Huawei_Wifi_Modul_FE_gyors_ethernet-i675918.png",
+            "ar": 39380
         },
         {
             "megnevezes": "Risen Energy Napelem RSM144-7-450M Mono 450w",
@@ -25,7 +27,8 @@
             "marka": "Risen",
             "garancia": 12,
             "leiras": "A tökéletes minőségen és támogatáson alapuló technológiai-kereskedelmi innováció veszi körül a Risen Energy teljes napelemes PV üzleti megoldásait, amelyek a legerősebbek és legköltséghatékonyabbak az iparágban.",
-            "kep": "https://www.chs.hu/Risen_Energy_Napelem_RSM144-7-450M_Mono_450w-i996918.jpg"
+            "kep": "https://www.chs.hu/Risen_Energy_Napelem_RSM144-7-450M_Mono_450w-i996918.jpg",
+            "ar": 96720
         },
         {
             "megnevezes": "Sunova Solar Napelem SS-410-54MDH PERC Mono 410w",
@@ -34,16 +37,18 @@
             "marka": "Sunova",
             "garancia": 40,
             "leiras": "Jobb fénybefogás és áramfelvétel a modul teljesítményének és megbízhatóságának javítása érdekében.",
-            "kep": "https://solar.hu/wp-content/uploads/2022/08/sunova.jpg"
+            "kep": "https://solar.hu/wp-content/uploads/2022/08/sunova.jpg",
+            "ar": 85220
         },
         {
-            "megnevezes": "ANKER EUFYCAM3 Kamera 4K, Beépített Napelem, Akkumulátoros, Mozgásérzékelő, WiFi-s, vízálló, kültéri - T81603W1",
+            "megnevezes": "ANKER EUFYCAM3 Kamera 4K",
             "cikkszam": "328235",
             "gyartoi_cikkszam": "T81603W1",
             "marka": "ANKER",
             "garancia": 2,
             "leiras": "Ingyenes helyi tárhely: beépített 16 GB 3 hónapos használatra. Támogatja a HDD/SSD tárhelybővítést, akár 16 TB-ig. Emberi felismerés (öntanuló algoritmus). Jármű-felismerés. Háziállat-felismerés",
-            "kep": "https://www.chs.hu/ANKER_EUFYCAM3_Kamera_4K_Beepitett_Napelem_Akkumulatoros_Mozgaserzekelo_WiFi-s_vizallo_kulteri_-_T81603W1-i1180112.jpg"
+            "kep": "https://www.chs.hu/ANKER_EUFYCAM3_Kamera_4K_Beepitett_Napelem_Akkumulatoros_Mozgaserzekelo_WiFi-s_vizallo_kulteri_-_T81603W1-i1180112.jpg",
+            "ar": 68185
         },
         {
             "megnevezes": "Csúszóanya napelem tartószerkezet",
@@ -52,7 +57,8 @@
             "marka": "PROFINESS",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Csuszoanya_napelem_tartoszerkezet-i993809.jpg"
+            "kep": "https://www.chs.hu/Csuszoanya_napelem_tartoszerkezet-i993809.jpg",
+            "ar": 196
         },
         {
             "megnevezes": "Huawei 4G dongle modul napelemhez",
@@ -61,7 +67,8 @@
             "marka": "Huawei",
             "garancia": 2,
             "leiras": "",
-            "kep": "https://www.chs.hu/Huawei_4G_dongle_modul_napelemhez-i978741.jpg"
+            "kep": "https://www.chs.hu/Huawei_4G_dongle_modul_napelemhez-i978741.jpg",
+            "ar": 50715
         },
         {
             "megnevezes": "A.SUN Köztes leszorító (szimpla) 30-50-es napelem tartószerkezet",
@@ -70,7 +77,8 @@
             "marka": "ASUN",
             "garancia": 1,
             "leiras": "Napelemek rögzítésére a szerelősínekhez. Modulok közti szélesség: 20 mm. Anyag: Alumínium",
-            "kep": "https://www.chs.hu/ASUN_Koztes_leszorito_szimpla_30-50-es_napelem_tartoszerkezet-i981280.jpg"
+            "kep": "https://www.chs.hu/ASUN_Koztes_leszorito_szimpla_30-50-es_napelem_tartoszerkezet-i981280.jpg",
+            "ar": 658
         },
         {
             "megnevezes": "ETT Szolár vezeték 1x4mm2 fekete (500m)",
@@ -79,7 +87,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Szolar_vezetek_1x4mm2_fekete_500m-i978768.jpg"
+            "kep": "https://www.chs.hu/Szolar_vezetek_1x4mm2_fekete_500m-i978768.jpg",
+            "ar": 330068 
         },
         {
             "megnevezes": "Risen Energy Napelem RSM40-8-390MB FULL BLACK Mono 390w",
@@ -88,7 +97,8 @@
             "marka": "Risen Energy",
             "garancia": 37,
             "leiras": "Műszaki paraméterek (STC). Tömeg: 21kg. Kábelátmérő: 4,0mm2 (12AWG). Kábel hossz: 1200mm. Csatlakozó: MC4",
-            "kep": "https://www.chs.hu/Risen_Energy_Napelem_RSM40-8-390MB_FULL_BLACK_Mono_390w-i1008366.jpg"
+            "kep": "https://www.chs.hu/Risen_Energy_Napelem_RSM40-8-390MB_FULL_BLACK_Mono_390w-i1008366.jpg",
+            "ar": 96030
         },
         {
             "megnevezes": "ETT Végleszorító 30mm napelem tartószerkezet",
@@ -97,7 +107,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Alusun_Vegleszorito_30mm_napelem_tartoszerkezet-i1008370.png"
+            "kep": "https://www.chs.hu/Alusun_Vegleszorito_30mm_napelem_tartoszerkezet-i1008370.png",
+            "ar": 800
         },
         {
             "megnevezes": "ANKER EUFYCAM Napelem, EUFYCAM Kamerákhoz, kültéri, fehér",
@@ -106,7 +117,8 @@
             "marka": "ANKER",
             "garancia": 2,
             "leiras": "Folyamatos töltést biztosít az eufyCam, eufyCam E, eufyCam 2, eufyCam 2 Pro, eufyCam 2C, eufyCam 2C Pro készülékekhez. Az eufy-tól, ahol a magánélet az első. Átfogó biztonsági megoldások otthona számára. Hivatalos eufy biztonsági kiegészítő. Az eufy Solar Panel töltő az egyetlen hivatalos napelem a piacon, amelyet az összes eufyCam folyamatos töltésére terveztek.",
-            "kep": "https://www.chs.hu/ANKER_EUFYCAM_Napelem_Solar_Panel_EUFYCAM_Kamerakhoz_kulteri_feher_-_T8700021-i1206098.jpg"
+            "kep": "https://www.chs.hu/ANKER_EUFYCAM_Napelem_Solar_Panel_EUFYCAM_Kamerakhoz_kulteri_feher_-_T8700021-i1206098.jpg",
+            "ar": 20254
         },
         {
             "megnevezes": "ETT Szolár vezeték 1x6mm2 fekete (500m)",
@@ -115,7 +127,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Szolar_vezetek_1x6mm2_fekete_500m-i978769.jpg"
+            "kep": "https://www.chs.hu/Szolar_vezetek_1x6mm2_fekete_500m-i978769.jpg",
+            "ar": 262390
         },
         {
             "megnevezes": "ETT Végleszorító 35mm napelem tartószerkezet",
@@ -124,7 +137,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/PROFINESS_Vegleszorito_35mm_napelem_tartoszerkezet-i994017.jpg"
+            "kep": "https://www.chs.hu/PROFINESS_Vegleszorito_35mm_napelem_tartoszerkezet-i994017.jpg",
+            "ar": 600
         },
         {
             "megnevezes": "ETT Szolár vezeték 1x4mm2 piros (500m)",
@@ -133,7 +147,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Szolar_vezetek_1x4mm2_piros_500m-i978766.jpg"
+            "kep": "https://www.chs.hu/Szolar_vezetek_1x4mm2_piros_500m-i978766.jpg",
+            "ar": 226390
         },
         {
             "megnevezes": "ETT Szolár vezeték 1x6mm2 piros (500m)",
@@ -142,7 +157,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Szolar_vezetek_1x6mm2_piros_500m-i978767.jpg"
+            "kep": "https://www.chs.hu/Szolar_vezetek_1x6mm2_piros_500m-i978767.jpg",
+            "ar": 316770
         },
         {
             "megnevezes": "SANDBERG Napelem tábla Solar 6-Panel Powerbank 20000",
@@ -151,7 +167,8 @@
             "marka": "SANDBERG",
             "garancia": 5,
             "leiras": "A Sandberg Solar 6-panel Powerbank 20000 valóban minden energiát biztosít, amelyre az összes eszközének szüksége van: akár 8 töltést egy átlagos okostelefon számára. Ha távol van a konnektorról, gyorsan feltöltheti a powerbankot a nagy, összecsukható napelemen keresztül, amely 6 napelemet tartalmaz. Így biztos lehet abban, hogy mindig képes lesz a készülékét feltölteni. 2 USB-A csatlakozást, valamint 1 USB-C PD 20W csatlakozást kap a gyorstöltéshez. Egy karabinert is mellékeltünk, a sátron vagy hátizsákon való napelemes töltéshez. A napelem szükség szerint be- és kikapcsolható. A tökéletes mobiltöltési megoldás családi vakációhoz, kiránduláshoz vagy más kalandhoz.",
-            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_6-Panel_Powerbank_20000-i1010848.jpg"
+            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_6-Panel_Powerbank_20000-i1010848.jpg",
+            "ar": 45790
         },
         {
             "megnevezes": "PROFINESS Adapter (lapka) napelem tartószerkezet",
@@ -160,7 +177,8 @@
             "marka": "PROFINESS",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/PROFINESS_Adapter_lapka_napelem_tartoszerkezet-i754861.jpg"
+            "kep": "https://www.chs.hu/PROFINESS_Adapter_lapka_napelem_tartoszerkezet-i754861.jpg",
+            "ar": 622
         },
         {
             "megnevezes": "DAH Solar Napelem DHT-M60X10/FS FULL SCREEN Black Mono 460w",
@@ -169,7 +187,8 @@
             "marka": "DAH SOLAR",
             "garancia": 37,
             "leiras": "",
-            "kep": "https://www.chs.hu/DAH_Solar_Napelem_DHT-M60X10FS_FULL_SCREEN_Black_Mono_460w-i1012784.png"
+            "kep": "https://www.chs.hu/DAH_Solar_Napelem_DHT-M60X10FS_FULL_SCREEN_Black_Mono_460w-i1012784.png",
+            "ar": 119339
         },
         {
             "megnevezes": "ETT Köztes leszorító FEKETE napelem modulhoz",
@@ -178,7 +197,8 @@
             "marka": "ETT",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Alusun_Koztes_leszorito_FEKETE_napelem_modulhoz-i1015255.png"
+            "kep": "https://www.chs.hu/Alusun_Koztes_leszorito_FEKETE_napelem_modulhoz-i1015255.png",
+            "ar": 1102
         },
         {
             "megnevezes": "DAH Solar Napelem DHM-54X10/FS(BB) FULL SCREEN FULL BLACK Mono 405w",
@@ -187,7 +207,8 @@
             "marka": "DAH SOLAR",
             "garancia": 37,
             "leiras": "",
-            "kep": "https://www.chs.hu/DAH_Solar_Napelem_DHM-54X10FSBB_FULL_SCREEN_FULL_BLACK_Mono_405w-i1177436.jpg"
+            "kep": "https://www.chs.hu/DAH_Solar_Napelem_DHM-54X10FSBB_FULL_SCREEN_FULL_BLACK_Mono_405w-i1177436.jpg",
+            "ar": 82080
         },
         {
             "megnevezes": "Ecoflow 400W Solar Panel",
@@ -196,7 +217,8 @@
             "marka": "Ecoflow",
             "garancia": 10,
             "leiras": "Kihajtott méret 106.8 x 239.0 x 2.4cm. Összehajtott méret 82 x 42 x 2.5cm. Súly napelem 16 kg. Névleges teljesítmény 400W. Hatékonyság 22%-23%. Csatlakozó típus MC4. Nyílt áramköri feszültség 48V (Vmp 41V). Rövidzárlati áram 11A (Imp 9.8A). Üzemi és tárolási hőmérséklet -20°C és 85°C között. Cella típusa Monokristályos szilícium",
-            "kep": "https://www.chs.hu/Ecoflow_400W_Solar_Panel-i1175974.jpg"
+            "kep": "https://www.chs.hu/Ecoflow_400W_Solar_Panel-i1175974.jpg",
+            "ar": 374300
         },
         {
             "megnevezes": "Ecoflow 220W Solar Panel",
@@ -205,7 +227,8 @@
             "marka": "Ecoflow",
             "garancia": 0,
             "leiras": "Kihajtott méret 82 x 183 x 2.5cm. Összehajtott méret 82 x 42 x 2.5cm. Súly napelem 9.5 kg. Névleges teljesítmény 220W Eleje/155W Hátulja. Hatékonyság 22%-23%. Csatlakozó típus MC4",
-            "kep": "https://www.chs.hu/Ecoflow_220W_Solar_Panel-i1175981.jpg"
+            "kep": "https://www.chs.hu/Ecoflow_220W_Solar_Panel-i1175981.jpg",
+            "ar": 239900
         },
         {
             "megnevezes": "Ecoflow 160W Solar Panel",
@@ -214,7 +237,8 @@
             "marka": "Ecoflow",
             "garancia": 0,
             "leiras": "Kihajtott méret 68 x 157 x 2.4 cm Összehajtott méret 68 x 42 x 2.4 cm Súly 7kg (napelem 5kg) Névleges teljesítmény 160W (±5W) Hatékonyság 21%-22% Csatlakozó típus MC4 Üresjárási feszültség 21.4V (Vmp 18.2V) Rövidzárlati áram 9.6A (Imp 8.8A) Üzemi és tárolási hőmérséklet -20°C és 85°C között Cella típusa Monokristályos szilícium",
-            "kep": "https://www.chs.hu/Ecoflow_160W_Solar_Panel-i1175988.jpg"
+            "kep": "https://www.chs.hu/Ecoflow_160W_Solar_Panel-i1175988.jpg",
+            "ar": 133000
         },
         {
             "megnevezes": "DAH Solar Napelem DHM-66L9(BW) Black Mono 415w",
@@ -223,7 +247,8 @@
             "marka": "DAH SOLAR",
             "garancia": 37,
             "leiras": "",
-            "kep": "https://www.chs.hu/DAH_Solar_Napelem_DHM-66L9BW_Black_Mono_415w-i1204663.jpg"
+            "kep": "https://www.chs.hu/DAH_Solar_Napelem_DHM-66L9BW_Black_Mono_415w-i1204663.jpg",
+            "ar": 102466
         },
         {
             "megnevezes": "ANKER EUFYCAM3 Biztonsági Kamera Rendszer (3+1) 4K, Beépített Napelem, WiFi-s, vízálló, kültéri",
@@ -232,7 +257,8 @@
             "marka": "ANKER",
             "garancia": 2,
             "leiras": "4K részletek nappal és éjszaka. Örökös teljesítmény, napelemes stílusban. Akár 16 TB-os bővíthető helyi tároló. A BionicMind™ AI megkülönbözteti a családtagokat az idegenektől. HomeBase 3 központosított biztonsági menedzsment",
-            "kep": "https://www.chs.hu/ANKER_EUFYCAM3_Biztonsagi_Kamera_Rendszer_3_1_4K_Beepitett_Napelem_WiFi-s_vizallo_kulteri_-_T88723W1-i1180165.jpg"
+            "kep": "https://www.chs.hu/ANKER_EUFYCAM3_Biztonsagi_Kamera_Rendszer_3_1_4K_Beepitett_Napelem_WiFi-s_vizallo_kulteri_-_T88723W1-i1180165.jpg",
+            "ar": 181600
         },
         {
             "megnevezes": "ANKER Napelem Solar Panel, 100W, PowerHouse Akkumulátorokhoz",
@@ -241,7 +267,8 @@
             "marka": "ANKER",
             "garancia": 2,
             "leiras": "Több napfény, hosszabb teljesítmény. A panelek közvetlen napfényben elhelyezve akár 23%-os napenergia-átalakítási hatékonyságot kínálnak. Több panel egymás utáni láncolásával még gyorsabban feltölthető. Intelligens napfénykövető rendszer. A Suncast technológia útmutatásával megfelelően állítsa be a paneleket az optimális napelemes töltéshez.",
-            "kep": "https://www.chs.hu/ANKER_Napelem_Solar_Panel_100W_PowerHouse_Akkumulatorokhoz_-_A2431031-i1182132.jpg"
+            "kep": "https://www.chs.hu/ANKER_Napelem_Solar_Panel_100W_PowerHouse_Akkumulatorokhoz_-_A2431031-i1182132.jpg",
+            "ar": 153010
         },
         {
             "megnevezes": "HAMA 176615, OKOS WIFI KAMERA 1080P, NAPELEMES, ÉJJELLÁTÓ, KÜLTÉRI",
@@ -250,7 +277,8 @@
             "marka": "HAMA",
             "garancia": 0,
             "leiras": "Kültéri, vezeték nélküli, akkumulátoros WIFI okoskamera napelemes támogatással, egyszerűen, kényelmesen megfigyelhető vele pl. a ház előtti terület, az udvar, vagy a kert. Napelemes üzem: amikor a kültéri kamera a napelem modulon keresztül működik, gyakorlatilag autonóm működés lehetséges. Részletgazdag képek sötétben is: éjszaka jól látható kamerakép az infravörös éjszakai üzemmódnak köszönhetően 2-utas hangtovábbítás: mikrofon és hangszóró lehetővé teszi a kommunikációt a Hama Smart kültéri kamerával, pl. mobiltelefonon keresztül beszélhet a postással, akkor is, ha Ön nincs otthon. Egyszerű telepítés, az Ön otthoni WiFi hálózatán kommunikál, nincs szükség plussz hubra, központi egységre a kamera néhány perc alatt beállítható.Mozgásérzékelés funkció: pl. összekapcsolható egy kültéri Hama okosizzóval, vagy riasztó szirénával",
-            "kep": "https://www.chs.hu/HAMA_176615_OKOS_WIFI_KAMERA_1080P_NAPELEMES_EJJELLATO_KULTERI-i1196024.png"
+            "kep": "https://www.chs.hu/HAMA_176615_OKOS_WIFI_KAMERA_1080P_NAPELEMES_EJJELLATO_KULTERI-i1196024.png",
+            "ar": 50890
         },
         {
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 10W 2xUSB",
@@ -259,7 +287,8 @@
             "marka": "SANDBERG",
             "garancia": 5,
             "leiras": "A Sandberg Solar Charger 10W 2xUSB nagyteljesítményű napelem tábla, amely a napfényből villamosságot készít. 2 USB kimenete van, ezek használhatók az Ön USB készüléke, pl. az okostelefonja, tabletja vagy powerbank-jai töltéséhez. Amikor egy powerbank-ot köt hozzá, villamosságot ment el és használhatja később az okostelefonja töltéséhez, vagy stabilizáló közbenső készüléknek használhatja a töltéskor (ha a powerbank-ja támogatja az egyidejű be- és kimenet csatlakozást). A vele szállított bepattanó kampókat használhatja pl. kiránduláskor a napelem tábla rögzítéséhez a hátizsákjára. Ez zöld energia az Ön készülékei számára!",
-            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_10W_2xUSB-i1010825.jpg"
+            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_10W_2xUSB-i1010825.jpg",
+            "ar": 28758
         },
         {
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 13W 2xUSB",
@@ -268,7 +297,8 @@
             "marka": "SANDBERG",
             "garancia": 5,
             "leiras": "A Sandberg Foldable Solar Charger nagyteljesítményű napelem tábla, amely a napfényből villamosságot készít. 2 USB kimenete van, ezek használhatók az Ön USB készüléke, pl. az okostelefonja, tablete vagy powerbank-jei töltéséhez. Amikor egy powerbank-ot köt hozzá, villamosságot ment el és használhatja később az okostelefonja töltéséhez, vagy stabilizáló közbenső készüléknek használhatja a töltéskor (ha a powerbank-ja támogatja az egyidejű be- és kimenet csatlakozást). Az USB kimeneteket praktikus húzózáras zsebben tartjuk, ahol bőven van hely az Ön USB felszerelésének. A vele szállított bepattanó kampókat használhatja pl. kiránduláskor a napelem tábla rögzítéséhez a hátizsákjára. Ez zöld energia az Ön készülékei számára!",
-            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_13W_2xUSB-i1010826.jpg"
+            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_13W_2xUSB-i1010826.jpg",
+            "ar": 38900
         },
         {
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 21W 2xUSB",
@@ -277,7 +307,8 @@
             "marka": "SANDBERG",
             "garancia": 5,
             "leiras": "A Sandberg Solar Charger 21W 2xUSB nagyteljesítményű napelem tábla, amely a napfényből villamosságot készít. 2 USB kimenete van, ezek használhatók az Ön USB készüléke, pl. az okostelefonja, tabletja vagy powerbank-jai töltéséhez. Amikor egy powerbank-ot köt hozzá, villamosságot ment el és használhatja később az okostelefonja töltéséhez, vagy stabilizáló közbenső készüléknek használhatja a töltéskor (ha a powerbank-ja támogatja az egyidejű be- és kimenet csatlakozást). A vele szállított bepattanó kampókat használhatja pl. kiránduláskor a napelem tábla rögzítéséhez a hátizsákjára. Ez zöld energia az Ön készülékei számára!",
-            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_21W_2xUSB-i1010835.jpg"
+            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_21W_2xUSB-i1010835.jpg",
+            "ar": 44425
         },
         {
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 40W QC3.0+PD+DC",
@@ -286,7 +317,8 @@
             "marka": "SANDBERG",
             "garancia": 5,
             "leiras": "A Sandberg Solar Charger 40W kompakt, nagy teljesítményű napelem. Az összecsukható napelem 6 monokristályos napelemre nyitható ki, így akár 40 W kombinált teljesítményt biztosít. A panel vezérlődobozában 3 gyors port található: USB-A QC 3.0 támogatással, USB-C, DC 5521. Rengeteg csatlakozási lehetőséget biztosít optimális töltési sebességgel okostelefonhoz, táblagéphez, powerbankhoz stb. A mellékelt biztonsági horgok segítségével például a napelemet a hátizsákhoz rögzítheti, ha kalandra készül. Zöld energia felszerelése számára!",
-            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_40W_QC30_PD_DC-i1010838.jpg"
+            "kep": "https://www.chs.hu/SANDBERG_Napelem_tabla_Solar_Charger_40W_QC30_PD_DC-i1010838.jpg",
+            "ar": 58553
         },
         {
             "megnevezes": "PROFINESS Korcolt lemez klipsz napelem tartószerkezet",
@@ -295,7 +327,8 @@
             "marka": "PROFINESS ",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/PROFINESS_Korcolt_lemez_klipsz_napelem_tartoszerkezet-i993798.jpg"
+            "kep": "https://www.chs.hu/PROFINESS_Korcolt_lemez_klipsz_napelem_tartoszerkezet-i993798.jpg",
+            "ar": 2810
         },
         {
             "megnevezes": "Botkonzol (ászokcsavar) 10x250 napelem tartószerkezet",
@@ -304,7 +337,8 @@
             "marka": "PROFINESS",
             "garancia": 1,
             "leiras": "",
-            "kep": "https://www.chs.hu/Botkonzol_aszokcsavar_10x250_napelem_tartoszerkezet-i994014.jpg"
+            "kep": "https://www.chs.hu/Botkonzol_aszokcsavar_10x250_napelem_tartoszerkezet-i994014.jpg",
+            "ar": 2880
         },
         {
             "megnevezes": "Huawei SUN 2000-6KTL-M1 - 3 fázis inverter",
@@ -313,7 +347,8 @@
             "marka": "Huawei",
             "garancia": 10,
             "leiras": "Az optimalizálóval akár 30%-kal több energia 1. Plug & Play akkumulátor felület 1. WLAN, Fast Ethernet, 4G Kommunikáció.",
-            "kep": "https://www.chs.hu/Huawei_SUN_2000-6KTL-M1_-_3_fazis_inverter-i972369.png"
+            "kep": "https://www.chs.hu/Huawei_SUN_2000-6KTL-M1_-_3_fazis_inverter-i972369.png",
+            "ar": 684900
         },
         {
             "megnevezes": "Huawei SUN 2000-5KTL-M1 - 3 fázis inverter",
@@ -322,7 +357,8 @@
             "marka": "Huawei",
             "garancia": 10,
             "leiras": "Az optimalizálóval akár 30%-kal több energia 1. Plug & Play akkumulátor felület 1. WLAN, Fast Ethernet, 4G Kommunikáció.",
-            "kep": "https://www.chs.hu/Huawei_SUN_2000-5KTL-M1_-_3_fazis_inverter-i972369.png"
+            "kep": "https://www.chs.hu/Huawei_SUN_2000-5KTL-M1_-_3_fazis_inverter-i972369.png",
+            "ar": 619900
         },
         {
             "megnevezes": "Huawei Luna Smart Power Sensor 3F 100A",
@@ -331,7 +367,8 @@
             "marka": "Huawei",
             "garancia": 2,
             "leiras": "Pontos: Class 1 mérési pontosság. Egyszerű és könnyű: LCD kijelző, egyszerű beállíts és ellenőrzés. Energiahatékonyság: Teljes energiafogyasztás kevesebb mint 1W.",
-            "kep": "https://www.chs.hu/Huawei_Luna_Smart_Power_Sensor_3F_100A-i998445.jpg"
+            "kep": "https://www.chs.hu/Huawei_Luna_Smart_Power_Sensor_3F_100A-i998445.jpg",
+            "ar": 65454
         },
         {
             "megnevezes": "Tigo TS4-A-O 700W Optimizer 1,2m",
@@ -340,7 +377,8 @@
             "marka": "Tigo",
             "garancia": 25,
             "leiras": "A Tigo új genercáiós optimalizálói, a TS4 sorozat, teljesen új megoldást kínálnak a napelemek optimalizálására. Korábban, más gyártók megoldásainál, minden napelemhez optimalizálót kellett szerelni, ami feleslegesen magas költségeket és többletmunkát jelentett. Azonban a Tigo TS4 optimalizálóit elég csak az érintett napelemekre felszerelni, pl. az árnyékolt modulokra. Továbbá a TS4 több mint 2000 inverter típussal tud együttműködni.",
-            "kep": "https://www.chs.hu/Tigo_TS4-A-O_700W_Optimizer_12m-i1005579.png"
+            "kep": "https://www.chs.hu/Tigo_TS4-A-O_700W_Optimizer_12m-i1005579.png",
+            "ar": 25600
         }
     ]
 }
