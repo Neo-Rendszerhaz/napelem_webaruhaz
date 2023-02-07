@@ -1,4 +1,5 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
+import AdminCimekView from "../../view/adminView/AdminCimekView.js"
 
 class AdminCimController{
     constructor()
@@ -11,7 +12,7 @@ class AdminCimController{
     cimAdatok(tomb)
     {
         const szuloElem = $("#adatTarolo");
-        new AdminCimek(tomb, szuloElem)
+        new AdminCimekView(tomb, szuloElem)
     }
 }
 export default AdminCimController
