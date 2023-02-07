@@ -3,10 +3,10 @@ import AdminRendTetelV from "./AdminRendelesTetelView.js";
 class AdminRendTetelekV{
     constructor(tomb,szuloElem){
         $(szuloElem).html(`<table class="table table-striped"><tr><th>Rendelés szám</th>
-        <th>Termék id</th>
+        <th>Termék neve</th>
         <th>Mennyiség</th>
-        <th>Nettó ár</th>
-        <th>Bruttó ár</th>
+        <th>Tétel ár</th>
+        <th>Összes tétel ár</th>
         <th>Termék megjelenítés</th>
         </tr></table>`)
         const ujSzulo = "tbody";
