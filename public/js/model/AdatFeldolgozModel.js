@@ -58,12 +58,6 @@ class AdatFeldolgozModel
             console.error('Error:', error);
         });
     }
-    jsonadatokBe() 
-    {
-        fetch("../js/termekek.json")
-            .then((response) => response.json())
-            .then((json) => console.log(json));
-    }
 
     adatUj(vegpont, adat)
     {

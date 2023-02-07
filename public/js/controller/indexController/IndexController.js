@@ -7,9 +7,15 @@ class IndexController
     {
         console.log("IndexController Hello!");
         const token = $(`meta[name="csrf-token"]`).attr("content");
-        const adatFeldolgozModel = new AdatFeldolgozModel;
-        this.vegpont = "/";
+        const adatFeldolgozModel = new AdatFeldolgozModel(token);
+
+        const tomb=[];
+        // this.vegpont = "/";
+        this.vegpont = "../js/termekek.json"
         adatFeldolgozModel.adatBe(this.vegpont, this.kezdolapAdatok);
+        // const json = adatFeldolgozModel.jsonadatokBe(tomb, "termekek")
+        // console.log(json);
+        // this.kezdolapAdatok();
     }
     kezdolapAdatok(tomb){
         const szuloelem = $("article")
