@@ -28,8 +28,8 @@ return new class extends Migration
             $table->string("vezeteknev", 80);
             $table->string("keresztnev", 80);
             $table->integer("telefonszam");
-            $table->string("cegnev", 80)->nullable();
-            $table->char("adoszam", 13)->nullable();
+            $table->string("cegnev", 80)->nullable()->default("");
+            $table->char("adoszam", 13)->nullable()->default("");
             $table->char("jelleg", 1); // M: magánszemély, C:cég
             $table->char("jogosultsag", 1); //R: rendszer admin, A: általános admin, F: felhasználó
             $table->rememberToken();

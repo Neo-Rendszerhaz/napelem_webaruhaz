@@ -20,7 +20,6 @@ class RendelesTetel extends Model
         'rendeles_szam',
         "termek_id",
         "mennyiseg",
-        "netto_ar",
         "ar",
     ];
 }
