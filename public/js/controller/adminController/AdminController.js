@@ -10,7 +10,7 @@ class AdminController
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
-        this.rendelesTetelek="/rendeles_tetelek";
+        this.rendelesTetelek="/rendeles_tetelek_termekkel";
         this.felhasznalok="/felhasznalok";
         this.cimek="/cimek"
 

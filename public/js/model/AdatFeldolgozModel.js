@@ -140,4 +140,4 @@ class AdatFeldolgozModel
     }
 }
 
-export default AdatBeolvasModel;
+export default AdatFeldolgozModel;
