@@ -12,7 +12,7 @@ class AdminController
 
         this.rendelesTetelek="/rendeles_tetelek_termekkel";
         this.felhasznalok="/felhasznalok";
-        this.cimek="/cimek"
+        this.cimek="/cimek";
 
         $(document).on("click", "#felhasznaloGomb", ()=>
         {

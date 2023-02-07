@@ -60,7 +60,7 @@ class AdatFeldolgozModel
     }
     jsonadatokBe() 
     {
-        fetch("./termekek.json")
+        fetch("../js/termekek.json")
             .then((response) => response.json())
             .then((json) => console.log(json));
     }
