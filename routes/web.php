@@ -82,6 +82,7 @@ Route::middleware(["admin"])->group(function()
     Route::delete("/rendelesek/{rendeles_id}", [RendelesController::class, "destroy"]);
 
     Route::get("/rendeles_tetelek", [RendelesTetelController::class, "index"]);
+    Route::get("/rendeles_tetelek_termekkel", [RendelesTetelController::class, "termekekkel"]);
     Route::get("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "show"]);
     Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
     Route::put("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "update"]);
