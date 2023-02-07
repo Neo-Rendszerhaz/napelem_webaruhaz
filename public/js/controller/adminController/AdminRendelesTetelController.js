@@ -5,12 +5,12 @@ class AdminRendTetelC{
     constructor(){
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const AFM = new AdatFeldolgozModel(token);
-        const vegpont = "/rendeles_tetelek"
+        const vegpont = "/rendeles_tetelek_termekkel";
         AFM.adatBe(vegpont,this.tetelMutat)
     }
     tetelMutat(tomb){
         // const szuloElem = "article"
-        const szuloElem = "#adminMenupontok"
+        const szuloElem = "#adatTarolo"
         new AdminRendTetelekV(tomb, szuloElem);
     }
 }

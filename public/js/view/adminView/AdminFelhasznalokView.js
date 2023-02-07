@@ -1,6 +1,6 @@
-import AdminFelhasznalo from "./AdminFelhasznalo.js";
+import AdminFelhasznaloView from "./AdminFelhasznaloView.js";
 
-class AdminFelhasznalok
+class AdminFelhasznalokView
 {
     constructor(adat, szuloElem)
     {
@@ -22,9 +22,9 @@ class AdminFelhasznalok
 
         adat.forEach(elem => 
         {
-            new AdminFelhasznalo(elem, this.tbodyElem);    
+            new AdminFelhasznaloView(elem, this.tbodyElem);    
         });
     }
 }
 
-export default AdminFelhasznalok
+export default AdminFelhasznalokView
