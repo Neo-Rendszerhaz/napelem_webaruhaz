@@ -1,4 +1,4 @@
-class AdminFelhasznalo
+class AdminFelhasznaloView
 {
     #elem
     constructor(elem, szuloElem)
@@ -8,7 +8,7 @@ class AdminFelhasznalo
         <td>${elem.vezeteknev+" "+elem.keresztnev}</td>
         <td>${elem.email}</td>
         <td>+36${elem.telefonszam}</td>
-        <td><button id=${elem.felhasznalo_id}>Címek</button></td>
+        <td><button id="megjelenit${elem.felhasznalo_id}">Címek</button></td>
         <td>${elem.cegnev}</td>
         <td>${elem.adoszam}</td>
         <td>${elem.jelleg}</td>
@@ -16,7 +16,14 @@ class AdminFelhasznalo
         </tr>`)
         // <td><button id=${elem.felhasznalo_id}>J</button></td>
 
+        this.cimMegjelenit=$(`megjelenit${elem.felhasznalo_id}`);
 
+        $(this.cimMegjelenit).on("click", this.cimMegjelenit, ()=>
+        {
+            console.log(this.cimMegjelenit);
+            console.log("módosít az AdminFelhasznaloView-ban");
+            // this.kattintasTrigger("megjelenít")
+        });
 
     }
 
@@ -27,4 +34,4 @@ class AdminFelhasznalo
         window.dispatchEvent(esemeny);
     }
 }
-export default AdminFelhasznalo
+export default AdminFelhasznaloView

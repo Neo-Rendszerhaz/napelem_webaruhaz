@@ -1,4 +1,4 @@
-import AdminCim from "./AdminCim.js";
+import AdminCimView from "./AdminCimView.js";
 
 class AdminCimek
 {
@@ -22,7 +22,7 @@ class AdminCimek
 
         tomb.forEach(elem => 
         {
-            new AdminCim(elem, this.tbodyElem);    
+            new AdminCimView(elem, this.tbodyElem);    
         });
     }
 }

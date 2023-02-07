@@ -1,7 +1,7 @@
-import AdminFelhasznalok from "../../view/adminView/AdminFelhasznalok.js";
+import AdminFelhasznalokView from "../../view/adminView/AdminFelhasznalokView.js";
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import AdminRendTetelekV from "../../view/adminView/AdminRendelesTetelekView.js";
-import AdminCimek from "../../view/adminView/AdminCimek.js";
+import AdminCimekView from "../../view/adminView/AdminCimekView.js";
 
 class AdminController
 {
@@ -13,18 +13,19 @@ class AdminController
         this.rendelesTetelek="/rendeles_tetelek_termekkel";
         this.felhasznalok="/felhasznalok";
         this.cimek="/cimek"
-
-        $(document).on("click", "#felhasznaloGomb", ()=>
+        
+        $("#felhasznaloGomb").on("click", ()=>
         {
+            console.log("valami");
             adatFeldolgozModel.adatBe(this.felhasznalok, this.profilAdatok);
         });
 
-        $(document).on("click", "#rendelesTetelGomb", ()=>
+        $("#rendelesTetelGomb").on("click", ()=>
         {
             adatFeldolgozModel.adatBe(this.rendelesTetelek, this.rendelesTetelAdatok);
         });
 
-        $(document).on("click", "#cimGomb", ()=>
+        $("#cimGomb").on("click", ()=>
         {
             adatFeldolgozModel.adatBe(this.cimek, this.cimAdatok);
         });
@@ -34,7 +35,7 @@ class AdminController
     profilAdatok(tomb)
     {
         const szuloElem = $("#adatTarolo");
-        new AdminFelhasznalok(tomb, szuloElem)
+        new AdminFelhasznalokView(tomb, szuloElem)
     }
 
     rendelesTetelAdatok(tomb)
@@ -46,7 +47,7 @@ class AdminController
     cimAdatok(tomb)
     {
         const szuloElem = $("#adatTarolo");
-        new AdminCimek(tomb, szuloElem)
+        new AdminCimekView(tomb, szuloElem)
     }
 }
 
