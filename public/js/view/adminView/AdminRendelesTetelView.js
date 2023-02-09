@@ -6,11 +6,11 @@ class AdminRendTetelV{
         <td>${obj.mennyiseg}</td>
         <td>${(obj.ar/obj.mennyiseg).toFixed()}</td>
         <td>${parseInt(obj.ar)}</td>
-        <td><button id=MegJel${obj.termek_id}>Megjelenít</button></td>
+        <td><button id=MegJel${obj.rendeles_szam}${obj.termek_id}>Megjelenít</button></td>
         </tr>`);
         //this.gombMegJel=$(`#${obj.termek_id}Megjelenít`)
         this.aktiv=false
-        $(`#MegJel${obj.termek_id}`).on("click",()=>{
+        $(`#MegJel${obj.rendeles_szam}${obj.termek_id}`).on("click",()=>{
             if(!this.aktiv)
             {
                 $(`#${obj.rendeles_szam}${obj.termek_id}`).after(`<tr id='${obj.rendeles_szam}${obj.termek_id}reszletes'>

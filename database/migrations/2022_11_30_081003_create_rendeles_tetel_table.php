@@ -37,6 +37,7 @@ return new class extends Migration
         RendelesTetel::create(["rendeles_szam"=>2, "termek_id"=>2,"mennyiseg"=>3, "ar"=>1030]);
         RendelesTetel::create(["rendeles_szam"=>1, "termek_id"=>3,"mennyiseg"=>3, "ar"=>1030]);
         RendelesTetel::create(["rendeles_szam"=>3, "termek_id"=>5,"mennyiseg"=>1, "ar"=>6030]);
+        RendelesTetel::create(["rendeles_szam"=>3, "termek_id"=>1,"mennyiseg"=>1, "ar"=>6030]);
     }
 
     /**
