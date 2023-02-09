@@ -1,5 +1,6 @@
 import AdminCimController from "../controller/adminController/AdminCimController.js";
 import AdminProfilController from "../controller/adminController/AdminProfilController.js";
+import AdminRendelesController from "../controller/adminController/AdminRendelesController.js";
 import AdminRendTetelC from "../controller/adminController/AdminRendelesTetelController.js";
 
 $(function(){
@@ -25,5 +26,9 @@ $(function(){
     $("#cimGomb").on("click", ()=>
     {
        new AdminCimController();
+    });
+    $("#rendelesGomb").on("click", ()=>
+    {
+       new AdminRendelesController();
     });
 })
