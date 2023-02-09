@@ -51,6 +51,8 @@ Route::middleware(["admin"])->group(function()
         return view("oldalak/admin/admin_web_adatok");
     });
 
+    Route::get("/f_cimek/{felhasznalo_id}", [FelhasznaloController::class, "felhasznalokCimekkel"]);
+
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
     Route::post("/cimek", [CimController::class, "store"]);
@@ -82,6 +84,7 @@ Route::middleware(["admin"])->group(function()
     Route::delete("/rendelesek/{rendeles_id}", [RendelesController::class, "destroy"]);
 
     Route::get("/rendeles_tetelek", [RendelesTetelController::class, "index"]);
+    Route::get("/rendeles_tetelek_termekkel", [RendelesTetelController::class, "termekekkel"]);
     Route::get("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "show"]);
     Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
     Route::put("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "update"]);

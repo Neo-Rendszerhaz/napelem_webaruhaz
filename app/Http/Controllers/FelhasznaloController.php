@@ -113,4 +113,29 @@ class FelhasznaloController extends Controller
 
         return $felhasznaloTabla;
     }
+
+    public function felhasznalokCimekkel($id)
+    {
+        $szamlazas = DB::table("cim as c")
+            ->selectRaw("c.*, 'szamlazas' as tipus")
+            ->rightJoin("felhasznalo as f", "f.szamlazasi_cim", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $id);
+             $szallitas1 = DB::table("cim as c")
+            ->selectRaw("c.*, 'szallitas1'")
+            ->rightJoin("felhasznalo as f", "szallitasi_cim_1", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $id);
+            $szamlazas = $szamlazas->union($szallitas1);
+            $szallitas2 = DB::table("cim as c")
+            ->selectRaw("c.*, 'szallitas2'")
+            ->rightJoin("felhasznalo as f", "szallitasi_cim_2", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $id);
+            $szamlazas = $szamlazas->union($szallitas2);
+            $szallitas3 = DB::table("cim as c")
+            ->selectRaw("c.*, 'szallitas3'")
+            ->rightJoin("felhasznalo as f", "szallitasi_cim_3", "=", "c.cim_id")
+            ->where("f.felhasznalo_id", $id);
+            $szamlazas = $szamlazas->union($szallitas3)->get();
+            return $szamlazas;
+        
+    }
 }

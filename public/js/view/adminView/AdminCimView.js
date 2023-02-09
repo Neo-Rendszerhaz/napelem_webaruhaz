@@ -1,4 +1,4 @@
-class AdminCim
+class AdminCimView
 {
     #elem
     constructor(elem, szuloElem)
@@ -17,4 +17,4 @@ class AdminCim
         </tr>`);
     }
 }
-export default AdminCim;
+export default AdminCimView;

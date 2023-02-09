@@ -1,7 +1,6 @@
-import AdatFeldolgozModel from "./model/AdatFeldolgozModel.js";
+import IndexController from "./controller/indexController/IndexController.js";
 
 $(function()
 {
-    const adatFeldolgozModel = new AdatFeldolgozModel();
-    adatFeldolgozModel.jsonadatokBe();
+    new IndexController();
 });

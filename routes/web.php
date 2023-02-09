@@ -51,6 +51,8 @@ Route::middleware(["admin"])->group(function()
         return view("oldalak/admin/admin_web_adatok");
     });
 
+    Route::get("/f_cimek/{felhasznalo_id}", [FelhasznaloController::class, "felhasznalokCimekkel"]);
+
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
     Route::post("/cimek", [CimController::class, "store"]);
