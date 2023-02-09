@@ -1,29 +1,20 @@
 import KezdolapView from "./KezdolapView.js";
 
-class KezdoLapokView
-{
-    constructor(tomb, szuloElem)
-    {
-        // console.log(tomb.termekek);
-        $(szuloElem).html(`<table class="table table-striped">
-        <tr>
-        <th>Megnevezés</th>
-        <th>Cikkszám</th>
-        <th>Gyártói Cikkszám</th>
-        <th>Márka</th>
-        <th>Garancia</th>
-        <th>Leírás</th>
-        <th>kép</th>
-        <th>Ár</th>
-        <tr></table>`);
-
-        this.tablaElem=szuloElem.children("table:last-child")
-        this.tbodyElem=this.tablaElem.children("tbody")
-
-        tomb.termekek.forEach(elem => 
-        {
-            new KezdolapView(elem, this.tbodyElem);    
+class KezdoLapokView {
+    constructor(tomb, szuloElem) {
+        //console.log(tomb.termekek);
+        szuloElem.html(
+            `<div>
+                <h1></h1>
+                <p><a></p>
+                <img>
+                <h3></h3>
+            </div>`)
+        this.divElem = szuloElem.children("div:last-child");
+        tomb.termekek.forEach(adat => {
+            const adatom = new KezdolapView(adat, this.divElem);
         });
+
     }
 }
 
