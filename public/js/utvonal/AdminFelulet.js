@@ -3,6 +3,8 @@ import AdminProfilController from "../controller/adminController/AdminProfilCont
 import AdminHaszonController from "../controller/adminController/AdminHaszonController.js";
 import AdminRendelesController from "../controller/adminController/AdminRendelesController.js";
 import AdminRendTetelC from "../controller/adminController/AdminRendelesTetelController.js";
+import AdminTermekController from "../controller/adminController/AdminTermekController.js";
+
 
 $(function () {
     $("article").html(`
@@ -29,6 +31,10 @@ $(function () {
     $("#rendelesTetelGomb").on("click", () => {
         new AdminRendTetelC();
     });
+    $("#termekGomb").on("click", () => {
+        new AdminTermekController();
+    });
+
 
 
 
