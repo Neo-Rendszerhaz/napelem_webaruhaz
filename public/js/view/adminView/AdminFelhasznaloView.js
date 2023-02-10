@@ -4,7 +4,7 @@ class AdminFelhasznaloView
     constructor(elem, szuloElem)
     {
         this.#elem=elem;
-        szuloElem.append(`<tr>
+        $(szuloElem).append(`<tr id="felhasznalo${elem.felhasznalo_id}">
         <td>${elem.vezeteknev+" "+elem.keresztnev}</td>
         <td>${elem.email}</td>
         <td>+36${elem.telefonszam}</td>
@@ -13,25 +13,36 @@ class AdminFelhasznaloView
         <td>${elem.adoszam}</td>
         <td>${elem.jelleg}</td>
         <td>${elem.jogosultsag}</td>
-        </tr>
-        <tr>
-        <td>
-        <div id="fCimek"></div>
-        <td>
         </tr>`)
-        // <td><button id=${elem.felhasznalo_id}>J</button></td>
-
+        
         this.cimMegjelenit=$(`#megjelenit${elem.felhasznalo_id}`);
 
+        // this.divElem=$(`#adatTarolo`).children("div:last-child")
+        // this.ujdivElem=this.divElem.after(`<div id="ujDiv"></div>`)
 
+
+        // this.tableElem=$("#cimekTarolo").children("table:last-child")
+        // this.tbodyElem=this.tableElem.children("tbody");
+        this.valami=$("#cimekTarolo>table")
+
+        this.aktiv=false;
         this.cimMegjelenit.on("click", ()=>
         {
-            console.log(this.cimMegjelenit);
-            console.log("módosít az AdminFelhasznaloView-ban");
+            if(!this.aktiv)
+            {
+                console.log(this.cimMegjelenit);
+                this.kattintasTrigger("megjelenit");
+                this.aktiv=true;
+                console.log(this.aktiv);
 
-            this.kattintasTrigger("megjelenit")
+            }
+            else
+            {
+                $("#cimekTarolo").html(`<div id="cimekTarolo"></div>`);
+                this.aktiv=false;
+                console.log(this.aktiv);
+            }
         });
-
     }
 
     kattintasTrigger(esemenyNeve)

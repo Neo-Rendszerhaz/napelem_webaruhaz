@@ -14,15 +14,15 @@ class AdminFelhasznalokView
         <th>Adószám</th>
         <th>Jelleg</th>
         <th>Jogosultság</th>
-        </tr></table>`);
-        // <th>Szerkesztés</th>
+        </tr></table>
+        <div id="cimekTarolo"></div>
+        `);
 
-        this.tablaelem=szuloElem.children("table:last-child")
-        this.tbodyElem=this.tablaelem.children("tbody")
+        const tbodyElem="#adatTarolo>table>tbody"
 
         adat.forEach(elem => 
         {
-            new AdminFelhasznaloView(elem, this.tbodyElem);    
+            new AdminFelhasznaloView(elem, tbodyElem);
         });
     }
 }

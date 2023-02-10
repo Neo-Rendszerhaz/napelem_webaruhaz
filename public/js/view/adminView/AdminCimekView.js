@@ -25,5 +25,6 @@ class AdminCimek
             new AdminCimView(elem, this.tbodyElem);    
         });
     }
+
 }
 export default AdminCimek;
