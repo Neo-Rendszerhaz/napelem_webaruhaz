@@ -1,17 +1,15 @@
 class KezdolapView {
-    #elem
+    #elem;
     constructor(elem, szuloElem) {
         this.#elem = elem;
-        szuloElem.append(`<tr>
-        <td>${elem.megnevezes}</td>
-        <td>${elem.cikkszam}</td>
-        <td>${elem.gyartoi_cikkszam}</td>
-        <td>${elem.marka}</td>
-        <td>${elem.garancia}</td>
-        <td>${elem.leiras}</td>
-        <td>${elem.kep}</td>
-        <td>${elem.ar}</td>
-        </tr>`);
+        szuloElem.append(`
+            <div class="termek">
+                <h2>Név: ${elem.megnevezes}</h2>
+                <img src="${elem.kep}">
+                <h3>Ár: ${elem.ar} Ft</h3>
+                <button id="gomb${elem.id}">Kosárba</button>
+            </div>
+            `)
     }
 }
 
