@@ -6,11 +6,6 @@ class AdatFeldolgozModel
         this.token=token;
     }
 
-    adatModosit(adat)
-    {
-        console.log("Modelben módosít",adat);
-    }
-
     egyAdat(vegpont, myCallBack)
     {
         console.log(vegpont);

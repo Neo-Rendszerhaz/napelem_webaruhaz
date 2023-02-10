@@ -9,7 +9,8 @@ class AdminRendTetelekV{
         <th>Összes tétel ár</th>
         <th>Termék megjelenítés</th>
         </tr></table>`)
-        const ujSzulo = "tbody";
+
+        const ujSzulo = "#adatTarolo>table>tbody";
         tomb.forEach(termek => {
             new AdminRendTetelV(termek,ujSzulo);
         });
