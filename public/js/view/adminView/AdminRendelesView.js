@@ -14,6 +14,7 @@ class AdminRendelesView {
         <td id="${this.#obj.rendeles_szam}allapot">${this.#obj.allapot}</td>
         <td><button id=${this.#obj.rendeles_szam}MegJ>Megjelenítés</button></td>
         <td id="${this.#obj.rendeles_szam}modositasHely"><button id=${this.#obj.rendeles_szam}Mod>Módosítás</button></td>
+        <td><button id=${this.#obj.rendeles_szam}Tor>Törlés</button></td>
         </tr>`)
 
     this.aktiv = false
@@ -26,8 +27,8 @@ class AdminRendelesView {
         this.aktiv = false
       }
     })
-
     this.rendelesAllapotMod()
+    this.rendelesTor()
   }
   sajatEvent(eventNev) {
     const esemeny = new CustomEvent(eventNev, {detail: this.#obj})
@@ -108,8 +109,13 @@ class AdminRendelesView {
         this.e = document.getElementById(`allapotok${this.#obj.rendeles_szam}`).value; 
         this.#obj.allapot = this.e;
         $(`#${this.#obj.rendeles_szam}allapot`).html(this.e)
-        this.sajatEvent("RendAllapotMod")
+        this.sajatEvent("rendAllapotMod")
       })
+    })
+  }
+  rendelesTor(){
+    $(`#${this.#obj.rendeles_szam}Tor`).on("click",()=>{
+      this.sajatEvent("rendelesTorles")
     })
   }
 }
