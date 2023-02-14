@@ -1,39 +1,40 @@
 class AdminRendTetelV{
+    #obj
     constructor(obj,szuloElem){
-        $(szuloElem).append(`<tr id='${obj.rendeles_szam}${obj.termek_id}'>
-        <td>${obj.rendeles_szam}</td>
-        <td>${obj.megnevezes}</td>
-        <td>${obj.mennyiseg}</td>
-        <td>${(obj.ar/obj.mennyiseg).toFixed()}</td>
-        <td>${parseInt(obj.ar)}</td>
-        <td><button id=MegJel${obj.rendeles_szam}${obj.termek_id}>Megjelenít</button></td>
+        this.#obj = obj
+        $(szuloElem).append(`<tr id='${this.#obj.rendeles_szam}${this.#obj.termek_id}'>
+        <td>${this.#obj.rendeles_szam}</td>
+        <td>${this.#obj.megnevezes}</td>
+        <td>${this.#obj.mennyiseg}</td>
+        <td>${(this.#obj.ar/this.#obj.mennyiseg).toFixed()}</td>
+        <td>${parseInt(this.#obj.ar)}</td>
+        <td><button id=MegJel${this.#obj.rendeles_szam}${this.#obj.termek_id}>Megjelenít</button></td>
         </tr>`);
-        //this.gombMegJel=$(`#${obj.termek_id}Megjelenít`)
         this.aktiv=false
-        $(`#MegJel${obj.rendeles_szam}${obj.termek_id}`).on("click",()=>{
+        $(`#MegJel${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
             if(!this.aktiv)
             {
-                $(`#${obj.rendeles_szam}${obj.termek_id}`).after(`<tr id='${obj.rendeles_szam}${obj.termek_id}reszletes'>
+                $(`#${this.#obj.rendeles_szam}${this.#obj.termek_id}`).after(`<tr id='${this.#obj.rendeles_szam}${this.#obj.termek_id}reszletes'>
                 <th>Cikkszám</th>
                 <th>Gyártói cikkszám</th>
                 <th>Márka</th>
                 <th>Garancia</th>
                 <th>Leíras</th>
                 </tr>
-                <tr id='${obj.rendeles_szam}${obj.termek_id}termek'>
-                <td>${obj.cikkszam}</td>
-                <td>${obj.gyartoi_cikkszam}</td>
-                <td>${obj.marka}</td>
-                <td>${obj.garancia}</td>
-                <td>${obj.leiras}</td>
+                <tr id='${this.#obj.rendeles_szam}${this.#obj.termek_id}termek'>
+                <td>${this.#obj.cikkszam}</td>
+                <td>${this.#obj.gyartoi_cikkszam}</td>
+                <td>${this.#obj.marka}</td>
+                <td>${this.#obj.garancia}</td>
+                <td>${this.#obj.leiras}</td>
                 </tr>`)
 
                 this.aktiv=true
                 console.log("tuntent")
             }
             else{
-                $(`#${obj.rendeles_szam}${obj.termek_id}reszletes`).remove()
-                $(`#${obj.rendeles_szam}${obj.termek_id}termek`).remove()
+                $(`#${this.#obj.rendeles_szam}${this.#obj.termek_id}reszletes`).remove()
+                $(`#${this.#obj.rendeles_szam}${this.#obj.termek_id}termek`).remove()
                 this.aktiv=false
             }
         })
