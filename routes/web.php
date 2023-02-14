@@ -28,10 +28,33 @@ Route::get('/', function ()
     return view("oldalak/index");
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-    // return view('oldalak/felhasznalo/profil');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::group(['middleware' => ['auth', 'felhasznalo']], function() 
+{
+    Route::get('/dashboard', function () 
+    {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get("/profil", function()
+    {
+        return view("oldalak/felhasznalo/profil");
+    })->name("profil");
+
+    Route::get("/admin_felulet", function()
+    {
+        return view("oldalak/admin/admin_web_adatok");
+    })->middleware("admin")->name("admin_felulet");
+
+    Route::get("/kezdolap", function()
+    {
+        return view("oldalak/index");
+    })->name("kezdolap");
+});
+
+Route::get("/be_reg_felulet", function()
+{
+    return view("oldalak/bejelentkezes_regisztracio");
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,10 +69,6 @@ Route::middleware(["rendszerAdmin"])->group(function()
 
 Route::middleware(["admin"])->group(function()
 {
-    Route::get("/admin_felulet", function()
-    {
-        return view("oldalak/admin/admin_web_adatok");
-    });
 
     Route::get("/f_cimek/{felhasznalo_id}", [FelhasznaloController::class, "felhasznalokCimekkel"]);
 
@@ -105,11 +124,7 @@ Route::middleware(["admin"])->group(function()
 });
 
 Route::middleware(["felhasznalo"])->group(function()
-{
-    Route::get("/profil", function()
-    {
-        return view("oldalak/felhasznalo/profil");
-    });
+{    
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
 });

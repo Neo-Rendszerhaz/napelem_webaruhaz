@@ -13,6 +13,7 @@ class AdminRendelesekView{
         <th>Állapot</th>
         <th>Cím megjelenítés</th>
         <th>Állapot módosítás</th>
+        <th>Rendelés törlés</th>
         </tr></table>`)
         const ujSzulo = "tbody";
         tomb.forEach(rendeles => {

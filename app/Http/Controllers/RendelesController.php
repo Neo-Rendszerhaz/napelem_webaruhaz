@@ -44,6 +44,7 @@ class RendelesController extends Controller
         $rendeles->kedvezmenyes_ar = $request->kedvezmenyes_ar;
         $rendeles->allapot = $request->allapot;
         $rendeles->save();
+        return $rendeles;
     }
 
     public function destroy($rendeles_szam)

@@ -12,8 +12,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Adatlap') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('kezdolap')">
+                        {{ __('Kezdőlap') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin_felulet')">
+                        {{ __('Admin Felület') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -23,7 +30,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                            <div>{{ Auth::user()->vezeteknev. ' ' .Auth::user()->keresztnev}}</div>
 
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -35,7 +42,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Személyes adatok') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -45,7 +52,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Kijelentkezés') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -68,7 +75,13 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Adatlap') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('kezdolap')">
+                {{ __('Kezdőlap') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin_felulet')">
+                {{ __('Admin Felület') }}
             </x-responsive-nav-link>
         </div>
 
@@ -81,7 +94,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Személyes adatok') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -91,7 +104,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Kijelentkezés') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

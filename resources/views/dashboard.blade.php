@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Személyes adatok') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                <link href="{{ asset('css/profil.css') }}" rel="stylesheet">
+                    <script src="{{ asset('https://code.jquery.com/jquery-3.6.1.js')}}" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+                    <script src="{{ asset('js/utvonal/profil.js')}}" type="module"></script>
+                    <div id="profilTarolo"></div>
                 </div>
             </div>
         </div>

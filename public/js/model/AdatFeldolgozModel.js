@@ -77,11 +77,11 @@ class AdatFeldolgozModel
         });
     }
 
-    adatModosit(vegpont, adat)
+    adatModosit(vegpont, adat, id)
     {
         console.log(adat);
         console.log("módosít", vegpont);
-        vegpont+="/" + adat.id;
+        vegpont+="/" + id;
         fetch(vegpont,
         {
             method: "PUT",
@@ -95,7 +95,7 @@ class AdatFeldolgozModel
         .then((response)=>response.json())
         .then((data) => 
         {
-            console.log("Sikeres módosítás" + data.updatedAt);
+            console.log("Sikeres módosítás" + data);
         })
         .catch((error) => 
         {
@@ -103,11 +103,11 @@ class AdatFeldolgozModel
         });
     }
 
-    adatTorol(vegpont, adat)
+    adatTorol(vegpont, adat, id)
     {
         console.log("töröltem: ");
         console.log(adat);
-        vegpont +="/"+adat.id;
+        vegpont +="/"+id;
         console.log(vegpont);
         fetch(vegpont,
         {
