@@ -1,6 +1,7 @@
 {
     "termekek": [
         {
+            "id": 1,
             "megnevezes": "Risen Energy Napelem RSM40-8-405M Black Mono 405w",
             "cikkszam": "320719",
             "gyartoi_cikkszam": "RSM40-8-405M",
@@ -11,6 +12,7 @@
             "ar": 75770
         },
         {
+            "id": 2,
             "megnevezes": "Huawei Wifi Modul FE (gyors ethernet) napelemhez",
             "cikkszam": "295519",
             "gyartoi_cikkszam": "WIFI DONGLE FE (FAST ETHERNET)",
@@ -21,6 +23,7 @@
             "ar": 39380
         },
         {
+            "id": 3,
             "megnevezes": "Risen Energy Napelem RSM144-7-450M Mono 450w",
             "cikkszam": "312009",
             "gyartoi_cikkszam": "RSM144-7-450M",
@@ -31,6 +34,7 @@
             "ar": 96720
         },
         {
+            "id": 4,
             "megnevezes": "Sunova Solar Napelem SS-410-54MDH PERC Mono 410w",
             "cikkszam": "324777",
             "gyartoi_cikkszam": "SS-410-54MDH",
@@ -41,6 +45,7 @@
             "ar": 85220
         },
         {
+            "id": 5,
             "megnevezes": "ANKER EUFYCAM3 Kamera 4K",
             "cikkszam": "328235",
             "gyartoi_cikkszam": "T81603W1",
@@ -51,6 +56,7 @@
             "ar": 68185
         },
         {
+            "id": 6,
             "megnevezes": "Csúszóanya napelem tartószerkezet",
             "cikkszam": "303871",
             "gyartoi_cikkszam": "",
@@ -61,6 +67,7 @@
             "ar": 196
         },
         {
+            "id": 7,
             "megnevezes": "Huawei 4G dongle modul napelemhez",
             "cikkszam": "295520",
             "gyartoi_cikkszam": "02312EHS",
@@ -71,6 +78,7 @@
             "ar": 50715
         },
         {
+            "id": 8,
             "megnevezes": "A.SUN Köztes leszorító (szimpla) 30-50-es napelem tartószerkezet",
             "cikkszam": "301009",
             "gyartoi_cikkszam": "9745",
@@ -81,6 +89,7 @@
             "ar": 658
         },
         {
+            "id": 9,
             "megnevezes": "ETT Szolár vezeték 1x4mm2 fekete (500m)",
             "cikkszam": "295908",
             "gyartoi_cikkszam": "H1Z2Z2-K",
@@ -88,9 +97,10 @@
             "garancia": 1,
             "leiras": "",
             "kep": "https://www.chs.hu/Szolar_vezetek_1x4mm2_fekete_500m-i978768.jpg",
-            "ar": 330068 
+            "ar": 330068
         },
         {
+            "id": 10,
             "megnevezes": "Risen Energy Napelem RSM40-8-390MB FULL BLACK Mono 390w",
             "cikkszam": "315595",
             "gyartoi_cikkszam": "RSM40-8-390MB BLACK",
@@ -101,6 +111,7 @@
             "ar": 96030
         },
         {
+            "id": 11,
             "megnevezes": "ETT Végleszorító 30mm napelem tartószerkezet",
             "cikkszam": "316046",
             "gyartoi_cikkszam": "",
@@ -111,6 +122,7 @@
             "ar": 800
         },
         {
+            "id": 12,
             "megnevezes": "ANKER EUFYCAM Napelem, EUFYCAM Kamerákhoz, kültéri, fehér",
             "cikkszam": "321043",
             "gyartoi_cikkszam": "T8700021",
@@ -121,6 +133,7 @@
             "ar": 20254
         },
         {
+            "id": 13,
             "megnevezes": "ETT Szolár vezeték 1x6mm2 fekete (500m)",
             "cikkszam": "295909",
             "gyartoi_cikkszam": "H1Z2Z2-K",
@@ -131,6 +144,7 @@
             "ar": 262390
         },
         {
+            "id": 14,
             "megnevezes": "ETT Végleszorító 35mm napelem tartószerkezet",
             "cikkszam": "303868",
             "gyartoi_cikkszam": "",
@@ -141,6 +155,7 @@
             "ar": 600
         },
         {
+            "id": 15,
             "megnevezes": "ETT Szolár vezeték 1x4mm2 piros (500m)",
             "cikkszam": "295906",
             "gyartoi_cikkszam": "H1Z2Z2-K",
@@ -151,6 +166,7 @@
             "ar": 226390
         },
         {
+            "id": 16,
             "megnevezes": "ETT Szolár vezeték 1x6mm2 piros (500m)",
             "cikkszam": "295907",
             "gyartoi_cikkszam": "H1Z2Z2-K",
@@ -161,6 +177,7 @@
             "ar": 316770
         },
         {
+            "id": 17,
             "megnevezes": "SANDBERG Napelem tábla Solar 6-Panel Powerbank 20000",
             "cikkszam": "322045",
             "gyartoi_cikkszam": "420-73",
@@ -171,6 +188,7 @@
             "ar": 45790
         },
         {
+            "id": 18,
             "megnevezes": "PROFINESS Adapter (lapka) napelem tartószerkezet",
             "cikkszam": "303877",
             "gyartoi_cikkszam": "",
@@ -181,6 +199,7 @@
             "ar": 622
         },
         {
+            "id": 19,
             "megnevezes": "DAH Solar Napelem DHT-M60X10/FS FULL SCREEN Black Mono 460w",
             "cikkszam": "323505",
             "gyartoi_cikkszam": "DHT-M60X10/FS- 460W(BW)",
@@ -191,6 +210,7 @@
             "ar": 119339
         },
         {
+            "id": 20,
             "megnevezes": "ETT Köztes leszorító FEKETE napelem modulhoz",
             "cikkszam": "323493",
             "gyartoi_cikkszam": "",
@@ -201,6 +221,7 @@
             "ar": 1102
         },
         {
+            "id": 21,
             "megnevezes": "DAH Solar Napelem DHM-54X10/FS(BB) FULL SCREEN FULL BLACK Mono 405w",
             "cikkszam": "326121",
             "gyartoi_cikkszam": "DHM-54X10/FS(BB)405W",
@@ -211,6 +232,7 @@
             "ar": 82080
         },
         {
+            "id": 22,
             "megnevezes": "Ecoflow 400W Solar Panel",
             "cikkszam": "327340",
             "gyartoi_cikkszam": "SOLAR400W",
@@ -221,6 +243,7 @@
             "ar": 374300
         },
         {
+            "id": 23,
             "megnevezes": "Ecoflow 220W Solar Panel",
             "cikkszam": "327341",
             "gyartoi_cikkszam": "SOLAR220W",
@@ -231,6 +254,7 @@
             "ar": 239900
         },
         {
+            "id": 24,
             "megnevezes": "Ecoflow 160W Solar Panel",
             "cikkszam": "327342",
             "gyartoi_cikkszam": "EFSOLAR160W",
@@ -241,6 +265,7 @@
             "ar": 133000
         },
         {
+            "id": 25,
             "megnevezes": "DAH Solar Napelem DHM-66L9(BW) Black Mono 415w",
             "cikkszam": "327734",
             "gyartoi_cikkszam": "DHM-66L9(BW)415W",
@@ -251,6 +276,7 @@
             "ar": 102466
         },
         {
+            "id": 26,
             "megnevezes": "ANKER EUFYCAM3 Biztonsági Kamera Rendszer (3+1) 4K, Beépített Napelem, WiFi-s, vízálló, kültéri",
             "cikkszam": "328239",
             "gyartoi_cikkszam": "T88723W1",
@@ -261,6 +287,7 @@
             "ar": 181600
         },
         {
+            "id": 27,
             "megnevezes": "ANKER Napelem Solar Panel, 100W, PowerHouse Akkumulátorokhoz",
             "cikkszam": "328492",
             "gyartoi_cikkszam": "A2431031",
@@ -271,6 +298,7 @@
             "ar": 153010
         },
         {
+            "id": 28,
             "megnevezes": "HAMA 176615, OKOS WIFI KAMERA 1080P, NAPELEMES, ÉJJELLÁTÓ, KÜLTÉRI",
             "cikkszam": "329454",
             "gyartoi_cikkszam": "176615",
@@ -281,6 +309,7 @@
             "ar": 50890
         },
         {
+            "id": 29,
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 10W 2xUSB",
             "cikkszam": "322030",
             "gyartoi_cikkszam": "420-69",
@@ -291,6 +320,7 @@
             "ar": 28758
         },
         {
+            "id": 30,
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 13W 2xUSB",
             "cikkszam": "322033",
             "gyartoi_cikkszam": "420-40",
@@ -301,6 +331,7 @@
             "ar": 38900
         },
         {
+            "id": 31,
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 21W 2xUSB",
             "cikkszam": "322039",
             "gyartoi_cikkszam": "420-70",
@@ -311,6 +342,7 @@
             "ar": 44425
         },
         {
+            "id": 32,
             "megnevezes": "SANDBERG Napelem tábla Solar Charger 40W QC3.0+PD+DC",
             "cikkszam": "322041",
             "gyartoi_cikkszam": "420-67",
@@ -321,6 +353,7 @@
             "ar": 58553
         },
         {
+            "id": 33,
             "megnevezes": "PROFINESS Korcolt lemez klipsz napelem tartószerkezet",
             "cikkszam": "303874",
             "gyartoi_cikkszam": "",
@@ -331,6 +364,7 @@
             "ar": 2810
         },
         {
+            "id": 34,
             "megnevezes": "Botkonzol (ászokcsavar) 10x250 napelem tartószerkezet",
             "cikkszam": "303876",
             "gyartoi_cikkszam": "",
@@ -341,6 +375,7 @@
             "ar": 2880
         },
         {
+            "id": 35,
             "megnevezes": "Huawei SUN 2000-6KTL-M1 - 3 fázis inverter",
             "cikkszam": "295514",
             "gyartoi_cikkszam": "SUN 2000-6KTL-M1",
@@ -351,6 +386,7 @@
             "ar": 684900
         },
         {
+            "id": 36,
             "megnevezes": "Huawei SUN 2000-5KTL-M1 - 3 fázis inverter",
             "cikkszam": "295512",
             "gyartoi_cikkszam": "SUN 2000-5KTL-M1",
@@ -361,6 +397,7 @@
             "ar": 619900
         },
         {
+            "id": 37,
             "megnevezes": "Huawei Luna Smart Power Sensor 3F 100A",
             "cikkszam": "314177",
             "gyartoi_cikkszam": "DTSU_100A",
@@ -371,6 +408,7 @@
             "ar": 65454
         },
         {
+            "id": 38,
             "megnevezes": "Tigo TS4-A-O 700W Optimizer 1,2m",
             "cikkszam": "319119",
             "gyartoi_cikkszam": "DTSU_150A",
