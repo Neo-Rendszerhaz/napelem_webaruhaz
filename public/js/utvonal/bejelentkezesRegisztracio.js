@@ -3,6 +3,7 @@ import BejelentkezesController from "../controller/bejelentkezesRegisztracio/Bej
 
 $(function()
 {
-    console.log("bejelentkezes");
-    new BejelentkezesController
+    // console.log("bejelentkezes");
+    // new BejelentkezesController();
+
 });

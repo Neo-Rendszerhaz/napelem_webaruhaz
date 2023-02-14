@@ -19,7 +19,7 @@ return new class extends Migration
     {
         Schema::create('haszon', function (Blueprint $table) {
             $table->primary(["datum"]);
-            $table->date("datum")->default(Carbon::now());
+            $table->dateTime("datum")->default(DB::raw("now()"));
             $table->integer("haszon_szazalek");
             $table->integer("afa_szazalek");
             $table->timestamps();

@@ -20,13 +20,13 @@ class FelhasznaloProfilController
 
     profilAdatok(adat)
     {
-        const szuloElem = $("article");
+        const szuloElem = $("#profilTarolo");
         new ProfilokView(adat, szuloElem)
     }
 
     profilRendelesek(tomb)
     {
-        const szuloElem = $("article");
+        const szuloElem = $("#profilTarolo");
         new ProfilRendelesekView(tomb, szuloElem)
     }
 
