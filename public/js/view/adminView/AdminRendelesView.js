@@ -19,52 +19,15 @@ class AdminRendelesView {
     this.aktiv = false
     $(`#${this.#obj.rendeles_szam}MegJ`).on('click', () => {
       if (!this.aktiv) {
-        $(`#${this.#obj.rendeles_szam}rendeles`).after(`<tr id='${
-          this.#obj.rendeles_szam
-        }rendelesFejlec'>
-                <th>Iranyítószám</th>
-                <th>Város</th>
-                <th>Közterület neve</th>
-                <th>Hely/Házszám</th>
-                <th>Hely/Ház jelleg</th>
-                <th>Épület</th>
-                <th>Emelet</th>
-                <th>Ajtó</th>
-                <th>Kapucsengő</th>
-                </tr>
-                <tr id='${this.#obj.iranyitoszam}reszletesRendeles'>
-                <td>${this.#obj.varos}</td>
-                <td>${this.#obj.kozterulet_neve}</td>
-                <td>${this.#obj.hely_hazszam}</td>
-                <td>${this.#obj.hely_haz_jelleg}</td>
-                <td>${this.#obj.epulet}</td>
-                <td>${this.#obj.emelet}</td>
-                <td>${this.#obj.ajto}</td>
-                <td>${this.#obj.kapucsengo}</td>
-                </tr>`)
-
+        this.rendelesReszletesMegjel()
         this.aktiv = true
       } else {
-        $(`#${this.#obj.rendeles_szam}rendelesFejlec`).remove()
-        $(`#${this.#obj.iranyitoszam}reszletesRendeles`).remove()
+        this.rendelesReszletesMegjelEltunt()
         this.aktiv = false
       }
     })
 
-    $(`#${this.#obj.rendeles_szam}Mod`).on('click', () => {
-      $(`#${this.#obj.rendeles_szam}rendeles>#${this.#obj.rendeles_szam}allapot`).html(this.allapotok())
-      this.modositasGomb = $(`#${this.#obj.rendeles_szam}modositasHely`).html();
-      $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Mod`).hide()
-      $(`#${this.#obj.rendeles_szam}modositasHely`).append(`<button id=${this.#obj.rendeles_szam}Ment>Mentés</button>`)
-      $(`#${this.#obj.rendeles_szam}Ment`).on('click',()=>{
-        $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Mod`).show();
-        $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Ment`).remove();
-        this.e = document.getElementById(`allapotok${this.#obj.rendeles_szam}`).value; 
-        this.#obj.allapot = this.e;
-        $(`#${this.#obj.rendeles_szam}allapot`).html(this.e)
-        this.sajatEvent("RendAllapotMod")
-      })
-    })
+    this.rendelesAllapotMod()
   }
   sajatEvent(eventNev) {
     const esemeny = new CustomEvent(eventNev, {detail: this.#obj})
@@ -103,6 +66,51 @@ class AdminRendelesView {
       }
       this.szoveg+="</select>"
     return this.szoveg
+  }
+  rendelesReszletesMegjel(){
+    $(`#${this.#obj.rendeles_szam}rendeles`).after(`<tr id='${
+      this.#obj.rendeles_szam
+    }rendelesFejlec'>
+            <th>Iranyítószám</th>
+            <th>Város</th>
+            <th>Közterület neve</th>
+            <th>Hely/Házszám</th>
+            <th>Hely/Ház jelleg</th>
+            <th>Épület</th>
+            <th>Emelet</th>
+            <th>Ajtó</th>
+            <th>Kapucsengő</th>
+            </tr>
+            <tr id='${this.#obj.iranyitoszam}reszletesRendeles'>
+            <td>${this.#obj.varos}</td>
+            <td>${this.#obj.kozterulet_neve}</td>
+            <td>${this.#obj.hely_hazszam}</td>
+            <td>${this.#obj.hely_haz_jelleg}</td>
+            <td>${this.#obj.epulet}</td>
+            <td>${this.#obj.emelet}</td>
+            <td>${this.#obj.ajto}</td>
+            <td>${this.#obj.kapucsengo}</td>
+            </tr>`)
+  }
+  rendelesReszletesMegjelEltunt(){
+    $(`#${this.#obj.rendeles_szam}rendelesFejlec`).remove()
+        $(`#${this.#obj.iranyitoszam}reszletesRendeles`).remove()
+  }
+  rendelesAllapotMod(){
+    $(`#${this.#obj.rendeles_szam}Mod`).on('click', () => {
+      $(`#${this.#obj.rendeles_szam}rendeles>#${this.#obj.rendeles_szam}allapot`).html(this.allapotok())
+      this.modositasGomb = $(`#${this.#obj.rendeles_szam}modositasHely`).html();
+      $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Mod`).hide()
+      $(`#${this.#obj.rendeles_szam}modositasHely`).append(`<button id=${this.#obj.rendeles_szam}Ment>Mentés</button>`)
+      $(`#${this.#obj.rendeles_szam}Ment`).on('click',()=>{
+        $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Mod`).show();
+        $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Ment`).remove();
+        this.e = document.getElementById(`allapotok${this.#obj.rendeles_szam}`).value; 
+        this.#obj.allapot = this.e;
+        $(`#${this.#obj.rendeles_szam}allapot`).html(this.e)
+        this.sajatEvent("RendAllapotMod")
+      })
+    })
   }
 }
 export default AdminRendelesView
