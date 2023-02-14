@@ -8,10 +8,14 @@ article {
 .termek {
     width: 90%;
     border: 2px solid black;
+    border-radius: 25px;
     margin: 10px;
     padding: 10px;
 }
 
 img {
     width: 100%;
+}
+#kosartartalom {
+    border: 2px solid red;
 }

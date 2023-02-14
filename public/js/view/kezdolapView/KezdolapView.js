@@ -9,7 +9,18 @@ class KezdolapView {
                 <h3>Ár: ${elem.ar} Ft</h3>
                 <button id="gomb${elem.id}">Kosárba</button>
             </div>
-            `)
+            `);
+        document
+            .getElementById(`gomb${elem.id}`)
+            .addEventListener("click", () => {
+                //console.log(elem);
+                this.kattintas(elem);
+            });
+    }
+    kattintas(elem) {
+        window.dispatchEvent(
+            new CustomEvent("kosar", { detail: elem })
+        );
     }
 }
 
