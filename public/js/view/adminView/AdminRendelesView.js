@@ -53,9 +53,12 @@ class AdminRendelesView {
 
     $(`#${this.#obj.rendeles_szam}Mod`).on('click', () => {
       $(`#${this.#obj.rendeles_szam}rendeles>#${this.#obj.rendeles_szam}allapot`).html(this.allapotok())
-      $(`#${this.#obj.rendeles_szam}modositasHely`).html(`<button id=${this.#obj.rendeles_szam}Ment>Mentés</button>`)
+      this.modositasGomb = $(`#${this.#obj.rendeles_szam}modositasHely`).html();
+      $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Mod`).hide()
+      $(`#${this.#obj.rendeles_szam}modositasHely`).append(`<button id=${this.#obj.rendeles_szam}Ment>Mentés</button>`)
       $(`#${this.#obj.rendeles_szam}Ment`).on('click',()=>{
-        $(`#${this.#obj.rendeles_szam}modositasHely`).html(`<button id=${this.#obj.rendeles_szam}Mod>Módosítás</button>`)
+        $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Mod`).show();
+        $(`#${this.#obj.rendeles_szam}modositasHely>#${this.#obj.rendeles_szam}Ment`).remove();
         this.e = document.getElementById(`allapotok${this.#obj.rendeles_szam}`).value; 
         this.#obj.allapot = this.e;
         $(`#${this.#obj.rendeles_szam}allapot`).html(this.e)
