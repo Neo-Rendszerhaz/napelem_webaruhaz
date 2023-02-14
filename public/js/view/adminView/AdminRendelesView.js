@@ -10,8 +10,8 @@ class AdminRendelesView {
         <td>${obj.kedvezmeny}</td>
         <td>${obj.kedvezmenyes_ar}</td>
         <td>${obj.allapot}</td>
-        <td><button>Megjelenítés</button></td>
-        <td><button>Modosítás</button></td>
+        <td><button id=${obj.rendeles_szam}MegJ>Megjelenítés</button></td>
+        <td><button id=${obj.rendeles_szam}Mod>Modosítás</button></td>
         </tr>`)
   }
 }
