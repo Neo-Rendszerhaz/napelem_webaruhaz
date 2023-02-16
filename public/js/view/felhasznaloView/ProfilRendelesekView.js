@@ -5,7 +5,7 @@ class ProfilRendelesekView
     constructor(tomb, szuloelem)
     {
         szuloelem.append(`<div id="rendelesek">
-        <h3>Rendelések:</h3>
+        <h2>Rendelések:</h2>
         </div>`);
 
         this.rendelesDiv=szuloelem.children("div:last-child");

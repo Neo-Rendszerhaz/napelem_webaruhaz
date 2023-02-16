@@ -25,7 +25,6 @@ class RendelesTetelController extends Controller
         $rendelesTetel= new RendelesTetel();
         $rendelesTetel->termek_id = $request->termek_id;
         $rendelesTetel->mennyiseg = $request->mennyiseg;
-        $rendelesTetel->netto_ar = $request->netto_ar;
         $rendelesTetel->ar = $request->ar;
         $rendelesTetel->save();
     }
@@ -35,7 +34,6 @@ class RendelesTetelController extends Controller
         $rendelesTetel= RendelesTetelController::show($rendeles_szam, $termek_id);
         $rendelesTetel->termek_id = $request->termek_id;
         $rendelesTetel->mennyiseg = $request->mennyiseg;
-        $rendelesTetel->netto_ar = $request->netto_ar;
         $rendelesTetel->ar = $request->ar;
         $rendelesTetel->save();
     }

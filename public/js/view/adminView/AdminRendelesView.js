@@ -8,9 +8,9 @@ class AdminRendelesView {
         <td>${this.#obj.datum}</td>
         <td>${this.#obj.vezeteknev} ${this.#obj.keresztnev}</td>
         <td>${this.#obj.szallitasi_cim}</td>
-        <td>${this.#obj.vegosszeg}</td>
+        <td>${this.#obj.teljes_ar} Ft</td>
         <td>${this.#obj.kedvezmeny}</td>
-        <td>${this.#obj.kedvezmenyes_ar}</td>
+        <td>${this.#obj.vegosszeg} Ft</td>
         <td id="${this.#obj.rendeles_szam}allapot">${this.#obj.allapot}</td>
         <td><button id=${this.#obj.rendeles_szam}MegJ>Megjelenítés</button></td>
         <td id="${this.#obj.rendeles_szam}modositasHely"><button id=${this.#obj.rendeles_szam}Mod>Módosítás</button></td>
@@ -82,7 +82,8 @@ class AdminRendelesView {
             <th>Ajtó</th>
             <th>Kapucsengő</th>
             </tr>
-            <tr id='${this.#obj.iranyitoszam}reszletesRendeles'>
+            <tr id='${this.#obj.rendeles_szam}reszletesRendeles'>
+            <td>${this.#obj.iranyitoszam}</td>
             <td>${this.#obj.varos}</td>
             <td>${this.#obj.kozterulet_neve}</td>
             <td>${this.#obj.hely_hazszam}</td>
@@ -95,7 +96,7 @@ class AdminRendelesView {
   }
   rendelesReszletesMegjelEltunt(){
     $(`#${this.#obj.rendeles_szam}rendelesFejlec`).remove()
-        $(`#${this.#obj.iranyitoszam}reszletesRendeles`).remove()
+        $(`#${this.#obj.rendeles_szam}reszletesRendeles`).remove()
   }
   rendelesAllapotMod(){
     $(`#${this.#obj.rendeles_szam}Mod`).on('click', () => {

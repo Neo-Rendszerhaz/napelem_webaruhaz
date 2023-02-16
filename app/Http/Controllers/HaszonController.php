@@ -23,7 +23,7 @@ class HaszonController extends Controller
     {
         $haszonValtozas= new Haszon();
         $haszonValtozas->termek_id = $request->termek_id;
-        $haszonValtozas->datumig = $request->datumig;
+        $haszonValtozas->datumtol = $request->datumtol;
         $haszonValtozas->garancia = $request->garancia;
         $haszonValtozas->save();
     }
@@ -32,7 +32,7 @@ class HaszonController extends Controller
     {
         $haszonValtozas= HaszonController::show($datum);
         $haszonValtozas->termek_id = $request->termek_id;
-        $haszonValtozas->datumig = $request->datumig;
+        $haszonValtozas->datumtol = $request->datumtol;
         $haszonValtozas->garancia = $request->garancia;
         $haszonValtozas->save();
     }

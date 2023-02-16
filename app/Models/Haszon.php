@@ -11,7 +11,7 @@ class Haszon extends Model
     protected function setKeysForSaveQuery($query)
     {
         $query
-            ->where('datum', '=', $this->getAttribute('datum'));
+            ->where('datumtol', '=', $this->getAttribute('datumtol'));
         return $query;
     } 
 

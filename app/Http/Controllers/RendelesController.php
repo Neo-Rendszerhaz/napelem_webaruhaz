@@ -26,9 +26,9 @@ class RendelesController extends Controller
         $rendeles->datum = $request->datum;
         $rendeles->felhasznalo_id = $request->felhasznalo_id;
         $rendeles->szallitasi_cim = $request->szallitasi_cim;
-        $rendeles->vegosszeg = $request->vegosszeg;
+        $rendeles->teljes_ar = $request->teljes_ar;
         $rendeles->kedvezmeny = $request->kedvezmeny;
-        $rendeles->kedvezmenyes_ar = $request->kedvezmenyes_ar;
+        $rendeles->vegosszeg = $request->vegosszeg;
         $rendeles->allapot = $request->allapot;
         $rendeles->save();
     }
@@ -39,9 +39,9 @@ class RendelesController extends Controller
         $rendeles->datum = $request->datum;
         $rendeles->felhasznalo_id = $request->felhasznalo_id;
         $rendeles->szallitasi_cim = $request->szallitasi_cim;
-        $rendeles->vegosszeg = $request->vegosszeg;
+        $rendeles->teljes_ar = $request->teljes_ar;
         $rendeles->kedvezmeny = $request->kedvezmeny;
-        $rendeles->kedvezmenyes_ar = $request->kedvezmenyes_ar;
+        $rendeles->vegosszeg = $request->vegosszeg;
         $rendeles->allapot = $request->allapot;
         $rendeles->save();
         return $rendeles;

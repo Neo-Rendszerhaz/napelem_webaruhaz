@@ -6,8 +6,8 @@ class AdminRendTetelV{
         <td>${this.#obj.rendeles_szam}</td>
         <td>${this.#obj.megnevezes}</td>
         <td>${this.#obj.mennyiseg}</td>
-        <td>${(this.#obj.ar/this.#obj.mennyiseg).toFixed()}</td>
-        <td>${parseInt(this.#obj.ar)}</td>
+        <td>${(this.#obj.ar/this.#obj.mennyiseg).toFixed()} Ft</td>
+        <td>${parseInt(this.#obj.ar)} Ft</td>
         <td><button id=MegJel${this.#obj.rendeles_szam}${this.#obj.termek_id}>Megjelenít</button></td>
         </tr>`);
         this.aktiv=false

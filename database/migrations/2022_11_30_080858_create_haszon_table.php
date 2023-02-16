@@ -18,8 +18,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('haszon', function (Blueprint $table) {
-            $table->primary(["datum"]);
-            $table->dateTime("datum")->default(DB::raw("now()"));
+            $table->primary(["datumtol"]);
+            $table->dateTime("datumtol")->default(DB::raw("now()"));
             $table->integer("haszon_szazalek");
             $table->integer("afa_szazalek");
             $table->timestamps();

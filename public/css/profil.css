@@ -3,20 +3,6 @@
     box-sizing: border-box;
 }
 
-body
-{
-    /* background-color: snow; */
-    --tw-bg-opacity: 1;
-    background-color: rgba(243, 244, 246, 1);
-    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-main
-{
-    width: 90%;
-    margin: auto;
-}
-
 footer
 {
     text-align: center;
@@ -36,7 +22,7 @@ footer
 
 }
 
-article div
+#profilTarolo div
 {
     margin: 10px;
 }
@@ -46,4 +32,9 @@ article div
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
+}
+
+#rendelesek div
+{
+    grid-template-columns: 2fr;
 }

@@ -7,9 +7,9 @@ class AdminRendelesekView{
         <th>Dátum</th>
         <th>Felhasználó</th>
         <th>Szállítási cím</th>
-        <th>Végösszeg</th>
+        <th>Teljes ár</th>
         <th>Kedvezmény</th>
-        <th>Kedvezményes ár</th>
+        <th>Végösszeg</th>
         <th>Állapot</th>
         <th>Cím megjelenítés</th>
         <th>Állapot módosítás</th>

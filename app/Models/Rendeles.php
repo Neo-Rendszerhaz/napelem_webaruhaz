@@ -13,9 +13,9 @@ class Rendeles extends Model
         "datum",
         "felhasznalo_id",
         "szallitasi_cim",
-        "vegosszeg",
+        "teljes_ar",
         "kedvezmeny",
-        "kedvezmenyes_ar",
+        "vegosszeg",
         "allapot",
     ];
 }
