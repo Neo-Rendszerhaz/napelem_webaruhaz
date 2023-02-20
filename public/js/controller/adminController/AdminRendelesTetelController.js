@@ -7,6 +7,9 @@ class AdminRendTetelC{
         const AFM = new AdatFeldolgozModel(token);
         const vegpont = "/rendeles_tetelek_termekkel";
         AFM.adatBe(vegpont,this.tetelMutat)
+        $(window).on("RTtorles",(event)=>{
+            AFM.adatTorol()
+        })
     }
     tetelMutat(tomb){
         // const szuloElem = "article"
