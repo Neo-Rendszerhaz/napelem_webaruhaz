@@ -3,6 +3,7 @@ import KezdoLapokView from "../../view/kezdolapView/KezdoLapokView.js";
 
 class IndexController {
     constructor() {
+        console.log(window.localStorage.getItem("kosar"))
         this.kosar = [];
         console.log("IndexController Hello!");
         const token = $(`meta[name="csrf-token"]`).attr("content");
@@ -31,7 +32,8 @@ class IndexController {
         this.kosar.forEach((termek) => {
             html += "<div>" + termek.megnevezes + ", " + termek.ar + " Ft" + ", " + termek.db + " db" + "</div>";
         });
-        document.getElementById("kosartartalom").innerHTML = html;
+        window.localStorage.setItem("kosar", html)
+        window.localStorage.removeItem("kosar")
     }
 
     termekekKosarba(ujTermek) {

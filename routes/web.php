@@ -49,11 +49,16 @@ Route::group(['middleware' => ['auth', 'felhasznalo']], function()
     {
         return view("oldalak/index");
     })->name("kezdolap");
+
 });
 
 Route::get("/be_reg_felulet", function()
 {
     return view("oldalak/bejelentkezes_regisztracio");
+});
+Route::get("/kosar", function()
+{
+    return view("oldalak/kosar");
 });
 
 Route::middleware('auth')->group(function () {
