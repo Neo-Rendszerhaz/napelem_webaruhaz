@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth', 'felhasznalo']], function()
     {
         return view("oldalak/index");
     })->name("kezdolap");
+
 });
 
 Route::middleware('auth')->group(function () {

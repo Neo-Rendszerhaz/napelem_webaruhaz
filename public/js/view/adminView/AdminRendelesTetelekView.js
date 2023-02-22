@@ -8,6 +8,7 @@ class AdminRendTetelekV{
         <th>Tétel ár</th>
         <th>Összes tétel ár</th>
         <th>Termék megjelenítés</th>
+        <th>Rendelés tétel törlés</th>
         </tr></table>`)
 
         const ujSzulo = "#adatTarolo>table>tbody";
