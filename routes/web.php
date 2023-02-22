@@ -45,6 +45,11 @@ Route::group(['middleware' => ['auth', 'felhasznalo']], function()
         return view("oldalak/index");
     })->name("kezdolap");
 
+    Route::get("/kosar", function()
+    {
+        return view("oldalak/kosar");
+    })->name("kosar");
+
 });
 
 Route::middleware('auth')->group(function () {

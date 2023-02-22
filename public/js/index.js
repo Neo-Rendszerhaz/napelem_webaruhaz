@@ -1,4 +1,4 @@
-import IndexController from "./controller/indexController/IndexController.js";
+import IndexController from "./controller/publikusController/IndexController.js";
 
 $(function()
 {
