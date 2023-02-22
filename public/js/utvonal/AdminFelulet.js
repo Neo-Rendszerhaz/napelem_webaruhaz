@@ -4,6 +4,7 @@ import AdminHaszonController from "../controller/adminController/AdminHaszonCont
 import AdminRendelesController from "../controller/adminController/AdminRendelesController.js";
 import AdminRendTetelC from "../controller/adminController/AdminRendelesTetelController.js";
 import AdminTermekController from "../controller/adminController/AdminTermekController.js";
+import AdminRegisztracioController from "../controller/adminController/AdminRegisztracioController.js";
 
 
 $(function () {
@@ -14,28 +15,44 @@ $(function () {
     <button id="rendelesGomb">Rendelés</button>
     <button id="rendelesTetelGomb">Rendelés tétel</button>
     <button id="termekGomb">Termék</button>
+    <button id="regisztracioGomb">Dolgozó regisztrálása</button>
     <div id="adatTarolo"></div>
     `);
-    $("#cimGomb").on("click", () => {
+
+    $("#cimGomb").on("click", () => 
+    {
         new AdminCimController();
     });
-    $("#felhasznaloGomb").on("click", () => {
+
+    $("#felhasznaloGomb").on("click", () => 
+    {
         new AdminProfilController();
     });
-    $("#haszonGomb").on("click", () => {
+
+    $("#haszonGomb").on("click", () => 
+    {
         new AdminHaszonController();
-    })
-    $("#rendelesGomb").on("click", () => {
+    });
+
+    $("#rendelesGomb").on("click", () => 
+    {
         new AdminRendelesController();
     });
-    $("#rendelesTetelGomb").on("click", () => {
+
+    $("#rendelesTetelGomb").on("click", () => 
+    {
         new AdminRendTetelC();
     });
-    $("#termekGomb").on("click", () => {
+
+    $("#termekGomb").on("click", () => 
+    {
         new AdminTermekController();
     });
 
+    new AdminRegisztracioController();
 
-
-
-})
+    $("#regisztracioGomb").on("click", ()=>
+    {
+        new AdminRegisztracioController();
+    });
+});

@@ -27,7 +27,7 @@ return new class extends Migration
             $table->foreignId("szallitasi_cim_3")->nullable()->references("cim_id")->on("cim");
             $table->string("vezeteknev", 80);
             $table->string("keresztnev", 80);
-            $table->integer("telefonszam");
+            $table->string("telefonszam");
             $table->string("cegnev", 80)->nullable()->default("");
             $table->char("adoszam", 13)->nullable()->default("");
             $table->char("jelleg", 1); // M: magánszemély, C:cég

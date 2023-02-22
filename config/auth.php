@@ -43,7 +43,7 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'felhasznalo',
-            'password' => 'jelszó',
+            'password' => 'jelszo',
             'hash' => false
         ]
     ],

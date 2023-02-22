@@ -136,6 +136,17 @@ class FelhasznaloController extends Controller
             ->where("f.felhasznalo_id", $id);
             $szamlazas = $szamlazas->union($szallitas3)->get();
             return $szamlazas;
-        
+    }
+
+    public function ujDolgozo(Request $request)
+    {
+        $felhasznalo= new Felhasznalo();
+        $felhasznalo->email = $request->email;
+        $felhasznalo->jelszo = $request->jelszo;
+        $felhasznalo->vezeteknev = $request->vezeteknev;
+        $felhasznalo->keresztnev = $request->keresztnev;
+        $felhasznalo->telefonszam = $request->telefonszam;
+        $felhasznalo->jogosultsag = $request->jogosultsag;
+        $felhasznalo->save();
     }
 }
