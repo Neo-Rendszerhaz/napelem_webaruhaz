@@ -35,25 +35,21 @@ Route::group(['middleware' => ['auth', 'felhasznalo']], function()
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get("/profil", function()
-    {
-        return view("oldalak/felhasznalo/profil");
-    })->name("profil");
-
     Route::get("/admin_felulet", function()
     {
-        return view("oldalak/admin/admin_web_adatok");
+        return view("oldalak/admin/admin_oldal");
     })->middleware("admin")->name("admin_felulet");
 
     Route::get("/kezdolap", function()
     {
         return view("oldalak/index");
     })->name("kezdolap");
-});
 
-Route::get("/be_reg_felulet", function()
-{
-    return view("oldalak/bejelentkezes_regisztracio");
+    Route::get("/kosar", function()
+    {
+        return view("oldalak/kosar");
+    })->name("kosar");
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -71,6 +67,7 @@ Route::middleware(["admin"])->group(function()
 {
 
     Route::get("/f_cimek/{felhasznalo_id}", [FelhasznaloController::class, "felhasznalokCimekkel"]);
+    Route::post("/uj_dolgozo", [FelhasznaloController::class, "ujDolgozo"]);
 
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);

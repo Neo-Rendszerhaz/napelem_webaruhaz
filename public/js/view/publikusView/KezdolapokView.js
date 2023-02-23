@@ -4,8 +4,8 @@ class KezdoLapokView {
     constructor(tomb, szuloElem) {
         //console.log(tomb.termekek);
         this.divElem = szuloElem.children("div:last-child");
-        tomb.termekek.forEach(adat => {
-            const adatom = new KezdolapView(adat, szuloElem);
+        tomb.termekek.forEach(termek => {
+            const adatom = new KezdolapView(termek, szuloElem);
         });
 
     }
