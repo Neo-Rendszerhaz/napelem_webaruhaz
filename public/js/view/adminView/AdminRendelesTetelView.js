@@ -26,7 +26,7 @@ class AdminRendTetelV{
         $(`#RTtor${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
             this.sajatEsemeny("RTtorles")
         })
-
+        
     }
     rendelesTetelReszMut(){
             $(`#${this.#obj.rendeles_szam}${this.#obj.termek_id}`).after(`<tr id='${this.#obj.rendeles_szam}${this.#obj.termek_id}reszletes'>
