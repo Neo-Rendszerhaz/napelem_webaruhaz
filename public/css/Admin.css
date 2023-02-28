@@ -5,10 +5,20 @@ table{
 h2
 {
     text-align: center;
-    margin-top: 10px;
+    margin-top: -10px;
+    font-size: 20pt;
 }
 
-#adatTarolo
+#myInput
+{
+    float: right;
+    width: 20%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#adatTarolo, .tartalom
 {
     margin-top: 20px;
 }
@@ -28,9 +38,6 @@ h2
     right: 0;
     background: rgba(0, 0, 0, 0.7);
     display: none;
-    /* visibility: hidden;
-    opacity: 0; */
-    /* z-index: -9; */
 }
 
 .popup {
@@ -41,8 +48,6 @@ h2
   width: 85%;
   height: 50vh;
   position: relative;
-  /* visibility: visible; */
-  /* z-index: -11; */
   display: block;
 }
 
