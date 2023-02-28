@@ -19,7 +19,7 @@ class AdminRendTetelV{
             this.sajatEsemeny("RTtorles")
         })
     
-        this.modal = $("#bovebbAdat");
+        this.modal = $(".overlay");
         this.spanElem = $(".bezar");
         this.spanElem.on("click",()=>{
             this.rendelesTetelReszEltunt()
