@@ -53,17 +53,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post("/uj_dolgozo", [FelhasznaloController::class, "ujDolgozo"]);
+
 Route::middleware(["rendszerAdmin"])->group(function()
 {
-    
+
 });
 
 Route::middleware(["admin"])->group(function()
 {
-
     Route::get("/f_cimek/{felhasznalo_id}", [FelhasznaloController::class, "felhasznalokCimekkel"]);
-    Route::post("/uj_dolgozo", [FelhasznaloController::class, "ujDolgozo"]);
-
+    
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
     Route::post("/cimek", [CimController::class, "store"]);

@@ -17,31 +17,17 @@ class AdminFelhasznaloView
         
         this.cimMegjelenit=$(`#megjelenit${elem.felhasznalo_id}`);
 
-        // this.divElem=$(`#adatTarolo`).children("div:last-child")
-        // this.ujdivElem=this.divElem.after(`<div id="ujDiv"></div>`)
-
-
-        // this.tableElem=$("#cimekTarolo").children("table:last-child")
-        // this.tbodyElem=this.tableElem.children("tbody");
-        this.valami=$("#cimekTarolo>table")
-
-        this.aktiv=false;
         this.cimMegjelenit.on("click", ()=>
         {
-            if(!this.aktiv)
-            {
-                console.log(this.cimMegjelenit);
-                this.kattintasTrigger("megjelenit");
-                this.aktiv=true;
-                console.log(this.aktiv);
+            this.kattintasTrigger("megjelenit");
+            $(".overlay").css({"display": "block", "opacity": 1, "visibility": "visible", "z-index": 10, "background": "rgba(0, 0, 0, 0.7)"})
+        });
 
-            }
-            else
-            {
-                $("#cimekTarolo").html(`<div id="cimekTarolo"></div>`);
-                this.aktiv=false;
-                console.log(this.aktiv);
-            }
+        this.bezar=$("#bezar");
+        this.bezar.on("click", ()=>
+        {
+            console.log("bezár");
+            $(".overlay").css({"display": "none","opacity": 0, "z-index": -10})
         });
     }
 

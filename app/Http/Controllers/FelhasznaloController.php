@@ -6,6 +6,9 @@ use App\Models\Felhasznalo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class FelhasznaloController extends Controller
 {
@@ -25,7 +28,7 @@ class FelhasznaloController extends Controller
     {
         $felhasznalo= new Felhasznalo();
         $felhasznalo->email = $request->email;
-        $felhasznalo->jelszo = $request->jelszo;
+        $felhasznalo->jelszo = Hash::make($request->jelszo);
         $felhasznalo->szamlazasi_cim = $request->szamlazasi_cim;
         $felhasznalo->szallitasi_cim_1 = $request->szallitasi_cim_1;
         $felhasznalo->szallitasi_cim_2 = $request->szallitasi_cim_2;
@@ -38,6 +41,7 @@ class FelhasznaloController extends Controller
         $felhasznalo->jelleg = $request->jelleg;
         $felhasznalo->jogosultsag = $request->jogosultsag;
         $felhasznalo->save();
+        redirect();
     }
 
     public function update(Request $request, $id)
@@ -142,11 +146,35 @@ class FelhasznaloController extends Controller
     {
         $felhasznalo= new Felhasznalo();
         $felhasznalo->email = $request->email;
+
+        // $request->validate([
+        //     'vezeteknev' => ['required', 'string', 'max:255'],
+        //     'keresztnev' => ['required', 'string', 'max:255'],
+        //     'telefonszam' => ['required', 'string', 'max:9'],
+        //     'jogosultsag' => ['required', 'string', 'max:255'],
+        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.Felhasznalo::class],
+        //     'jelszo' => ['required', 'confirmed', Rules\Password::defaults()],
+        // ]);
+        $validator = Validator::make($request->all(), [
+            'jelszo' => [ 'required', 'string', 
+            Password::min(8)
+                ->mixedCase()
+                ->numbers() 
+                ->symbols()
+            ],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(["message" => $validator->errors()->all()], 400);
+        }
         $felhasznalo->jelszo = $request->jelszo;
+        // $user->password = Hash::make($request->password);
         $felhasznalo->vezeteknev = $request->vezeteknev;
         $felhasznalo->keresztnev = $request->keresztnev;
         $felhasznalo->telefonszam = $request->telefonszam;
         $felhasznalo->jogosultsag = $request->jogosultsag;
+        $felhasznalo->jelleg = "M";
         $felhasznalo->save();
+        return $felhasznalo;
     }
 }

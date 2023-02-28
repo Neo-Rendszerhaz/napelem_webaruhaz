@@ -24,7 +24,7 @@ class AdminProfilController{
     
     cimAdatok(tomb)
     {
-        const szuloElem=$("#cimekTarolo");
+        const szuloElem=$(".tartalom");
         // new AdminFelhasznaloCimekView(tomb, szuloElem)
         new AdminCimekView(tomb, szuloElem)
     }

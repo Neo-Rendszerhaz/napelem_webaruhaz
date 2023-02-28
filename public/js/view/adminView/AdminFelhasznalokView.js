@@ -15,7 +15,13 @@ class AdminFelhasznalokView
         <th>Jelleg</th>
         <th>Jogosultság</th>
         </tr></table>
-        <div id="cimekTarolo"></div>
+        <div class="overlay">
+            <div class="popup">
+                <h2>Címek</h2>
+                <p id="bezar" class="close">&times;</p>
+                <div class="tartalom"></div>
+            </div>
+        </div>
         `);
 
         const tbodyElem="#adatTarolo>table>tbody"

@@ -49,7 +49,7 @@ $(function () {
         new AdminTermekController();
     });
 
-    new AdminRegisztracioController();
+    // new AdminRegisztracioController();
 
     $("#regisztracioGomb").on("click", ()=>
     {

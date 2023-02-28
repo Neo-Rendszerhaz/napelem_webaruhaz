@@ -56,6 +56,7 @@ class AdatFeldolgozModel
 
     adatUj(vegpont, adat)
     {
+        console.log(adat);
         fetch(vegpont,
         {
             method: "POST",

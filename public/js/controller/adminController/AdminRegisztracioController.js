@@ -15,7 +15,7 @@ class AdminRegisztracioController
         $(window).on("regisztralas", (event)=>
         {
             console.log(event.detail);
-            adatFeldolgozModel.adatUj(this.Regisztracio, event.detail);
+            adatFeldolgozModel.adatUj("/uj_dolgozo", event.detail);
         });
     }
 
