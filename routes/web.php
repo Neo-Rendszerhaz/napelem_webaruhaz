@@ -45,6 +45,11 @@ Route::group(['middleware' => ['auth', 'felhasznalo']], function()
         return view("oldalak/index");
     })->name("kezdolap");
 
+    Route::get("/kosar", function()
+    {
+        return view("oldalak/kosar");
+    })->name("kosar");
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -93,6 +98,7 @@ Route::middleware(["admin"])->group(function()
     Route::post("/rendelesek", [RendelesController::class, "store"]);
     Route::put("/rendelesek/{rendeles_id}", [RendelesController::class, "update"]);
     Route::delete("/rendelesek/{rendeles_id}", [RendelesController::class, "destroy"]);
+    Route::delete("/rendelesekTetellel/{rendeles_id}", [RendelesController::class, "rendelesTorlesTetellel"]);
     Route::get("/rendelesek_cimmel_felhasznaloval", [RendelesController::class, "CimEsFelhasznalo"]);
 
     Route::get("/rendeles_tetelek", [RendelesTetelController::class, "index"]);

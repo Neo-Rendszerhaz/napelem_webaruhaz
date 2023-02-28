@@ -25,7 +25,7 @@
                     <li><a href="/">Kezdőlap</a></li>
                 </ul>
             </nav>
-            <button id="kosar" href="/kosar">Kosár</button>
+            <a href="/kosar"><button id="kosar">Kosár</button></a>
         </header>
         <article>
         </article>

@@ -104,11 +104,10 @@ class AdatFeldolgozModel
         });
     }
 
-    adatTorol(vegpont, adat, id)
+    adatTorol(vegpont, adat)
     {
         console.log("töröltem: ");
         console.log(adat);
-        vegpont +="/"+id;
         console.log(vegpont);
         fetch(vegpont,
         {

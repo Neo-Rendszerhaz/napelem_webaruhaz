@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rendeles;
+use App\Models\RendelesTetel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -50,6 +51,10 @@ class RendelesController extends Controller
     public function destroy($rendeles_szam)
     {
         Rendeles::find($rendeles_szam)->delete();
+    }
+    public function rendelesTorlesTetellel($rendeles_szam)
+    {
+        RendelesTetel::where('rendeles_szam','=',$rendeles_szam)->delete();
     }
 
     public function CimEsFelhasznalo(){

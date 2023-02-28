@@ -18,7 +18,7 @@ return new class extends Migration
     {
         Schema::create('rendeles', function (Blueprint $table) {
             $table->id("rendeles_szam");
-            $table->dateTime("datum")->default(DB::raw("now()"));
+            $table->date("datum")->default(Carbon::now());
             $table->foreignId("felhasznalo_id")->references("felhasznalo_id")->on("felhasznalo");
             $table->foreignId("szallitasi_cim")->references("cim_id")->on("cim");
             $table->integer("teljes_ar");

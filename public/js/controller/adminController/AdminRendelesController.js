@@ -11,8 +11,12 @@ class AdminRendelesController{
             AFM.adatModosit("/rendelesek",event.detail,event.detail.rendeles_szam)
         })
         $(window).on("rendelesTorles",(event)=>{
-            AFM.adatTorol("/rendelesek",event.detail,event.detail.rendeles_szam)
-            AFM.adatBe(this.rendelesTetelek,this.tetelMutat)
+            let figyelmeztetes = confirm("Biztosan szeretné törölni?");
+            if(figyelmeztetes === true){
+                AFM.adatTorol(`/rendelesekTetellel/${event.detail.rendeles_szam}`,event.detail)
+                AFM.adatTorol(`/rendelesek/${event.detail.rendeles_szam}`,event.detail)
+                AFM.adatBe(this.rendelesTetelek,this.tetelMutat)            
+            }
         })
     }
     tetelMutat(tomb){
