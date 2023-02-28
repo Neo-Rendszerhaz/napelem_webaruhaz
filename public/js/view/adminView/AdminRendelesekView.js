@@ -20,7 +20,6 @@ class AdminRendelesekView{
             new AdminRendelesView(rendeles,ujSzulo);
         });
         this.myInputElem =$("#myInput")
-        console.log(this.myInputElem)
         this.myInputElem.keyup(this.myFunction)
     }
     
