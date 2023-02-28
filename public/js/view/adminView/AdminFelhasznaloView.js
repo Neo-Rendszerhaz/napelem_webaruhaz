@@ -20,14 +20,16 @@ class AdminFelhasznaloView
         this.cimMegjelenit.on("click", ()=>
         {
             this.kattintasTrigger("megjelenit");
-            $(".overlay").css({"display": "block", "opacity": 1, "visibility": "visible", "z-index": 10, "background": "rgba(0, 0, 0, 0.7)"})
+            $(".overlay").show();
+            // $(".overlay").css({"display": "block", "opacity": 1, "visibility": "visible", "z-index": 10})
         });
 
         this.bezar=$("#bezar");
         this.bezar.on("click", ()=>
         {
             console.log("bezár");
-            $(".overlay").css({"display": "none","opacity": 0, "z-index": -10})
+            $(".overlay").hide();
+            // $(".overlay").css({"display": "none","opacity": 0, "z-index": -10})
         });
     }
 
