@@ -33,7 +33,6 @@ class AdminRendelesekView{
         for (i = 1; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[0];
             txtValue = td.textContent || td.innerText;
-            console.log(txtValue)
             if (txtValue.indexOf(filter) > -1) {
                 tr[i].style.display = "";
             } else {

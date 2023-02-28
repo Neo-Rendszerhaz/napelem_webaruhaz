@@ -2,7 +2,12 @@ import AdminRendTetelV from "./AdminRendelesTetelView.js";
 
 class AdminRendTetelekV{
     constructor(tomb,szuloElem){
-        $(szuloElem).html(`<input type="text" id="myInput" placeholder="Rendelés szám keresése" title="Írja be a rendelés számot"><table class="table table-striped">
+        $(szuloElem).html(`<input type="text" id="myInput" placeholder="Rendelés szám keresése" title="Írja be a rendelés számot">
+        <div class="overlay">
+        <div id ="popup"><span class="bezar">&times;</span>
+        <div class=tartalom></div> 
+      </div>
+      </div>
         <table class="table table-striped"><tr><th>Rendelés szám</th>
         <th>Termék neve</th>
         <th>Mennyiség</th>
