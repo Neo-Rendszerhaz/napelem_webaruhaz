@@ -1,10 +1,11 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import KezdoLapokView from "../../view/publikusView/KezdoLapokView.js";
 
+
 class IndexController {
     constructor() {
         this.kosar = [];
-        console.log("IndexController Hello!");
+        //console.log("IndexController Hello!");
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
@@ -15,7 +16,6 @@ class IndexController {
         //Kosár gombra kattintva a konzolon megjelenik a kosár tomb!
         $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
-            console.log(this.kosar);
             this.termekekLocalStoragebe();
         });
 
@@ -33,14 +33,11 @@ class IndexController {
         });
 
         let html_string = JSON.stringify(this.kosar); //az objectet stringgé alakítja át
-        window.localStorage.setItem(this.kosar, html_string);
+        window.localStorage.setItem("kosar", html_string);
         //console.log(html_string);
 
-        let html_object = JSON.parse(localStorage.getItem(this.kosar)); //a stringet visszaalakítja objectté
-        console.log(html_object);
-
-        //kosárcontroller, ami példányosítja a kosárview-t
-        //kosár: termékek megjelenítése divbe és p tagek-be
+        // let html_object = JSON.parse(localStorage.getItem("kosar")); //a stringet visszaalakítja objectté
+        // console.log(html_object);
     }
 
     termekekKosarba(ujTermek) {
