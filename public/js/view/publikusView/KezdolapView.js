@@ -4,23 +4,30 @@ class KezdolapView {
         this.#elem = elem;
         szuloElem.append(`
             <div class="termek">
+                <div id="${elem.id}">
                 <h2>Név: ${elem.megnevezes}</h2>
                 <img src="${elem.kep}">
                 <h3>Ár: ${elem.ar} Ft</h3>
+                </div>
                 <button id="gomb${elem.id}">Kosárba</button>
             </div>
             `);
-        document
-            .getElementById(`gomb${elem.id}`)
-            .addEventListener("click", () => {
+        $(`#gomb${elem.id}`)
+            .on("click", () => {
                 //console.log(elem);
-                this.kattintas(elem);
+                this.kattintas("kosar");
             });
+        this.termekKattUjOldal(`#${elem.id}`);
     }
-    kattintas(elem) {
+    kattintas(esemenyNeve) {
         window.dispatchEvent(
-            new CustomEvent("kosar", { detail: elem })
+            new CustomEvent(esemenyNeve, { detail: this.#elem })
         );
+    }
+    termekKattUjOldal(elem) {
+        $(elem).on('click', () => {
+            this.kattintas("termekUjOldal");
+        });
     }
 }
 

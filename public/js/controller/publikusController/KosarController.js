@@ -11,6 +11,7 @@ class KosarController {
         //console.log("KosarController Hali!");
 
         let html_object = JSON.parse(localStorage.getItem("kosar"));
+        console.log(html_object);
         for (let i = 0; i < html_object.length; i++) {
             console.log(html_object[i]);
         }
