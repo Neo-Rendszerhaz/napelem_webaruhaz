@@ -18,9 +18,14 @@ h2
     border-radius: 5px;
 }
 
-#adatTarolo, .tartalom
+#adatTarolo
 {
     margin-top: 20px;
+}
+
+.tartalom
+{
+  margin-top: 50px;
 }
 
 #regisztracio
@@ -61,8 +66,9 @@ h2
   top: 20px;
   right: 30px;
   transition: all 200ms;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+
   text-decoration: none;
   color: #333;
 }
