@@ -4,7 +4,7 @@ class AdminRendTetelekV{
     constructor(tomb,szuloElem){
         $(szuloElem).html(`<input type="text" id="myInput" placeholder="Rendelés szám keresése" title="Írja be a rendelés számot">
         <div class="overlay">
-        <div id ="popup"><span class="bezar">&times;</span>
+        <div class ="popup"><p id="bezar" class="close">&times;</p>
         <div class=tartalom></div> 
       </div>
       </div>

@@ -20,7 +20,7 @@ class AdminRendTetelV{
         })
     
         this.modal = $(".overlay");
-        this.spanElem = $(".bezar");
+        this.spanElem = $("#bezar");
         this.spanElem.on("click",()=>{
             this.rendelesTetelReszEltunt()
         })
