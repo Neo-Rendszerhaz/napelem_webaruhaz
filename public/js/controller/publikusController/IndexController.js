@@ -1,10 +1,12 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import KezdoLapokView from "../../view/publikusView/KezdoLapokView.js";
+import TermekView from "../../view/publikusView/TermekView.js";
+
 
 class IndexController {
     constructor() {
         this.kosar = [];
-        console.log("IndexController Hello!");
+        //console.log("IndexController Hello!");
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
@@ -15,32 +17,44 @@ class IndexController {
         //Kosár gombra kattintva a konzolon megjelenik a kosár tomb!
         $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
-            console.log(this.kosar);
             this.termekekLocalStoragebe();
         });
-
+        $(window).on("termekUjOldal", (event) => {
+            console.log(event.detail);
+            this.ujOldal(event.detail);
+        })
     }
 
+    ujOldal(adat) {
+        const szuloelem = $("article");
+        new TermekView(adat, szuloelem);
+    }
     kezdolapAdatok(tomb) {
         const szuloelem = $("article");
         new KezdoLapokView(tomb, szuloelem);
     }
 
     termekekLocalStoragebe() {
-        var html = "";
-        this.kosar.forEach((termek) => {
-            html += "<div>" + termek.megnevezes + ", " + termek.ar + " Ft" + ", " + termek.db + " db" + "</div>";
-        });
+        let szamlalo = 0;
+        //helyben lekérem a localstorage adatot és ahhoz adom hozzá az adatokat
+        let json_object = JSON.parse(localStorage.getItem("kosar")); //a stringet visszaalakítja objectté
+        if (json_object != null) {
+            for (let index = 0; index < json_object.length; index++) {
+                if (!this.kosar.includes(json_object[index])) {
+                    this.kosar.push(json_object[index])
+                    szamlalo++;
+                }
+            }
+        }
 
-        let html_string = JSON.stringify(this.kosar); //az objectet stringgé alakítja át
-        window.localStorage.setItem(this.kosar, html_string);
+        let json_string = JSON.stringify(this.kosar); //az objectet stringgé alakítja át
+        console.log(this.kosar);
+        //adatok.push(json_object);
+        // for (let index = 0; index < adatok.length; index++) {
+        //     console.log(adatok[index]);
+        // }
+        window.localStorage.setItem("kosar", json_string);
         //console.log(html_string);
-
-        let html_object = JSON.parse(localStorage.getItem(this.kosar)); //a stringet visszaalakítja objectté
-        console.log(html_object);
-
-        //kosárcontroller, ami példányosítja a kosárview-t
-        //kosár: termékek megjelenítése divbe és p tagek-be
     }
 
     termekekKosarba(ujTermek) {
