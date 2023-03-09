@@ -2,7 +2,13 @@ import AdminRendelesView from "./AdminRendelesView.js";
 
 class AdminRendelesekView{
     constructor(tomb,szuloElem){
-        $(szuloElem).html(`<input type="text" id="myInput" placeholder="Rendelés szám keresése" title="Írja be a rendelés számot"><table class="table table-striped"><tr>
+        $(szuloElem).html(`<input type="text" id="myInput" placeholder="Rendelés szám keresése" title="Írja be a rendelés számot">
+        <div class="overlay">
+        <div class ="popup"><p id="bezar" class="close">&times;</p>
+        <div class=tartalom></div> 
+      </div>
+      </div>
+        <table class="table table-striped"><tr>
         <th>Rendelés szám</th>
         <th>Dátum</th>
         <th>Felhasználó</th>
