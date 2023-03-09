@@ -1,0 +1,22 @@
+*
+{
+    box-sizing: border-box;
+}
+
+#egyTermek
+{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#kosarba
+{
+    cursor: pointer;
+}
+
+img
+{
+    width: 100%;
+}
