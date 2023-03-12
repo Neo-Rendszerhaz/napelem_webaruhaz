@@ -1,22 +1,17 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
-import TermekekView from "../../view/publikusView/TermekekViev.js";
+import TermekekView from "../../view/publikusView/TermekekView.js";
 // import TermekView from "../../view/publikusView/TermekView.js";
 
-$(function()
-{
+$(function () {
     new TermekController();
 })
 
-class TermekController
-{
-    constructor()
-    {
+class TermekController {
+    constructor() {
         console.log("termek Kontroller");
-        this.termek=[];
+        this.termek = [];
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
-
-        
 
         let jsonObjektum = JSON.parse(localStorage.getItem("termek"));
         this.termek.push(jsonObjektum)
@@ -25,8 +20,7 @@ class TermekController
         console.log(this.termek);
     }
 
-    termekAdatok(tomb)
-    {
+    termekAdatok(tomb) {
         const szuloelem = $("#egyTermek");
         // const szuloelem = $("article");
         new TermekekView(tomb, szuloelem);
