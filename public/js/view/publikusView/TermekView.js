@@ -4,7 +4,6 @@ class TermekView
     constructor(elem, szuloElem)
     {
         this.#elem=elem
-        console.log(elem);
         szuloElem.html(`
         <div id="kep"><img src="${elem.kep}"></div>
         <div id="termek">

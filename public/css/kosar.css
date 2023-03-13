@@ -1,0 +1,17 @@
+*
+{
+    box-sizing: border-box;
+}
+
+article
+{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.termek img
+{
+    width: 40%;
+}

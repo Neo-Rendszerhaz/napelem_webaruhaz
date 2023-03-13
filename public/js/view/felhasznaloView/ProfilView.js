@@ -14,14 +14,17 @@ class ProfilView
 
         if(elem.szamlazasi_cim==null)
         {
-            $(profilDiv).append(profilAdat);
+            $(profilDiv).append(`${profilAdat}
+            <button id="cimSzerkesztes" class="szerkesztes">Szerkesztés</button></div>`);
         }
 
         if(elem.tipus=="szamlazas")
         {
             $(cimDiv).append(`<div id=szamlazas>
-            <h3>Számlázási cím:</h3>${cimzes}</div>`);
-            $(profilDiv).append(profilAdat);
+            <h3>Számlázási cím:</h3>${cimzes}
+            <div class="gomb"><button id="cimSzerkesztes" class="szerkesztes">Szerkesztés</button></div></div>`);
+            $(profilDiv).append(`${profilAdat}
+            <button id="profilSzerkesztes" class="szerkesztes">Szerkesztés</button></div>`);
         }
         
         if(elem.tipus=="szallitas1" && elem.szallitasi_cim_1!=null)

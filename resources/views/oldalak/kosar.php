@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="/../js/controller/publikusController/KosarController.js" type="module"></script>
+    <script src="/../js/utvonal/KosarFelulet.js" type="module"></script>
     <link rel="stylesheet" href="/../css/kosar.css">
     <title>Kosár</title>
 </head>
@@ -16,13 +16,14 @@
     <main>
         <header>
             <nav>
-                <p>Kosár</p>
             </nav>
         </header>
         <article>
 
         </article>
-        <footer></footer>
+        <footer>
+            
+        </footer>
     </main>
 </body>
 
