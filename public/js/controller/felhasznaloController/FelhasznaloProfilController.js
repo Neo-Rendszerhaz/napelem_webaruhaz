@@ -14,7 +14,7 @@ class FelhasznaloProfilController
         console.log(this.felhasznaloAdatok);
         adatFeldolgozModel.egyAdat(this.felhasznaloAdatok, this.profilAdatok);
 
-        this.felhasznaloRendelesek="f_rendelesek";
+        this.felhasznaloRendelesek="/f_rendelesek";
         adatFeldolgozModel.adatBe(this.felhasznaloRendelesek, this.profilRendelesek);
     }
 
