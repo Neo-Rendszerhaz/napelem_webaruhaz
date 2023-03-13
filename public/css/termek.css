@@ -1,5 +1,4 @@
-*
-{
+* {
     box-sizing: border-box;
 }
 
@@ -7,16 +6,31 @@ article
 {
     width: 80%;
     margin: auto;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    border: 2px solid black;
 }
 
-#kosarba
-{
+.wrapper {
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+}
+
+.wrapper span {
+    font-size: 20px;
+}
+
+.wrapper button {
+    margin: auto;
+    padding: auto;
+}
+
+#kosarba {
     cursor: pointer;
 }
 
-img
-{
+img {
     width: 100%;
 }

@@ -12,15 +12,15 @@ class AdminRendTetelV{
         <td><button id=RTtor${this.#obj.rendeles_szam}${this.#obj.termek_id}>Törlés</button></td>
         </tr>`);
         
+            this.modal = $(".overlay");
+            this.spanElem = $("#bezar");
+        
         $(`#MegJel${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
                 this.rendelesTetelReszMut()
         })
         $(`#RTtor${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
             this.sajatEsemeny("RTtorles")
         })
-    
-        this.modal = $(".overlay");
-        this.spanElem = $("#bezar");
         this.spanElem.on("click",()=>{
             this.rendelesTetelReszEltunt()
         })

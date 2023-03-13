@@ -7,7 +7,6 @@ class KezdoLapokView {
         tomb.termekek.forEach(termek => {
             const adatom = new KezdolapView(termek, szuloElem);
         });
-
     }
 }
 
