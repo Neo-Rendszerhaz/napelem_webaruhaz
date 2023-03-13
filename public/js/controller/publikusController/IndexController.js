@@ -6,9 +6,9 @@ import TermekController from "./TermekController.js";
 
 class IndexController {
     constructor() {
-        
-        this.kosar=[];
-        this.termek=[];
+
+        this.kosar = [];
+        this.termek = [];
         //console.log("IndexController Hello!");
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
@@ -17,24 +17,22 @@ class IndexController {
         adatFeldolgozModel.adatBe(this.vegpont, this.kezdolapAdatok);
 
         //Kosár gombra kattintva a konzolon megjelenik a kosár tomb!
-        $(window).on("kosar", (event) => 
-        {
+        $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
             this.termekekLocalStoragebe();
         });
 
-        $(window).on("termekUjOldal", (event) => 
-        {
+
+        $(window).on("termekUjOldal", (event) => {
             console.log(event.detail);
-            
+
             this.ujOldal(event.detail);
             // this.ujOldal(event.detail);
             // adatFeldolgozModel.adatBe("oldalak/termek", this.ujOldal(event.detail))
         })
     }
 
-    ujOldal(tomb) 
-    {
+    ujOldal(tomb) {
         let jsonString = JSON.stringify(tomb);
         window.localStorage.setItem("termek", jsonString);
 
@@ -57,7 +55,7 @@ class IndexController {
         //helyben lekérem a localstorage adatot és ahhoz adom hozzá az adatokat
 
         // let json_object = JSON.parse(localStorage.getItem("kosar")); //a stringet visszaalakítja objectté
-        
+
         // if (json_object != null) 
         // {
         //     for (let i = 0; i < json_object.length; i++) 
@@ -81,14 +79,13 @@ class IndexController {
 
 
         // __________________________________________
-        const adatok=[];
+        const adatok = [];
 
-        if(localStorage.getItem("kosar")==null)
-        {
+        if (localStorage.getItem("kosar") == null) {
             localStorage.setItem("kosar", "[]");
         }
 
-        
+
         var regiaAdat = JSON.parse(localStorage.getItem("kosar"));
 
         adatok.push(regiaAdat)

@@ -9,13 +9,54 @@ article {
     width: 90%;
     border: 2px solid black;
     border-radius: 25px;
-    margin: 10px;
+    margin: auto;
     padding: 10px;
     cursor: pointer;
+    text-align: center;
 }
 
+.wrapper {
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+}
 
+.wrapper span {
+    font-size: 20px;
+}
+
+.wrapper button {
+    margin: auto;
+    padding: auto;
+}
 
 img {
     width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    article {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    article {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    article {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
 }
