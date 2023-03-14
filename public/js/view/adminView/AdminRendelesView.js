@@ -69,17 +69,29 @@ class AdminRendelesView {
     return this.szoveg
   }
   rendelesReszletesMegjel(){
-    $(".tartalom").html(`
-            <div class="reszletesCim"> <h3>Iranyítószám</h3> <p>${this.#obj.iranyitoszam}</p></div>
-            <div class="reszletesCim"> <h3>Város</h3> <p>${this.#obj.varos}</p></div>
-            <div class="reszletesCim"> <h3>Közterület neve</h3> <p>${this.#obj.kozterulet_neve}</p></div>
-            <div class="reszletesCim"> <h3>Közterület jellege</h3> <p>${this.#obj.kozterulet_jellege}</p></div>
-            <div class="reszletesCim"> <h3>Hely/Házszám</h3> <p>${this.#obj.hely_hazszam}</p></div>
-            <div class="reszletesCim"> <h3>Hely/Ház jelleg</h3> <p>${this.#obj.hely_haz_jelleg}</p></div>
-            <div class="reszletesCim"> <h3>Épület</h3> <p>${this.#obj.epulet}</p></div>
-            <div class="reszletesCim"> <h3>Emelet</h3> <p>${this.#obj.emelet}</p></div>
-            <div class="reszletesCim"> <h3>Ajtó</h3> <p>${this.#obj.ajto}</p></div>
-            <div class="reszletesCim"> <h3>Kapucsengő</h3> <p>${this.#obj.kapucsengo}</p></div>
+    $(".tartalom").html(`<table class="table table-striped"><tr>
+      <th>Iranyítószám</th>
+      <th>Város</th>
+      <th>Közterület neve</th>
+      <th>Közterület jellege</th>
+      <th>Hely/Házszám</th>
+      <th>Hely/Ház jelleg</th>
+      <th>Épület</th>
+      <th>Emelet</th>
+      <th>Ajtó</th>
+      <th>Kapucsengő</th>
+    </tr><tr>
+    <td>${this.#obj.iranyitoszam}</td>
+    <td>${this.#obj.varos}</td>
+    <td>${this.#obj.kozterulet_neve}</td>
+    <td>${this.#obj.kozterulet_jellege}</td>
+    <td>${this.#obj.hely_hazszam}</td>
+    <td>${this.#obj.hely_haz_jelleg}</td>
+    <td>${this.#obj.epulet}</td>
+    <td>${this.#obj.emelet}</td>
+    <td>${this.#obj.ajto}</td>
+    <td>${this.#obj.kapucsengo}</td>
+    </tr></table>
             `)
             this.modal.show();
   }

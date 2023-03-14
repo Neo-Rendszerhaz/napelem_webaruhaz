@@ -28,11 +28,20 @@ class AdminRendTetelV{
     }
     rendelesTetelReszMut(){
             $(".tartalom").html(`
-            <div class="reszletesTermek"> <h3>Cikkszám</h3> <p>${this.#obj.cikkszam}</p></div>
-            <div class="reszletesTermek"> <h3>Gyártói cikkszám</h3> <p>${this.#obj.gyartoi_cikkszam}</p></div>
-            <div class="reszletesTermek"> <h3>Márka</h3> <p>${this.#obj.marka}</p></div>
-            <div class="reszletesTermek"> <h3>Garancia</h3> <p>${this.#obj.garancia}</p></div>
-            <div class="reszletesTermek"> <h3>Leíras</h3> <p>${this.#obj.leiras}</p></div>`)
+            <table class="table table-striped"><tr>
+                <th>Cikkszám</th>
+                <th>Gyártói cikkszám</th>
+                <th>Márka</th>
+                <th>Garancia</th>
+                <th>Leíras</th>
+                </tr>
+                <tr>
+                <td>${this.#obj.cikkszam}</td>
+                <td>${this.#obj.gyartoi_cikkszam}</td>
+                <td>${this.#obj.marka}</td>
+                <td>${this.#obj.garancia}</td>
+                <td>${this.#obj.leiras}</td>
+                </tr></table>`)
             this.modal.show();
         }
     rendelesTetelReszEltunt(){
