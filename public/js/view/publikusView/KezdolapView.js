@@ -19,17 +19,18 @@ class KezdolapView {
                 <span id="number${elem.id}">1</span>
                 <button id="plus${elem.id}">+</button>
             </div>
-            <button id=" gomb${elem.id}">Kosárba</button>
+            <button id="gomb${elem.id}">Kosárba</button>
         </div>
             `);
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);
         this.#plus = document.getElementById(`plus${elem.id}`);
-        $(`#gomb${elem.id}`)
-            .on("click", () => {
-                //console.log(elem);
-                this.kattintas("kosar");
-            });
+        
+        $(`#gomb${elem.id}`).on("click", () =>
+        {
+            //console.log(elem);
+            this.kattintas("kosar");
+        });
         $(this.#plus)
             .on("click", () => {
                 this.#menny++;
@@ -46,17 +47,18 @@ class KezdolapView {
         this.termekKattUjOldal(`#${elem.id}`);
 
     }
-    kattintas(esemenyNeve) {
-        window.dispatchEvent(
-            new CustomEvent(esemenyNeve, { detail: this.#elem })
-        );
+
+    kattintas(esemenyNeve) 
+    {
+        window.dispatchEvent(new CustomEvent(esemenyNeve, { detail: this.#elem }));
     }
-    termekKattUjOldal(elem) {
-        $(elem).on('click', () => {
+
+    termekKattUjOldal(elem) 
+    {
+        $(elem).on('click', () => 
+        {
             this.kattintas("termekUjOldal");
         });
     }
-
 }
-
 export default KezdolapView;

@@ -1,16 +1,17 @@
 import KosarView from "./KosarView.js";
 
-class KosarakView {
-    constructor(tomb, szuloelem) {
-        console.log("KosarakView Hali!");
-        szuloelem.html(`
+class KosarakView 
+{
+    constructor(tomb, szuloElem) 
+    {
+        szuloElem.html(`
         <div id="rendtermekek">
         </div>`)
-        this.divElem = szuloelem.children("div:last-child");
-        tomb.forEach(adat => {
-            const kosaram = new KosarView(adat, this.divElem);
+        this.divElem = szuloElem.children("div:last-child");
+        tomb.forEach(adat => 
+        {
+            new KosarView(adat, this.divElem);
         });
     }
 }
-
 export default KosarakView;
