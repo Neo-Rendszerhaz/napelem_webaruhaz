@@ -20,7 +20,7 @@ class TermekView
             <h2>Ár: ${elem.ar} Ft</h2>
             <div class="wrapper">
                 <button id="minus${elem.id}">-</button>
-                <span id="number${elem.id}">1</span>
+                <input type="number" id="number${elem.id}">1</input>
                 <button id="plus${elem.id}">+</button>
             </div>
             <button id="kosarba">Kosárba</button>
