@@ -28,6 +28,7 @@ class IndexController
         $(window).on("termekUjOldal", (event) => {
             console.log(event.detail);
             this.ujOldal(event.detail);
+            window.location.href = "/termek";
         })
     }
 
@@ -35,8 +36,7 @@ class IndexController
         let jsonString = JSON.stringify(tomb);
         window.localStorage.setItem("termek", jsonString);
 
-        new TermekController();
-        window.location.href = "/termek";
+        
     }
 
     kezdolapAdatok(tomb) {

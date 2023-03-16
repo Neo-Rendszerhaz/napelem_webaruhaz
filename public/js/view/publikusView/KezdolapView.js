@@ -11,14 +11,14 @@ class KezdolapView {
         <div class="termek">
             <div id="${elem.id}" class="kattintasiFelulet">
             <img src="${elem.kep}">
-            <h6>Név: ${elem.megnevezes}</h3>
+            <h6 class="termekNev">${elem.megnevezes}</h6>
             </div>
             <div class="wrapper">
-                <h4 class="ar">Ár: ${elem.ar} Ft</h3>
+                <h4 class="ar">${elem.ar} Ft</h4>
                 <div class="mennyisegTarolo">
-                    <button id="minus${elem.id}">-</button>
-                    <span id="number${elem.id}">1</span>
-                    <button id="plus${elem.id}">+</button>
+                <button id="minus${elem.id}">-</button>
+                <span id="number${elem.id}">1</span>
+                <button id="plus${elem.id}">+</button>
                 </div>
             </div>
             <div>
@@ -48,21 +48,16 @@ class KezdolapView {
                 }
             })
 
-        this.termekKattUjOldal(`#${elem.id}`);
+        $(`#${elem.id}`).on('click', () => 
+        {
+            this.kattintas("termekUjOldal");
+        });
 
     }
 
     kattintas(esemenyNeve) 
     {
         window.dispatchEvent(new CustomEvent(esemenyNeve, { detail: this.#elem }));
-    }
-
-    termekKattUjOldal(elem) 
-    {
-        $(elem).on('click', () => 
-        {
-            this.kattintas("termekUjOldal");
-        });
     }
 }
 export default KezdolapView;

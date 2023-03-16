@@ -1,4 +1,4 @@
-import TermekekView from "../../view/publikusView/TermekekViev.js";
+import TermekekView from "../../view/publikusView/TermekekView.js";
 
 class TermekController
 {

@@ -34,8 +34,6 @@ class RegisteredUserController extends Controller
             'vezeteknev' => ['required', 'string', 'max:255'],
             'keresztnev' => ['required', 'string', 'max:255'],
             'telefonszam' => ['required', 'string', 'max:11'],
-            'cegnev' => ['string', 'max:255'],
-            'adoszam' => ['string', 'max:255'],
             'jelleg' => ['required', 'string', 'max:1'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
