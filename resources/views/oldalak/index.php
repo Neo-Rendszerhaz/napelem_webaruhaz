@@ -30,8 +30,11 @@
         <article>
         </article>
         <aside>
-            <p>Kereső</p>
-            <p>Rendezés</p>
+            <div id="kereso">
+            </div>
+            <div>    
+                <p>Rendezés</p>
+            </div>
         </aside>
         <footer>
 

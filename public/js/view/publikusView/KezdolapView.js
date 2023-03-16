@@ -16,15 +16,15 @@ class KezdolapView {
             <div class="wrapper">
                 <h4 class="ar">${elem.ar} Ft</h4>
                 <div class="mennyisegTarolo">
-                <button id="minus${elem.id}">-</button>
-                <span id="number${elem.id}">1</span>
-                <button id="plus${elem.id}">+</button>
+                    <button id="minus${elem.id}">-</button>
+                    <input type="number" min=1 max=100 class="dbInput" value="1" id="number${elem.id}">
+                    <button id="plus${elem.id}">+</button>
                 </div>
             </div>
             <div>
                 <button id="gomb${elem.id}" class="kosarGomb">Kosárba</button>
             </div>
-            </div>
+        </div>
             `);
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);
@@ -37,15 +37,23 @@ class KezdolapView {
         });
         $(this.#plus)
             .on("click", () => {
-                this.#menny++;
-                this.#number.innerText = this.#menny;
+                let input = this.#number.value;
+                if (input >= 100) {
+                    input = 100;
+                }else{
+                    input++;
+                    this.#number.value = input;
+                }
             })
         $(this.#minus)
             .on("click", () => {
-                if (this.#menny > 1) {
-                    this.#menny--;
-                    this.#number.innerText = this.#menny;
-                }
+                let input = this.#number.value;
+                if (input <= 1) {
+                    input = 1
+                }else{
+                    input--;
+                    this.#number.value = input;
+                }   
             })
 
         $(`#${elem.id}`).on('click', () => 
