@@ -10,21 +10,21 @@ class KezdolapView {
         szuloElem.append(`
         <div class="termek">
             <div id="${elem.id}" class="kattintasiFelulet">
-            <img src="${elem.kep}">
-            <h6>Név: ${elem.megnevezes}</h3>
+                <img src="${elem.kep}">
+                <h6>Név: ${elem.megnevezes}</h3>
             </div>
             <div class="wrapper">
                 <h4 class="ar">Ár: ${elem.ar} Ft</h3>
                 <div class="mennyisegTarolo">
                     <button id="minus${elem.id}">-</button>
-                    <span id="number${elem.id}">1</span>
+                    <input type="number" min=1 max=100 class="dbInput" value="1" id="number${elem.id}">
                     <button id="plus${elem.id}">+</button>
                 </div>
             </div>
             <div>
                 <button id="gomb${elem.id}" class="kosarGomb">Kosárba</button>
             </div>
-            </div>
+        </div>
             `);
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);
@@ -37,15 +37,23 @@ class KezdolapView {
         });
         $(this.#plus)
             .on("click", () => {
-                this.#menny++;
-                this.#number.innerText = this.#menny;
+                let input = this.#number.value;
+                if (input >= 100) {
+                    input = 100;
+                }else{
+                    input++;
+                    this.#number.value = input;
+                }
             })
         $(this.#minus)
             .on("click", () => {
-                if (this.#menny > 1) {
-                    this.#menny--;
-                    this.#number.innerText = this.#menny;
-                }
+                let input = this.#number.value;
+                if (input <= 1) {
+                    input = 1
+                }else{
+                    input--;
+                    this.#number.value = input;
+                }   
             })
 
         this.termekKattUjOldal(`#${elem.id}`);
@@ -63,6 +71,9 @@ class KezdolapView {
         {
             this.kattintas("termekUjOldal");
         });
+    }
+    termekDbKosarba(){
+        
     }
 }
 export default KezdolapView;
