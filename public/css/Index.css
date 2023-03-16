@@ -1,24 +1,72 @@
-article {
-    width: 90%;
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+main
+{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "n n n n n n n" 
+                         "as as a a a a a"
+                         "f f f f f f f";
+}
+
+aside
+{
+    grid-area: as;
+    border: 1px solid black;
+}
+
+article 
+{
+    border: 1px solid black;
+    width: 100%;
+    grid-area: a;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: auto;
 }
 
-.termek {
+nav
+{
+    grid-area: n;
+}
+
+footer
+{
+    grid-area: f;
+}
+
+.termek 
+{
+    /* background-color: silver; */
     width: 90%;
-    border: 2px solid black;
-    border-radius: 25px;
     margin: auto;
-    padding: 10px;
+    margin: 10px;
+    /* height: 700px; */
+    border: 1px solid black;
+
+}
+
+.kattintasiFelulet
+{
     cursor: pointer;
-    text-align: center;
 }
 
 .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    padding: 10px;
+    margin: 10px;
+    /* margin: auto; */
+}
+
+.ar
+{
     margin: auto;
+    float: left;
 }
 
 .wrapper span {
@@ -27,11 +75,27 @@ article {
 
 .wrapper button {
     margin: auto;
-    padding: auto;
+}
+
+.mennyisegTarolo button, .mennyisegTarolo span
+{
+    margin: auto;
+    float: right;
+    /* margin: 10px; */
+    padding: 10px;
+}
+
+.kosarGomb
+{
+    align-content: end;
+    align-self: end;
+    width: 100%;
+    text-align: center;
 }
 
 img {
     width: 100%;
+    margin: auto;
 }
 
 @media screen and (max-width: 1200px) {

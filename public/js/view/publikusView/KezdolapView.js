@@ -9,18 +9,22 @@ class KezdolapView {
         this.#menny = 1;
         szuloElem.append(`
         <div class="termek">
-            <div id="${elem.id}">
-                <h2>Név: ${elem.megnevezes}</h2>
-                <img src="${elem.kep}">
-                <h3>Ár: ${elem.ar} Ft</h3>
+            <div id="${elem.id}" class="kattintasiFelulet">
+            <img src="${elem.kep}">
+            <h6>Név: ${elem.megnevezes}</h3>
             </div>
             <div class="wrapper">
-                <button id="minus${elem.id}">-</button>
-                <span id="number${elem.id}">1</span>
-                <button id="plus${elem.id}">+</button>
+                <h4 class="ar">Ár: ${elem.ar} Ft</h3>
+                <div class="mennyisegTarolo">
+                    <button id="minus${elem.id}">-</button>
+                    <span id="number${elem.id}">1</span>
+                    <button id="plus${elem.id}">+</button>
+                </div>
             </div>
-            <button id="gomb${elem.id}">Kosárba</button>
-        </div>
+            <div>
+                <button id="gomb${elem.id}" class="kosarGomb">Kosárba</button>
+            </div>
+            </div>
             `);
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);

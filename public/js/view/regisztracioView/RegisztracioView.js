@@ -21,10 +21,10 @@ class RegisztracioView
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" required autofocus autocomplete="email">
                 
                 <label for="jelszo" class="mt-1 form-label">Jelszó:</label>
-                <input type="password" class="form-control" id="jelszo" name="jelszo" placeholder="Jelszó" required autofocus autocomplete="jelszo">
+                <input type="password" class="form-control" id="jelszo" name="jelszo" placeholder="Jelszó" required autocomplete="uj-jelszo">
                 
                 <label for="jelszoUjra" class="mt-1 form-label">Jelszó újra:</label>
-                <input type="password" class="form-control" id="jelszoUjra" name="jelszoUjra" placeholder="Jelszó újra" required autofocus autocomplete="jelszo">
+                <input type="password" class="form-control" id="jelszoUjra" name="jelszoUjra" placeholder="Jelszó újra" required autocomplete="uj-jelszo">
 
                 <label for="telefonszam" class="mt-1 form-label">Telefonszám:</label>
                 <div class="input-group flex-nowrap">

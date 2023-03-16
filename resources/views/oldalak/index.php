@@ -29,6 +29,10 @@
         </header>
         <article>
         </article>
+        <aside>
+            <p>Kereső</p>
+            <p>Rendezés</p>
+        </aside>
         <footer>
 
         </footer>

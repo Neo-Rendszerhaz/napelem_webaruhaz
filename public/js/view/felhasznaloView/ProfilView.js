@@ -8,23 +8,42 @@ class ProfilView
         const cimzes=`<p>${elem.iranyitoszam+" "+elem.varos+" "+elem.kozterulet_neve+" "+elem.kozterulet_jellege+" "+elem.hely_hazszam+" "+elem.epulet+" "+elem.emelet+" "+elem.ajto+" "+elem.kapucsengo}</p>`;
 
         
-        const profilAdat = `<p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>
+        const maganszemelyAdat = `<p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>
         <p>Email cím: ${elem.email}</p>
         <p>Telefonszám: +36${elem.telefonszam}</p>`;
 
+        const cegAdat=`
+        <p>Cégnév: ${elem.cegnev}</p>
+        <p>Adószám: ${elem.adoszam}</p>
+        `;
+
+        const szerkesztesGomb=`<div class="gomb"><button id="cimSzerkesztes" class="szerkesztes">Szerkesztés</button></div>`;
+
         if(elem.szamlazasi_cim==null)
         {
-            $(profilDiv).append(`${profilAdat}
-            <button id="cimSzerkesztes" class="szerkesztes">Szerkesztés</button></div>`);
+            console.log(maganszemelyAdat);
+            if(elem.jelleg==="M")
+            {
+                $(profilDiv).append(maganszemelyAdat, szerkesztesGomb);
+            }
+            else if(elem.jelleg==="C")
+            {
+                $(profilDiv).append(maganszemelyAdat, cegAdat, szerkesztesGomb);   
+            }
         }
 
         if(elem.tipus=="szamlazas")
         {
             $(cimDiv).append(`<div id=szamlazas>
-            <h3>Számlázási cím:</h3>${cimzes}
-            <div class="gomb"><button id="cimSzerkesztes" class="szerkesztes">Szerkesztés</button></div></div>`);
-            $(profilDiv).append(`${profilAdat}
-            <button id="profilSzerkesztes" class="szerkesztes">Szerkesztés</button></div>`);
+            <h3>Számlázási cím:</h3>${cimzes, szerkesztesGomb}`);
+            if(elem.jelleg==="M")
+            {
+                $(profilDiv).append(maganszemelyAdat, szerkesztesGomb);
+            }
+            else if(elem.jelleg==="C")
+            {
+                $(profilDiv).append(maganszemelyAdat, cegAdat, szerkesztesGomb);   
+            }
         }
         
         if(elem.tipus=="szallitas1" && elem.szallitasi_cim_1!=null)

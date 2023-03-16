@@ -111,7 +111,6 @@ class FelhasznaloController extends Controller
         $felhasznaloTabla=DB::table("felhasznalo as f")
         ->select("*")
         ->join("rendeles as r", "r.felhasznalo_id", "=", "f.felhasznalo_id")
-        ->join("rendeles_tetel as rt", "rt.rendeles_szam", "=", "r.rendeles_szam")
         ->where("f.felhasznalo_id", $felhasznalo->felhasznalo_id)
         ->get();
 
@@ -147,14 +146,6 @@ class FelhasznaloController extends Controller
         $felhasznalo= new Felhasznalo();
         $felhasznalo->email = $request->email;
 
-        // $request->validate([
-        //     'vezeteknev' => ['required', 'string', 'max:255'],
-        //     'keresztnev' => ['required', 'string', 'max:255'],
-        //     'telefonszam' => ['required', 'string', 'max:9'],
-        //     'jogosultsag' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:'.Felhasznalo::class],
-        //     'jelszo' => ['required', 'confirmed', Rules\Password::defaults()],
-        // ]);
         $validator = Validator::make($request->all(), [
             'jelszo' => [ 'required', 'string', 
             Password::min(8)
@@ -167,8 +158,7 @@ class FelhasznaloController extends Controller
         if ($validator->fails()) {
             return response()->json(["message" => $validator->errors()->all()], 400);
         }
-        $felhasznalo->jelszo = $request->jelszo;
-        // $user->password = Hash::make($request->password);
+        $felhasznalo->jelszo = Hash::make($request->password);
         $felhasznalo->vezeteknev = $request->vezeteknev;
         $felhasznalo->keresztnev = $request->keresztnev;
         $felhasznalo->telefonszam = $request->telefonszam;

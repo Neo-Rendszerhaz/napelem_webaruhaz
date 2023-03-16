@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+#neoLogo
+{
+    width: 88px;
+}
+
 footer
 {
     text-align: center;

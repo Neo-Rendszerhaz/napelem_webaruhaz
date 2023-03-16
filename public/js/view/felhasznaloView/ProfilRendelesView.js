@@ -4,8 +4,6 @@ class ProfilRendelesView
     constructor(elem, szuloElem)
     {
         this.#elem=elem
-        console.log($.isEmptyObject(elem));
-        console.log(elem);
         
         if(elem.length!==0)
         {
