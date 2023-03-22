@@ -24,7 +24,6 @@
             </nav>
         </header>
         <article>
-            <div id="egyTermek"></div>
         </article>
         <footer></footer>
     </main>

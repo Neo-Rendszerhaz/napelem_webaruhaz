@@ -32,8 +32,7 @@
         <aside>
             <div id="kereso">
             </div>
-            <div>    
-                <p>Rendezés</p>
+            <div id="szuro">    
             </div>
         </aside>
         <footer>

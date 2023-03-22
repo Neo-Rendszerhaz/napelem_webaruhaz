@@ -15,15 +15,15 @@
         </div>
 
         <!-- Vezetéknév -->
-            <div class="row mt-3">
-                <div class="col-3">
-                    <label for="vezeteknev" class=" col-form-label">Vezetéknév</label>
-                </div>
-                <div class="col-md">
-                    <x-text-input id="vezeteknev" class="w-full" type="text" name="vezeteknev" placeholder="Vezetéknév" :value="old('vezeteknev')" required autofocus autocomplete="vezeteknev" />
-                    <x-input-error :messages="$errors->get('vezeteknev')" class="mt-1" />
-                </div>
+        <div class="row mt-3">
+            <div class="col-3">
+                <label for="vezeteknev" class=" col-form-label">Vezetéknév</label>
             </div>
+            <div class="col-md">
+                <x-text-input id="vezeteknev" class="w-full" type="text" name="vezeteknev" placeholder="Vezetéknév" :value="old('vezeteknev')" required autofocus autocomplete="vezeteknev" />
+                <x-input-error :messages="$errors->get('vezeteknev')" class="mt-1" />
+            </div>
+        </div>
         
         <!-- Keresztnév -->
         <div class="row mt-3">

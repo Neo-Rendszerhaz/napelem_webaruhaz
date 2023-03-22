@@ -3,15 +3,95 @@
     box-sizing: border-box;
 }
 
+main
+{
+    display: grid;
+    grid-template-areas: "n n n n n n n"
+                         "a a a a a as as"
+                         "f f f f f f f";
+}
+
+nav
+{
+    grid-area: n;
+}
+
 article
 {
+    grid-area: a;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
     width: 80%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+}
+
+aside
+{
+    grid-area: as;
+}
+
+footer
+{
+    grid-area: f;
+}
+
+.termek
+{
+    display: flex;
+    flex: 0 0 30%;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .termek img
 {
     width: 40%;
+}
+
+.overlay 
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.popup {
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 5px;
+  width: 40%;   
+  position: relative;
+  display: block;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bold;
+
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
 }

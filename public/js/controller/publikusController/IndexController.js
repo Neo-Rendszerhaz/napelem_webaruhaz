@@ -32,11 +32,10 @@ class IndexController
         })
     }
 
-    ujOldal(tomb) {
+    ujOldal(tomb) 
+    {
         let jsonString = JSON.stringify(tomb);
         window.localStorage.setItem("termek", jsonString);
-
-        
     }
 
     kezdolapAdatok(tomb) {
