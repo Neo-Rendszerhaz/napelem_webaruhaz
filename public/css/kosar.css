@@ -67,7 +67,7 @@ footer
   border-radius: 5px;
   width: 40%;   
   position: relative;
-  display: block;
+  /* display: block; */
 }
 
 .popup h2 {
@@ -94,4 +94,10 @@ footer
 .popup .content {
   max-height: 30%;
   overflow: auto;
+}
+
+#formTartalom
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
