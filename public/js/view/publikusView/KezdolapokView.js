@@ -3,7 +3,8 @@ import KezdolapView from "./KezdolapView.js";
 class KezdoLapokView 
 {
     constructor(jsonTomb, szuloElem) 
-    {
+    {   
+        this.checkedTomb
         $("#kereso").html(`
         <label>Kereső</label>
         <input type="text" id="keresoMezo" placeholder="termék keresése" title="Írja be a termék nevét">`);
@@ -13,6 +14,12 @@ class KezdoLapokView
         <button id="novekvoABC">ABC növekvő</button>
         <button id="csokkenoABC">ABC csökkenő</button>
         `)
+        let tempArr = []
+        this.tombtomb = jsonTomb.termekek
+        this.tombtomb.forEach(termek => {
+            tempArr.push(termek.marka)
+        }); 
+        tempArr = [...new Set(tempArr)]
         // <select name="szures" id="szures">
         //     <option value="abcNovekvo">ABC szerinti növekvő sorrend</option>
         //     <option value="abcCsokkeno">ABC szerinti csökkenő sorrend</option>
@@ -57,21 +64,70 @@ class KezdoLapokView
             // console.log(tomb.termekek);
             // tomb.termekek.sort();
         });
-
+        this.kereso=$("#keresoMezo").keyup(this.kereses)
         $(`#csokkenoABC`).on("click", ()=>
         {
             console.log("csökkenő");
         });
+        this.markaInputMegj(tempArr);
     }
 
+    markaInputMegj(markaTomb){
+        $("#szuro").append("<div id='markaSzuro'></div>")
+        markaTomb.forEach(marka => {
+            $("#markaSzuro").append(` 
+            <input type="checkbox" id="${marka.replace(/\s/g, '')}" name="${marka}" value="${marka}">
+            <label for="${marka.replace(/\s/g, '')}">${marka}</label><br>`)
+            $(`#${marka.replace(/\s/g, '')}`).on("click",()=>{
+                this.markaSzuroVizsgalas()
+            })
+        });
+    }
+    markaSzuroVizsgalas(){  
+        this.checkedTomb = []
+        const inputMarkaTomb = $("#markaSzuro>input");
+        for (let index = 0; index < inputMarkaTomb.length; index++) {
+            if(inputMarkaTomb[index].checked){
+                this.checkedTomb.push(inputMarkaTomb[index].value.replace(/\s/g, ''))
+            }
+        }
+        this.szurtTermekJelenit()
+    }
+
+    szurtTermekJelenit(){
+        if(this.checkedTomb.length>0){
+            let megjelenitendoElem = [];
+        this.tombtomb.forEach(termek => {
+            for (let index = 0; index < this.checkedTomb.length; index++) {
+                if(termek.marka.replace(/\s/g, '') === this.checkedTomb[index]){
+                    megjelenitendoElem.push($(`#${termek.id}`).parent());                   
+                }
+            }
+            $(`#${termek.id}`).parent().hide()
+        });
+        megjelenitendoElem.forEach(elem => {
+            console.log(elem)
+            elem.show();
+        });
+        }
+        else{
+            this.tombtomb.forEach(termek => {
+                $(`#${termek.id}`).parent().show()
+            });
+        }
+        
+
+    }
     tombMegjelenit(tomb, szuloElem)
     {
         tomb.forEach(termek => 
         {   
             new KezdolapView(termek, szuloElem);
-            this.kereso=$("#keresoMezo").keyup(this.kereses)
+            
         });
     }
+
+
 
     kereses(){
         var input, filter, cim, i, txtValue, TDiv, KDiv;
