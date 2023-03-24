@@ -11,7 +11,7 @@ class AdminRendelesController{
             AFM.adatModosit("/rendelesek",event.detail,event.detail.rendeles_szam)
         })
         $(window).on("rendelesTorles",(event)=>{
-            let figyelmeztetes = confirm("Biztosan szeretné törölni?");
+            let figyelmeztetes = confirm("Biztosan szeretné törölni a rendelés?");
             if(figyelmeztetes === true){
                 AFM.adatTorol(`/rendelesekTetellel/${event.detail.rendeles_szam}`,event.detail)
                 AFM.adatTorol(`/rendelesek/${event.detail.rendeles_szam}`,event.detail)
