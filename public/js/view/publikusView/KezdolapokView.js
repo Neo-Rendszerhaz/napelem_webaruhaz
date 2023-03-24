@@ -2,68 +2,88 @@ import KezdolapView from "./KezdolapView.js";
 
 class KezdoLapokView 
 {
-    constructor(jsonTomb, szuloElem) 
+    constructor(tomb, szuloElem)
     {   
         this.checkedTomb
+
         $("#kereso").html(`
         <label>Kereső</label>
         <input type="text" id="keresoMezo" placeholder="termék keresése" title="Írja be a termék nevét">`);
         
         $(`#szuro`).html(`
         <label for="szures">Szűrés</label>
-        <button id="novekvoABC">ABC növekvő</button>
-        <button id="csokkenoABC">ABC csökkenő</button>
+        <select name="szures" id="szures">
+            <option value="abcNovekvo">ABC szerint növekvő</option>
+            <option value="abcCsokkeno">ABC szerint csökkenő</option>
+            <option value="arNovekvo">Ár szerint növekvő</option>
+            <option value="arCsokkeno">Ár szerint csökkenő</option>
+        </select>
         `)
+
         let tempArr = []
-        this.tombtomb = jsonTomb.termekek
+        this.tombtomb = tomb
         this.tombtomb.forEach(termek => {
             tempArr.push(termek.marka)
         }); 
         tempArr = [...new Set(tempArr)]
-        // <select name="szures" id="szures">
-        //     <option value="abcNovekvo">ABC szerinti növekvő sorrend</option>
-        //     <option value="abcCsokkeno">ABC szerinti csökkenő sorrend</option>
-        // </select>
 
-        const tomb=[];
-        const megenevezesTomb=[];
-        const arTomb=[];
+        this.tombMegjelenit(tomb, szuloElem)
 
-        for (let i = 0; i < jsonTomb.termekek.length; i++) 
+        $('#szures').on('change', function () 
         {
-            tomb.push(jsonTomb.termekek[i]);
-        }
+            var ertek = $("#szures option:selected").val();
+            console.log(ertek);
+            if(ertek==="abcNovekvo")
+            {
+                tomb.sort(function(a,b)
+                {
+                    if(a.megnevezes>b.megnevezes)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -1
+                    }
+                });
+                console.log(tomb);
+            }
+            else if(ertek==="abcCsokkeno")
+            {
+                tomb.sort(function(a,b)
+                {
+                    if(a.megnevezes<b.megnevezes)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -1
+                    }
+                });
+            }
+            else if(ertek==="arNovekvo")
+            {
+                tomb.sort(function(a,b)
+                {
+                    return a.ar-b.ar
+                });
+            }
+            else if(ertek==="arCsokkeno")
+            {
+                tomb.sort(function(a,b)
+                {
+                    return b.ar-a.ar
+                });
+            }
 
-        this.tombMegjelenit(tomb, szuloElem);
-
-
-        for (let i = 0; i < tomb.length; i++) 
-        {
-            megenevezesTomb.push(tomb[i].megnevezes);  
-            arTomb.push(tomb[i].ar);  
-        }
-        console.log(arTomb);
-
-        const novekvoABC=megenevezesTomb.sort();
-        const novekvoAr=arTomb.sort(function(a, b){return a-b});
-        // const csokkenoAr=novekvoAr.reverse();
-        
-
-        // const csokkeno=novekvo.reverse();
-        // console.log(novekvo);
-        // console.log(csokkeno);
-
-        console.log(novekvoAr);
-        // console.log(csokkenoAr);
-
-        $(`#novekvoABC`).on("click", ()=>
-        {
-            console.log("növekvő");
-            
-            this.tombMegjelenit(novekvoABC, szuloElem);
-            // console.log(tomb.termekek);
-            // tomb.termekek.sort();
+            $(szuloElem).html("");
+            tomb.forEach(termek=>
+            {
+                new KezdolapView(termek, szuloElem)  
+            })
         });
+
         this.kereso=$("#keresoMezo").keyup(this.kereses)
         $(`#csokkenoABC`).on("click", ()=>
         {
@@ -118,13 +138,27 @@ class KezdoLapokView
         
 
     }
+
     tombMegjelenit(tomb, szuloElem)
     {
-        tomb.forEach(termek => 
-        {   
-            new KezdolapView(termek, szuloElem);
-            
+        $(szuloElem).html("");
+
+        tomb.sort(function(a,b)
+        {
+            if(a.megnevezes>b.megnevezes)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1
+            }
         });
+
+        tomb.forEach(termek=>
+        {
+            new KezdolapView(termek, szuloElem)  
+        })
     }
 
 

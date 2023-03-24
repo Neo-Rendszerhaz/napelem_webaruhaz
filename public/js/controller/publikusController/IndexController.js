@@ -39,8 +39,9 @@ class IndexController
     }
 
     kezdolapAdatok(tomb) {
+        let tombTermekek=tomb.termekek;
         const szuloelem = $("article");
-        new KezdoLapokView(tomb, szuloelem);
+        new KezdoLapokView(tombTermekek, szuloelem);
     }
 
     termekekLocalStorageba() 
