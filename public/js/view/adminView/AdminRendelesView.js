@@ -14,9 +14,10 @@ class AdminRendelesView {
         <td id="${this.#obj.rendeles_szam}allapot">${this.#obj.allapot}</td>
         <td><button id=${this.#obj.rendeles_szam}MegJ>Megjelenítés</button></td>
         <td id="${this.#obj.rendeles_szam}modositasHely"><button id=${this.#obj.rendeles_szam}Mod>Módosítás</button></td>
-        <td><button id=${this.#obj.rendeles_szam}Tor>Törlés</button></td>
         </tr>`)
-
+        if(this.#obj.allapot==="FL"){
+          $(`#${this.#obj.rendeles_szam}rendeles`).append(`<td><button id=${this.#obj.rendeles_szam}Tor>Törlés</button></td>`)
+        }
         this.modal = $(".overlay");
             this.spanElem = $("#bezar");
     $(`#${this.#obj.rendeles_szam}MegJ`).on('click', () => {
@@ -45,25 +46,21 @@ class AdminRendelesView {
     else if(this.#obj.allapot ==="FA"){
       this.szoveg +=`
         <option value="FA">FA</option>
-        <option value="FL">FL</option>
         <option value="RL">RL</option>`
     }
     else if(this.#obj.allapot ==="RL"){
       this.szoveg +=`
         <option value="RL">RL</option>
-        <option value="FA">FA</option>
         <option value="KA">KA</option>`
     }
     else if(this.#obj.allapot ==="KA"){
       this.szoveg +=`
         <option value="KA">KA</option>
-        <option value="RL">RL</option>
         <option value="T">T</option>`
     }
     else if(this.#obj.allapot ==="T"){
       this.szoveg +=`
-        <option value="T"></option>
-        <option value="KA"></option>`
+        <option value="T"></option>`
       }
       this.szoveg+="</select>"
     return this.szoveg
@@ -111,6 +108,9 @@ class AdminRendelesView {
         this.#obj.allapot = this.e;
         $(`#${this.#obj.rendeles_szam}allapot`).html(this.e)
         this.sajatEvent("rendAllapotMod")
+        if(this.#obj.allapot!="FL"){
+          $(`#${this.#obj.rendeles_szam}Tor`).remove()
+        }
       })
     })
   }
