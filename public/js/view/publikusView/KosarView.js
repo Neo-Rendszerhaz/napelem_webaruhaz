@@ -21,7 +21,7 @@ class KosarView
             $(".tartalom").html(`
             <h3>Szállítási cím megadása</h3>
             <form id="szallitasiCim">
-            <div class="form-group">
+            <div id="formTartalom" class="form-group">
 
                 <div class="row mt-3">
                     <div class="col-3">
@@ -103,11 +103,16 @@ class KosarView
                         <input id="kapucsengo" class="w-full" type="text" name="kapucsengo" placeholder="Kapucsengő" :value="old('kapucsengo')" required ="kapucsengo" />
                     </div>
                 </div>
-
-                <input type="button" class="btn btn-primary mt-2" id="rendelesVeglegesites" value="Rendelés véglegesítése">
+                    <input type="button" id="rendelesVeglegesites" class="btn btn-primary mt-2"  value="Rendelés véglegesítése">
             </div>
             </form>
             `)
+
+            $(`#rendelesVeglegesites`).on("click", ()=>
+            {
+                //console.log("rendelesVeglegesites KATT");
+                this.kattintasTrigger("rendelesVeglegesites")
+            });
         });
 
         $(`#bezar`).on("click", ()=>
@@ -115,6 +120,8 @@ class KosarView
             console.log("bezár");
             $(".overlay").hide();
         });
+
+        
     }
 
     kattintasTrigger(esemenyNeve)
