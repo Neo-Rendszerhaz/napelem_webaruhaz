@@ -1,12 +1,11 @@
 import KosarView from "./KosarView.js";
 
-class KosarakView 
-{
-    #rendelesAdatok={};
-    #tomb=[]
-    constructor(tomb, szuloElem) 
-    {
-        this.#tomb=tomb
+class KosarakView {
+    #rendelesCimAdatok = {};
+    #tomb = []
+    constructor(tomb, szuloElem) {
+        this.#tomb = tomb
+        this.#rendelesCimAdatok = { iranyitoszam: "", varos: "", kozterulet_neve: "", kozterulet_jellege: "", hely_hazszam: "", hely_haz_jelleg: "", epulet: "", emelet: "", ajto: "", kapucsengo: "" }
         $(`aside`).html(`
         <button id="rendelesLeadasGomb">Rendelés leadás</button>
         <div class="overlay">
@@ -22,7 +21,7 @@ class KosarakView
                                 <label for="iranyitoszam" class=" col-form-label">Irányítószám</label>
                             </div>
                             <div class="col-md">
-                                <input id="iranyitoszam" class="w-full" type="text" name="iranyitoszam" placeholder="1234" :value="old('iranyitoszam')" required ="iranyitoszam" />
+                                <input id="iranyitoszam" class="w-full" type="text" name="iranyitoszam" placeholder="1234" required ="iranyitoszam" />
                             </div>
                         </div>
         
@@ -31,7 +30,7 @@ class KosarakView
                                 <label for="varos" class=" col-form-label">Város</label>
                             </div>
                             <div class="col-md">
-                                <input id="varos" class="w-full" type="text" name="varos" placeholder="Város" :value="old('varos')" required ="varos" />
+                                <input id="varos" class="w-full" type="text" name="varos" placeholder="Város" required ="varos" />
                             </div>
                         </div>
         
@@ -40,7 +39,7 @@ class KosarakView
                                 <label for="kozteruletNeve" class=" col-form-label">Közterület neve</label>
                             </div>
                             <div class="col-md">
-                                <input id="kozteruletNeve" class="w-full" type="text" name="kozteruletNeve" placeholder="Közterület neve" :value="old('kozteruletNeve')" required ="kozteruletNeve" />
+                                <input id="kozteruletNeve" class="w-full" type="text" name="kozteruletNeve" placeholder="Közterület neve" required ="kozteruletNeve" />
                             </div>
                         </div>
         
@@ -49,16 +48,27 @@ class KosarakView
                                 <label for="kozteruletJellege" class=" col-form-label">Közterület jellege</label>
                             </div>
                             <div class="col-md">
-                                <input id="kozteruletJellege" class="w-full" type="text" name="kozteruletJellege" placeholder="Közterület jellege" :value="old('kozteruletJellege')" required ="kozteruletJellege" />
+                                <input id="kozteruletJellege" class="w-full" type="text" name="kozteruletJellege" placeholder="Közterület jellege" required ="kozteruletJellege" />
                             </div>
                         </div>
-        
+
+                        <div class="form-group">
+                            <div class=" form-check form-check-inline">
+                                <input id="hazJelleg" class="form-check-input" type="radio" name="helyHazJelleg" value="hsz" checked>
+                                <label for="hazJelleg" class="form-check-label">Házszám</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input id="helyrajzJelleg" class="form-check-input" type="radio" name="helyHazJelleg" value="hrsz">
+                                <label for="helyrajzJelleg" class="form-check-label">Helyrajzi szám</label>
+                            </div>
+                        </div>
+
                         <div class="row mt-3">
                             <div class="col-3">
                                 <label for="helyHazSzam" class=" col-form-label">Ház / helyrajzi szám</label>
                             </div>
                             <div class="col-md">
-                                <input id="helyHazSzam" class="w-full" type="text" name="helyHazSzam" placeholder="Ház / helyrajzi szám" :value="old('helyHazSzam')" required ="helyHazSzam" />
+                                <input id="helyHazSzam" class="w-full" type="text" name="helyHazSzam" placeholder="Ház / helyrajzi szám" required ="helyHazSzam" />
                             </div>
                         </div>
         
@@ -67,7 +77,7 @@ class KosarakView
                                 <label for="epulet" class=" col-form-label">Épület</label>
                             </div>
                             <div class="col-md">
-                                <input id="epulet" class="w-full" type="text" name="epulet" placeholder="Épület" :value="old('epulet')" required ="epulet" />
+                                <input id="epulet" class="w-full" type="text" name="epulet" placeholder="Épület" required ="epulet" />
                             </div>
                         </div>
         
@@ -76,7 +86,7 @@ class KosarakView
                                 <label for="emelet" class=" col-form-label">Emelet</label>
                             </div>
                             <div class="col-md">
-                                <input id="emelet" class="w-full" type="text" name="emelet" placeholder="Emelet" :value="old('emelet')" required ="emelet" />
+                                <input id="emelet" class="w-full" type="text" name="emelet" placeholder="Emelet" required ="emelet" />
                             </div>
                         </div>
         
@@ -85,20 +95,26 @@ class KosarakView
                                 <label for="ajto" class=" col-form-label">Ajtó szám</label>
                             </div>
                             <div class="col-md">
-                                <input id="ajto" class="w-full" type="text" name="ajto" placeholder="Ajtó szám" :value="old('ajto')" required ="ajto" />
+                                <input id="ajto" class="w-full" type="text" name="ajto" placeholder="Ajtó szám" required ="ajto" />
                             </div>
                         </div>
         
                         <div class="row mt-3">
                             <div class="col-3">
-                                <label for="kapucsengo" class=" col-form-label">Kapucsengő</label>
+                                <label for="kapucsengo" class="col-form-label">Kapucsengő</label>
                             </div>
                             <div class="col-md">
-                                <input id="kapucsengo" class="w-full" type="text" name="kapucsengo" placeholder="Kapucsengő" :value="old('kapucsengo')" required ="kapucsengo" />
+                                <input id="kapucsengo" class="w-full" type="text" name="kapucsengo" placeholder="Kapucsengő" required ="kapucsengo" />
                             </div>
                         </div>
-                        <input type="checkbox" id="azonosCim" name="azonosCim" value="azonosCim">
-                        <label for="azonosCim">Számlázási és szállítási cím megegyezik</label><br>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <input id="azonosCim" class="w-full" type="checkbox" name="azonosCim">
+                            </div>
+                            <div class="col-md">
+                                <label for="azonosCim" class="col-form-label">Számlázási és szállítási cím megegyezik</label><br>
+                            </div>
+                        </div>
                         </div>
                         <input type="button" id="rendelesVeglegesites" class="btn btn-primary mt-2"  value="Rendelés véglegesítése">
                     </form>
@@ -114,8 +130,7 @@ class KosarakView
 
         console.log(tomb);
 
-        tomb.forEach(adat => 
-        {
+        tomb.forEach(adat => {
             new KosarView(adat, this.divElem);
         });
 
@@ -123,49 +138,63 @@ class KosarakView
         // console.log(this.tombMentes);
         // this.#rendelesTermekekAdatok={megnevezes:"", cikkszam:"", gyartoi_cikkszam:"", marka:"", garancia:"", leiras:""};
 
-        $(`#rendelesLeadasGomb`).on("click", ()=>
-        {
+        $(`#rendelesLeadasGomb`).on("click", () => {
             $(".overlay").show();
+        });
+
+        $(`#rendelesVeglegesites`).on("click", () => {
+            this.rendelesMent()
+            console.log(this.rendelesMent())
             this.kattintasTrigger("rendelesVeglegesites")
         });
 
-        $(`#rendelesVeglegesites`).on("click", ()=>
-        {
-            //console.log("rendelesVeglegesites KATT");
-        });
-
-        $(`#bezar`).on("click", ()=>
-        {
+        $(`#bezar`).on("click", () => {
             console.log("bezár");
             $(".overlay").hide();
         });
     }
 
-    objektbe(tomb) 
-    {
+    objektbe(tomb) {
         var object = {};
-        for (var i = 0; i < tomb.length; ++i)
-        {
+        for (var i = 0; i < tomb.length; ++i) {
             object[i] = tomb[i];
         }
         return object;
-      }
-
-    rendelesMent()
-    {
-        this.#rendelesAdatok.megnevezes=$("#megnevezes").val();
-        this.#rendelesAdatok.cikkszam=$("#cikkszam").val();
-        this.#rendelesAdatok.gyartoi_cikkszam=$("#gyartoi_cikkszam").val();
-        this.#rendelesAdatok.marka=$("#marka").val();
-        this.#rendelesAdatok.garancia=$("#garancia").val();
-        this.#rendelesAdatok.leiras=$("#leiras").val();
     }
 
-    kattintasTrigger(esemenyNeve)
-    {
-        console.log("triggerben", esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve, {detail: {"termekek":this.tombMentes, /* "cim": */}});
-        window.dispatchEvent(esemeny);
+    rendelesMent() {
+        this.#rendelesCimAdatok.iranyitoszam = $("#iranyitoszam").val();
+        this.#rendelesCimAdatok.varos = $("#varos").val();
+        this.#rendelesCimAdatok.kozterulet_neve = $("#kozteruletNeve").val();
+        this.#rendelesCimAdatok.kozterulet_jellege = $("#kozteruletJellege").val();
+        this.#rendelesCimAdatok.hely_hazszam = $("#helyHazSzam").val();
+        this.#rendelesCimAdatok.hely_haz_jelleg = $("input[name='helyHazJelleg']:checked").val();
+        //     if ($("#epulet").length === 0) {
+        //         $("#epulet").val() == ""
+        //     } else {
+        //         this.#rendelesCimAdatok.epulet = $("#epulet").val();
+        //     }
+        //     if ($("#emelet").length === 0) {
+        //         $("#emelet").val() == ""
+        //     } else {
+        //         this.#rendelesCimAdatok.emelet = $("#emelet").val();
+        //     }
+        //     if ($("#ajto").length === 0) {
+        //         $("#ajto").val() == ""
+        //     } else {
+        //         this.#rendelesCimAdatok.ajto = $("#ajto").val();
+        //     }
+        //     if ($("#kapucsengo").length === 0) {
+        //         $("#kapucsengo").val() == ""
+        //     } else {
+        //         this.#rendelesCimAdatok.kapucsengo = $("#kapucsengo").val();
+        //     }
+        }
+
+        kattintasTrigger(esemenyNeve) {
+            console.log("triggerben", esemenyNeve);
+            const esemeny = new CustomEvent(esemenyNeve, { detail: {/* "termekek":this.tombMentes ,*/ "cim": this.#rendelesCimAdatok } });
+            window.dispatchEvent(esemeny);
+        }
     }
-}
 export default KosarakView;

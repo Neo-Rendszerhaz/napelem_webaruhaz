@@ -22,17 +22,22 @@ class CimController extends Controller
 
     public function store(Request $request)
     {
+        $object = json_decode(json_encode($request->cim), FALSE);
+        //dd($object->cim->iranyitoszam);
+        
+
+        
         $cim= new Cim();
-        $cim->iranyitoszam = $request->iranyitoszam;
-        $cim->varos = $request->varos;
-        $cim->kozterulet_neve = $request->kozterulet_neve;
-        $cim->kozterulet_jellege = $request->kozterulet_jellege;
-        $cim->hely_hazszam = $request->hely_hazszam;
-        $cim->hely_haz_jelleg = $request->hely_haz_jelleg;
-        $cim->epulet = $request->epulet;
-        $cim->emelet = $request->emelet;
-        $cim->ajto = $request->ajto;
-        $cim->kapucsengo = $request->kapucsengo;
+        $cim->iranyitoszam = $object->cim->iranyitoszam;
+        $cim->varos = $object->cim->varos;
+        $cim->kozterulet_neve = $object->cim->kozterulet_neve;
+        $cim->kozterulet_jellege = $object->cim->kozterulet_jellege;
+        $cim->hely_hazszam = $object->cim->hely_hazszam;
+        $cim->hely_haz_jelleg = $object->cim->hely_haz_jelleg;
+        $cim->epulet = $object->cim->epulet;
+        $cim->emelet = $object->cim->emelet;
+        $cim->ajto = $object->cim->ajto;
+        $cim->kapucsengo = $object->cim->kapucsengo;
         $cim->save();
     }
 

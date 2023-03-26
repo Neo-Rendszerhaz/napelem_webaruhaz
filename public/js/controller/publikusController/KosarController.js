@@ -25,7 +25,8 @@ class KosarController
             // console.log(event.detail[0].megnevezes);
 
             console.log(event.detail);
-            adatFeldolgozModel.adatUj("/termekek", {"termekek":event.detail});
+            adatFeldolgozModel.adatUj("/cimek", {"cim":event.detail});
+            //adatFeldolgozModel.adatUj("/termekek", {"termekek":event.detail});
             // for (let i = 0; i < event.detail.length; i++) 
             // {
             //     console.log("valami");    

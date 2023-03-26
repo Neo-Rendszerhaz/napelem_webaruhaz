@@ -76,7 +76,7 @@ Route::middleware(["admin"])->group(function()
     
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
-    Route::post("/cimek", [CimController::class, "store"]);
+    
     Route::put("/cimek/{cim_id}", [CimController::class, "update"]);
     Route::delete("/cimek/{cim_id}", [CimController::class, "destroy"]);
 
@@ -129,9 +129,11 @@ Route::middleware(["felhasznalo"])->group(function()
 {    
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
-    Route::post("/termekek", [TermekController::class, "store"]);
+    
 });
 
+Route::post("/cimek", [CimController::class, "store"]);
+Route::post("/termekek", [TermekController::class, "store"]);
  /* VÉGPONTOK */
 
 require __DIR__.'/auth.php';
