@@ -121,7 +121,6 @@ Route::middleware(["admin"])->group(function()
 
     Route::get("/termekek", [TermekController::class, "index"]);
     Route::get("/termekek/{termek_id}", [TermekController::class, "show"]);
-    Route::post("/termekek", [TermekController::class, "store"]);
     Route::put("/termekek/{termek_id}", [TermekController::class, "update"]);
     Route::delete("/termekek/{termek_id}", [TermekController::class, "destroy"]);
 });
@@ -130,6 +129,7 @@ Route::middleware(["felhasznalo"])->group(function()
 {    
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
+    Route::post("/termekek", [TermekController::class, "store"]);
 });
 
  /* VÉGPONTOK */

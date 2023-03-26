@@ -4,11 +4,11 @@ import KosarakView from "../../view/publikusView/KosarakView.js";
 
 class KosarController 
 {
-    #rendelesAdatok={};
     constructor() 
     {        
         this.kosar=[];
-        this.#rendelesAdatok={megnevezes:"", cikkszam:"", gyartoi_cikkszam:"", marka:"", garancia:"", leiras:""};
+        this.termekMent=[];
+        
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
@@ -19,30 +19,37 @@ class KosarController
         }
 
         this.kosarAdatok(this.kosar)
-        $(window).on("rendelesVeglegesites", ()=>
-        {
-            console.log(this.kosar);
-            adatFeldolgozModel.adatUj("/termekek", this.kosar);
 
+        $(window).on("rendelesVeglegesites", (event)=>
+        {
+            // console.log(event.detail[0].megnevezes);
+
+            console.log(event.detail);
+            adatFeldolgozModel.adatUj("/termekek", {"termekek":event.detail});
+            // for (let i = 0; i < event.detail.length; i++) 
+            // {
+            //     console.log("valami");    
+            // }
+
+
+            // this.termekMent.push(event.detail)
+            // console.log(this.termekMent);
+
+            // for (let i = 0; i < this.termekMent.length; i++) 
+            // {
+            //     console.log(this.termekMent[i[megnevezes]]);
+            //     // adatFeldolgozModel.adatUj("/termekek", this.termekMent[i]);
+            // }
+            // event.detail.forEach(elem => 
+            // {
+            // });
         });
-        this.rendelesMent();
-        console.log(this.#rendelesAdatok);
     }
 
     kosarAdatok(tomb)
     {
         const szuloelem = $("article");
         new KosarakView(tomb, szuloelem);
-    }
-
-    rendelesMent()
-    {
-        this.#rendelesAdatok.megnevezes=$("#megnevezes").val();
-        this.#rendelesAdatok.cikkszam=$("#cikkszam").val();
-        this.#rendelesAdatok.gyartoi_cikkszam=$("#gyartoi_cikkszam").val();
-        this.#rendelesAdatok.marka=$("#marka").val();
-        this.#rendelesAdatok.garancia=$("#garancia").val();
-        this.#rendelesAdatok.leiras=$("#leiras").val();
     }
 }
 export default KosarController;

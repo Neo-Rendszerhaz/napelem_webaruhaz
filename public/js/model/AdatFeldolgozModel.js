@@ -57,15 +57,16 @@ class AdatFeldolgozModel
     adatUj(vegpont, adat)
     {
         console.log(adat);
+        console.log(JSON.stringify(adat));
         fetch(vegpont,
         {
             method: "POST",
+            body: JSON.stringify(adat),
             headers:
             {
                 "content-type": "application/json",
                 "X-CSRF-TOKEN": this.token,
             },
-            body: JSON.stringify(adat),
         })
         .then((response)=>response.json())
         .then((data)=>

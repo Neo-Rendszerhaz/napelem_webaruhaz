@@ -21,14 +21,19 @@ class TermekController extends Controller
 
     public function store(Request $request)
     {
-        $termek= new Termek();
-        $termek->megnevezes = $request->megnevezes;
-        $termek->cikkszam = $request->cikkszam;
-        $termek->gyartoi_cikkszam = $request->gyartoi_cikkszam;
-        $termek->marka = $request->marka;
-        $termek->garancia = $request->garancia;
-        $termek->leiras = $request->leiras;
-        $termek->save();
+        $object = json_decode(json_encode($request->termekek), FALSE);
+        // dd($request->termekek[0]["megnevezes"]);
+        dd($object->termekek[0]->megnevezes);
+
+
+        // $termek= new Termek();
+        // $termek->megnevezes = $request->megnevezes;
+        // $termek->cikkszam = $request->cikkszam;
+        // $termek->gyartoi_cikkszam = $request->gyartoi_cikkszam;
+        // $termek->marka = $request->marka;
+        // $termek->garancia = $request->garancia;
+        // $termek->leiras = $request->leiras;
+        // $termek->save();
     }
 
     public function update(Request $request, $termek_id)

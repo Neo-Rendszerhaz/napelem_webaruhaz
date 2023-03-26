@@ -60,14 +60,19 @@ footer
     display: none;
 }
 
-.popup {
+.popup 
+{
+  display: table;
   margin: 30px auto;
   padding: 20px;
   background: white;
   border-radius: 5px;
-  width: 40%;   
+  width: 60%;
+  height: 90%;
   position: relative;
-  /* display: block; */
+  display: block;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .popup h2 {
@@ -82,7 +87,6 @@ footer
   transition: all 200ms;
   font-size: 40px;
   font-weight: bold;
-
   text-decoration: none;
   color: #333;
 }
@@ -91,10 +95,10 @@ footer
   cursor: pointer;
 }
 
-.popup .content {
+/* .popup .content {
   max-height: 30%;
   overflow: auto;
-}
+} */
 
 #formTartalom
 {
