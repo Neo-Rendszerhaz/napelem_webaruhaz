@@ -47,14 +47,17 @@ class IndexController {
 
     termekekKosarba(ujTermek) {
         let index = 0;
+        let mennyiseg = $(`#number${ujTermek.id}`)
+        console.log(mennyiseg)
         while (this.kosar.length > index && this.kosar[index].id != ujTermek.id) {
             index++;
         }
         if (index < this.kosar.length) {
-            this.kosar[index].db++;
+            this.kosar[index].db += parseInt(mennyiseg.val())
+
         }
         else {
-            ujTermek.db = 1;
+            ujTermek.db = parseInt(mennyiseg.val());
             this.kosar.push(ujTermek);
         }
     }
