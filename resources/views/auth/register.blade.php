@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="/../js/phpRegisztracio.js"></script>
+    <title>Document</title>
+</head>
+<body>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -5,11 +17,11 @@
 
         <div class="form-group">
             <div class=" form-check form-check-inline">
-                <input id="jellegM" class="form-check-input" type="radio" name="jelleg" value="M" checked>
+                <input id="jellegM" class="form-check-input" type="radio" name="jelleg" value="M" >
                 <label for="jellegM" class="form-check-label">Magánszemély</label>
             </div>
             <div class="form-check form-check-inline">
-                <input id="jellegC" class="form-check-input" type="radio" name="jelleg" value="C">
+                <input id="jellegC" class="form-check-input" type="radio" name="jelleg" value="C" checked>
                 <label for="jellegC" class="form-check-label">Cég</label>
             </div>
         </div>
@@ -124,3 +136,5 @@
         </div>
     </form>
 </x-guest-layout>
+</body>
+</html>

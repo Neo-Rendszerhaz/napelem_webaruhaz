@@ -26,13 +26,13 @@
             </nav>
         </header>
         <article>
-
+            <h1>A kosarad jelenleg üres.</h1>
         </article>
         <aside>
-            
+
         </aside>
         <footer>
-            
+
         </footer>
     </main>
 </body>
