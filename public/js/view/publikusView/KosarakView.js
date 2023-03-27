@@ -135,7 +135,7 @@ class KosarakView {
         });
 
         this.tombMentes = this.objektbe(tomb);
-        // console.log(this.tombMentes);
+        console.log(this.tombMentes);
         // this.#rendelesTermekekAdatok={megnevezes:"", cikkszam:"", gyartoi_cikkszam:"", marka:"", garancia:"", leiras:""};
 
         $(`#rendelesLeadasGomb`).on("click", () => {
@@ -193,7 +193,7 @@ class KosarakView {
 
         kattintasTrigger(esemenyNeve) {
             console.log("triggerben", esemenyNeve);
-            const esemeny = new CustomEvent(esemenyNeve, { detail: {/* "termekek":this.tombMentes ,*/ "cim": this.#rendelesCimAdatok } });
+            const esemeny = new CustomEvent(esemenyNeve, { detail: {/* "termekek":this.tombMentes, */ "cim": this.#rendelesCimAdatok } });
             window.dispatchEvent(esemeny);
         }
     }
