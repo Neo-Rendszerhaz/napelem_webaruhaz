@@ -25,14 +25,14 @@ class TermekController extends Controller
         // dd($request->termekek[0]["megnevezes"]);
         dd($object->termekek[0]->megnevezes);
 
-
+        
         // $termek= new Termek();
-        // $termek->megnevezes = $request->megnevezes;
-        // $termek->cikkszam = $request->cikkszam;
-        // $termek->gyartoi_cikkszam = $request->gyartoi_cikkszam;
-        // $termek->marka = $request->marka;
-        // $termek->garancia = $request->garancia;
-        // $termek->leiras = $request->leiras;
+        // $termek->megnevezes = $object->termekek->megnevezes;
+        // $termek->cikkszam = $object->termekek->cikkszam;
+        // $termek->gyartoi_cikkszam = $object->termekek->gyartoi_cikkszam;
+        // $termek->marka = $object->termekek->marka;
+        // $termek->garancia = $object->termekek->garancia;
+        // $termek->leiras = $object->termekek->leiras;
         // $termek->save();
     }
 
