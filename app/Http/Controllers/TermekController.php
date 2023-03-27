@@ -23,17 +23,18 @@ class TermekController extends Controller
     {
         $object = json_decode(json_encode($request->termekek), FALSE);
         // dd($request->termekek[0]["megnevezes"]);
-        dd($object->termekek[0]->megnevezes);
+        // dd(count($object->termekek));
 
-        
-        // $termek= new Termek();
-        // $termek->megnevezes = $object->termekek->megnevezes;
-        // $termek->cikkszam = $object->termekek->cikkszam;
-        // $termek->gyartoi_cikkszam = $object->termekek->gyartoi_cikkszam;
-        // $termek->marka = $object->termekek->marka;
-        // $termek->garancia = $object->termekek->garancia;
-        // $termek->leiras = $object->termekek->leiras;
-        // $termek->save();
+        for ($i=0; $i < count($object->termekek); $i++) 
+        {
+            $termek= new Termek();
+            $termek->megnevezes = $object->termekek[$i]->megnevezes;
+            $termek->cikkszam = $object->termekek[$i]->cikkszam;
+            $termek->gyartoi_cikkszam = $object->termekek[$i]->gyartoi_cikkszam;
+            $termek->marka = $object->termekek[$i]->marka;
+            $termek->garancia = $object->termekek[$i]->garancia;
+            $termek->save();
+        }
     }
 
     public function update(Request $request, $termek_id)

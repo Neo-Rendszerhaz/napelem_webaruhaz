@@ -297,7 +297,7 @@ class KosarakView {
 
     kattintasTrigger(esemenyNeve) {
         console.log("triggerben", esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve, { detail: {/* "termekek":this.tombMentes ,*/ "cim": this.#rendelesCimAdatok } });
+        const esemeny = new CustomEvent(esemenyNeve, { detail: {"termekek":this.tombMentes , "cim": this.#rendelesCimAdatok } });
         window.dispatchEvent(esemeny);
     }
 }

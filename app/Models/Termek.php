@@ -16,6 +16,5 @@ class Termek extends Model
         "gyartoi_cikkszam",
         "marka",
         "garancia",
-        "leiras"
     ];
 }
