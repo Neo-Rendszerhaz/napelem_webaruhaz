@@ -230,7 +230,7 @@ class KosarakView {
         });
 
         this.tombMentes = this.objektbe(tomb);
-        // console.log(this.tombMentes);
+        console.log(this.tombMentes);
         // this.#rendelesTermekekAdatok={megnevezes:"", cikkszam:"", gyartoi_cikkszam:"", marka:"", garancia:"", leiras:""};
 
         $(`#rendelesLeadasGomb`).on("click", () => {
