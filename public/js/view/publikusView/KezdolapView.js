@@ -20,7 +20,7 @@ class KezdolapView {
                     <button id="minus${elem.id}">-</button>
                     </div>
                     <div>
-                    <input type="number" min=1 max=100 class="dbInput" value="1" id="number${elem.id}">
+                    <input type="number" min=1 class="dbInput" value="1" id="number${elem.id}">
                     </div>
                     <div>
                     <button id="plus${elem.id}">+</button>
@@ -38,17 +38,13 @@ class KezdolapView {
 
         $(`#gomb${elem.id}`).on("click", () => {
             this.kattintas("kosar");
-            
+
         });
         $(this.#plus)
             .on("click", () => {
                 let input = this.#number.value;
-                if (input >= 100) {
-                    input = 100;
-                } else {
-                    input++;
-                    this.#number.value = input;
-                }
+                input++;
+                this.#number.value = input;
             })
         $(this.#minus)
             .on("click", () => {

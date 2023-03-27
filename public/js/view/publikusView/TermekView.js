@@ -18,7 +18,7 @@ class TermekView {
             <h2>Ár: ${elem.ar} Ft</h2>
             <div class="wrapper">
                 <button id="minus${elem.id}">-</button>
-                <input type="number" id="number${elem.id}">1</input>
+                <input type="number" class="dbInput" value=1 min=1 id="number${elem.id}"></input>
                 <button id="plus${elem.id}">+</button>
             </div>
             <button id="kosarba">Kosárba</button>
@@ -27,6 +27,9 @@ class TermekView {
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);
         this.#plus = document.getElementById(`plus${elem.id}`);
+        $(`#kosarba`).on("click", () => {
+            this.kattintas("kosar");
+        });
         $(this.#plus).on("click", () => {
             this.#menny++;
             this.#number.value = this.#menny;
@@ -37,6 +40,10 @@ class TermekView {
                 this.#number.value = this.#menny;
             }
         })
+    }
+
+    kattintas(esemenyNeve) {
+        window.dispatchEvent(new CustomEvent(esemenyNeve, { detail: this.#elem }));
     }
 }
 

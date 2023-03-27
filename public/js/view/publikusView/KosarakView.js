@@ -6,8 +6,12 @@ class KosarakView {
     constructor(tomb, szuloElem) {
         this.#tomb = tomb
         this.#rendelesCimAdatok = { iranyitoszam: "", varos: "", kozterulet_neve: "", kozterulet_jellege: "", hely_hazszam: "", hely_haz_jelleg: "", epulet: "", emelet: "", ajto: "", kapucsengo: "" }
+        this.vegosszeg = 0;
         $(`aside`).html(`
-        <button id="rendelesLeadasGomb">Rendelés leadás</button>
+        <div>
+            <h3>Végösszeg: ${this.vegosszegOsszeadas(tomb)} Ft</h3>
+            <button id="rendelesLeadasGomb">Rendelés leadás</button>
+        </div>
         <div class="overlay">
             <div class="popup">
                 <h2>Rendelés leadás</h2>
@@ -112,13 +116,13 @@ class KosarakView {
                                 <input id="azonosCim" class="w-full" type="checkbox" name="azonosCim" checked="checked">
                             </div>
                             <div class="col-md">
-                                <label for="azonosCim" class="col-form-label">Számlázási és szállítási cím NEM egyezik meg</label><br>
+                                <label for="azonosCim" class="col-form-label">Számlázási cím megegyezik a szállítási címmel</label><br>
                             </div>
                         </div>
                         </div>
                         
                     </form>
-                    <form id="szallitasiCim">
+                    <form id="szallitasiCim" style="display:none">
                     <h3>Szállítási cím megadása</h3>
                     <div id="formTartalom" class="form-group">
                         <div class="row mt-3">
@@ -231,7 +235,6 @@ class KosarakView {
 
         this.tombMentes = this.objektbe(tomb);
         console.log(this.tombMentes);
-        // this.#rendelesTermekekAdatok={megnevezes:"", cikkszam:"", gyartoi_cikkszam:"", marka:"", garancia:"", leiras:""};
 
         $(`#rendelesLeadasGomb`).on("click", () => {
             $(".overlay").show();
@@ -241,6 +244,7 @@ class KosarakView {
             this.rendelesMent()
             console.log(this.rendelesMent())
             this.kattintasTrigger("rendelesVeglegesites")
+            localStorage.clear();
         });
 
         $(`#bezar`).on("click", () => {
@@ -250,7 +254,7 @@ class KosarakView {
 
         $(`#azonosCim`).on("click", () => {
             let bePipalva = $(`#azonosCim`).prop('checked');
-            if (bePipalva == true) {
+            if (bePipalva == false) {
                 $("#szallitasiCim").show();
             } else {
                 $("#szallitasiCim").hide();
@@ -258,6 +262,13 @@ class KosarakView {
         })
     }
 
+    vegosszegOsszeadas(tomb) {
+        let ar = 0;
+        for (let i = 0; i < tomb.length; i++) {
+            ar += tomb[i].ar * tomb[i].db;
+        }
+        return ar;
+    }
     objektbe(tomb) {
         var object = {};
         for (var i = 0; i < tomb.length; ++i) {
