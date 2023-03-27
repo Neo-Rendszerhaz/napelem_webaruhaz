@@ -2,13 +2,10 @@ import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import KezdoLapokView from "../../view/publikusView/KezdoLapokView.js";
 import TermekController from "./TermekController.js";
 
-class IndexController 
-{
-    constructor() 
-    {
-        this.kosar=[];
-        if(this.kosar.length==0 && JSON.parse(localStorage.getItem("kosar"))!=null)
-        {
+class IndexController {
+    constructor() {
+        this.kosar = [];
+        if (this.kosar.length == 0 && JSON.parse(localStorage.getItem("kosar")) != null) {
             this.kosar = this.kosar.concat(JSON.parse(localStorage.getItem("kosar")))
         }
 
@@ -18,8 +15,7 @@ class IndexController
         this.vegpont = "../js/termekek.json";
         adatFeldolgozModel.adatBe(this.vegpont, this.kezdolapAdatok);
 
-        $(window).on("kosar", (event) => 
-        {
+        $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
             this.termekekLocalStorageba();
         });
@@ -32,20 +28,18 @@ class IndexController
         })
     }
 
-    ujOldal(tomb) 
-    {
+    ujOldal(tomb) {
         let jsonString = JSON.stringify(tomb);
         window.localStorage.setItem("termek", jsonString);
     }
 
     kezdolapAdatok(tomb) {
-        let tombTermekek=tomb.termekek;
+        let tombTermekek = tomb.termekek;
         const szuloelem = $("article");
         new KezdoLapokView(tombTermekek, szuloelem);
     }
 
-    termekekLocalStorageba() 
-    {
+    termekekLocalStorageba() {
         console.log(this.kosar);
         let jsonString = JSON.stringify(this.kosar);
         window.localStorage.setItem("kosar", jsonString);

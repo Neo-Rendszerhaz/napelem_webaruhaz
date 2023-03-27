@@ -35,18 +35,17 @@ class KezdolapView {
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);
         this.#plus = document.getElementById(`plus${elem.id}`);
-        
-        $(`#gomb${elem.id}`).on("click", () =>
-        {
-            //console.log(elem);
+
+        $(`#gomb${elem.id}`).on("click", () => {
             this.kattintas("kosar");
+            
         });
         $(this.#plus)
             .on("click", () => {
                 let input = this.#number.value;
                 if (input >= 100) {
                     input = 100;
-                }else{
+                } else {
                     input++;
                     this.#number.value = input;
                 }
@@ -56,21 +55,19 @@ class KezdolapView {
                 let input = this.#number.value;
                 if (input <= 1) {
                     input = 1
-                }else{
+                } else {
                     input--;
                     this.#number.value = input;
-                }   
+                }
             })
 
-        $(`#${elem.id}`).on('click', () => 
-        {
+        $(`#${elem.id}`).on('click', () => {
             this.kattintas("termekUjOldal");
         });
 
     }
 
-    kattintas(esemenyNeve) 
-    {
+    kattintas(esemenyNeve) {
         window.dispatchEvent(new CustomEvent(esemenyNeve, { detail: this.#elem }));
     }
 }

@@ -1,12 +1,10 @@
-class TermekView 
-{
+class TermekView {
     #elem;
     #minus;
     #number;
     #plus;
     #menny = 1;
-    constructor(elem, szuloElem) 
-    {
+    constructor(elem, szuloElem) {
         this.#elem = elem
         szuloElem.html(`
         <div id="kep"><img src="${elem.kep}"></div>
@@ -29,17 +27,14 @@ class TermekView
         this.#minus = document.getElementById(`minus${elem.id}`);
         this.#number = document.getElementById(`number${elem.id}`);
         this.#plus = document.getElementById(`plus${elem.id}`);
-        $(this.#plus).on("click", () => 
-        {
+        $(this.#plus).on("click", () => {
             this.#menny++;
-            this.#number.innerText = this.#menny;
+            this.#number.value = this.#menny;
         })
-        $(this.#minus).on("click", () => 
-        {
-            if (this.#menny > 1) 
-            {
+        $(this.#minus).on("click", () => {
+            if (this.#menny > 1) {
                 this.#menny--;
-                this.#number.innerText = this.#menny;
+                this.#number.value = this.#menny;
             }
         })
     }
