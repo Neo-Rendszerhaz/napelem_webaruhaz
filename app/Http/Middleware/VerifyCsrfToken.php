@@ -17,6 +17,9 @@ class VerifyCsrfToken extends Middleware
         "/uj_dolgozo",
         "/felhasznalok",
         "/felhasznalok/*",
-        "/termekek"
+        "/termekek",
+        "/rendelesek",
+        "/rendeles_tetelek",
+        "/rendeles_leadas",
     ];
 }

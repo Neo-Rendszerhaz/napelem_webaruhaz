@@ -15,9 +15,21 @@ kék: 698ec3 */
 main
 {
     display: grid;
-    grid-template-areas: "n n n n n n n" 
-                         "as as a a a a a"
-                         "f f f f f f f";
+    grid-template-areas: "h h h h h h h h"
+                         "n n n n n n n n" 
+                         "as a a a a a a a"
+                         "f f f f f f f f";
+}
+
+header
+{
+    grid-area: h;
+}
+
+
+#logo
+{
+    width: 10%;
 }
 
 aside
@@ -51,12 +63,6 @@ footer
 
 .termek 
 {
-    /* flex: 0 0 30%;
-    display: grid;
-    grid-template-rows: 400px auto auto;
-    width: 90%;
-    height: 100%;
-    align-self: stretch; */
     flex: 0 0 30%;
     border: 1px solid gray;
     display:flex;
@@ -93,7 +99,6 @@ footer
 
 .ar
 {
-    /* margin: auto; */
     font-weight: bold;
 }
 
@@ -101,8 +106,11 @@ footer
     font-size: 20px;
 }
 
-.wrapper button {
-    margin: auto;
+ .mennyisegTarolo
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .mennyisegTarolo button,  .mennyisegTarolo input
@@ -111,6 +119,7 @@ footer
     justify-content: space-between;
     margin: auto;
     padding: 5px 10px;
+    text-align: center;
     border: none;
     background-color: #b3cf61;
     border-radius: 5px;
@@ -119,21 +128,7 @@ footer
 .mennyisegTarolo input
 {
     margin: 0px 5px;
-}
-
-.mennyisegTarolo
-{
-    display: flex;
-    justify-content: space-between;
-    /* margin: auto; */
-    align-self: center;
-    align-items: center;
-}
-
-.mennyisegTarolo div
-{
-    display: flex;
-    justify-content: space-between;
+    width: 60px;
 }
 
 input::-webkit-outer-spin-button,
@@ -167,16 +162,35 @@ img {
     margin: auto;
 }
 
+
 @media screen and (max-width: 1200px) 
 {
     main
     {
-        grid-template-areas: "n n n n n n n"
+        grid-template-areas: "h h h h h h h"
+                             "n n n n n n n"
                              "as as as as as as as"
                              "a a a a a a a"
                              "f f f f f f f";
     }
-    article {
+    article 
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 1100px) 
+{
+    .termek
+    {
+        flex: 0 0 25%;
+    }
+    article 
+    {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -184,20 +198,27 @@ img {
     }
 }
 
-@media screen and (max-width: 1000px) {
-    article {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        margin: auto;
+@media screen and (max-width: 900px) 
+{
+    .termek
+    {
+        flex: 0 0 10%;
+    }
+    article 
+    {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 800px) {
-    article {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        margin: auto;
+
+@media screen and (max-width: 550px) 
+{
+    .termek
+    {
+        flex: 0 0 20%;
+    }
+    article 
+    {
+        grid-template-columns: 1fr;
     }
 }

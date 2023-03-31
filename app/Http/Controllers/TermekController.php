@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Termek;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TermekController extends Controller
 {
@@ -19,22 +20,39 @@ class TermekController extends Controller
         return $termek;
     }
 
-    public function store(Request $request)
+    public static function store(Request $request)
     {
         $object = json_decode(json_encode($request->termekek), FALSE);
+        // $veglegesAr=0;
+        // for ($i=0; $i < count($object->termekek); $i++) 
+        // { 
+        //     $veglegesAr+=$object->termekek[$i]->ar*$object->termekek[$i]->db;
+        // }
+        
         // dd($request->termekek[0]["megnevezes"]);
         // dd(count($object->termekek));
-
+        $termekekTomb=[];
         for ($i=0; $i < count($object->termekek); $i++) 
         {
-            $termek= new Termek();
-            $termek->megnevezes = $object->termekek[$i]->megnevezes;
-            $termek->cikkszam = $object->termekek[$i]->cikkszam;
-            $termek->gyartoi_cikkszam = $object->termekek[$i]->gyartoi_cikkszam;
-            $termek->marka = $object->termekek[$i]->marka;
-            $termek->garancia = $object->termekek[$i]->garancia;
-            $termek->save();
+            if(TermekController::vanTermek($object->termekek[$i])>0)
+            {
+                $termek=TermekController::CikkszamHasonlitas($object->termekek[$i]);
+                // dd($termek->termek_id);
+            }
+            else
+            {
+                $termek= new Termek();
+                $termek->megnevezes = $object->termekek[$i]->megnevezes;
+                $termek->cikkszam = $object->termekek[$i]->cikkszam;
+                $termek->gyartoi_cikkszam = $object->termekek[$i]->gyartoi_cikkszam;
+                $termek->marka = $object->termekek[$i]->marka;
+                $termek->garancia = $object->termekek[$i]->garancia;
+                $termek->save();
+            }
+            array_push($termekekTomb, $termek);
         }
+
+        return $termekekTomb;
     }
 
     public function update(Request $request, $termek_id)
@@ -52,5 +70,22 @@ class TermekController extends Controller
     public function destroy($termek_id)
     {
         Termek::find($termek_id)->delete();
+    }
+
+    public static function vanTermek($termek)
+    {
+        $vanTermek=DB::table("termek as t")
+        ->where("t.cikkszam", "=", $termek->cikkszam)
+        ->count();
+        return $vanTermek;
+    }
+
+    public static function CikkszamHasonlitas($termek)
+    {
+        $termekCikkszam=DB::table("termek")
+        ->select("*")
+        ->where("cikkszam", "=", $termek->cikkszam)
+        ->get();
+        return $termekCikkszam[0];
     }
 }

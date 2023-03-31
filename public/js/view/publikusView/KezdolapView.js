@@ -17,13 +17,13 @@ class KezdolapView {
                 <h4 class="ar">${elem.ar} Ft</h4>
                 <div class="mennyisegTarolo">
                     <div>
-                    <button id="minus${elem.id}">-</button>
+                    <button id="minus${elem.id}" class="novCsok">&minus;</button>
                     </div>
                     <div>
                     <input type="number" min=1 class="dbInput" value="1" id="number${elem.id}">
                     </div>
                     <div>
-                    <button id="plus${elem.id}">+</button>
+                    <button id="plus${elem.id}" class="novCsok">&plus;</button>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,6 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import KosarakView from "../../view/publikusView/KosarakView.js";
 
-
 class KosarController 
 {
     constructor() 
@@ -22,28 +21,11 @@ class KosarController
 
         $(window).on("rendelesVeglegesites", (event)=>
         {
-            // console.log(event.detail[0].megnevezes);
 
             console.log(event.detail);
-            adatFeldolgozModel.adatUj("/cimek", {"cim":event.detail});
-            adatFeldolgozModel.adatUj("/termekek", {"termekek":event.detail});
-            // for (let i = 0; i < event.detail.length; i++) 
-            // {
-            //     console.log("valami");    
-            // }
-
-
-            // this.termekMent.push(event.detail)
-            // console.log(this.termekMent);
-
-            // for (let i = 0; i < this.termekMent.length; i++) 
-            // {
-            //     console.log(this.termekMent[i[megnevezes]]);
-            //     // adatFeldolgozModel.adatUj("/termekek", this.termekMent[i]);
-            // }
-            // event.detail.forEach(elem => 
-            // {
-            // });
+            // adatFeldolgozModel.adatUj("/cimek", {"cim":event.detail});
+            // adatFeldolgozModel.adatUj("/termekek", {"termekek":event.detail});
+            adatFeldolgozModel.adatUj("/rendeles_tetelek", {"termekek":event.detail, "cim":event.detail, "vegosszeg":event.detail});
         });
     }
 

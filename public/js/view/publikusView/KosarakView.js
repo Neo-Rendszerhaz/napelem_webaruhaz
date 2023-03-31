@@ -9,7 +9,7 @@ class KosarakView {
         this.vegosszeg = 0;
         $(`aside`).html(`
         <div>
-            <h3>Végösszeg: ${this.vegosszegOsszeadas(tomb)} Ft</h3>
+            <h3>Végösszeg: ${this.vegosszegAr(this.#tomb)} Ft</h3>
             <button id="rendelesLeadasGomb">Rendelés leadás</button>
         </div>
         <div class="overlay">
@@ -244,7 +244,7 @@ class KosarakView {
             this.rendelesMent()
             console.log(this.rendelesMent())
             this.kattintasTrigger("rendelesVeglegesites")
-            localStorage.clear();
+            // localStorage.clear();
         });
 
         $(`#bezar`).on("click", () => {
@@ -262,13 +262,15 @@ class KosarakView {
         })
     }
 
-    vegosszegOsszeadas(tomb) {
+    vegosszegAr(tomb) 
+    {
         let ar = 0;
         for (let i = 0; i < tomb.length; i++) {
             ar += tomb[i].ar * tomb[i].db;
         }
         return ar;
     }
+
     objektbe(tomb) {
         var object = {};
         for (var i = 0; i < tomb.length; ++i) {
@@ -284,31 +286,15 @@ class KosarakView {
         this.#rendelesCimAdatok.kozterulet_jellege = $("#kozteruletJellege").val();
         this.#rendelesCimAdatok.hely_hazszam = $("#helyHazSzam").val();
         this.#rendelesCimAdatok.hely_haz_jelleg = $("input[name='helyHazJelleg']:checked").val();
-        //     if ($("#epulet").length === 0) {
-        //         $("#epulet").val() == ""
-        //     } else {
-        //         this.#rendelesCimAdatok.epulet = $("#epulet").val();
-        //     }
-        //     if ($("#emelet").length === 0) {
-        //         $("#emelet").val() == ""
-        //     } else {
-        //         this.#rendelesCimAdatok.emelet = $("#emelet").val();
-        //     }
-        //     if ($("#ajto").length === 0) {
-        //         $("#ajto").val() == ""
-        //     } else {
-        //         this.#rendelesCimAdatok.ajto = $("#ajto").val();
-        //     }
-        //     if ($("#kapucsengo").length === 0) {
-        //         $("#kapucsengo").val() == ""
-        //     } else {
-        //         this.#rendelesCimAdatok.kapucsengo = $("#kapucsengo").val();
-        //     }
+        this.#rendelesCimAdatok.epulet = $("#epulet").val();
+        this.#rendelesCimAdatok.emelet = $("#emelet").val();
+        this.#rendelesCimAdatok.ajto = $("#ajto").val();
+        this.#rendelesCimAdatok.kapucsengo = $("#kapucsengo").val();
     }
 
     kattintasTrigger(esemenyNeve) {
         console.log("triggerben", esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve, { detail: {"termekek":this.tombMentes , "cim": this.#rendelesCimAdatok } });
+        const esemeny = new CustomEvent(esemenyNeve, { detail: {"termekek":this.tombMentes , "cim": this.#rendelesCimAdatok, "vegosszeg":this.vegosszegAr(this.#tomb) } });
         window.dispatchEvent(esemeny);
     }
 }

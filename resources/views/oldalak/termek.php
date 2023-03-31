@@ -18,10 +18,10 @@
             <nav>
                 <ul>
                     <li><a href="/dashboard">Profil</a></li>
-                    <li><a href="/admin_felulet">Admin Felület</a></li>
                     <li><a href="/">Kezdőlap</a></li>
                 </ul>
             </nav>
+            <a href="/kosar"><button id="kosar">Kosár</button></a>
         </header>
         <article>
         </article>

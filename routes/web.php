@@ -9,6 +9,7 @@ use App\Http\Controllers\RendelesController;
 use App\Http\Controllers\RendelesTetelController;
 use App\Http\Controllers\SzamlazasiCimValtController;
 use App\Http\Controllers\TermekController;
+use App\Models\Rendeles;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,11 +64,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post("/uj_dolgozo", [FelhasznaloController::class, "ujDolgozo"]);
 
 Route::middleware(["rendszerAdmin"])->group(function()
 {
-
+    Route::post("/uj_dolgozo", [FelhasznaloController::class, "ujDolgozo"]);
 });
 
 Route::middleware(["admin"])->group(function()
@@ -100,7 +100,6 @@ Route::middleware(["admin"])->group(function()
 
     Route::get("/rendelesek", [RendelesController::class, "index"]);
     Route::get("/rendelesek/{rendeles_id}", [RendelesController::class, "show"]);
-    Route::post("/rendelesek", [RendelesController::class, "store"]);
     Route::put("/rendelesek/{rendeles_id}", [RendelesController::class, "update"]);
     Route::delete("/rendelesek/{rendeles_id}", [RendelesController::class, "destroy"]);
     Route::delete("/rendelesekTetellel/{rendeles_id}", [RendelesController::class, "rendelesTorlesTetellel"]);
@@ -109,7 +108,6 @@ Route::middleware(["admin"])->group(function()
     Route::get("/rendeles_tetelek", [RendelesTetelController::class, "index"]);
     Route::get("/rendeles_tetelek_termekkel", [RendelesTetelController::class, "termekekkel"]);
     Route::get("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "show"]);
-    Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
     Route::put("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "update"]);
     Route::delete("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "destroy"]);
 
@@ -129,11 +127,13 @@ Route::middleware(["felhasznalo"])->group(function()
 {    
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
-    
+    Route::post("/cimek", [CimController::class, "store"]);
+    Route::post("/termekek", [TermekController::class, "store"]);
+    Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
+    Route::post("/rendelesek", [RendelesController::class, "store"]);
 });
 
-Route::post("/cimek", [CimController::class, "store"]);
-Route::post("/termekek", [TermekController::class, "store"]);
+
  /* VÉGPONTOK */
 
 require __DIR__.'/auth.php';

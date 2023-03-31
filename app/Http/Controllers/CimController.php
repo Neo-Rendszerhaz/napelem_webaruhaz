@@ -20,14 +20,11 @@ class CimController extends Controller
         return $cim;
     }
 
-    public function store(Request $request)
+    public static function store(Request $request)
     {
         $object = json_decode(json_encode($request->cim), FALSE);
-        //dd($object->cim->iranyitoszam);
         
-
-        
-        $cim= new Cim();
+        $cim = new Cim();
         $cim->iranyitoszam = $object->cim->iranyitoszam;
         $cim->varos = $object->cim->varos;
         $cim->kozterulet_neve = $object->cim->kozterulet_neve;
@@ -39,6 +36,8 @@ class CimController extends Controller
         $cim->ajto = $object->cim->ajto;
         $cim->kapucsengo = $object->cim->kapucsengo;
         $cim->save();
+
+        return $cim->cim_id;
     }
 
     public function update(Request $request, $id)

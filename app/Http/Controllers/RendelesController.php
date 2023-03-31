@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Rendeles;
 use App\Models\RendelesTetel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class RendelesController extends Controller
@@ -21,17 +23,23 @@ class RendelesController extends Controller
         return $rendeles;
     }
 
-    public function store(Request $request)
+    public static function store(Request $request)
     {
+        $object = json_decode(json_encode($request->vegosszeg), FALSE);
+        $vegosszeg=$object->vegosszeg;
+        
+        $szallitasi_cim=CimController::store($request);
+  
         $rendeles= new Rendeles();
-        $rendeles->datum = $request->datum;
-        $rendeles->felhasznalo_id = $request->felhasznalo_id;
-        $rendeles->szallitasi_cim = $request->szallitasi_cim;
-        $rendeles->teljes_ar = $request->teljes_ar;
-        $rendeles->kedvezmeny = $request->kedvezmeny;
-        $rendeles->vegosszeg = $request->vegosszeg;
-        $rendeles->allapot = $request->allapot;
+        $rendeles->datum = Carbon::now()->format('Y-m-d');
+        $rendeles->felhasznalo_id = Auth::user()->felhasznalo_id;
+        $rendeles->szallitasi_cim = $szallitasi_cim;
+        $rendeles->teljes_ar = $vegosszeg;
+        $rendeles->kedvezmeny = 0;
+        $rendeles->allapot = "FL";
         $rendeles->save();
+
+        return $rendeles;
     }
 
     public function update(Request $request, $rendeles_szam)

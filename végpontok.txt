@@ -9,6 +9,7 @@ use App\Http\Controllers\RendelesController;
 use App\Http\Controllers\RendelesTetelController;
 use App\Http\Controllers\SzamlazasiCimValtController;
 use App\Http\Controllers\TermekController;
+use App\Models\Rendeles;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,25 +36,26 @@ Route::group(['middleware' => ['auth', 'felhasznalo']], function()
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get("/profil", function()
-    {
-        return view("oldalak/felhasznalo/profil");
-    })->name("profil");
-
     Route::get("/admin_felulet", function()
     {
-        return view("oldalak/admin/admin_web_adatok");
+        return view("oldalak/admin/admin_oldal");
     })->middleware("admin")->name("admin_felulet");
 
     Route::get("/kezdolap", function()
     {
         return view("oldalak/index");
     })->name("kezdolap");
-});
 
-Route::get("/be_reg_felulet", function()
-{
-    return view("oldalak/bejelentkezes_regisztracio");
+    Route::get("/kosar", function()
+    {
+        return view("oldalak/kosar");
+    })->name("kosar");
+    
+    Route::get("/termek", function()
+    {
+        return view("oldalak/termek");
+    })->name("termek");
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -62,19 +64,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::middleware(["rendszerAdmin"])->group(function()
 {
-    
+    Route::post("/uj_dolgozo", [FelhasznaloController::class, "ujDolgozo"]);
 });
 
 Route::middleware(["admin"])->group(function()
 {
-
     Route::get("/f_cimek/{felhasznalo_id}", [FelhasznaloController::class, "felhasznalokCimekkel"]);
-
+    
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
-    Route::post("/cimek", [CimController::class, "store"]);
+    
     Route::put("/cimek/{cim_id}", [CimController::class, "update"]);
     Route::delete("/cimek/{cim_id}", [CimController::class, "destroy"]);
 
@@ -98,15 +100,14 @@ Route::middleware(["admin"])->group(function()
 
     Route::get("/rendelesek", [RendelesController::class, "index"]);
     Route::get("/rendelesek/{rendeles_id}", [RendelesController::class, "show"]);
-    Route::post("/rendelesek", [RendelesController::class, "store"]);
     Route::put("/rendelesek/{rendeles_id}", [RendelesController::class, "update"]);
     Route::delete("/rendelesek/{rendeles_id}", [RendelesController::class, "destroy"]);
+    Route::delete("/rendelesekTetellel/{rendeles_id}", [RendelesController::class, "rendelesTorlesTetellel"]);
     Route::get("/rendelesek_cimmel_felhasznaloval", [RendelesController::class, "CimEsFelhasznalo"]);
 
     Route::get("/rendeles_tetelek", [RendelesTetelController::class, "index"]);
     Route::get("/rendeles_tetelek_termekkel", [RendelesTetelController::class, "termekekkel"]);
     Route::get("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "show"]);
-    Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
     Route::put("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "update"]);
     Route::delete("/rendeles_tetelek/{rendeles_szam}/{termek_id}", [RendelesTetelController::class, "destroy"]);
 
@@ -118,7 +119,6 @@ Route::middleware(["admin"])->group(function()
 
     Route::get("/termekek", [TermekController::class, "index"]);
     Route::get("/termekek/{termek_id}", [TermekController::class, "show"]);
-    Route::post("/termekek", [TermekController::class, "store"]);
     Route::put("/termekek/{termek_id}", [TermekController::class, "update"]);
     Route::delete("/termekek/{termek_id}", [TermekController::class, "destroy"]);
 });
@@ -127,7 +127,12 @@ Route::middleware(["felhasznalo"])->group(function()
 {    
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
+    Route::post("/cimek", [CimController::class, "store"]);
+    Route::post("/termekek", [TermekController::class, "store"]);
+    Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
+    Route::post("/rendelesek", [RendelesController::class, "store"]);
 });
+
 
  /* VÉGPONTOK */
 
