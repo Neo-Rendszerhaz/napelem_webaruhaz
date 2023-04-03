@@ -21,23 +21,25 @@
         <header>
             <img id="logo" src="/logo/NeO-Rendszerhaz-logo.png" alt="NeO Rendszerház">
             <div>
-                <p>NeO Rendszerház</p>
+                <h2>NeO Rendszerház</h2>
                 <p>Informatikai eszközök értékesítése | oktatás</p>
             </div>
         </header>
         <nav>
-            <a href="/">Kezdőlap</a></li>
-            <a href="/dashboard">Fiókom</a></li>
-            <a id="bejelentkezes" href="/login">Bejelentkezes</a>
-            <a id="regisztracio" href="/register">Regisztráció</a>
-            <a href="/kosar"><i id="kosar" class=''>Kosár</i></a>
+            <ul>
+                <li><a href="/kosar"><i id="kosar" class=''><img id="cart" src="src=/logo/cart.png"></i></a></li>
+                <li><a id=" bejelentkezes" href="/login">Bejelentkezes</a></li>
+                <li><a id="regisztracio" href="/register">Regisztráció</a></li>
+                <li><a href="/dashboard">Fiókom</a></li>
+                <li><a href="/">Kezdőlap</a></li>
+            </ul>
         </nav>
         <article>
         </article>
         <aside>
             <div id="kereso">
             </div>
-            <div id="szuro">    
+            <div id="szuro">
             </div>
         </aside>
         <footer>

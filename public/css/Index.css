@@ -4,42 +4,48 @@ kék: 698ec3 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-*
-{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     font-family: "Montserrat", sans-serif;
 }
 
-main
-{
+main {
     display: grid;
     grid-template-areas: "h h h h h h h h"
-                         "n n n n n n n n" 
-                         "as a a a a a a a"
-                         "f f f f f f f f";
+        "n n n n n n n n"
+        "as a a a a a a a"
+        "f f f f f f f f";
 }
 
-header
-{
+header {
     grid-area: h;
 }
 
+header div h2 {
+    color: rgba(62, 142, 195);
+    padding-left: 0;
+    margin: 0;
+}
 
-#logo
-{
+header div p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+
+#logo {
     width: 10%;
 }
 
-aside
-{
+aside {
     grid-area: as;
     border: 1px solid black;
 }
 
-article 
-{
+article {
     border: 1px solid black;
     width: 100%;
     grid-area: a;
@@ -48,44 +54,72 @@ article
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: stretch;
-    gap:10px;
+    gap: 10px;
 }
 
-nav
-{
+nav {
     grid-area: n;
+    width: 100%;
+    border: center;
+    display: block;
+    overflow: hidden;
+    background-color: rgba(62, 142, 195);
 }
 
-footer
-{
+ul {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #04AA6D;
+}
+
+footer {
     grid-area: f;
 }
 
-.termek 
-{
+.termek {
     flex: 0 0 30%;
     border: 1px solid gray;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px;
     border: 1px solid rgba(100, 100, 100, 0.2);
     border-radius: 10px;
+    font-weight: bold;
 }
 
-.termek:hover
-{
+.termek:hover {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.termekNev
-{
+.termekNev {
     width: 90%;
     margin: auto;
 }
 
-.kattintasiFelulet
-{
+.kattintasiFelulet {
     cursor: pointer;
 }
 
@@ -97,8 +131,7 @@ footer
     margin: 20px 0px;
 }
 
-.ar
-{
+.ar {
     font-weight: bold;
 }
 
@@ -106,15 +139,14 @@ footer
     font-size: 20px;
 }
 
- .mennyisegTarolo
-{
+.mennyisegTarolo {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.mennyisegTarolo button,  .mennyisegTarolo input
-{
+.mennyisegTarolo button,
+.mennyisegTarolo input {
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -125,24 +157,22 @@ footer
     border-radius: 5px;
 }
 
-.mennyisegTarolo input
-{
+.mennyisegTarolo input {
     margin: 0px 5px;
     width: 60px;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
     -moz-appearance: textfield;
 }
 
-.kosarGomb
-{
+.kosarGomb {
     display: grid;
     margin: auto;
     margin-bottom: 10px;
@@ -163,18 +193,16 @@ img {
 }
 
 
-@media screen and (max-width: 1200px) 
-{
-    main
-    {
+@media screen and (max-width: 1200px) {
+    main {
         grid-template-areas: "h h h h h h h"
-                             "n n n n n n n"
-                             "as as as as as as as"
-                             "a a a a a a a"
-                             "f f f f f f f";
+            "n n n n n n n"
+            "as as as as as as as"
+            "a a a a a a a"
+            "f f f f f f f";
     }
-    article 
-    {
+
+    article {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -183,14 +211,12 @@ img {
 }
 
 
-@media screen and (max-width: 1100px) 
-{
-    .termek
-    {
+@media screen and (max-width: 1100px) {
+    .termek {
         flex: 0 0 25%;
     }
-    article 
-    {
+
+    article {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -198,27 +224,23 @@ img {
     }
 }
 
-@media screen and (max-width: 900px) 
-{
-    .termek
-    {
+@media screen and (max-width: 900px) {
+    .termek {
         flex: 0 0 10%;
     }
-    article 
-    {
+
+    article {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 
-@media screen and (max-width: 550px) 
-{
-    .termek
-    {
+@media screen and (max-width: 550px) {
+    .termek {
         flex: 0 0 20%;
     }
-    article 
-    {
+
+    article {
         grid-template-columns: 1fr;
     }
 }
