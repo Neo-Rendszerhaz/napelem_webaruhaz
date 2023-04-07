@@ -5,8 +5,8 @@ class KosarView {
 
         szuloelem.append(`
             <div class="termek">
-                <h3>${elem.megnevezes}</h3>
                 <img src="${elem.kep}">
+                <h4>${elem.megnevezes}</h4>
                 <p>Ár: ${elem.ar} Ft/db</p>
                 <p>Mennyiség: ${elem.db} db</p>
                 <p>Összesen: ${elem.ar * elem.db} Ft </p>

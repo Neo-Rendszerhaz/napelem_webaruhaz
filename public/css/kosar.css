@@ -1,67 +1,73 @@
-*
-{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-main
-{
-    display: grid;
-    grid-template-areas: "n n n n n n n"
-                         "a a a a a as as"
-                         "f f f f f f f";
+main {
+  display: grid;
+  grid-template-areas: "n n n n n n n"
+    "a a a a a a a"
+    "as as as as as as as"
+    "f f f f f f f";
 }
 
-nav
-{
-    grid-area: n;
+nav {
+  grid-area: n;
 }
 
-article
-{
-    grid-area: a;
-    /* display: flex;
+article {
+  grid-area: a;
+  /* display: flex;
     flex-wrap: wrap;
     justify-content: space-between; */
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
-aside
-{
-    grid-area: as;
+aside {
+  grid-area: as;
+  display: flex;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  margin: auto;
+  border: 2px solid black;
+  width: 80%;
+  padding: 10px;
 }
 
-footer
-{
-    grid-area: f;
+footer {
+  grid-area: f;
 }
 
-.termek
-{
-    display: flex;
-    flex: 0 0 30%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.termek {
+  display: flex;
+  justify-content: center;
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  white-space: normal;
+  border: 2px solid black;
+  width: 100%;
+  margin: 10px;
+  font-size: 20px;
 }
 
-.termek img
-{
-    width: 40%;
+.termek img,
+h4,
+p {
+  width: 20%;
+  padding: 5px;
 }
 
-.overlay 
-{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
 }
 
-.popup 
-{
+.popup {
   display: table;
   margin: 30px auto;
   padding: 20px;
@@ -80,6 +86,7 @@ footer
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
+
 .popup .close {
   position: absolute;
   top: 20px;
@@ -90,6 +97,7 @@ footer
   text-decoration: none;
   color: #333;
 }
+
 .popup .close:hover {
   color: red;
   cursor: pointer;
@@ -100,8 +108,7 @@ footer
   overflow: auto;
 } */
 
-#formTartalom
-{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+#formTartalom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
