@@ -17,10 +17,14 @@
 <body>
     <main>
         <header>
-            <nav>
-                <ul>
-                    <li><a href="/dashboard">Profil</a></li>
-                    <li><a href="/">Kezdőlap</a></li>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <input type="checkbox" id="checkbox_toggle">
+                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                    <div class="menu">
+                        <li><a href="/dashboard">Profil</a></li>
+                        <li><a href="/">Kezdőlap</a></li>
+                    </div>
                 </ul>
             </nav>
         </header>

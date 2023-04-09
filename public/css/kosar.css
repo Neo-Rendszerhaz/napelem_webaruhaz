@@ -4,23 +4,77 @@
 
 main {
   display: grid;
-  grid-template-areas: "n n n n n n n"
-    "a a a a a a a"
-    "as as as as as as as"
-    "f f f f f f f";
+  grid-template-areas: "n n n n n n n n"
+    "a a a a a a a a"
+    "as as as as as as as as"
+    "f f f f f f f f";
 }
 
 nav {
   grid-area: n;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(62, 142, 195);
+  float: right;
+}
+
+.nav-links {
+  list-style-type: none;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 5px 14px;
+}
+
+.menu a {
+  color: white;
+}
+
+.menu a:link {
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+.menu a:hover,
+a:active {
+  color: rgba(62, 142, 195);
+  background-color: white;
 }
 
 article {
-  grid-area: a;
-  /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
   width: 80%;
+  grid-area: a;
+  display: flex;
   margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 10px;
 }
 
 aside {
@@ -102,11 +156,6 @@ p {
   color: red;
   cursor: pointer;
 }
-
-/* .popup .content {
-  max-height: 30%;
-  overflow: auto;
-} */
 
 #formTartalom {
   display: grid;
