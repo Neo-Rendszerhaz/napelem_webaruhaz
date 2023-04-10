@@ -31,7 +31,7 @@
                 <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                 <div class="menu">
                     <li><a href="/">Kezdőlap</a></li>
-                    <li><a id=" bejelentkezes" href="/login">Bejelentkezes</a></li>
+                    <li><a id="bejelentkezes" href="/login">Bejelentkezes</a></li>
                     <li><a id="regisztracio" href="/register">Regisztráció</a></li>
                     <li><a href="/dashboard">Fiókom</a></li>
                     <li><a href="/kosar"><i id="kosar">Kosár</i></a></li>

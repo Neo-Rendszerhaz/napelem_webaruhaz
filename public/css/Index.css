@@ -32,8 +32,6 @@ header div h2 {
 header div p {
     padding: 0;
     margin: 0;
-    text-align: center;
-    position: relative;
 }
 
 
@@ -44,6 +42,11 @@ header div p {
 aside {
     grid-area: as;
     border: 1px solid black;
+    padding: 10px;
+}
+
+aside div {
+    padding: 5px;
 }
 
 article {
@@ -62,10 +65,10 @@ article {
     grid-area: n;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 10px;
     background-color: rgba(62, 142, 195);
-    float: right;
+    opacity: 0.7;
 }
 
 .nav-links {
@@ -128,6 +131,20 @@ footer {
     border: 1px solid rgba(100, 100, 100, 0.2);
     border-radius: 10px;
     font-weight: bold;
+    background-color: lightgrey;
+}
+
+.termek img {
+    mix-blend-mode: multiply;
+}
+
+.termek h4 {
+    color: #93bc17;
+}
+
+.termek h6 {
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .termek:hover {
@@ -257,6 +274,11 @@ img {
 
     main {
         padding-top: 100px;
+        grid-template-areas: "h"
+            "n"
+            "as"
+            "a"
+            "f";
     }
 
     .navbar {

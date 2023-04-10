@@ -9,19 +9,27 @@ class TermekView {
         szuloElem.html(`
         <div id="kep"><img src="${elem.kep}"></div>
         <div id="termek">
-        <h2>${elem.megnevezes}</h2>
-        <p>Cikkszám: ${elem.cikkszam}</p>
-            <p>Gyártói cikkszám: ${elem.gyartoi_cikkszam}</p>
-            <p>Márka: ${elem.marka}</p>
-            <p>Garancia: ${elem.garancia} hónap</p>
-            <p>${elem.leiras}</p>
-            <h2>Ár: ${elem.ar} Ft</h2>
-            <div class="wrapper">
-                <button id="minus${elem.id}">-</button>
-                <input type="number" class="dbInput" value=1 min=1 id="number${elem.id}"></input>
-                <button id="plus${elem.id}">+</button>
+            <h2>${elem.megnevezes}</h2>
+            <p>Cikkszám: ${elem.cikkszam}</p>
+                <p>Gyártói cikkszám: ${elem.gyartoi_cikkszam}</p>
+                <p>Márka: ${elem.marka}</p>
+                <p>Garancia: ${elem.garancia} hónap</p>
+                <p>${elem.leiras}</p>
+                <div class="wrapper">
+                <h4 class="ar">${elem.ar} Ft</h4>
+                <div class="mennyisegTarolo">
+                    <div>
+                    <button id="minus${elem.id}" class="novCsok">&minus;</button>
+                    </div>
+                    <div>
+                    <input type="number" min=1 class="dbInput" value="1" id="number${elem.id}">
+                    </div>
+                    <div>
+                    <button id="plus${elem.id}" class="novCsok">&plus;</button>
+                    </div>
+                </div>
             </div>
-            <button id="kosarba">Kosárba</button>
+                    <button id="kosarba" class="kosarGomb">Kosárba</button>
         </div>
         `);
         this.#minus = document.getElementById(`minus${elem.id}`);

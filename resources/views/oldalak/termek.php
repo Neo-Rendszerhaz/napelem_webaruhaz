@@ -14,14 +14,18 @@
 
 <body>
     <main>
-    <header>
-            <nav>
-                <ul>
-                    <li><a href="/dashboard">Profil</a></li>
-                    <li><a href="/">Kezdőlap</a></li>
+        <header>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <input type="checkbox" id="checkbox-toggle">
+                    <label for="checkbox-toggle" class="hamburger">&#9776;</label>
+                    <div class="menu">
+                        <li><a href="/dashboard">Profil</a></li>
+                        <li><a href="/">Kezdőlap</a></li>
+                        <li><a href="/kosar"><i id="kosar">Kosár</i></a></li>
+                    </div>
                 </ul>
             </nav>
-            <a href="/kosar"><button id="kosar">Kosár</button></a>
         </header>
         <article>
         </article>
