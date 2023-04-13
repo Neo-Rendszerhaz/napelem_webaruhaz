@@ -23,12 +23,6 @@ class TermekController extends Controller
     public static function store(Request $request)
     {
         $object = json_decode(json_encode($request->termekek), FALSE);
-        // $veglegesAr=0;
-        // for ($i=0; $i < count($object->termekek); $i++) 
-        // { 
-        //     $veglegesAr+=$object->termekek[$i]->ar*$object->termekek[$i]->db;
-        // }
-        
         // dd($request->termekek[0]["megnevezes"]);
         // dd(count($object->termekek));
         $termekekTomb=[];

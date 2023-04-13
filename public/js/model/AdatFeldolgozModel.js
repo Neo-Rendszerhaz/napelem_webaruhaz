@@ -21,6 +21,7 @@ class AdatFeldolgozModel
         .then((response) => response.json())
         .then((data) => 
         {
+            console.log(data);
             myCallBack(data)
         })
         .catch((error) => 
@@ -83,7 +84,33 @@ class AdatFeldolgozModel
     {
         console.log(adat);
         console.log("módosít", vegpont);
+        console.log(id);
         vegpont+="/" + id;
+        fetch(vegpont,
+        {
+            method: "PUT",
+            headers:
+            {
+                "content-type": "application/json",
+                "X-CSRF-TOKEN": this.token,
+            },
+            body: JSON.stringify(adat),
+        })
+        .then((response)=>response.json())
+        .then((data) => 
+        {
+            console.log("Sikeres módosítás" + data);
+        })
+        .catch((error) => 
+        {
+            console.error('Error:', error);
+        });
+    }
+
+    felhasznaloCimModosit(vegpont, adat)
+    {
+        console.log(adat);
+        console.log("módosít", vegpont);
         fetch(vegpont,
         {
             method: "PUT",

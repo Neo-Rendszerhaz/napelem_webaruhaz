@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Cim;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 // use Illuminate\Support\Facades\DB;
 
 class CimController extends Controller
@@ -35,6 +37,48 @@ class CimController extends Controller
         $cim->emelet = $object->cim->emelet;
         $cim->ajto = $object->cim->ajto;
         $cim->kapucsengo = $object->cim->kapucsengo;
+        $cim->save();
+
+        return $cim->cim_id;
+    }
+
+    public static function szamlazasiCim(Request $request)
+    {
+        $szamlazasiCim = json_decode(json_encode($request->cim), FALSE);
+
+        // dd($szamlazasiCim->cim->szamlazasiCimAdatok);
+        
+        $cim = new Cim();
+        $cim->iranyitoszam = $szamlazasiCim->cim->szamlazasiCimAdatok->iranyitoszam;
+        $cim->varos = $szamlazasiCim->cim->szamlazasiCimAdatok->varos;
+        $cim->kozterulet_neve = $szamlazasiCim->cim->szamlazasiCimAdatok->kozterulet_neve;
+        $cim->kozterulet_jellege = $szamlazasiCim->cim->szamlazasiCimAdatok->kozterulet_jellege;
+        $cim->hely_hazszam = $szamlazasiCim->cim->szamlazasiCimAdatok->hely_hazszam;
+        $cim->hely_haz_jelleg = $szamlazasiCim->cim->szamlazasiCimAdatok->hely_haz_jelleg;
+        $cim->epulet = $szamlazasiCim->cim->szamlazasiCimAdatok->epulet;
+        $cim->emelet = $szamlazasiCim->cim->szamlazasiCimAdatok->emelet;
+        $cim->ajto = $szamlazasiCim->cim->szamlazasiCimAdatok->ajto;
+        $cim->kapucsengo = $szamlazasiCim->cim->szamlazasiCimAdatok->kapucsengo;
+        $cim->save();
+
+        return $cim->cim_id;
+    }
+
+    public static function szallitasiCim(Request $request)
+    {
+        $szallitasiCim = json_decode(json_encode($request->cim), FALSE);
+        
+        $cim = new Cim();
+        $cim->iranyitoszam = $szallitasiCim->cim->szallitasiCimAdatok->iranyitoszam;
+        $cim->varos = $szallitasiCim->cim->szallitasiCimAdatok->varos;
+        $cim->kozterulet_neve = $szallitasiCim->cim->szallitasiCimAdatok->kozterulet_neve;
+        $cim->kozterulet_jellege = $szallitasiCim->cim->szallitasiCimAdatok->kozterulet_jellege;
+        $cim->hely_hazszam = $szallitasiCim->cim->szallitasiCimAdatok->hely_hazszam;
+        $cim->hely_haz_jelleg = $szallitasiCim->cim->szallitasiCimAdatok->hely_haz_jelleg;
+        $cim->epulet = $szallitasiCim->cim->szallitasiCimAdatok->epulet;
+        $cim->emelet = $szallitasiCim->cim->szallitasiCimAdatok->emelet;
+        $cim->ajto = $szallitasiCim->cim->szallitasiCimAdatok->ajto;
+        $cim->kapucsengo = $szallitasiCim->cim->szamlazasiCimAdatok->kapucsengo;
         $cim->save();
 
         return $cim->cim_id;

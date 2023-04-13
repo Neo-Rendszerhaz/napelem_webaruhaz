@@ -26,10 +26,10 @@ class RendelesController extends Controller
     public static function store(Request $request)
     {
         $object = json_decode(json_encode($request->vegosszeg), FALSE);
+        $szCim = json_decode(json_encode($request->cim), FALSE);
         $vegosszeg=$object->vegosszeg;
         
-        $szallitasi_cim=CimController::store($request);
-  
+        $szallitasi_cim=CimController::szallitasiCim($request);
         $rendeles= new Rendeles();
         $rendeles->datum = Carbon::now()->format('Y-m-d');
         $rendeles->felhasznalo_id = Auth::user()->felhasznalo_id;

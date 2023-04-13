@@ -21,5 +21,8 @@ class VerifyCsrfToken extends Middleware
         "/rendelesek",
         "/rendeles_tetelek",
         "/rendeles_leadas",
+        "/szamlazasi_cim",
+        "/cim_modositas",
+        "/cim_modositas/*"
     ];
 }

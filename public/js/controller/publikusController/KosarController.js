@@ -4,27 +4,32 @@ import KosarakView from "../../view/publikusView/KosarakView.js";
 class KosarController 
 {
     constructor() 
-    {        
-        this.kosar=[];
-        this.termekMent=[];
-        
+    {
+        this.aktFelhasznalo = 0;
+        console.log(this.aktFelhasznalo);
+        this.kosar = [];
+        this.termekMent = [];
+
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
         let jsonObjektum = JSON.parse(localStorage.getItem("kosar"));
         for (let i = 0; i < jsonObjektum.length; i++) 
         {
-            this.kosar.push(jsonObjektum[i]);    
+            this.kosar.push(jsonObjektum[i]);
         }
 
-        this.kosarAdatok(this.kosar)
+        this.kosarAdatok(this.kosar);
 
-        $(window).on("rendelesVeglegesites", (event)=>
+        adatFeldolgozModel.adatBe("/akt_felhasznalo", (id) => 
         {
+            this.aktualisFelhasznalo(id)
+        });
 
-            console.log(event.detail);
-            // adatFeldolgozModel.adatUj("/cimek", {"cim":event.detail});
-            // adatFeldolgozModel.adatUj("/termekek", {"termekek":event.detail});
+        $(window).on("rendelesVeglegesites", (event) => 
+        {
+            adatFeldolgozModel.adatModosit("/cim_modositas", { cim: event.detail },this.aktFelhasznalo);
+
             adatFeldolgozModel.adatUj("/rendeles_tetelek", {"termekek":event.detail, "cim":event.detail, "vegosszeg":event.detail});
         });
     }
@@ -33,6 +38,12 @@ class KosarController
     {
         const szuloelem = $("article");
         new KosarakView(tomb, szuloelem);
+    }
+
+    aktualisFelhasznalo(id) 
+    {
+        this.aktFelhasznalo=id
+        console.log(this.aktFelhasznalo);
     }
 }
 export default KosarController;

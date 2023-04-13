@@ -46,6 +46,9 @@ class FelhasznaloController extends Controller
 
     public function update(Request $request, $id)
     {
+        $object = json_decode(json_encode($request->cim), FALSE);
+        dd($object);
+
         $felhasznalo= Felhasznalo::find($id);
         $felhasznalo->email = $request->email;
         $felhasznalo->jelszo = $request->jelszo;
@@ -60,6 +63,35 @@ class FelhasznaloController extends Controller
         $felhasznalo->adoszam = $request->adoszam;
         $felhasznalo->jelleg = $request->jelleg;
         $felhasznalo->jogosultsag = $request->jogosultsag;
+        $felhasznalo->save();
+        
+    }
+
+    public function cimModositas(Request $request, $id)
+    {
+        $object = json_decode(json_encode($request->cim), FALSE);
+        $felhasznalo= Felhasznalo::find($id);
+        $felhasznalo->email = $felhasznalo->email;
+        $felhasznalo->jelszo = $felhasznalo->jelszo;
+        if($object->cim->szamlazasiCimMegyezikSzallitasiCimmel==true)
+        {
+            $felhasznalo->szamlazasi_cim = CimController::szamlazasiCim($request);
+            $felhasznalo->szallitasi_cim_1 = CimController::szamlazasiCim($request);
+        }
+        else
+        {
+            $felhasznalo->szamlazasi_cim = CimController::szamlazasiCim($object->cim->szamlazasiCimAdatok);
+            $felhasznalo->szallitasi_cim_1 = CimController::szallitasiCim($object->cim->szallitasiCimAdatok);
+        }
+        $felhasznalo->szallitasi_cim_2 = $felhasznalo->szallitasi_cim_2;
+        $felhasznalo->szallitasi_cim_3 = $felhasznalo->szallitasi_cim_3;
+        $felhasznalo->vezeteknev = $felhasznalo->vezeteknev;
+        $felhasznalo->keresztnev = $felhasznalo->keresztnev;
+        $felhasznalo->telefonszam = $felhasznalo->telefonszam;
+        $felhasznalo->cegnev = $felhasznalo->cegnev;
+        $felhasznalo->adoszam = $felhasznalo->adoszam;
+        $felhasznalo->jelleg = $felhasznalo->jelleg;
+        $felhasznalo->jogosultsag = $felhasznalo->jogosultsag;
         $felhasznalo->save();
     }
 
@@ -166,5 +198,10 @@ class FelhasznaloController extends Controller
         $felhasznalo->jelleg = "M";
         $felhasznalo->save();
         return $felhasznalo;
+    }
+
+    public function aktualisFelhasznalo()
+    {
+        return Auth::user()->felhasznalo_id;
     }
 }

@@ -128,9 +128,16 @@ Route::middleware(["felhasznalo"])->group(function()
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
     Route::post("/cimek", [CimController::class, "store"]);
+    Route::post("/szamlazasi_cim", [CimController::class, "szamlazasiCim"]);
     Route::post("/termekek", [TermekController::class, "store"]);
     Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
     Route::post("/rendelesek", [RendelesController::class, "store"]);
+    Route::get("/aktualis_felhasznalo", [FelhasznaloController::class, "aktualisFelhasznalo"]);
+
+
+    Route::put("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "update"]);
+    Route::put("/cim_modositas/{felhasznalo_id}", [FelhasznaloController::class, "cimModositas"]);
+    Route::get("akt_felhasznalo", [FelhasznaloController::class, "aktualisFelhasznalo"]);
 });
 
 
