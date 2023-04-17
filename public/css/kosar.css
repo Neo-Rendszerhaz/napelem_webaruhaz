@@ -4,14 +4,16 @@
 
 main {
   display: grid;
-  grid-template-areas: "n n n n n n n n"
-    "a a a a a a a a"
-    "as as as as as as as as"
+  grid-template-areas: "h h h h h h h h"
+    "a a a a a as as as"
     "f f f f f f f f";
 }
 
+header {
+  grid-area: h;
+}
+
 article {
-  width: 80%;
   grid-area: a;
   display: flex;
   margin: auto;
@@ -38,6 +40,7 @@ footer {
 
 .termek {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   overflow-wrap: break-word;
   white-space: nowrap;
@@ -109,9 +112,13 @@ p {
 
 @media screen and (max-width: 1200px) {
   main {
-    grid-template-areas: "h h h h h h h"
-      "n n n n n n n"
-      "as as as a a a a"
-      "f f f f f f f";
+    display: grid;
+    grid-template-areas: "h h h h h h h h"
+      "a a a a a a as as"
+      "f f f f f f f f";
   }
+}
+
+@media screen and (max-width: 900px) {
+
 }
