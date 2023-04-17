@@ -4,77 +4,89 @@ class ProfilView
     constructor(elem, cimDiv, profilDiv)
     {
         this.#elem=elem
-
-        const cimzes=`<p>${elem.iranyitoszam+" "+elem.varos+" "+elem.kozterulet_neve+" "+elem.kozterulet_jellege+" "+elem.hely_hazszam+" "+elem.epulet+" "+elem.emelet+" "+elem.ajto+" "+elem.kapucsengo}</p>`;
-
         
-        const maganszemelyAdat = `<p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>
+        for (const key in elem) 
+        {
+            if(elem[key]==null) 
+            {
+                elem[key]="";
+            }
+        }
+        if(elem.epulet!="")
+        {
+            elem.epulet+=" épület";
+        }
+        if(elem.emelet!="")
+        {
+            elem.emelet+=" emelet";
+        }
+        if(elem.ajto!="")
+        {
+            elem.ajto+=". ajtó"
+        }
+        
+        const cimzes=`<p>${elem.iranyitoszam+" "+elem.varos+" "+elem.kozterulet_neve+" "+elem.kozterulet_jellege+" "+elem.hely_hazszam+"."+elem.epulet+" "+elem.emelet+" "+elem.ajto} </p>`;
+
+        const maganszemelyAdat = `<div id="adatok"><h3>Profil adatok:</h3>
+        <p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>
         <p>Email cím: ${elem.email}</p>
-        <p>Telefonszám: +36${elem.telefonszam}</p>`;
+        <p>Telefonszám: +36${elem.telefonszam}</p></div>`;
 
         const cegAdat=`
+        <div id="adatok"><h3>Profil adatok:</h3>
+        <p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>
+        <p>Email cím: ${elem.email}</p>
+        <p>Telefonszám: +36${elem.telefonszam}</p>
         <p>Cégnév: ${elem.cegnev}</p>
         <p>Adószám: ${elem.adoszam}</p>
-        `;
+        </div>`;
 
-        const szerkesztesGomb=`<div class="gomb"><button id="cimSzerkesztes" class="szerkesztes">Szerkesztés</button></div>`;
-
-        if(elem.szamlazasi_cim==null)
+        if(elem.szamlazasi_cim=="")
         {
             console.log(maganszemelyAdat);
             if(elem.jelleg==="M")
             {
-                $(profilDiv).append(maganszemelyAdat, szerkesztesGomb);
+                $(profilDiv).append(maganszemelyAdat);
             }
             else if(elem.jelleg==="C")
             {
-                $(profilDiv).append(maganszemelyAdat, cegAdat, szerkesztesGomb);   
+                $(profilDiv).append(cegAdat);
             }
+            $("#profil").append(this.szerkesztesGomb("profilAdatokGomb"));
         }
 
         if(elem.tipus=="szamlazas")
         {
-            $(cimDiv).append(`<div id=szamlazas>
-            <h3>Számlázási cím:</h3>${cimzes, szerkesztesGomb}`);
+            $(cimDiv).html(`<div id=szamlazas>
+            <div><h3>Számlázási cím:</h3>${cimzes}</div>`);
+            $("#szamlazas").append(this.szerkesztesGomb("szamlazasiCimGomb"));
             if(elem.jelleg==="M")
             {
-                $(profilDiv).append(maganszemelyAdat, szerkesztesGomb);
+                $(profilDiv).html(maganszemelyAdat);
             }
             else if(elem.jelleg==="C")
             {
-                $(profilDiv).append(maganszemelyAdat, cegAdat, szerkesztesGomb);   
+                $(profilDiv).html(cegAdat);
             }
+            $("#profil").append(this.szerkesztesGomb("profilAdatokGomb"));
         }
         
         if(elem.tipus=="szallitas1" && elem.szallitasi_cim_1!=null)
         {
-            $(cimDiv).append(`<div id=szallitas1>
-            <h3>1. Szállítási cím:</h3>${cimzes}</div>`);
+            $(cimDiv).append(`<div id=szallitas>
+            <div><h3>Szállítási cím:</h3>${cimzes}</div>`);
+            $("#szallitas").append(this.szerkesztesGomb("szalliatsiCimGomb"));
         }
         else
         {
             $(cimDiv).append("");
         }
+    }
 
-        if(elem.tipus=="szallitas2" && elem.szallitasi_cim_2!=null)
-        {
-            $(cimDiv).append(`<div id=szallitas2>
-            <h3>2. Szállítási cím:</h3>${cimzes}</div>`);
-        }
-        else
-        {
-            $(cimDiv).append("");
-        }
-
-        if(elem.tipus=="szallitas3" && elem.szallitasi_cim_3!=null)
-        {
-            $(cimDiv).append(`<div id=szallitas3>
-            <h3>3. Szállítási cím:</h3>${cimzes}</div>`);
-        }
-        else
-        {
-            $(cimDiv).append("");
-        }
+    szerkesztesGomb(gombId)
+    {
+        const gomb=`<div class="gomb"><button id="${gombId}" class="szerkesztes">Szerkesztés</button></div>`;
+        return gomb
     }
 }
 export default ProfilView;

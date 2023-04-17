@@ -4,8 +4,8 @@ class ProfilRendelesekView
 {
     constructor(tomb, szuloelem)
     {
-        szuloelem.append(`<div id="rendelesek">
-        <h2>Rendelések:</h2>
+        szuloelem.append(`<h2 id="rendelesCim">Rendelések:</h2>
+        <div id="rendelesek">
         </div>`);
 
         this.rendelesDiv=szuloelem.children("div:last-child");

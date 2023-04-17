@@ -16,11 +16,17 @@ class FelhasznaloProfilController
 
         this.felhasznaloRendelesek="/f_rendelesek";
         adatFeldolgozModel.adatBe(this.felhasznaloRendelesek, this.profilRendelesek);
+
+        $(window).on("profilAdatokGomb", (event)=>
+        {
+            console.log(event.detail.felhasznalo_id);
+            adatFeldolgozModel.adatModosit("/felhasznalok", event.detail, event.detail.felhasznalo_id)
+        });
     }
 
     profilAdatok(adat)
     {
-        const szuloElem = $("#profilTarolo");
+        const szuloElem = $("#felhasznaloAdatok");
         new ProfilokView(adat, szuloElem)
     }
 

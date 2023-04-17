@@ -8,11 +8,11 @@ class ProfilRendelesView
         if(elem.length!==0)
         {
             szuloElem.append(`<div class="felhasznaloRendelesi">
-            <p>Rendelés szám: ${elem.rendeles_szam}</p>
-            <p>Rendelés dátuma: ${elem.datum}</p>
-            <p>Végösszeg: ${elem.vegosszeg} Ft</p>
-            <p class="rendelesAllapot">Rendelés Állapota: 
-            ${this.rendelesAllapot(elem.allapot)}</p>
+            <div><p>Rendelés szám: ${elem.rendeles_szam}</p></div>
+            <div><p>Rendelés dátuma: ${elem.datum}</p></div>
+            <div><p>Végösszeg: ${elem.vegosszeg} Ft</p></div>
+            <div><p class="rendelesAllapot">Rendelés Állapota: 
+            ${this.rendelesAllapot(elem.allapot)}</p></div>
             </div>`);
         }
         else

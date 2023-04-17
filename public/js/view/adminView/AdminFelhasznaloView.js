@@ -21,7 +21,6 @@ class AdminFelhasznaloView
         {
             this.kattintasTrigger("megjelenit");
             $(".overlay").show();
-            // $(".overlay").css({"display": "block", "opacity": 1, "visibility": "visible", "z-index": 10})
         });
 
         this.bezar=$("#bezar");
@@ -29,7 +28,6 @@ class AdminFelhasznaloView
         {
             console.log("bezár");
             $(".overlay").hide();
-            // $(".overlay").css({"display": "none","opacity": 0, "z-index": -10})
         });
     }
 
