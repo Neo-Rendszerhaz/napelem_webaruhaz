@@ -138,6 +138,9 @@ Route::middleware(["felhasznalo"])->group(function()
     Route::put("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "update"]);
     Route::put("/cim_modositas/{felhasznalo_id}", [FelhasznaloController::class, "cimModositas"]);
     Route::get("akt_felhasznalo", [FelhasznaloController::class, "aktualisFelhasznalo"]);
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+                ->middleware('auth')
+                ->name('logout');
 });
 
 

@@ -200,6 +200,6 @@ class FelhasznaloController extends Controller
 
     public function aktualisFelhasznalo()
     {
-        return Auth::user()->felhasznalo_id;
+        return Auth::user();
     }
 }

@@ -1,6 +1,7 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import KezdoLapokView from "../../view/publikusView/KezdoLapokView.js";
 import TermekController from "./TermekController.js";
+import NavigacioView from "../../view/publikusView/NavigacioView.js";
 
 class IndexController {
     constructor() {
@@ -11,10 +12,9 @@ class IndexController {
 
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
-
         this.vegpont = "../js/termekek.json";
         adatFeldolgozModel.adatBe(this.vegpont, this.kezdolapAdatok);
-
+        adatFeldolgozModel.adatBe("akt_felhasznalo",this.navigacio)
         $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
             this.termekekLocalStorageba();
@@ -32,7 +32,9 @@ class IndexController {
         let jsonString = JSON.stringify(tomb);
         window.localStorage.setItem("termek", jsonString);
     }
-
+    navigacio(aktualisFelhasznalo){
+        new NavigacioView(aktualisFelhasznalo)
+    }
     kezdolapAdatok(tomb) {
         let tombTermekek = tomb.termekek;
         const szuloelem = $("article");

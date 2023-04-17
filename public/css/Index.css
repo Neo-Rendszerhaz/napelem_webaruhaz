@@ -4,6 +4,40 @@ kék: 698ec3 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+#fejlec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#fejlec>div {
+    width: 500px;
+    margin-left: 20px;
+}
+
+#fejlec>div>h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(62, 142, 195);
+    margin: 0px;
+    font-size: 60px;
+}
+
+#fejlec>div>h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: gray;
+    font-size: 35px;
+    margin: 0px;
+    letter-spacing: 30px;
+    text-align: center;
+}
+
+#logo {
+    width: 200px;
+    height: 125px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -23,6 +57,11 @@ header {
     grid-area: h;
 }
 
+header,
+header div {
+    margin: auto;
+}
+
 header div h2 {
     color: rgba(62, 142, 195);
     padding-left: 0;
@@ -32,11 +71,6 @@ header div h2 {
 header div p {
     padding: 0;
     margin: 0;
-}
-
-
-#logo {
-    width: 10%;
 }
 
 aside {
@@ -50,57 +84,15 @@ aside div {
 }
 
 article {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
     border: 1px solid black;
     width: 100%;
     grid-area: a;
     gap: 10px;
-}
-
-.navbar {
-    grid-area: n;
-    padding: 10px;
-    background-color: rgba(62, 142, 195);
-    opacity: 0.7;
-}
-
-.nav-links {
-    list-style-type: none;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.menu {
-    gap: 1em;
-    font-size: 18px;
-}
-
-.menu li {
-    color: black;
-    text-align: center;
-    padding: 5px 14px;
-}
-
-.menu a {
-    color: white;
-}
-
-.menu a:link {
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-.hamburger {
-    display: none;
-    font-size: 24px;
-    user-select: none;
-}
-
-.menu a:hover,
-a:active {
-    color: rgba(62, 142, 195);
-    background-color: white;
 }
 
 footer {
@@ -108,12 +100,21 @@ footer {
 }
 
 .termek {
+    display: flex;
+    flex: 0 0 30%;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid gray;
     margin: 10px;
     border: 1px solid rgba(100, 100, 100, 0.2);
     border-radius: 10px;
     font-weight: bold;
     background-color: lightgrey;
+}
+
+.termekNev {
+    width: 90%;
+    margin: auto;
 }
 
 .termek img {
@@ -138,6 +139,9 @@ footer {
 }
 
 .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
     width: 90%;
     margin: 20px 0px;
 }
@@ -150,11 +154,27 @@ footer {
     font-size: 20px;
 }
 
+.mennyisegTarolo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .mennyisegTarolo button,
 .mennyisegTarolo input {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 5px 10px;
+    text-align: center;
     border: none;
     background-color: #b3cf61;
     border-radius: 5px;
+}
+
+.mennyisegTarolo input {
+    margin: 0px 5px;
+    width: 60px;
 }
 
 input::-webkit-outer-spin-button,
@@ -168,7 +188,21 @@ input[type=number] {
 }
 
 .kosarGomb {
+    display: grid;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 8px;
+    width: 90%;
+    text-align: center;
     border: none;
     background-color: #b3cf61;
     font-size: 16px;
+}
+
+img {
+    display: grid;
+    width: 90%;
+    margin: 10px 0px;
+    margin: auto;
 }
