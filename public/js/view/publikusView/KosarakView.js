@@ -233,6 +233,7 @@ class KosarakView {
 
         szuloElem.html(`
         <div id="rendtermekek">
+            <h3>Kosár</h3>
         </div>`)
         this.divElem = szuloElem.children("div:last-child");
 

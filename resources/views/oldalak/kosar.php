@@ -17,19 +17,25 @@
 </head>
 
 <body>
+    <header>
+        <div id="fejlec"><img id="logo" src="/logo/NeO-Rendszerhaz-logo.png" alt="NeO Rendszerház">
+            <div>
+                <h2>NeO Rendszerház</h2>
+                <h3>WEBÁRUHÁZ</h3>
+            </div>
+        </div>
+    </header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <input type="checkbox" id="checkbox_toggle">
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <div class="menu">
+                    <li><a href="/dashboard">Profil</a></li>
+                    <li><a href="/">Kezdőlap</a></li>
+                </div>
+            </ul>
+        </nav>
     <main>
-        <header>
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <input type="checkbox" id="checkbox_toggle">
-                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-                    <div class="menu">
-                        <li><a href="/dashboard">Profil</a></li>
-                        <li><a href="/">Kezdőlap</a></li>
-                    </div>
-                </ul>
-            </nav>
-        </header>
         <article>
             <h1>A kosarad jelenleg üres.</h1>
         </article>

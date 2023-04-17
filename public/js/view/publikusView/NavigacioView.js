@@ -10,6 +10,7 @@ class NavigacioView{
         else{
             navBar=`            
             <li><a href="/">Kezdőlap</a></li>
+            <li><a href="/kosar">Kosár</a></li>
             <li><a id="bejelentkezes" href="/logout">Kijelentkezés</a></li>
             <li><a href="{{url('/logout')}}"> Kijelentkezés2</li>`
                 /*`<form method="POST" action="{{ route('logout') }}">
