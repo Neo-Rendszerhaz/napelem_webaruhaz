@@ -51,7 +51,7 @@ class AdatFeldolgozModel
         })
         .catch((error) => 
         {
-            console.error('Error:', error);
+            myCallBack(undefined)
         });
     }
 

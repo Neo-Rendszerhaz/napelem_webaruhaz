@@ -40,9 +40,9 @@ class KosarController
         new KosarakView(tomb, szuloelem);
     }
 
-    aktualisFelhasznalo(id) 
+    aktualisFelhasznalo(felhasznalo) 
     {
-        this.aktFelhasznalo=id
+        this.aktFelhasznalo=felhasznalo.felhasznalo_id
         console.log(this.aktFelhasznalo);
     }
 }
