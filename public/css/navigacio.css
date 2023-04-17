@@ -1,7 +1,180 @@
-header, header div
-{
+header,
+header div {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: auto;
+}
+
+article {
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    display: block;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+.termek {
+    display: flex;
+    flex: 0 0 30%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.termekNev {
+    width: 90%;
+    margin: auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.mennyisegTarolo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mennyisegTarolo button,
+.mennyisegTarolo input {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.mennyisegTarolo input {
+    margin: 0px 5px;
+    width: 60px;
+}
+
+.kosarGomb {
+    display: grid;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 8px;
+    width: 90%;
+    text-align: center;
+}
+
+img {
+    display: grid;
+    width: 90%;
+    margin: 10px 0px;
+    margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        grid-template-areas: "h h h h h h h"
+            "n n n n n n n"
+            "as as as a a a a"
+            "f f f f f f f";
+    }
+
+    article {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .termek {
+        flex: 0 0 25%;
+    }
+
+    article {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .termek {
+        flex: 0 0 10%;
+    }
+
+    article {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 820px) {
+
+    main {
+        padding-top: 100px;
+        grid-template-areas: "h"
+            "n"
+            "as"
+            "a"
+            "f";
+    }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+    }
+
+    .hamburger:hover {
+        background-color: white;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: rgba(62, 142, 195);
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: white;
+        transition: 0.3s ease;
+    }
+
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    article {
+        grid-template-columns: 1fr;
+    }
 }
