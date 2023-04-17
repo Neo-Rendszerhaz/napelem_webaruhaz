@@ -19,11 +19,11 @@
 <body>
     <main>
         <header>
-            <img id="logo" src="/logo/NeO-Rendszerhaz-logo.png" alt="NeO Rendszerház">
-            <div>
+        <div id="fejlec"><img id="logo" src="/logo/NeO-Rendszerhaz-logo.png" alt="NeO Rendszerház"><div>
                 <h2>NeO Rendszerház</h2>
-                <p>Informatikai eszközök értékesítése | oktatás</p>
+                <h3>WEBÁRUHÁZ</h3>
             </div>
+        </div>
         </header>
         <nav class="navbar">
             <ul class="nav-links">

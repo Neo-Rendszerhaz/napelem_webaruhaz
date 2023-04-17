@@ -4,6 +4,35 @@ kék: 698ec3 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+#fejlec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#fejlec>div{
+    width: 500px;
+    margin-left: 20px;
+}
+#fejlec>div>h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(62, 142, 195);
+    margin: 0px;
+    font-size: 60px;
+}
+#fejlec>div>h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: gray;
+    font-size: 35px;
+    margin: 0px;
+    letter-spacing: 30px;
+    text-align: center;
+}
+#logo {
+    width: 200px;
+    height: 125px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -32,11 +61,6 @@ header div h2 {
 header div p {
     padding: 0;
     margin: 0;
-}
-
-
-#logo {
-    width: 10%;
 }
 
 aside {

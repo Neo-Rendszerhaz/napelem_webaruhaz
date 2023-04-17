@@ -1,3 +1,32 @@
+#fejlec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#fejlec>div{
+    width: 500px;
+    margin-left: 20px;
+}
+#fejlec>div>h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(62, 142, 195);
+    margin: 0px;
+    font-size: 60px;
+}
+#fejlec>div>h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: gray;
+    font-size: 35px;
+    margin: 0px;
+    letter-spacing: 30px;
+    text-align: center;
+}
+#logo {
+    width: 200px;
+    height: 125px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 * {
     box-sizing: border-box;
 }
@@ -137,13 +166,13 @@ input[type=number] {
     cursor: pointer;
 }
 
-img {
+#kep>img {
     width: 500px;
     mix-blend-mode: multiply;
 }
 
 @media screen and (max-width: 1200px) {
-    img{
+    #kep>img{
         width: 100%;
     }
 }
