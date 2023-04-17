@@ -9,17 +9,19 @@
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="/../js/utvonal/TermekFelulet.js" type="module"></script>
     <link rel="stylesheet" href="/../css/termek.css">
+    <link rel="stylesheet" href="/../css/navigacioBar.css">
     <title>Termék</title>
 </head>
 
 <body>
     <main>
         <header>
-            <div id="fejlec"><img id="logo" src="/logo/NeO-Rendszerhaz-logo.png" alt="NeO Rendszerház"><div>
-                <h2>NeO Rendszerház</h2>
-                <h3>WEBÁRUHÁZ</h3>
+            <div id="fejlec"><img id="logo" src="/logo/NeO-Rendszerhaz-logo.png" alt="NeO Rendszerház">
+                <div>
+                    <h2>NeO Rendszerház</h2>
+                    <h3>WEBÁRUHÁZ</h3>
+                </div>
             </div>
-        </div>
             <nav class="navbar">
                 <ul class="nav-links">
                     <input type="checkbox" id="checkbox-toggle">

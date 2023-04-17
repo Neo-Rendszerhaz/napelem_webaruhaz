@@ -1,90 +1,94 @@
-header,
-header div {
+#fejlec {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
 }
 
-article {
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
+#fejlec>div {
+    width: 500px;
+    margin-left: 20px;
+}
+
+#fejlec>div>h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgba(62, 142, 195);
+    margin: 0px;
+    font-size: 60px;
+}
+
+#fejlec>div>h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: gray;
+    font-size: 35px;
+    margin: 0px;
+    letter-spacing: 30px;
+    text-align: center;
+}
+
+#logo {
+    width: 200px;
+    height: 125px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    grid-area: n;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(62, 142, 195);
+    z-index: 1;
+}
+
+.nav-links {
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .menu {
     display: flex;
+    gap: 1em;
+    font-size: 18px;
 }
 
 .menu li {
     display: block;
+    color: black;
+    text-align: center;
+    padding: 5px 14px;
+}
+
+.menu a {
+    color: white;
+}
+
+.menu a:link {
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu a:hover,
+a:active {
+    color: rgba(62, 142, 195);
+    background-color: white;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+    margin: 10px;
+
 }
 
 #checkbox_toggle {
     display: none;
-}
-
-.termek {
-    display: flex;
-    flex: 0 0 30%;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.termekNev {
-    width: 90%;
-    margin: auto;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-}
-
-.mennyisegTarolo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mennyisegTarolo button,
-.mennyisegTarolo input {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    padding: 5px 10px;
-    text-align: center;
-}
-
-.mennyisegTarolo input {
-    margin: 0px 5px;
-    width: 60px;
-}
-
-.kosarGomb {
-    display: grid;
-    margin: auto;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding: 8px;
-    width: 90%;
-    text-align: center;
-}
-
-img {
-    display: grid;
-    width: 90%;
-    margin: 10px 0px;
-    margin: auto;
 }
 
 @media screen and (max-width: 1200px) {
