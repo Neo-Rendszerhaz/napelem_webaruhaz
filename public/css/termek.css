@@ -69,14 +69,14 @@ a:active {
 
 .wrapper {
     display: flex;
-    justify-content: space-between;
-    align-self: center;
+    flex-direction: column;
     width: 90%;
     margin: 20px 0px;
+    text-align: center;
 }
 
 .ar {
-    font-weight: bold;
+    font-size: 30px;
 }
 
 .wrapper span {
@@ -85,8 +85,8 @@ a:active {
 
 .mennyisegTarolo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
 .mennyisegTarolo button,
@@ -131,17 +131,22 @@ input[type=number] {
 
 #termek {
     font-weight: bold;
+    margin-left: 40px;
 }
-
 #kosarba {
     cursor: pointer;
 }
 
 img {
-    width: 100%;
+    width: 500px;
     mix-blend-mode: multiply;
 }
 
+@media screen and (max-width: 1200px) {
+    img{
+        width: 100%;
+    }
+}
 @media screen and (max-width: 820px) {
 
     main {
@@ -180,5 +185,8 @@ img {
 
     .hamburger {
         display: block;
+    }
+    article{
+        grid-template-columns:1fr;
     }
 }
