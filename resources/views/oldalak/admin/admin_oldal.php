@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/../css/admin.css">
+    <link rel="stylesheet" href="/../css/navigacioBar.css">
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="/../js/utvonal/AdminFelulet.js" type="module"></script>
@@ -17,14 +18,16 @@
 
 <body>
     <main>
-        <header>
-            <nav>
-                <ul>
+        <nav>
+            <input type="checkbox" id="check"/>
+            <label for="check" class="checkBtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul>
                     <li><a href="/dashboard">Profil</a></li>
                     <li><a href="/">Kezdőlap</a></li>
                 </ul>
-            </nav>
-        </header>
+        </nav>
         <article>
 
         </article>
