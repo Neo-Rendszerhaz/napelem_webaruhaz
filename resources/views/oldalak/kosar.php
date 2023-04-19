@@ -13,6 +13,7 @@
     <script src="/../js/utvonal/KosarFelulet.js" type="module"></script>
     <link rel="stylesheet" href="/../css/navigacioBar.css">
     <link rel="stylesheet" href="/../css/kosar.css">
+    <link rel="stylesheet" href="/../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Kosár</title>
 </head>
@@ -36,7 +37,6 @@
             <li><a href="/">Kezdőlap</a></li>
         </ul>
     </nav>
-            
     <main>
         <article>
             <h1>A kosarad jelenleg üres.</h1>

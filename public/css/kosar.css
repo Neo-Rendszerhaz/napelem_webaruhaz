@@ -11,14 +11,14 @@ main
   grid-template-areas:
     "a a a a a as as as"
     "f f f f f f f f";
-  width: 95%;
+  width: 100%;
   margin: auto;
   margin-top: 10px;
 }
 
 article 
 {
-  /* border: 1px solid black; */
+  width: 95%;
   grid-area: a;
   display: flex;
   margin: auto;
