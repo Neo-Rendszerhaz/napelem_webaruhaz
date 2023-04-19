@@ -4,39 +4,7 @@ kék: 698ec3 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-#fejlec {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-#fejlec>div {
-    width: 500px;
-    margin-left: 20px;
-}
-
-#fejlec>div>h2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgba(62, 142, 195);
-    margin: 0px;
-    font-size: 60px;
-}
-
-#fejlec>div>h3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: gray;
-    font-size: 35px;
-    margin: 0px;
-    letter-spacing: 30px;
-    text-align: center;
-}
-
-#logo {
-    width: 200px;
-    height: 125px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
 * {
     box-sizing: border-box;
@@ -205,4 +173,86 @@ img {
     width: 90%;
     margin: 10px 0px;
     margin: auto;
+}
+
+@media screen and (max-width: 1200px) 
+{
+    main
+    {
+        grid-template-areas: "h h h h h h h"
+                             "n n n n n n n"
+                             "as as as as as as as"
+                             "a a a a a a a"
+                             "f f f f f f f";
+    }
+    article 
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1100px) 
+{
+    .termek
+    {
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+    }
+    article 
+    {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 900px) 
+{
+    .termek
+    {
+        flex: 0 0 20%;
+    }
+    article 
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) 
+{
+    #fejlec
+    {
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+}
+
+
+@media screen and (max-width: 550px) 
+{
+    .termek
+    {
+        flex: 0 0 20%;
+    }
+    article 
+    {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 550px) 
+{
+    .termek
+    {
+        flex: 0 0 10%;
+    }
+    article 
+    {
+        grid-template-columns: 1fr;
+    }
 }

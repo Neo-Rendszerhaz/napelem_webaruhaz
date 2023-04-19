@@ -10,12 +10,12 @@
 }
 
 .popup {
-  margin: 100px auto;
+  margin: 40px auto;
   padding: 20px;
   background: white;
   border-radius: 5px;
   width: 70%;
-  height: 55vh;
+  max-height: 90%;
   position: relative;
   display: block;
 }

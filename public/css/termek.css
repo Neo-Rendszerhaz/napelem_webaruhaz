@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
 article {
@@ -100,41 +102,7 @@ input[type=number] {
 @media screen and (max-width: 820px) {
 
     main {
-        padding-top: 100px;
-    }
-
-    .navbar {
-        position: fixed;
-        width: 100%;
-        top: 0;
-    }
-
-    .hamburger:hover {
-        background-color: white;
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        background-color: rgba(62, 142, 195);
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding: 16px 0;
-    }
-
-    .menu li:hover {
-        display: inline-block;
-        background-color: white;
-        transition: 0.3s ease;
-    }
-
-    input[type=checkbox]:checked~.menu {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
+        /* padding-top: 100px; */
     }
 
     article {

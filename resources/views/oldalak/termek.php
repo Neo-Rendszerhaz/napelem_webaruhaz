@@ -10,6 +10,7 @@
     <script src="/../js/utvonal/TermekFelulet.js" type="module"></script>
     <link rel="stylesheet" href="/../css/termek.css">
     <link rel="stylesheet" href="/../css/navigacioBar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Termék</title>
 </head>
 
@@ -22,18 +23,18 @@
                     <h3>WEBÁRUHÁZ</h3>
                 </div>
             </div>
-            <nav class="navbar">
-                <ul class="nav-links">
-                    <input type="checkbox" id="checkbox-toggle">
-                    <label for="checkbox-toggle" class="hamburger">&#9776;</label>
-                    <div class="menu">
-                        <li><a href="/dashboard">Profil</a></li>
-                        <li><a href="/">Kezdőlap</a></li>
-                        <li><a href="/kosar"><i id="kosar">Kosár</i></a></li>
-                    </div>
-                </ul>
-            </nav>
         </header>
+        <nav>
+            <input type="checkbox" id="check"/>
+            <label for="check" class="checkBtn">
+                <i class="fa fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="/dashboard">Profil</a></li>
+                <li><a href="/">Kezdőlap</a></li>
+                <li><a href="/kosar"><i id="kosar">Kosár</i></a></li>
+            </ul>
+        </nav>
         <article>
         </article>
         <footer></footer>

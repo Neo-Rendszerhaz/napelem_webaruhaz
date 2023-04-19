@@ -35,6 +35,7 @@ class ProfilokView
 
         this.profilAdatokGomb.on("click", ()=>
         {
+            $(".popup").css({"height": "55vh"});
             $(".tartalom").html(`<h3>Adatok módosítása</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -73,7 +74,55 @@ class ProfilokView
 
         this.szamlazasiCimGomb.on("click", ()=>
         {
+            $(".popup").css({"height": "90%"});
+            $(".tartalom").html(`<h3>Számlázási cím szerkesztése</h3>
+            <div class="popupTartalom">
+                <div class="adatBlokk">
+                    <label for="iranyitoszam">Irányítószám:</label>
+                    <input type="text" id="iranyitoszam" name="iranyitoszam" value="${this.szamlazasiCim.iranyitoszam}" required autocomplete="iranyitoszam">
+                </div>
+                
+                <div class="adatBlokk">
+                        <label for="varos">Város:</label>
+                        <input type="text" id="varos" name="varos" value="${this.szamlazasiCim.varos}" required autocomplete="varos">
+                </div>
+                
+                <div class="adatBlokk">
+                        <label for="kozteruletNeve">Közterület neve:</label>
+                        <input type="text" id="kozteruletNeve" name="kozteruletNeve" value="${this.szamlazasiCim.kozterulet_neve}" required autocomplete="kozteruletNeve">
+                </div>
 
+                <div class="adatBlokk">
+                        <label for="kozteruletJellege">Közterület jellege:</label>
+                        <input type="text" id="kozteruletJellege" name="kozteruletJellege" value="${this.szamlazasiCim.kozterulet_jellege}" required autocomplete="kozteruletJellege">
+                </div>
+                <div class="adatBlokk">
+                        <label for="hely_hazszam">Helyrajzi / ház szám:</label>
+                        <input type="text" id="hely_hazszam" name="hely_hazszam" value="${this.szamlazasiCim.hely_hazszam}" required autocomplete="hely_hazszam">
+                </div>
+                <div class="adatBlokk">
+                        <label for="epulet">Épület</label>
+                        <input type="text" id="epulet" name="epulet" value="${this.szamlazasiCim.epulet}" required autocomplete="epulet">
+                </div>
+                <div class="adatBlokk">
+                        <label for="emelet">Emelet</label>
+                        <input type="text" id="emelet" name="emelet" value="${this.szamlazasiCim.emelet}" required autocomplete="emelet">
+                </div>
+                <div class="adatBlokk">
+                        <label for="ajto">Ajtó</label>
+                        <input type="text" id="ajto" name="ajto" value="${this.szamlazasiCim.ajto}" required autocomplete="ajto">
+                </div>
+                <button id="profilAdatokModositas">Módosítás</button>
+                </div>`)
+            $(".overlay").show();
+
+            $("#profilAdatokModositas").on("click", ()=>
+            {
+                this.szemelyesAdatokModosit();
+                this.kattintasTrigger("profilAdatokGomb");
+                location.reload();
+                $(".overlay").hide();
+            });
         });
 
         this.bezar=$("#bezar");

@@ -1,3 +1,7 @@
+*
+{
+    font-family: "Montserrat", sans-serif;
+}
 #fejlec {
     display: flex;
     flex-wrap: wrap;
@@ -31,67 +35,124 @@
     margin-bottom: auto;
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+nav
+{
     grid-area: n;
-    padding: 10px;
+    width: 100%;
+    height: 50px;
     background-color: rgba(62, 142, 195);
+    position: sticky;
+    top: 0;
     z-index: 1;
 }
 
-.nav-links {
-    list-style-type: none;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.menu {
+nav ul
+{
     display: flex;
-    gap: 1em;
-    font-size: 18px;
-}
-
-.menu li {
-    display: block;
-    color: black;
+    margin: 0px 50px;
+    justify-content: space-evenly;
+    align-items: center;
     text-align: center;
-    padding: 5px 14px;
 }
 
-.menu a {
+nav ul li
+{
+    list-style-type: none;
+    margin: 0 5px;
+}
+
+nav ul li a
+{
+    display: block;
+    color: #000;
+    /* padding: 0px 30px; */
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+a:hover
+{
     color: white;
 }
 
-.menu a:link {
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-.menu a:hover,
-a:active {
-    color: rgba(62, 142, 195);
-    background-color: white;
-}
-
-.hamburger {
+.checkBtn
+{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 50px;
+    margin-right: 40px;
+    cursor: pointer;
     display: none;
-    font-size: 24px;
-    user-select: none;
-    margin: 10px;
-
 }
-
-#checkbox_toggle {
+#check
+{
     display: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px)
+{
+    .checkBtn
+    {
+        display: block;
+    }
+    nav
+    {
+        z-index: 1;
+    }
+    nav ul
+    {
+        align-content: flex-end;
+        flex-direction: column;
+        margin: 0px;
+        position: absolute;
+        width: 300px;
+        padding-bottom: 100%;
+        background-color: rgb(0,45,71);
+        opacity: 1;
+        top: 50px;
+        right: -200%;
+        text-align: center;
+        flex-wrap: wrap;
+        transition:  all 1s;
+    }
+    nav ul li a
+    {
+        font-size: 12pt;
+        float: right;
+        color: aliceblue;
+    }
+    nav ul li
+    {
+        display: block;
+        line-height: 50px;
+        width: 30%;
+        padding-right: 30px;
+    }
+    #check:checked ~ ul
+    {
+        right: 0%;
+    }
+    
+    #kosar i
+    {
+        font-size: 50px;
+    }
+
+    @media screen and (max-width: 550px)
+    {
+        #fejlec>div
+        {
+            display: none;
+        }
+    }
+}
+
+/* @media screen and (max-width: 1200px) {
     main {
-        grid-template-areas: "h h h h h h h"
+        grid-template-areas:
+            "h h h h h h h"
             "n n n n n n n"
             "as as as a a a a"
             "f f f f f f f";
@@ -179,4 +240,4 @@ a:active {
     article {
         grid-template-columns: 1fr;
     }
-}
+} */

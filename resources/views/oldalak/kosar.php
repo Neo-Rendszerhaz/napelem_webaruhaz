@@ -13,6 +13,7 @@
     <script src="/../js/utvonal/KosarFelulet.js" type="module"></script>
     <link rel="stylesheet" href="/../css/navigacioBar.css">
     <link rel="stylesheet" href="/../css/kosar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Kosár</title>
 </head>
 
@@ -25,16 +26,17 @@
             </div>
         </div>
     </header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <input type="checkbox" id="checkbox_toggle">
-                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-                <div class="menu">
-                    <li><a href="/dashboard">Profil</a></li>
-                    <li><a href="/">Kezdőlap</a></li>
-                </div>
-            </ul>
-        </nav>
+    <nav>
+        <input type="checkbox" id="check"/>
+        <label for="check" class="checkBtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="/dashboard">Profil</a></li>
+            <li><a href="/">Kezdőlap</a></li>
+        </ul>
+    </nav>
+            
     <main>
         <article>
             <h1>A kosarad jelenleg üres.</h1>

@@ -134,7 +134,6 @@ footer
     display: flex;
     flex-wrap: nowrap; 
     position: relative; 
-    /* align-items: stretch;  */
     width: 60%;
 }
 
