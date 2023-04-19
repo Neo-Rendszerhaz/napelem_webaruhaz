@@ -13,7 +13,13 @@ main
     "f f f f f f f f";
   width: 100%;
   margin: auto;
-  margin-top: 10px;
+  /* margin: 10px; */
+}
+
+#kosarCim
+{
+  font-weight: bold;
+  font-size: 45px;
 }
 
 article 
@@ -32,21 +38,41 @@ aside
   grid-area: as;
   display: flex;
   justify-content: flex-start;
-  margin-top: 50px;
-  margin-left: 10px;
+  margin-right: 20px;
   /* border: 1px solid black; */
+}
+
+#osszesito
+{
+  margin-top: 100px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#rendelesLeadasGomb
+{
+  background-color: #f9c467;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
 }
 
 footer {
   grid-area: f;
 }
 
-
 .termek
 {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  border: 1px solid black;
+  border: 1px solid gray;
+  border-radius: 5px;
   width: 100%;
   margin: 10px 0px;
   padding: 5px;
@@ -119,6 +145,11 @@ img
   grid-template-columns: repeat(2, 1fr);
 }
 
+footer
+{
+  margin-top: 15px;
+}
+
 @media screen and (max-width: 1200px) {
   main {
     display: grid;
@@ -128,6 +159,30 @@ img
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) 
+{
+  main 
+  {
+    grid-template-areas:
+      "h"
+      "a"
+      "as"
+      "f";
+  }
+  #osszesito
+  {
+    margin: auto;
+  }
+  .termek
+  {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
+@media screen and (max-width: 550px)
+{
+  .termek
+  {
+    grid-template-columns: 1fr;
+  }
 }

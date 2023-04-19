@@ -189,3 +189,21 @@ footer
     padding: 5px;
     margin: auto;
 }
+
+@media screen and (max-width: 700px) 
+{
+    .felhasznaloRendelesi
+    {
+        flex-direction: column;
+        padding-left: 15px;
+    }
+    #felhasznaloAdatok
+    {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    #felhasznaloAdatok>div
+    {
+        margin: 20px 0px;
+    }
+}

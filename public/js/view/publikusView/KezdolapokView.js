@@ -7,17 +7,23 @@ class KezdoLapokView
         this.checkedTomb
 
         $("#kereso").html(`
-        <label>Kereső</label>
-        <input type="text" id="keresoMezo" placeholder="termék keresése" title="Írja be a termék nevét">`);
+
+        <form class="nosubmit">
+        <input class="nosubmit" type="text" id="keresoMezo" placeholder="termék keresése" title="Írja be a termék nevét"required>
+        </form>
+        </div>
+        `);
         
         $(`#szuro`).html(`
-        <label for="szures">Szűrés</label>
-        <select name="szures" id="szures">
-            <option value="abcNovekvo">ABC szerint növekvő</option>
-            <option value="abcCsokkeno">ABC szerint csökkenő</option>
-            <option value="arNovekvo">Ár szerint növekvő</option>
-            <option value="arCsokkeno">Ár szerint csökkenő</option>
-        </select>
+        <div id="rendezes">
+            <label for="szures">Rendezés:</label>
+            <select name="szures" id="szures">
+                <option value="abcNovekvo">ABC szerint növekvő</option>
+                <option value="abcCsokkeno">ABC szerint csökkenő</option>
+                <option value="arNovekvo">Ár szerint növekvő</option>
+                <option value="arCsokkeno">Ár szerint csökkenő</option>
+            </select>
+        </div>
         `)
 
         let tempArr = []

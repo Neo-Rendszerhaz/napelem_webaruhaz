@@ -17,7 +17,7 @@ class KosarakView {
 
             this.vegosszeg = 0;
             $(`aside`).html(`
-        <div>
+        <div id="osszesito">
             <h3>Végösszeg: ${this.vegosszegAr(this.#tomb)} Ft</h3>
             <button id="rendelesLeadasGomb">Rendelés leadás</button>
         </div>
@@ -233,7 +233,7 @@ class KosarakView {
 
         szuloElem.html(`
         <div id="rendtermekek">
-            <h3>Kosár</h3>
+            <h3 id="kosarCim"><i class="fa fa-shopping-cart"  style="font-size:64px; margin-top:5px; margin-right:30px;"></i>Kosár</h3>
         </div>`)
         this.divElem = szuloElem.children("div:last-child");
 
@@ -261,8 +261,6 @@ class KosarakView {
                 this.rendelesSzamlaCimMent();
                 this.rendelesCimekMegegyeznek();
             }
-
-
 
             console.log(this.rendelesSzamlaCimMent())
             this.kattintasTrigger("rendelesVeglegesites")

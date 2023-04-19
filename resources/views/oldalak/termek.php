@@ -33,7 +33,7 @@
             <ul>
                 <li><a href="/dashboard">Profil</a></li>
                 <li><a href="/">Kezdőlap</a></li>
-                <li><a href="/kosar"><i id="kosar">Kosár</i></a></li>
+                <li><a id="kosar" href="/kosar"><i class="fa fa-shopping-cart"  style="font-size:36px; margin-top:5px;"></i></a></li>
             </ul>
         </nav>
         <article>
