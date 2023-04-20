@@ -1,6 +1,12 @@
 article
 {
+  /* margin: auto; */
   margin-top: 15px;
+}
+
+article>button
+{
+  margin: 0px 15px;
 }
 
 table{

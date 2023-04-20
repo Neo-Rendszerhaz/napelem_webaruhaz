@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: "Montserrat", sans-serif;
 }
 
 article {
@@ -26,6 +29,8 @@ article {
 .tartalom h3 {
     color: white;
     margin: 0px;
+    font-size: 17px;
+    font-weight: normal;
 }
 
 input[type=checkbox] {

@@ -47,7 +47,7 @@ class TermekView {
         $(`#kosarba`).on("click", () => {
             this.kattintas("kosar");
             $(".overlay").show();
-            // const myTimeout = setTimeout(this.eltuntet, 3000);
+            const myTimeout = setTimeout(this.eltuntet, 3000);
         });
         $(`.overlay`).on("click", () => {
             $(".overlay").hide();
