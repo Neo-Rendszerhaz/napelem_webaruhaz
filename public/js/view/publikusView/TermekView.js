@@ -4,39 +4,53 @@ class TermekView {
     #number;
     #plus;
     #menny = 1;
-    constructor(elem, szuloElem) {
-        this.#elem = elem
+    constructor(adat, szuloElem) {
+        adat.forEach(elem => {
+            this.elem = elem;
+        });
         szuloElem.html(`
-        <div id="kep"><img src="${elem.kep}"></div>
+        <div id="kep"><img src="${this.elem.kep}"></div>
         <div id="termek">
-            <h2>${elem.megnevezes}</h2>
-            <p>Cikkszám: ${elem.cikkszam}</p>
-                <p>Gyártói cikkszám: ${elem.gyartoi_cikkszam}</p>
-                <p>Márka: ${elem.marka}</p>
-                <p>Garancia: ${elem.garancia} hónap</p>
-                <p>${elem.leiras}</p>
+            <h2>${this.elem.megnevezes}</h2>
+            <p>Cikkszám: ${this.elem.cikkszam}</p>
+                <p>Gyártói cikkszám: ${this.elem.gyartoi_cikkszam}</p>
+                <p>Márka: ${this.elem.marka}</p>
+                <p>Garancia: ${this.elem.garancia} hónap</p>
+                <p>${this.elem.leiras}</p>
                 <div class="wrapper">
-                <h4 class="ar">${elem.ar} Ft</h4>
+                <h4 class="ar">${this.elem.ar} Ft</h4>
                 <div class="mennyisegTarolo">
                     <div>
-                    <button id="minus${elem.id}" class="novCsok">&minus;</button>
+                    <button id="minus${this.elem.id}" class="novCsok">&minus;</button>
                     </div>
                     <div>
-                    <input type="number" min=1 class="dbInput" value="1" id="number${elem.id}">
+                    <input type="number" min=1 class="dbInput" value="1" id="number${this.elem.id}">
                     </div>
                     <div>
-                    <button id="plus${elem.id}" class="novCsok">&plus;</button>
+                    <button id="plus${this.elem.id}" class="novCsok">&plus;</button>
                     </div>
                 </div>
             </div>
                     <button id="kosarba" class="kosarGomb">Kosárba</button>
         </div>
+        <div class="overlay">
+            <div class="popup">
+                <div class="tartalom">
+                    <h3>A termék sikeresen bekerült a kosárba.</h3>
+                </div>
+            </div>
+        </div>
         `);
-        this.#minus = document.getElementById(`minus${elem.id}`);
-        this.#number = document.getElementById(`number${elem.id}`);
-        this.#plus = document.getElementById(`plus${elem.id}`);
+        this.#minus = document.getElementById(`minus${this.elem.id}`);
+        this.#number = document.getElementById(`number${this.elem.id}`);
+        this.#plus = document.getElementById(`plus${this.elem.id}`);
         $(`#kosarba`).on("click", () => {
             this.kattintas("kosar");
+            $(".overlay").show();
+            // const myTimeout = setTimeout(this.eltuntet, 3000);
+        });
+        $(`.overlay`).on("click", () => {
+            $(".overlay").hide();
         });
         $(this.#plus).on("click", () => {
             this.#menny++;
@@ -50,8 +64,11 @@ class TermekView {
         })
     }
 
+    eltuntet() {
+        $(".overlay").hide();
+    }
     kattintas(esemenyNeve) {
-        window.dispatchEvent(new CustomEvent(esemenyNeve, { detail: this.#elem }));
+        window.dispatchEvent(new CustomEvent(esemenyNeve, { detail: this.elem }));
     }
 }
 

@@ -38,7 +38,8 @@ class KezdolapView {
 
         $(`#gomb${elem.id}`).on("click", () => {
             this.kattintas("kosar");
-
+            $(".overlay").show();
+            //const myTimeout = setTimeout(this.eltuntet, 3000);
         });
         $(this.#plus)
             .on("click", () => {
@@ -61,6 +62,10 @@ class KezdolapView {
             this.kattintas("termekUjOldal");
         });
 
+    }
+
+    eltuntet() {
+        $(".overlay").hide();
     }
 
     kattintas(esemenyNeve) {

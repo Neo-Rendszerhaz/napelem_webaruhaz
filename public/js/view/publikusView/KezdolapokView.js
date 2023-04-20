@@ -1,9 +1,7 @@
 import KezdolapView from "./KezdolapView.js";
 
-class KezdoLapokView 
-{
-    constructor(tomb, szuloElem)
-    {   
+class KezdoLapokView {
+    constructor(tomb, szuloElem) {
         this.checkedTomb
 
         $("#kereso").html(`
@@ -13,7 +11,7 @@ class KezdoLapokView
         </form>
         </div>
         `);
-        
+
         $(`#szuro`).html(`
         <div id="rendezes">
             <label for="szures">Rendezés:</label>
@@ -24,152 +22,142 @@ class KezdoLapokView
                 <option value="arCsokkeno">Ár szerint csökkenő</option>
             </select>
         </div>
-        `)
+        <div class="overlay">
+            <div class="popup">
+                <div class="tartalom">
+                <h3>A termék sikeresen bekerült a kosárba.</h3>
+                </div>
+            </div>
+        </div>
+        `);
 
+        $(`.overlay`).on("click", () => {
+            $(".overlay").hide();
+        });
         let tempArr = []
         this.tombtomb = tomb
         this.tombtomb.forEach(termek => {
             tempArr.push(termek.marka)
-        }); 
+        });
         tempArr = [...new Set(tempArr)]
 
         this.tombMegjelenit(tomb, szuloElem)
 
-        $('#szures').on('change', function () 
-        {
+        $('#szures').on('change', function () {
             var ertek = $("#szures option:selected").val();
             console.log(ertek);
-            if(ertek==="abcNovekvo")
-            {
-                tomb.sort(function(a,b)
-                {
-                    if(a.megnevezes>b.megnevezes)
-                    {
+            if (ertek === "abcNovekvo") {
+                tomb.sort(function (a, b) {
+                    if (a.megnevezes > b.megnevezes) {
                         return 1;
                     }
-                    else
-                    {
+                    else {
                         return -1
                     }
                 });
                 console.log(tomb);
             }
-            else if(ertek==="abcCsokkeno")
-            {
-                tomb.sort(function(a,b)
-                {
-                    if(a.megnevezes<b.megnevezes)
-                    {
+            else if (ertek === "abcCsokkeno") {
+                tomb.sort(function (a, b) {
+                    if (a.megnevezes < b.megnevezes) {
                         return 1;
                     }
-                    else
-                    {
+                    else {
                         return -1
                     }
                 });
             }
-            else if(ertek==="arNovekvo")
-            {
-                tomb.sort(function(a,b)
-                {
-                    return a.ar-b.ar
+            else if (ertek === "arNovekvo") {
+                tomb.sort(function (a, b) {
+                    return a.ar - b.ar
                 });
             }
-            else if(ertek==="arCsokkeno")
-            {
-                tomb.sort(function(a,b)
-                {
-                    return b.ar-a.ar
+            else if (ertek === "arCsokkeno") {
+                tomb.sort(function (a, b) {
+                    return b.ar - a.ar
                 });
             }
 
             $(szuloElem).html("");
-            tomb.forEach(termek=>
-            {
-                new KezdolapView(termek, szuloElem)  
+            tomb.forEach(termek => {
+                new KezdolapView(termek, szuloElem)
             })
         });
 
-        this.kereso=$("#keresoMezo").keyup(this.kereses)
-        $(`#csokkenoABC`).on("click", ()=>
-        {
+        this.kereso = $("#keresoMezo").keyup(this.kereses)
+        $(`#csokkenoABC`).on("click", () => {
             console.log("csökkenő");
         });
         this.markaInputMegj(tempArr);
     }
 
-    markaInputMegj(markaTomb){
+    markaInputMegj(markaTomb) {
         $("#szuro").append("<div id='markaSzuro'></div>")
         markaTomb.forEach(marka => {
             $("#markaSzuro").append(` 
             <input type="checkbox" id="${marka.replace(/\s/g, '')}" name="${marka}" value="${marka}">
             <label for="${marka.replace(/\s/g, '')}">${marka}</label><br>`)
-            $(`#${marka.replace(/\s/g, '')}`).on("click",()=>{
+            $(`#${marka.replace(/\s/g, '')}`).on("click", () => {
                 this.markaSzuroVizsgalas()
             })
         });
     }
-    markaSzuroVizsgalas(){  
+    markaSzuroVizsgalas() {
         this.checkedTomb = []
         const inputMarkaTomb = $("#markaSzuro>input");
         for (let index = 0; index < inputMarkaTomb.length; index++) {
-            if(inputMarkaTomb[index].checked){
+            if (inputMarkaTomb[index].checked) {
                 this.checkedTomb.push(inputMarkaTomb[index].value.replace(/\s/g, ''))
             }
         }
         this.szurtTermekJelenit()
     }
 
-    szurtTermekJelenit(){
-        if(this.checkedTomb.length>0){
+    szurtTermekJelenit() {
+        if (this.checkedTomb.length > 0) {
             let megjelenitendoElem = [];
-        this.tombtomb.forEach(termek => {
-            for (let index = 0; index < this.checkedTomb.length; index++) {
-                if(termek.marka.replace(/\s/g, '') === this.checkedTomb[index]){
-                    megjelenitendoElem.push($(`#${termek.id}`).parent());                   
+            this.tombtomb.forEach(termek => {
+                for (let index = 0; index < this.checkedTomb.length; index++) {
+                    if (termek.marka.replace(/\s/g, '') === this.checkedTomb[index]) {
+                        megjelenitendoElem.push($(`#${termek.id}`).parent());
+                    }
                 }
-            }
-            $(`#${termek.id}`).parent().hide()
-        });
-        megjelenitendoElem.forEach(elem => {
-            console.log(elem)
-            elem.show();
-        });
+                $(`#${termek.id}`).parent().hide()
+            });
+            megjelenitendoElem.forEach(elem => {
+                console.log(elem)
+                elem.show();
+            });
         }
-        else{
+        else {
             this.tombtomb.forEach(termek => {
                 $(`#${termek.id}`).parent().show()
             });
         }
-        
+
 
     }
 
-    tombMegjelenit(tomb, szuloElem)
-    {
+    tombMegjelenit(tomb, szuloElem) {
         $(szuloElem).html("");
 
-        tomb.sort(function(a,b)
-        {
-            if(a.megnevezes>b.megnevezes)
-            {
+        tomb.sort(function (a, b) {
+            if (a.megnevezes > b.megnevezes) {
                 return 1;
             }
-            else
-            {
+            else {
                 return -1
             }
         });
 
-        tomb.forEach(termek=>
-        {
-            new KezdolapView(termek, szuloElem)  
+        tomb.forEach(termek => {
+            new KezdolapView(termek, szuloElem)
         })
     }
 
 
 
-    kereses(){
+    kereses() {
         var input, filter, cim, i, txtValue, TDiv, KDiv;
         input = $("#keresoMezo");
         filter = input.val().toUpperCase();
@@ -186,21 +174,17 @@ class KezdoLapokView
         }
     }
 
-    novekvoRendezesABC(tomb, ertek)
-    {
+    novekvoRendezesABC(tomb, ertek) {
         let i = tomb.length;
-        if(i>=1)
-        {
-            let csere=-1;
-            for (let j = 0; j < i-1; j++) 
-            {
-                if(ertek[j]>ertek[j+1])
-                {
-                    ertek[j]=ertek[j+1];
-                    csere=j;
-                }    
+        if (i >= 1) {
+            let csere = -1;
+            for (let j = 0; j < i - 1; j++) {
+                if (ertek[j] > ertek[j + 1]) {
+                    ertek[j] = ertek[j + 1];
+                    csere = j;
+                }
             }
-            csere=i;
+            csere = i;
         }
     }
 }

@@ -13,6 +13,21 @@ article {
     border: 2px solid black;
 }
 
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 60px;
+    padding: 0px;
+    background-color: #93bc17;
+}
+
+.tartalom h3 {
+    color: white;
+    margin: 0px;
+}
+
 input[type=checkbox] {
     display: none;
 }
@@ -93,6 +108,12 @@ input[type=number] {
     mix-blend-mode: multiply;
 }
 
+@media screen and (max-width: 1400px) {
+    .popup {
+        width: 60%;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     #kep>img {
         width: 100%;
@@ -107,5 +128,13 @@ input[type=number] {
 
     article {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .popup {
+        width: 350px;
+        overflow: hidden;
     }
 }

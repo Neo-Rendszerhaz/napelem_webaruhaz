@@ -28,7 +28,7 @@
         </div>
     </header>
     <nav>
-        <input type="checkbox" id="check"/>
+        <input type="checkbox" id="check" />
         <label for="check" class="checkBtn">
             <i class="fa fa-bars"></i>
         </label>

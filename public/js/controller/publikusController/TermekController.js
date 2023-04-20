@@ -1,4 +1,4 @@
-import TermekekView from "../../view/publikusView/TermekekView.js";
+import TermekView from "../../view/publikusView/TermekView.js";
 
 class TermekController {
     constructor() {
@@ -13,6 +13,7 @@ class TermekController {
 
         this.termekAdatok(this.termek)
         $(window).on("kosar", (event) => {
+            console.log(event.detail);
             this.termekekKosarba(event.detail);
             this.termekekLocalStorageba();
         });
@@ -43,7 +44,7 @@ class TermekController {
 
     termekAdatok(tomb) {
         const szuloelem = $("article");
-        new TermekekView(tomb, szuloelem);
+        new TermekView(tomb, szuloelem);
     }
 }
 export default TermekController

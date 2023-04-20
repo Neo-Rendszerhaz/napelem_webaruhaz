@@ -8,9 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="/../js/utvonal/TermekFelulet.js" type="module"></script>
-    <link rel="stylesheet" href="/../css/termek.css">
     <link rel="stylesheet" href="/../css/navigacioBar.css">
+    <link rel="stylesheet" href="/../css/popup.css">
     <link rel="stylesheet" href="/../css/footer.css">
+    <link rel="stylesheet" href="/../css/termek.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Termék</title>
 </head>
@@ -26,17 +27,19 @@
             </div>
         </header>
         <nav>
-            <input type="checkbox" id="check"/>
+            <input type="checkbox" id="check" />
             <label for="check" class="checkBtn">
                 <i class="fa fa-bars"></i>
             </label>
             <ul>
                 <li><a href="/dashboard">Profil</a></li>
                 <li><a href="/">Kezdőlap</a></li>
-                <li><a id="kosar" href="/kosar"><i class="fa fa-shopping-cart"  style="font-size:36px; margin-top:5px;"></i></a></li>
+                <li><a id="kosar" href="/kosar"><i class="fa fa-shopping-cart"
+                            style="font-size:36px; margin-top:5px;"></i></a></li>
             </ul>
         </nav>
         <article>
+
         </article>
         <footer></footer>
     </main>
