@@ -181,7 +181,7 @@ footer
     border-bottom-right-radius: 0px;
 }
 
-#profilAdatokModositas
+.mentesGomb
 {
     display: block;
     background-color: #698ec3;
@@ -205,5 +205,61 @@ footer
     #felhasznaloAdatok>div
     {
         margin: 20px 0px;
+    }
+
+
+}
+
+@media screen and (max-width: 550px) 
+{
+    .popup
+    {
+        margin-top: 15px;
+        width: 85%;
+        margin-bottom: 10px;
+    }
+
+    .tartalom>h3
+    {
+        margin: 0px;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .popupTartalom
+    {
+        row-gap: 5px;
+    }
+
+    .adatBlokk
+    {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .adatBlokk>input
+    {
+        float: left;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+    }
+
+    .telszam
+    {
+        display: flex;
+        flex-wrap: nowrap; 
+        position: relative; 
+        width: 100%;
+    }
+
+    .mentesGomb
+    {
+        margin-top: 15px;
     }
 }

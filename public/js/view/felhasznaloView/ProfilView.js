@@ -25,7 +25,7 @@ class ProfilView
             elem.ajto+=". ajtó"
         }
         
-        const cimzes=`<p>${elem.iranyitoszam+" "+elem.varos+" "+elem.kozterulet_neve+" "+elem.kozterulet_jellege+" "+elem.hely_hazszam+"."+elem.epulet+" "+elem.emelet+" "+elem.ajto} </p>`;
+        const cimzes=`<p>${elem.iranyitoszam+" "+elem.varos+" "+elem.kozterulet_neve+" "+elem.kozterulet_jellege+" "+elem.hely_hazszam+". "+elem.epulet+" "+elem.emelet+" "+elem.ajto} </p>`;
 
         const maganszemelyAdat = `<div id="adatok"><h3>Profil adatok:</h3>
         <p>Teljes név: ${elem.vezeteknev +" "+elem.keresztnev}</p>

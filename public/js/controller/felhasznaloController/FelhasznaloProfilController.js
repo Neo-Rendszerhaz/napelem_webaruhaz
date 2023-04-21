@@ -17,10 +17,12 @@ class FelhasznaloProfilController
         this.felhasznaloRendelesek="/f_rendelesek";
         adatFeldolgozModel.adatBe(this.felhasznaloRendelesek, this.profilRendelesek);
 
-        $(window).on("profilAdatokGomb", (event)=>
+        $(window).on("profilAdatok", (event)=>
         {
-            console.log(event.detail.felhasznalo_id);
-            adatFeldolgozModel.adatModosit("/felhasznalok", event.detail, event.detail.felhasznalo_id)
+            console.log(event.detail.szalliatsiCim);
+            adatFeldolgozModel.adatModosit("/felhasznalok", event.detail.profilAdatok, event.detail.profilAdatok.felhasznalo_id);
+            adatFeldolgozModel.adatModosit("/cimek", event.detail.szamlazasiCim, event.detail.szamlazasiCim.cim_id);
+            adatFeldolgozModel.adatModosit("/cimek", event.detail.szallitasiCim, event.detail.szallitasiCim.cim_id);
         });
     }
 
