@@ -17,7 +17,15 @@ class KosarView {
                     <p>Ár: ${elem.ar} Ft/db</p>
                 </div>
                 <div class="mennyisegTarolo">
-                    <p>Mennyiség: ${elem.db} db</p>
+                    <div>
+                        <button id="minusz${elem.id}" class="novCsok">&minus;</button>
+                    </div>
+                    <div>
+                        <input type="number" min=1 class="dbInput" value="${elem.db}" id="szamlalo${elem.id}">
+                    </div>
+                    <div>
+                        <button id="plusz${elem.id}" class="novCsok">&plus;</button>
+                    </div>
                 </div>
                 <div>
                     <p id="osszeg${elem.id}">Összesen: ${elem.ar * elem.db} Ft </p>
@@ -55,52 +63,19 @@ class KosarView {
             this.kattintasTrigger("termekUjOldal");
         });
 
-        // let jsonObjektum = JSON.parse(localStorage.getItem("kosar"));
-        
+        this.minusz = $(`#minusz${elem.id}`);
+        this.szamlalo = $(`#szamlalo${elem.id}`);
+        this.plusz = $(`#plusz${elem.id}`);
 
-        // this.minusz = $(`#minusz${elem.id}`);
-        // this.szamlalo = $(`#szamlalo${elem.id}`);
-        // this.plusz = $(`#plusz${elem.id}`);
-
-        // $(this.plusz).on("click", () => 
-        // {
-        //     elem.db = this.szamlalo.val();
-        //     elem.db++;
-        //     this.szamlalo.val(elem.db);
-        //     // =this.szamlalo.val(elem.db);
-        //     for (let i = 0; i < jsonObjektum.length; i++) 
-        //     {
-        //         if(jsonObjektum[i].id===elem.id);
-        //         {
-        //             console.log(jsonObjektum[i]);
-        //         }
-        //     }
-        //     // localStorage.setItem("kosar", JSON.stringify(jsonObjektum.db));
-        //     // this.dbModositott(elem.id, elem.ar, this.szamlalo.val())
-        // })
-        // $(this.minusz).on("click", () => 
-        // {
-        //     elem.db = this.szamlalo.val();
-        //     if (elem.db <= 1)
-        //     {
-        //         elem.db = 1
-        //     } else 
-        //     {
-        //         elem.db--;
-        //         this.szamlalo.val(elem.db);
-        //         this.dbModositott(elem.id, elem.ar, this.szamlalo.val())
-        //     }
-        // })
+        $(this.plusz).on("click", () => 
+        {
+            this.kattintasTrigger("dbNoveles");
+        })
+        $(this.minusz).on("click", () => 
+        {
+            this.kattintasTrigger("dbCsokkenes");
+        })
     }
-
-    
-
-    // dbModositott(id, ar, db)
-    // {
-    //     let txt=`Összesen: ${ar*db} Ft`;
-    //     return $(`#osszeg${id}`).html(txt);
-    // }
-
     kattintasTrigger(esemenyNeve)
     {
         console.log("triggerben", esemenyNeve);

@@ -53,6 +53,67 @@ class KosarController
             this.ujOldal(event.detail);
             window.location.href = "/termek";
         });
+
+        $(window).on("dbNoveles", (event)=>
+        {
+            console.log(event.detail.db);
+            let db=event.detail.db;
+            db++
+            console.log(db);
+            event.detail.db=db;
+
+            for (let i = 0; i < jsonObjektum.length; i++) 
+            {
+                console.log(jsonObjektum[i]);
+                if(jsonObjektum[i].id===event.detail.id)
+                {
+                    console.log(jsonObjektum[i].db);
+                    localStorage.setItem("kosar", JSON.stringify(jsonObjektum));
+                }    
+            }
+            this.kosarAdatok(jsonObjektum);
+        });
+
+        $(window).on("dbCsokkenes", (event)=>
+        {
+            console.log(event.detail.db);
+            let db=event.detail.db;
+            if(db<=1)
+            {
+                db=1;
+            }
+            else
+            {
+                db--;
+                event.detail.db=db;
+            }
+
+            for (let i = 0; i < jsonObjektum.length; i++) 
+            {
+                console.log(jsonObjektum[i]);
+                if(jsonObjektum[i].id===event.detail.id)
+                {
+                    console.log(jsonObjektum[i].db);
+                    localStorage.setItem("kosar", JSON.stringify(jsonObjektum));
+                }    
+            }
+            this.kosarAdatok(jsonObjektum);
+        });
+
+    }
+
+    dbModositas()
+    {
+        for (let i = 0; i < jsonObjektum.length; i++) 
+        {
+            console.log(jsonObjektum[i]);
+            if(jsonObjektum[i].id===event.detail.id)
+            {
+                console.log(jsonObjektum[i].db);
+                localStorage.setItem("kosar", JSON.stringify(jsonObjektum));
+            }    
+        }
+        this.kosarAdatok(jsonObjektum);
     }
 
     kosarAdatok(tomb)
