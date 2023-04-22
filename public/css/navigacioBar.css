@@ -107,7 +107,7 @@ a:hover {
         right: -200%;
         text-align: center;
         flex-wrap: wrap;
-        transition: all 1s;
+        transition: all 0.8s;
     }
 
     nav ul li a {
@@ -137,96 +137,3 @@ a:hover {
         }
     }
 }
-
-/* @media screen and (max-width: 1200px) {
-    main {
-        grid-template-areas:
-            "h h h h h h h"
-            "n n n n n n n"
-            "as as as a a a a"
-            "f f f f f f f";
-    }
-
-    article {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin: auto;
-    }
-}
-
-
-@media screen and (max-width: 1100px) {
-    .termek {
-        flex: 0 0 25%;
-    }
-
-    article {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin: auto;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .termek {
-        flex: 0 0 10%;
-    }
-
-    article {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 820px) {
-
-    main {
-        padding-top: 100px;
-        grid-template-areas: "h"
-            "n"
-            "as"
-            "a"
-            "f";
-    }
-
-    .navbar {
-        position: fixed;
-        width: 100%;
-        top: 0;
-    }
-
-    .hamburger:hover {
-        background-color: white;
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        background-color: rgba(62, 142, 195);
-        right: 0;
-        left: 0;
-        text-align: center;
-        padding: 16px 0;
-    }
-
-    .menu li:hover {
-        display: inline-block;
-        background-color: white;
-        transition: 0.3s ease;
-    }
-
-    input[type=checkbox]:checked~.menu {
-        display: block;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    article {
-        grid-template-columns: 1fr;
-    }
-} */

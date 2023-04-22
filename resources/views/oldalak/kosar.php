@@ -38,16 +38,12 @@
         </ul>
     </nav>
     <main>
-        <article>
-            <h1>A kosarad jelenleg üres.</h1>
-        </article>
-        <aside>
-
-        </aside>
-        <footer>
-
-        </footer>
+        <section></section>
+        <article></article>
+        <div id="torlesPopupFelulet"></div>
+        <aside></aside>
     </main>
+    <footer></footer>
 </body>
 
 </html>

@@ -32,15 +32,19 @@ class KezdolapView {
             </div>
         </div>
             `);
-        this.#minus = document.getElementById(`minus${elem.id}`);
-        this.#number = document.getElementById(`number${elem.id}`);
-        this.#plus = document.getElementById(`plus${elem.id}`);
-
+            
         $(`#gomb${elem.id}`).on("click", () => {
             this.kattintas("kosar");
             $(".overlay").show();
             const myTimeout = setTimeout(this.eltuntet, 3000);
         });
+
+
+        this.#minus = document.getElementById(`minus${elem.id}`);
+        this.#number = document.getElementById(`number${elem.id}`);
+        this.#plus = document.getElementById(`plus${elem.id}`);
+        
+        
         $(this.#plus)
             .on("click", () => {
                 let input = this.#number.value;

@@ -21,8 +21,8 @@ class IndexController {
         });
 
 
-        $(window).on("termekUjOldal", (event) => {
-            console.log(event.detail);
+        $(window).on("termekUjOldal", (event) => 
+        {
             this.ujOldal(event.detail);
             window.location.href = "/termek";
         })

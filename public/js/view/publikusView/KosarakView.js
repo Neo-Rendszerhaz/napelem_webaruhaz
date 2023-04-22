@@ -6,6 +6,7 @@ class KosarakView {
     #tomb = []
     constructor(tomb, szuloElem) {
         this.#tomb = tomb
+        console.log(tomb);
         this.#rendelesCimek=
         {
             szamlazasiCimAdatok: {iranyitoszam: "", varos: "", kozterulet_neve: "", kozterulet_jellege: "", hely_hazszam: "", hely_haz_jelleg: "", epulet: "", emelet: "", ajto: "", kapucsengo: "" },
@@ -14,7 +15,8 @@ class KosarakView {
 
             szamlazasiCimMegyezikSzallitasiCimmel:"",
         }
-
+        if(tomb.length!=0)
+        {        
             this.vegosszeg = 0;
             $(`aside`).html(`
         <div id="osszesito">
@@ -231,14 +233,35 @@ class KosarakView {
             </div>
         </div>`)
 
-        szuloElem.html(`
+            szuloElem.html(`
         <div id="rendtermekek">
             <h3 id="kosarCim"><i class="fa fa-shopping-cart"  style="font-size:64px; margin-top:5px; margin-right:30px;"></i>Kosár</h3>
         </div>`)
         this.divElem = szuloElem.children("div:last-child");
+        }
+        else
+        {
+            $("aside").html("");
+            $("article").html("");
+            $("section").html(`<h1 id="ures">A kosarad jelenleg üres.</h1>`)
+        }
+        
 
         tomb.forEach(adat => {
             new KosarView(adat, this.divElem);
+        });
+
+        $(window).on("toroltTermek", (event)=>
+        {
+            console.log(event.detail.id);
+            for (let i = 0; i < tomb.length; i++) 
+            {
+                if(tomb[i].id===event.detail.id)
+                {
+                    delete tomb[i];
+                }
+            }
+            console.log(tomb);
         });
 
         this.tombMentes = this.objektbe(tomb);

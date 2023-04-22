@@ -35,7 +35,6 @@ class ProfilokView
 
         this.profilAdatokGomb.on("click", ()=>
         {
-            // $(".popup").css({"height": "55vh"});
             $(".tartalom").html(`<h3>Adatok módosítása</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -67,14 +66,13 @@ class ProfilokView
             {
                 this.szemelyesAdatokModosit();
                 this.kattintasTrigger("profilAdatokGomb");
-                // location.reload();
+                location.reload();
                 $(".overlay").hide();
             });
         });
 
         this.szamlazasiCimGomb.on("click", ()=>
         {
-            // $(".popup").css({"height": "90%"});
             $(".tartalom").html(`<h3>Számlázási cím szerkesztése</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -120,14 +118,13 @@ class ProfilokView
             {
                 this.szamlazasiCimAdatokModosit();
                 this.kattintasTrigger("profilAdatok");
-                // location.reload();
+                location.reload();
                 $(".overlay").hide();
             });
         });
 
         this.szallitasiCimGomb.on("click", ()=>
         {
-            // $(".popup").css({"height": "90%"});
             $(".tartalom").html(`<h3>Szállítási cím szerkesztése</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -174,7 +171,7 @@ class ProfilokView
             {
                 this.szallitasiCimAdatokModosit();
                 this.kattintasTrigger("profilAdatok");
-                // location.reload();
+                location.reload();
                 $(".overlay").hide();
             });
         });

@@ -5,15 +5,30 @@ class KosarController
 {
     constructor() 
     {
-        this.aktFelhasznalo = 0;
-        console.log(this.aktFelhasznalo);
+        this.aktFelhasznalo;
         this.kosar = [];
         this.termekMent = [];
+        this.modositottKosar=[]
+
+        $(window).on("toroltTermek", (event)=>
+        {
+            for (let i = 0; i < jsonObjektum.length; i++) 
+            {
+                if(jsonObjektum[i].id===event.detail.id)
+                {
+                    var eltavolit = jsonObjektum[i];
+                    jsonObjektum.splice(eltavolit, 1);
+                    localStorage.setItem("kosar", JSON.stringify(jsonObjektum));
+                }
+            }
+            this.kosarAdatok(jsonObjektum);
+        });
 
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
         let jsonObjektum = JSON.parse(localStorage.getItem("kosar"));
+        console.log(jsonObjektum);
         for (let i = 0; i < jsonObjektum.length; i++) 
         {
             this.kosar.push(jsonObjektum[i]);
@@ -32,6 +47,12 @@ class KosarController
 
             adatFeldolgozModel.adatUj("/rendeles_tetelek", {"termekek":event.detail, "cim":event.detail, "vegosszeg":event.detail});
         });
+
+        $(window).on("termekUjOldal", (event) => 
+        {
+            this.ujOldal(event.detail);
+            window.location.href = "/termek";
+        });
     }
 
     kosarAdatok(tomb)
@@ -40,10 +61,15 @@ class KosarController
         new KosarakView(tomb, szuloelem);
     }
 
+    ujOldal(tomb) 
+    {
+        let jsonString = JSON.stringify(tomb);
+        window.localStorage.setItem("termek", jsonString);
+    }
+
     aktualisFelhasznalo(felhasznalo) 
     {
-        this.aktFelhasznalo=felhasznalo.felhasznalo_id
-        console.log(this.aktFelhasznalo);
+        this.aktFelhasznalo=felhasznalo.felhasznalo_id;
     }
 }
 export default KosarController;
