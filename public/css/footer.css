@@ -9,10 +9,7 @@ footer div
 {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    font-weight: bold;
     align-items: center;
-    /* margin: 10px; */
 }
 
 footer>div>p
