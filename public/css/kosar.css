@@ -319,11 +319,11 @@ footer {
     margin: 0px;
     margin-left: 5px;
   }
-  #torlesPopup>.popup
+  .torlesPopup
   {
     width: 70%;
   }
-  #torlesPopup>.popup>div
+  .torlesPopup>.popup>div
   {
     justify-content: space-between;
   }
