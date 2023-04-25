@@ -17,11 +17,11 @@
 
         <div class="form-group">
             <div class=" form-check form-check-inline">
-                <input id="jellegM" class="form-check-input" type="radio" name="jelleg" value="M" >
+                <input id="jellegM" class="form-check-input" type="radio" name="jelleg" value="M" checked>
                 <label for="jellegM" class="form-check-label">Magánszemély</label>
             </div>
             <div class="form-check form-check-inline">
-                <input id="jellegC" class="form-check-input" type="radio" name="jelleg" value="C" checked>
+                <input id="jellegC" class="form-check-input" type="radio" name="jelleg" value="C">
                 <label for="jellegC" class="form-check-label">Cég</label>
             </div>
         </div>

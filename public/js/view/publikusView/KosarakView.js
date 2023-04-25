@@ -288,6 +288,7 @@ class KosarakView {
             console.log(this.rendelesSzamlaCimMent())
             this.kattintasTrigger("rendelesVeglegesites")
             localStorage.clear();
+            $(".overlay").hide();
         });
 
         $(`#bezar`).on("click", () => {
