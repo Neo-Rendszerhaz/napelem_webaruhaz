@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="{{ asset('css/be_reg.css') }}" rel="stylesheet">
+        <link rel="icon" href="/../logo/neo_favicon.png">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Bejelentkezés</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
