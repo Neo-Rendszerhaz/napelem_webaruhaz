@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () 
 {
-    // return view('welcome');
     return view("oldalak/index");
 });
 
@@ -143,7 +142,5 @@ Route::middleware(["felhasznalo"])->group(function()
                 ->name('logout');
 });
 
-
- /* VÉGPONTOK */
 
 require __DIR__.'/auth.php';

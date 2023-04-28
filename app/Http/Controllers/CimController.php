@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Cim;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
-// use Illuminate\Support\Facades\DB;
 
 class CimController extends Controller
 {
@@ -45,8 +42,6 @@ class CimController extends Controller
     public static function szamlazasiCim(Request $request)
     {
         $szamlazasiCim = json_decode(json_encode($request->cim), FALSE);
-
-        // dd($szamlazasiCim->cim->szamlazasiCimAdatok);
         
         $cim = new Cim();
         $cim->iranyitoszam = $szamlazasiCim->cim->szamlazasiCimAdatok->iranyitoszam;

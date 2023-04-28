@@ -16,7 +16,6 @@ class AdminProfilController{
         $(window).on("megjelenit", (event)=>
         {
             this.felhasznaloCimek="/f_cimek/"+event.detail
-            // console.log("Controllerben megjelen", event.detail);
             adatFeldolgozModel.adatBe(this.felhasznaloCimek, this.cimAdatok);
         });
         
@@ -25,7 +24,6 @@ class AdminProfilController{
     cimAdatok(tomb)
     {
         const szuloElem=$(".tartalom");
-        // new AdminFelhasznaloCimekView(tomb, szuloElem)
         new AdminCimekView(tomb, szuloElem)
     }
 

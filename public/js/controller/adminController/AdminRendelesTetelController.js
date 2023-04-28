@@ -17,7 +17,6 @@ class AdminRendTetelC{
         })
     }
     tetelMutat(tomb){
-        // const szuloElem = "article"
         const szuloElem = "#adatTarolo"
         new AdminRendTetelekV(tomb, szuloElem);
     }

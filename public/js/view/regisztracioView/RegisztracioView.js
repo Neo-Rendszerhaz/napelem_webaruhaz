@@ -1,12 +1,9 @@
-class RegisztracioView
-{
+class RegisztracioView {
     #elem
-    #regisztraciosAdatok={};
-    constructor(elem, szuloElem)
-    {
-        this.#elem=elem;
-        this.#regisztraciosAdatok={vezeteknev:"", keresztnev:"", email:"", jelszo:"", telefonszam:"", jogosultsag:""};
-        console.log(elem);
+    #regisztraciosAdatok = {};
+    constructor(elem, szuloElem) {
+        this.#elem = elem;
+        this.#regisztraciosAdatok = { vezeteknev: "", keresztnev: "", email: "", jelszo: "", telefonszam: "", jogosultsag: "" };
 
         szuloElem.append(`
         <form id="regisztracio">
@@ -44,29 +41,25 @@ class RegisztracioView
         </form>
         `)
 
-        this.regisztralas=$("#regisztralas");
+        this.regisztralas = $("#regisztralas");
 
-        this.regisztralas.on("click", ()=>
-        {
+        this.regisztralas.on("click", () => {
             this.regisztracioMent();
             this.kattintasTrigger("regisztralas")
         });
     }
 
-    regisztracioMent()
-    {
-        this.#regisztraciosAdatok.vezeteknev=$("#vezeteknev").val();
-        this.#regisztraciosAdatok.keresztnev=$("#keresztnev").val();
-        this.#regisztraciosAdatok.email=$("#email").val();
-        this.#regisztraciosAdatok.jelszo=$("#jelszo").val();
-        this.#regisztraciosAdatok.telefonszam=$("#telefonszam").val();
-        this.#regisztraciosAdatok.jogosultsag=$("#jogosultsag").find(":selected").val();
+    regisztracioMent() {
+        this.#regisztraciosAdatok.vezeteknev = $("#vezeteknev").val();
+        this.#regisztraciosAdatok.keresztnev = $("#keresztnev").val();
+        this.#regisztraciosAdatok.email = $("#email").val();
+        this.#regisztraciosAdatok.jelszo = $("#jelszo").val();
+        this.#regisztraciosAdatok.telefonszam = $("#telefonszam").val();
+        this.#regisztraciosAdatok.jogosultsag = $("#jogosultsag").find(":selected").val();
     }
 
-    kattintasTrigger(esemenyNeve)
-    {
-        console.log("triggerben", esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve, {detail:this.#regisztraciosAdatok});
+    kattintasTrigger(esemenyNeve) {
+        const esemeny = new CustomEvent(esemenyNeve, { detail: this.#regisztraciosAdatok });
         window.dispatchEvent(esemeny);
     }
 }

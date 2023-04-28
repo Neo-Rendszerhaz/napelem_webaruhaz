@@ -49,8 +49,6 @@ $(function () {
         new AdminTermekController();
     });
 
-    // new AdminRegisztracioController();
-
     $("#regisztracioGomb").on("click", ()=>
     {
         new AdminRegisztracioController();

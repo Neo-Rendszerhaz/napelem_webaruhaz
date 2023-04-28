@@ -23,15 +23,12 @@ class TermekController extends Controller
     public static function store(Request $request)
     {
         $object = json_decode(json_encode($request->termekek), FALSE);
-        // dd($request->termekek[0]["megnevezes"]);
-        // dd(count($object->termekek));
         $termekekTomb=[];
         for ($i=0; $i < count($object->termekek); $i++) 
         {
             if(TermekController::vanTermek($object->termekek[$i])>0)
             {
                 $termek=TermekController::CikkszamHasonlitas($object->termekek[$i]);
-                // dd($termek->termek_id);
             }
             else
             {

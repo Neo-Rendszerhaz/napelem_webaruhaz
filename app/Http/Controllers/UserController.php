@@ -35,15 +35,12 @@ class UserController extends Controller
                 ->mixedCase() 
                 ->numbers() 
                 ->symbols() 
-                /* ->uncompromised(), 
-                'confirmed' */
             ],
         ]);
 
         if ($validator->fails()) {
             return response()->json(["message" => $validator->errors()->all()], 400);
         }
-        //ha nem tért vissza hibával, jó lesz a jelszó, de titkosítjuk is...
         $user->password = Hash::make($request->password);
         $user->jogosultsag = 1;
         $user->save();
@@ -54,7 +51,6 @@ class UserController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        //$user->password = Hash::make($request->password);
         $user->jogosultság = $request->jogosultság;
         $user->save();
 
@@ -62,18 +58,12 @@ class UserController extends Controller
 
     public function updatePassword(Request $request, $id)
     {
-
-        /* $validator = Validator::make($request->all(), [
-            "password" => array( 'string', 'required', 'regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[^\s]{8,}$/u')
-        ]); */ //működik!!
         $validator = Validator::make($request->all(), [
             'password' => [ 'required', 'string', 
                 Password::min(8) 
                 ->mixedCase() 
                 ->numbers() 
                 ->symbols() 
-                /* ->uncompromised(), 
-                'confirmed' */
             ],
         ]);
 

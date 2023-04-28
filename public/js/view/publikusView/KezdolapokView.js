@@ -45,7 +45,6 @@ class KezdoLapokView {
 
         $('#szures').on('change', function () {
             var ertek = $("#szures option:selected").val();
-            console.log(ertek);
             if (ertek === "abcNovekvo") {
                 tomb.sort(function (a, b) {
                     if (a.megnevezes > b.megnevezes) {
@@ -55,7 +54,6 @@ class KezdoLapokView {
                         return -1
                     }
                 });
-                console.log(tomb);
             }
             else if (ertek === "abcCsokkeno") {
                 tomb.sort(function (a, b) {
@@ -86,7 +84,6 @@ class KezdoLapokView {
 
         this.kereso = $("#keresoMezo").keyup(this.kereses)
         $(`#csokkenoABC`).on("click", () => {
-            console.log("csökkenő");
         });
         this.markaInputMegj(tempArr);
     }
@@ -125,7 +122,6 @@ class KezdoLapokView {
                 $(`#${termek.id}`).parent().hide()
             });
             megjelenitendoElem.forEach(elem => {
-                console.log(elem)
                 elem.show();
             });
         }
