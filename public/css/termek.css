@@ -52,6 +52,7 @@ input[type=checkbox] {
 }
 
 .mennyisegTarolo {
+    margin-top: 15px;
     display: flex;
 }
 
@@ -60,11 +61,15 @@ input[type=checkbox] {
     display: flex;
     justify-content: space-between;
     margin: auto;
-    padding: 5px 10px;
+    padding: 10px 15px;
     text-align: center;
     border: none;
     background-color: #b3cf61;
     border-radius: 5px;
+}
+.mennyisegTarolo button
+{
+    cursor: pointer;
 }
 
 .mennyisegTarolo input {
@@ -88,7 +93,7 @@ input[type=number] {
     border-radius: 5px;
     border: none;
     background-color: #b3cf61;
-    padding: 8px;
+    padding: 14px;
     font-size: 16px;
     text-align: center;
 }
@@ -96,6 +101,7 @@ input[type=number] {
 #termek {
     font-weight: bold;
     margin-left: 40px;
+    margin-top: 20px;
 }
 
 #termek>h2{
