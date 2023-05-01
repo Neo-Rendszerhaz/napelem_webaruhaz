@@ -18,6 +18,7 @@ class AdminRendelesekView{
         <th>Végösszeg</th>
         <th>Állapot</th>
         <th>Cím megjelenítés</th>
+        <th>Rendelés tételek megjelenítése</th>
         <th>Állapot módosítás</th>
         <th>Rendelés törlés</th>
         </tr></table>`)

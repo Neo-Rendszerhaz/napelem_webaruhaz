@@ -12,7 +12,8 @@ class AdminRendelesView {
         <td>${this.#obj.kedvezmeny}</td>
         <td>${this.#obj.vegosszeg} Ft</td>
         <td id="${this.#obj.rendeles_szam}allapot">${this.#obj.allapot}</td>
-        <td><button id=${this.#obj.rendeles_szam}MegJ>Megjelenítés</button></td>
+        <td><button id=${this.#obj.rendeles_szam}MegJ>Cím megjelenítés</button></td>
+        <td><button id=${this.#obj.rendeles_szam}RendTetel>Rendelés tételek</button></td>
         <td id="${this.#obj.rendeles_szam}modositasHely"><button id=${this.#obj.rendeles_szam}Mod>Módosítás</button></td>
         </tr>`)
         if(this.#obj.allapot==="FL"){
@@ -24,6 +25,10 @@ class AdminRendelesView {
       this.rendelesReszletesMegjel()
 
     })
+    $(`#${this.#obj.rendeles_szam}RendTetel`).on('click', () => {
+      this.rendelesTetelMegjel()
+    })
+
 
     this.spanElem.on("click",()=>{
       this.rendelesReszletesMegjelEltunt()
@@ -91,6 +96,10 @@ class AdminRendelesView {
     </tr></table>
             `)
             this.modal.show();
+  }
+  rendelesTetelMegjel(){
+    this.sajatEvent("tetelMegjelenites");
+    this.modal.show();
   }
   rendelesReszletesMegjelEltunt(){
     this.modal.hide();
