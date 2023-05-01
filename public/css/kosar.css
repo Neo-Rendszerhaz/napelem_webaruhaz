@@ -12,7 +12,6 @@ main {
     "f f f f f f f f";
   width: 100%;
   margin: auto;
-  /* margin: 10px; */
 }
 
 #kosarCim {
@@ -90,7 +89,6 @@ aside {
   display: flex;
   justify-content: flex-start;
   margin-right: 20px;
-  /* border: 1px solid black; */
 }
 
 #osszesito {
@@ -188,7 +186,6 @@ img {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
-  /* display: none; */
   z-index: 1;
 }
 

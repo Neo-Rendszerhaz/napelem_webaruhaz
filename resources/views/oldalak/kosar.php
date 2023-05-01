@@ -39,7 +39,7 @@
         </ul>
     </nav>
     <main>
-        <section><h1 id="ures">A kosarad jelenleg üres.</h1></section>
+        <section></section>
         <article></article>
         <div id="torlesPopupFelulet"></div>
         <aside></aside>

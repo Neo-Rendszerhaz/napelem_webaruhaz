@@ -2,7 +2,6 @@ class KosarView {
     #elem;
     constructor(elem, szuloelem) {
         this.#elem = elem;
-        console.log(elem);
         szuloelem.append(`
         <div class="termek">
             <div class="termekKep">
@@ -36,7 +35,6 @@ class KosarView {
         $(`#torles${elem.id}`).on("click", ()=>
         {
             $(".torlesOverlay").show();
-            console.log("Katt");
             $("#torlesPopupFelulet").html(`
             <div class="torlesOverlay">
                 <div class="torlesPopup">
@@ -78,7 +76,6 @@ class KosarView {
     }
     kattintasTrigger(esemenyNeve)
     {
-        console.log("triggerben", esemenyNeve);
         const esemeny = new CustomEvent(esemenyNeve, {detail: this.#elem});
         window.dispatchEvent(esemeny);
     }

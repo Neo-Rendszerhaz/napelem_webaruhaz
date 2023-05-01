@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rendeles;
 use App\Models\RendelesTetel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

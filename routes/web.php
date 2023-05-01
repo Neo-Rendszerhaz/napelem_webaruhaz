@@ -25,7 +25,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () 
 {
-    // return view('welcome');
     return view("oldalak/index");
 });
 
@@ -139,7 +138,5 @@ Route::middleware(["felhasznalo"])->group(function()
     Route::put("/cim_modositas/{felhasznalo_id}", [FelhasznaloController::class, "cimModositas"]);
 });
 
-
- /* VÉGPONTOK */
 
 require __DIR__.'/auth.php';

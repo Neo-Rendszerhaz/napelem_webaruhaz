@@ -13,14 +13,12 @@ class TermekController {
 
         this.termekAdatok(this.termek)
         $(window).on("kosar", (event) => {
-            console.log(event.detail);
             this.termekekKosarba(event.detail);
             this.termekekLocalStorageba();
         });
     }
 
     termekekLocalStorageba() {
-        console.log(this.kosar);
         let jsonString = JSON.stringify(this.kosar);
         window.localStorage.setItem("kosar", jsonString);
     }
@@ -28,7 +26,6 @@ class TermekController {
     termekekKosarba(ujTermek) {
         let index = 0;
         let mennyiseg = $(`#number${ujTermek.id}`)
-        console.log(mennyiseg)
         while (this.kosar.length > index && this.kosar[index].id != ujTermek.id) {
             index++;
         }

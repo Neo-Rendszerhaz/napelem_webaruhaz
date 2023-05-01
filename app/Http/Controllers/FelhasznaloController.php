@@ -46,7 +46,6 @@ class FelhasznaloController extends Controller
 
     public function update(Request $request, $id)
     {
-        // dd($request->keresztnev);
         $felhasznalo= Felhasznalo::find($id);
         $felhasznalo->email = $request->email;
         $felhasznalo->jelszo = $request->jelszo;

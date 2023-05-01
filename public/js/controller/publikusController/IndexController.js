@@ -1,6 +1,5 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
 import KezdoLapokView from "../../view/publikusView/KezdoLapokView.js";
-import TermekController from "./TermekController.js";
 import NavigacioView from "../../view/publikusView/NavigacioView.js";
 
 class IndexController {
@@ -14,15 +13,14 @@ class IndexController {
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
         this.vegpont = "../js/termekek.json";
         adatFeldolgozModel.adatBe(this.vegpont, this.kezdolapAdatok);
-        adatFeldolgozModel.adatBe("akt_felhasznalo",this.navigacio)
+        adatFeldolgozModel.adatBe("akt_felhasznalo", this.navigacio)
         $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
             this.termekekLocalStorageba();
         });
 
 
-        $(window).on("termekUjOldal", (event) => 
-        {
+        $(window).on("termekUjOldal", (event) => {
             this.ujOldal(event.detail);
             window.location.href = "/termek";
         })
@@ -32,7 +30,7 @@ class IndexController {
         let jsonString = JSON.stringify(tomb);
         window.localStorage.setItem("termek", jsonString);
     }
-    navigacio(aktualisFelhasznalo){
+    navigacio(aktualisFelhasznalo) {
         new NavigacioView(aktualisFelhasznalo)
     }
     kezdolapAdatok(tomb) {
@@ -42,7 +40,6 @@ class IndexController {
     }
 
     termekekLocalStorageba() {
-        console.log(this.kosar);
         let jsonString = JSON.stringify(this.kosar);
         window.localStorage.setItem("kosar", jsonString);
     }
@@ -50,7 +47,6 @@ class IndexController {
     termekekKosarba(ujTermek) {
         let index = 0;
         let mennyiseg = $(`#number${ujTermek.id}`)
-        console.log(mennyiseg)
         while (this.kosar.length > index && this.kosar[index].id != ujTermek.id) {
             index++;
         }

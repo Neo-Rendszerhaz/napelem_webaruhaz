@@ -13,7 +13,6 @@ article {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border: 2px solid black;
 }
 
 .popup {
@@ -42,7 +41,6 @@ input[type=checkbox] {
     flex-direction: column;
     width: 90%;
     margin: 20px 0px;
-    text-align: center;
 }
 
 .ar {
@@ -55,8 +53,6 @@ input[type=checkbox] {
 
 .mennyisegTarolo {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .mennyisegTarolo button,
@@ -87,7 +83,6 @@ input[type=number] {
 }
 
 .kosarGomb {
-    display: grid;
     margin: auto;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -95,13 +90,16 @@ input[type=number] {
     background-color: #b3cf61;
     padding: 8px;
     font-size: 16px;
-    width: 90%;
     text-align: center;
 }
 
 #termek {
     font-weight: bold;
     margin-left: 40px;
+}
+
+#termek>h2{
+    padding-bottom: 10px;
 }
 
 #kosarba {

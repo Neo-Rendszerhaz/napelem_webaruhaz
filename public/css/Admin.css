@@ -1,59 +1,50 @@
-article
-{
-  /* margin: auto; */
+article {
   margin-top: 15px;
 }
 
-article>button
-{
+article>button {
   margin: 0px 15px;
 }
 
-table{
-    text-align: center;
+table {
+  text-align: center;
 }
 
-h2
-{
-    text-align: center;
-    margin-top: -10px;
-    font-size: 20pt;
+h2 {
+  text-align: center;
+  margin-top: -10px;
+  font-size: 20pt;
 }
 
-#myInput
-{
-    float: right;
-    width: 20%;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
+#myInput {
+  float: right;
+  width: 20%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-#adatTarolo
-{
-    margin-top: 20px;
+#adatTarolo {
+  margin-top: 20px;
 }
 
-.tartalom
-{
+.tartalom {
   margin-top: 50px;
 }
 
-#regisztracio
-{
-    width: 60%;
-    margin: auto;
+#regisztracio {
+  width: 60%;
+  margin: auto;
 }
 
-.overlay 
-{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
 }
 
 .popup {
@@ -72,6 +63,7 @@ h2
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
+
 .popup .close {
   position: absolute;
   top: 20px;
@@ -83,6 +75,7 @@ h2
   text-decoration: none;
   color: #333;
 }
+
 .popup .close:hover {
   color: red;
   cursor: pointer;

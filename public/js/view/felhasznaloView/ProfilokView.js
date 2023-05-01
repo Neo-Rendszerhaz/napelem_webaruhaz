@@ -1,40 +1,33 @@
 import ProfilView from "./ProfilView.js";
 
-class ProfilokView
-{
-    constructor(adat, szuloElem)
-    {
+class ProfilokView {
+    constructor(adat, szuloElem) {
         this.szamlazasiCim;
         this.szallitasiCim;
 
-        for (let i = 0; i < adat.length; i++) 
-        {
-            if(adat[i].tipus=="szamlazas")
-            {
-                this.szamlazasiCim=adat[i];
+        for (let i = 0; i < adat.length; i++) {
+            if (adat[i].tipus == "szamlazas") {
+                this.szamlazasiCim = adat[i];
             }
-            if(adat[i].tipus=="szallitas1")
-            {
-                this.szallitasiCim=adat[i];
-            } 
+            if (adat[i].tipus == "szallitas1") {
+                this.szallitasiCim = adat[i];
+            }
         }
         szuloElem.html(`<div id="profil"></div>
         <div id="cim"></div>`);
-        
-        this.cimDiv=szuloElem.children("div:last-child");
-        this.profilDiv=szuloElem.children("div:first-child");
 
-        adat.forEach(elem => 
-        {
+        this.cimDiv = szuloElem.children("div:last-child");
+        this.profilDiv = szuloElem.children("div:first-child");
+
+        adat.forEach(elem => {
             new ProfilView(elem, this.cimDiv, this.profilDiv);
         });
 
-        this.profilAdatokGomb=$(`#profilAdatokGomb`);
-        this.szamlazasiCimGomb=$(`#szamlazasiCimGomb`);
-        this.szallitasiCimGomb=$(`#szalliatsiCimGomb`);
+        this.profilAdatokGomb = $(`#profilAdatokGomb`);
+        this.szamlazasiCimGomb = $(`#szamlazasiCimGomb`);
+        this.szallitasiCimGomb = $(`#szalliatsiCimGomb`);
 
-        this.profilAdatokGomb.on("click", ()=>
-        {
+        this.profilAdatokGomb.on("click", () => {
             $(".tartalom").html(`<h3>Adatok módosítása</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -62,8 +55,7 @@ class ProfilokView
                 <button class ="mentesGomb" id="profilAdatokModositas">Módosítás</button>
                 </div>`)
             $(".overlay").show();
-            $("#profilAdatokModositas").on("click", ()=>
-            {
+            $("#profilAdatokModositas").on("click", () => {
                 this.szemelyesAdatokModosit();
                 this.kattintasTrigger("profilAdatokGomb");
                 location.reload();
@@ -71,8 +63,7 @@ class ProfilokView
             });
         });
 
-        this.szamlazasiCimGomb.on("click", ()=>
-        {
+        this.szamlazasiCimGomb.on("click", () => {
             $(".tartalom").html(`<h3>Számlázási cím szerkesztése</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -114,8 +105,7 @@ class ProfilokView
                 </div>`)
             $(".overlay").show();
 
-            $("#szamlazasiCimAdatokModositas").on("click", ()=>
-            {
+            $("#szamlazasiCimAdatokModositas").on("click", () => {
                 this.szamlazasiCimAdatokModosit();
                 this.kattintasTrigger("profilAdatok");
                 location.reload();
@@ -123,8 +113,7 @@ class ProfilokView
             });
         });
 
-        this.szallitasiCimGomb.on("click", ()=>
-        {
+        this.szallitasiCimGomb.on("click", () => {
             $(".tartalom").html(`<h3>Szállítási cím szerkesztése</h3>
             <div class="popupTartalom">
                 <div class="adatBlokk">
@@ -167,8 +156,7 @@ class ProfilokView
 
             $(".overlay").show();
 
-            $("#szallitasiCimAdatokModositas").on("click", ()=>
-            {
+            $("#szallitasiCimAdatokModositas").on("click", () => {
                 this.szallitasiCimAdatokModosit();
                 this.kattintasTrigger("profilAdatok");
                 location.reload();
@@ -176,51 +164,45 @@ class ProfilokView
             });
         });
 
-        this.bezar=$("#bezar");
-        this.bezar.on("click", ()=>
-        {
+        this.bezar = $("#bezar");
+        this.bezar.on("click", () => {
             $(".overlay").hide();
         });
 
     }
 
-    szemelyesAdatokModosit()
-    {
-        this.szamlazasiCim.vezeteknev=$("#vezeteknev").val();
-        this.szamlazasiCim.keresztnev=$("#keresztnev").val();
-        this.szamlazasiCim.email=$("#email").val();
-        this.szamlazasiCim.telefonszam=$("#telefonszam").val();
+    szemelyesAdatokModosit() {
+        this.szamlazasiCim.vezeteknev = $("#vezeteknev").val();
+        this.szamlazasiCim.keresztnev = $("#keresztnev").val();
+        this.szamlazasiCim.email = $("#email").val();
+        this.szamlazasiCim.telefonszam = $("#telefonszam").val();
     }
 
-    szamlazasiCimAdatokModosit()
-    {
-        this.szamlazasiCim.iranyitoszam=$("#iranyitoszam").val();
-        this.szamlazasiCim.varos=$("#varos").val();
-        this.szamlazasiCim.kozterulet_neve=$("#kozteruletNeve").val();
-        this.szamlazasiCim.kozterulet_jellege=$("#kozteruletJellege").val();
-        this.szamlazasiCim.hely_hazszam=$("#helyHazszam").val();
-        this.szamlazasiCim.epulet=$("#epulet").val();
-        this.szamlazasiCim.emelet=$("#emelet").val();
-        this.szamlazasiCim.ajto=$("#ajto").val();
+    szamlazasiCimAdatokModosit() {
+        this.szamlazasiCim.iranyitoszam = $("#iranyitoszam").val();
+        this.szamlazasiCim.varos = $("#varos").val();
+        this.szamlazasiCim.kozterulet_neve = $("#kozteruletNeve").val();
+        this.szamlazasiCim.kozterulet_jellege = $("#kozteruletJellege").val();
+        this.szamlazasiCim.hely_hazszam = $("#helyHazszam").val();
+        this.szamlazasiCim.epulet = $("#epulet").val();
+        this.szamlazasiCim.emelet = $("#emelet").val();
+        this.szamlazasiCim.ajto = $("#ajto").val();
     }
 
-    szallitasiCimAdatokModosit()
-    {
-        this.szallitasiCim.iranyitoszam=$("#iranyitoszam").val();
-        this.szallitasiCim.varos=$("#varos").val();
-        this.szallitasiCim.kozterulet_neve=$("#kozteruletNeve").val();
-        this.szallitasiCim.kozterulet_jellege=$("#kozteruletJellege").val();
-        this.szallitasiCim.hely_hazszam=$("#helyHazszam").val();
-        this.szallitasiCim.epulet=$("#epulet").val();
-        this.szallitasiCim.emelet=$("#emelet").val();
-        this.szallitasiCim.ajto=$("#ajto").val();
+    szallitasiCimAdatokModosit() {
+        this.szallitasiCim.iranyitoszam = $("#iranyitoszam").val();
+        this.szallitasiCim.varos = $("#varos").val();
+        this.szallitasiCim.kozterulet_neve = $("#kozteruletNeve").val();
+        this.szallitasiCim.kozterulet_jellege = $("#kozteruletJellege").val();
+        this.szallitasiCim.hely_hazszam = $("#helyHazszam").val();
+        this.szallitasiCim.epulet = $("#epulet").val();
+        this.szallitasiCim.emelet = $("#emelet").val();
+        this.szallitasiCim.ajto = $("#ajto").val();
     }
 
-    kattintasTrigger(esemenyNeve)
-    {
-        console.log("triggerben", esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve, {detail: {"profilAdatok":this.szamlazasiCim, "szamlazasiCim":this.szamlazasiCim, "szallitasiCim":this.szallitasiCim}});
+    kattintasTrigger(esemenyNeve) {
+        const esemeny = new CustomEvent(esemenyNeve, { detail: { "profilAdatok": this.szamlazasiCim, "szamlazasiCim": this.szamlazasiCim, "szallitasiCim": this.szallitasiCim } });
         window.dispatchEvent(esemeny);
     }
 }
-    export default ProfilokView;
+export default ProfilokView;

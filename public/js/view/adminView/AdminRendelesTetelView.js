@@ -2,6 +2,8 @@ class AdminRendTetelV{
     #obj
     constructor(obj,szuloElem){
         this.#obj = obj
+        console.log(this.#obj)
+        this.gombAllapotAktiv = true;
         $(szuloElem).append(`<tr id='${this.#obj.rendeles_szam}${this.#obj.termek_id}'>
         <td>${this.#obj.rendeles_szam}</td>
         <td>${this.#obj.megnevezes}</td>
@@ -21,31 +23,32 @@ class AdminRendTetelV{
         $(`#RTtor${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
             this.sajatEsemeny("RTtorles")
         })
-        this.spanElem.on("click",()=>{
-            this.rendelesTetelReszEltunt()
-        })
     
     }
     rendelesTetelReszMut(){
-            $(".tartalom").html(`
-            <table class="table table-striped"><tr>
-                <th>Cikkszám</th>
-                <th>Gyártói cikkszám</th>
-                <th>Márka</th>
-                <th>Garancia</th>
-                <th>Leíras</th>
-                </tr>
-                <tr>
+        if(this.gombAllapotAktiv){
+            $(`#${this.#obj.rendeles_szam}${this.#obj.termek_id}`).after(`
+            <tr id="rtFejlec${this.#obj.rendeles_szam}${this.#obj.termek_id}">
+            <th>Cikkszám</th>
+            <th>Gyártói cikkszám</th>
+            <th>Márka</th>
+            <th>Garancia</th>
+            <th>Leíras</th>
+            </tr>
+            <tr id="rt${this.#obj.rendeles_szam}${this.#obj.termek_id}">
                 <td>${this.#obj.cikkszam}</td>
                 <td>${this.#obj.gyartoi_cikkszam}</td>
                 <td>${this.#obj.marka}</td>
                 <td>${this.#obj.garancia}</td>
                 <td>${this.#obj.leiras}</td>
-                </tr></table>`)
-            this.modal.show();
+                </tr>`)
+                this.gombAllapotAktiv=false
         }
-    rendelesTetelReszEltunt(){
-        this.modal.hide();
+        else{
+            $(`#rt${this.#obj.rendeles_szam}${this.#obj.termek_id}`).remove()
+            $(`#rtFejlec${this.#obj.rendeles_szam}${this.#obj.termek_id}`).remove()
+            this.gombAllapotAktiv = true
+        }
         }
     sajatEsemeny(eventNev){
         const esemeny = new CustomEvent(eventNev, {detail: this.#obj})

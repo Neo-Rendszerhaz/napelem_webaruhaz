@@ -2,21 +2,19 @@ import KosarView from "./KosarView.js";
 
 class KosarakView {
 
-    #rendelesCimek={};
+    #rendelesCimek = {};
     #tomb = []
     constructor(tomb, szuloElem) {
         this.#tomb = tomb
-        console.log(tomb);
-        this.#rendelesCimek=
+        this.#rendelesCimek =
         {
-            szamlazasiCimAdatok: {iranyitoszam: "", varos: "", kozterulet_neve: "", kozterulet_jellege: "", hely_hazszam: "", hely_haz_jelleg: "", epulet: "", emelet: "", ajto: "", kapucsengo: "" },
-            
+            szamlazasiCimAdatok: { iranyitoszam: "", varos: "", kozterulet_neve: "", kozterulet_jellege: "", hely_hazszam: "", hely_haz_jelleg: "", epulet: "", emelet: "", ajto: "", kapucsengo: "" },
+
             szallitasiCimAdatok: { iranyitoszam: "", varos: "", kozterulet_neve: "", kozterulet_jellege: "", hely_hazszam: "", hely_haz_jelleg: "", epulet: "", emelet: "", ajto: "", kapucsengo: "" },
 
-            szamlazasiCimMegyezikSzallitasiCimmel:"",
+            szamlazasiCimMegyezikSzallitasiCimmel: "",
         }
-        if(tomb.length!=0)
-        {        
+        if (tomb.length != 0) {
             this.vegosszeg = 0;
             $(`aside`).html(`
         <div id="osszesito">
@@ -237,31 +235,25 @@ class KosarakView {
         <div id="rendtermekek">
             <h3 id="kosarCim"><i class="fa fa-shopping-cart"  style="font-size:64px; margin-top:5px; margin-right:30px;"></i>Kosár</h3>
         </div>`)
-        this.divElem = szuloElem.children("div:last-child");
+            this.divElem = szuloElem.children("div:last-child");
         }
-        else
-        {
+        else {
             $("aside").html("");
             $("article").html("");
             $("section").html(`<h1 id="ures">A kosarad jelenleg üres.</h1>`)
         }
-        
+
 
         tomb.forEach(adat => {
             new KosarView(adat, this.divElem);
         });
 
-        $(window).on("toroltTermek", (event)=>
-        {
-            console.log(event.detail.id);
-            for (let i = 0; i < tomb.length; i++) 
-            {
-                if(tomb[i].id===event.detail.id)
-                {
+        $(window).on("toroltTermek", (event) => {
+            for (let i = 0; i < tomb.length; i++) {
+                if (tomb[i].id === event.detail.id) {
                     delete tomb[i];
                 }
             }
-            console.log(tomb);
         });
 
         this.tombMentes = this.objektbe(tomb);
@@ -270,48 +262,39 @@ class KosarakView {
             $(".overlay").show();
         });
 
-        $(`#rendelesVeglegesites`).on("click", () => 
-        {
+        $(`#rendelesVeglegesites`).on("click", () => {
             let bePipalva = $(`#azonosCim`).prop('checked');
-            this.#rendelesCimek.szamlazasiCimMegyezikSzallitasiCimmel=bePipalva;
-            if (!bePipalva) 
-            {
+            this.#rendelesCimek.szamlazasiCimMegyezikSzallitasiCimmel = bePipalva;
+            if (!bePipalva) {
                 this.rendelesSzamlaCimMent();
                 this.rendelesSzallitCimMent();
             }
-            else 
-            {
+            else {
                 this.rendelesSzamlaCimMent();
                 this.rendelesCimekMegegyeznek();
             }
 
-            console.log(this.rendelesSzamlaCimMent())
             this.kattintasTrigger("rendelesVeglegesites")
             localStorage.clear();
             $(".overlay").hide();
         });
 
         $(`#bezar`).on("click", () => {
-            console.log("bezár");
             $(".overlay").hide();
         });
 
-        $(`#azonosCim`).on("click", () => 
-        {
+        $(`#azonosCim`).on("click", () => {
             let bePipalva = $(`#azonosCim`).prop('checked');
-            if (bePipalva == false) 
-            {
+            if (bePipalva == false) {
                 $("#szallitasiCim").show();
 
-            } else 
-            {
+            } else {
                 $("#szallitasiCim").hide();
             }
         })
     }
 
-    vegosszegAr(tomb) 
-    {
+    vegosszegAr(tomb) {
         let ar = 0;
         for (let i = 0; i < tomb.length; i++) {
             ar += tomb[i].ar * tomb[i].db;
@@ -353,8 +336,7 @@ class KosarakView {
         this.#rendelesCimek.szallitasiCimAdatok.kapucsengo = $("#szlKapucsengo").val();
     }
 
-    rendelesCimekMegegyeznek()
-    {
+    rendelesCimekMegegyeznek() {
         this.#rendelesCimek.szallitasiCimAdatok.iranyitoszam = $("#szmIranyitoszam").val();
         this.#rendelesCimek.szallitasiCimAdatok.varos = $("#szmVaros").val();
         this.#rendelesCimek.szallitasiCimAdatok.kozterulet_neve = $("#szmKozteruletNeve").val();
@@ -363,13 +345,12 @@ class KosarakView {
         this.#rendelesCimek.szallitasiCimAdatok.hely_haz_jelleg = $("input[name='szmHelyHazJelleg']:checked").val();
         this.#rendelesCimek.szallitasiCimAdatok.epulet = $("#szmEpulet").val();
         this.#rendelesCimek.szallitasiCimAdatok.emelet = $("#szmEmelet").val();
-        this.#rendelesCimek.szallitasiCimAdatok.ajto =$("#szmAjto").val();
+        this.#rendelesCimek.szallitasiCimAdatok.ajto = $("#szmAjto").val();
         this.#rendelesCimek.szallitasiCimAdatok.kapucsengo = $("#szmKapucsengo").val();
     }
 
     kattintasTrigger(esemenyNeve) {
-        console.log("triggerben", esemenyNeve);
-        const esemeny = new CustomEvent(esemenyNeve, { detail: {"termekek":this.tombMentes , "cim": this.#rendelesCimek, "vegosszeg":this.vegosszegAr(this.#tomb)} });
+        const esemeny = new CustomEvent(esemenyNeve, { detail: { "termekek": this.tombMentes, "cim": this.#rendelesCimek, "vegosszeg": this.vegosszegAr(this.#tomb) } });
         window.dispatchEvent(esemeny);
     }
 }

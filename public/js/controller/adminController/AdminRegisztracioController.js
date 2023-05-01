@@ -5,7 +5,6 @@ class AdminRegisztracioController
 {
     constructor()
     {
-        console.log("Regisztráció Controller");
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
@@ -14,7 +13,6 @@ class AdminRegisztracioController
 
         $(window).on("regisztralas", (event)=>
         {
-            console.log(event.detail);
             adatFeldolgozModel.adatUj("/uj_dolgozo", event.detail);
         });
     }

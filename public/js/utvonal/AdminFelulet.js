@@ -2,7 +2,6 @@ import AdminCimController from "../controller/adminController/AdminCimController
 import AdminProfilController from "../controller/adminController/AdminProfilController.js";
 import AdminHaszonController from "../controller/adminController/AdminHaszonController.js";
 import AdminRendelesController from "../controller/adminController/AdminRendelesController.js";
-import AdminRendTetelC from "../controller/adminController/AdminRendelesTetelController.js";
 import AdminTermekController from "../controller/adminController/AdminTermekController.js";
 import AdminRegisztracioController from "../controller/adminController/AdminRegisztracioController.js";
 
@@ -13,7 +12,6 @@ $(function () {
     <button id="felhasznaloGomb">Felhasználok</button>
     <button id="haszonGomb">Haszon</button>
     <button id="rendelesGomb">Rendelés</button>
-    <button id="rendelesTetelGomb">Rendelés tétel</button>
     <button id="termekGomb">Termék</button>
     <button id="regisztracioGomb">Dolgozó regisztrálása</button>
     <div id="adatTarolo"></div>
@@ -39,17 +37,10 @@ $(function () {
         new AdminRendelesController();
     });
 
-    $("#rendelesTetelGomb").on("click", () => 
-    {
-        new AdminRendTetelC();
-    });
-
     $("#termekGomb").on("click", () => 
     {
         new AdminTermekController();
     });
-
-    // new AdminRegisztracioController();
 
     $("#regisztracioGomb").on("click", ()=>
     {
