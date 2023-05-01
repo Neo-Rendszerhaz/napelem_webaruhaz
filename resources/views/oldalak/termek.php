@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="/../js/utvonal/TermekFelulet.js" type="module"></script>
+    <script src="/../js/view/publikusView/HeaderLink.js"></script>
     <link rel="stylesheet" href="/../css/navigacioBar.css">
     <link rel="stylesheet" href="/../css/popup.css">
     <link rel="stylesheet" href="/../css/footer.css">
