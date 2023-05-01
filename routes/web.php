@@ -76,8 +76,6 @@ Route::middleware(["admin"])->group(function()
     
     Route::get("/cimek", [CimController::class, "index"]);
     Route::get("/cimek/{cim_id}", [CimController::class, "show"]);
-    
-    Route::put("/cimek/{cim_id}", [CimController::class, "update"]);
     Route::delete("/cimek/{cim_id}", [CimController::class, "destroy"]);
 
     Route::get("/felhasznalok", [FelhasznaloController::class, "index"]);
@@ -128,6 +126,8 @@ Route::middleware(["felhasznalo"])->group(function()
     Route::get("/adatok", [FelhasznaloController::class, "aktualisFelhasznaloAdatai"]);
     Route::get("/f_rendelesek", [FelhasznaloController::class, "aktualisFelhasznaloRendelesei"]);
     Route::post("/cimek", [CimController::class, "store"]);
+    Route::put("/cimek/{cim_id}", [CimController::class, "update"]);
+
     Route::post("/szamlazasi_cim", [CimController::class, "szamlazasiCim"]);
     Route::post("/termekek", [TermekController::class, "store"]);
     Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
@@ -137,10 +137,6 @@ Route::middleware(["felhasznalo"])->group(function()
 
     Route::put("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "update"]);
     Route::put("/cim_modositas/{felhasznalo_id}", [FelhasznaloController::class, "cimModositas"]);
-    Route::get("akt_felhasznalo", [FelhasznaloController::class, "aktualisFelhasznalo"]);
-    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->middleware('auth')
-                ->name('logout');
 });
 
 
