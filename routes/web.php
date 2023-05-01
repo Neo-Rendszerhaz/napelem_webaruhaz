@@ -131,7 +131,7 @@ Route::middleware(["felhasznalo"])->group(function()
     Route::post("/termekek", [TermekController::class, "store"]);
     Route::post("/rendeles_tetelek", [RendelesTetelController::class, "store"]);
     Route::post("/rendelesek", [RendelesController::class, "store"]);
-    Route::get("/aktualis_felhasznalo", [FelhasznaloController::class, "aktualisFelhasznalo"]);
+    Route::get("/akt_felhasznalo", [FelhasznaloController::class, "aktualisFelhasznalo"]);
 
 
     Route::put("/felhasznalok/{felhasznalo_id}", [FelhasznaloController::class, "update"]);

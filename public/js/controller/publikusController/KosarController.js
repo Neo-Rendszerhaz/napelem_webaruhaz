@@ -22,7 +22,7 @@ class KosarController {
         const token = $(`meta[name="csrf-token"]`).attr("content");
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
 
-        adatFeldolgozModel.adatBe("/aktualis_felhasznalo", (id) => {
+        adatFeldolgozModel.adatBe("/akt_felhasznalo", (id) => {
             this.aktualisFelhasznalo(id)
         });
 
@@ -33,11 +33,13 @@ class KosarController {
             location.reload();
         });
 
-        $(window).on("toroltTermek", (event) => {
-            for (let i = 0; i < jsonObjektum.length; i++) {
-                if (jsonObjektum[i].id === event.detail.id) {
-                    var eltavolit = jsonObjektum[i];
-                    jsonObjektum.splice(eltavolit, 1);
+        $(window).on("toroltTermek", (event) => 
+        {
+            for (let i = 0; i < jsonObjektum.length; i++) 
+            {
+                if (jsonObjektum[i].id === event.detail.id) 
+                {
+                    jsonObjektum.splice(i, 1);
                     localStorage.setItem("kosar", JSON.stringify(jsonObjektum));
                 }
             }

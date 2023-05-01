@@ -268,19 +268,55 @@ img {
 #formTartalom {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  /* width: 90%; */
+  margin: auto;
+}
+
+#formTartalom div, #rendelesVeglegesites
+{
+  /* margin-left: 30px; */
+  display: flex;
+
 }
 
 footer {
   margin-top: 15px;
 }
 
-@media screen and (max-width: 1200px) {
+.form-check
+{
+  margin-top: 30px;
+}
+
+.row
+{
+  align-items: center;
+}
+.col-3
+{
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) 
+{
   main {
     display: grid;
     grid-template-areas:
       "s s s s s s s s"
       "a a a a a a as as"
       "f f f f f f f f";
+  }
+  #formTartalom div, #rendelesVeglegesites
+  {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 1000px) 
+{
+  .col-3
+  {
+    width: 100%;
   }
 }
 
@@ -300,6 +336,29 @@ footer {
   .termek {
     grid-template-columns: 1fr 1fr;
   }
+  #formTartalom
+  {
+    grid-template-columns: 1fr;
+  }
+  .row
+  {
+    flex-wrap: nowrap;
+    align-items: center;
+    --bs-gutter-x: 0rem;
+  }
+
+  .col-3
+  {
+    width: 30%;
+  }
+  #azonosCimSzoveg
+  {
+    width: 60%;
+  }
+  /* label
+  {
+    margin-right: 5px;
+  } */
 }
 
 @media screen and (max-width: 550px) {
@@ -324,5 +383,17 @@ footer {
   .torlesPopup>.popup>div
   {
     justify-content: space-between;
+  }
+  .row
+  {
+    flex-wrap: wrap;
+  }
+  .col-3
+  {
+    width: 100%;
+  }
+  #azonosCimSzoveg
+  {
+    width: 100%;
   }
 }

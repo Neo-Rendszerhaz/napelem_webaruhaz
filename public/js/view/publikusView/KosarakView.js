@@ -105,10 +105,10 @@ class KosarakView {
         
                         <div class="row mt-3">
                             <div class="col-3">
-                                <label for="ajto" class=" col-form-label">Ajtó szám</label>
+                                <label for="ajto" class=" col-form-label">Ajtó</label>
                             </div>
                             <div class="col-md">
-                                <input id="szmAjto" class="w-full" type="text" name="ajto" placeholder="Ajtó szám" required ="ajto" />
+                                <input id="szmAjto" class="w-full" type="text" name="ajto" placeholder="Ajtó" required ="ajto" />
                             </div>
                         </div>
         
@@ -125,7 +125,7 @@ class KosarakView {
                                 <input id="azonosCim" class="w-full" type="checkbox" name="azonosCim" checked="checked">
                             </div>
                             <div class="col-md">
-                                <label for="azonosCim" class="col-form-label">A szállítási cím megegyezik a számlázási címmel</label><br>
+                                <label id="azonosCimSzoveg" for="azonosCim" class="col-form-label">A szállítási cím megegyezik a számlázási címmel</label><br>
                             </div>
                         </div>
                         </div>
@@ -210,10 +210,10 @@ class KosarakView {
         
                         <div class="row mt-3">
                             <div class="col-3">
-                                <label for="ajto" class=" col-form-label">Ajtó szám</label>
+                                <label for="ajto" class=" col-form-label">Ajtó</label>
                             </div>
                             <div class="col-md">
-                                <input id="szlAjto" class="w-full" type="text" name="ajto" placeholder="Ajtó szám" required ="ajto" />
+                                <input id="szlAjto" class="w-full" type="text" name="ajto" placeholder="Ajtó" required ="ajto" />
                             </div>
                         </div>
         
@@ -248,13 +248,14 @@ class KosarakView {
             new KosarView(adat, this.divElem);
         });
 
-        $(window).on("toroltTermek", (event) => {
-            for (let i = 0; i < tomb.length; i++) {
-                if (tomb[i].id === event.detail.id) {
-                    delete tomb[i];
-                }
-            }
-        });
+        // $(window).on("toroltTermek", (event) => {
+        //     for (let i = 0; i < tomb.length; i++) {
+        //         if (tomb[i].id === event.detail.id) {
+        //             delete tomb[i];
+        //         }
+        //     }
+        //     console.log(tomb);
+        // });
 
         this.tombMentes = this.objektbe(tomb);
 
