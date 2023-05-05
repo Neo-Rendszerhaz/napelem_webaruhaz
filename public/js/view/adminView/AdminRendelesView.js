@@ -36,13 +36,15 @@ class AdminRendelesView {
     this.rendelesAllapotMod()
     this.rendelesTor()
   }
+  
   sajatEvent(eventNev) {
     const esemeny = new CustomEvent(eventNev, {detail: this.#obj})
     window.dispatchEvent(esemeny)
   }
 
   allapotok(){
-    this.szoveg = `<select name="allapotok" id="allapotok${this.#obj.rendeles_szam}">`;
+    this.szoveg = `<select name="allapotok"
+    id="allapotok${this.#obj.rendeles_szam}">`;
     if(this.#obj.allapot ==="FL"){
       this.szoveg +=`   
         <option value="FL">FL</option>
@@ -70,6 +72,7 @@ class AdminRendelesView {
       this.szoveg+="</select>"
     return this.szoveg
   }
+  
   rendelesReszletesMegjel(){
     $(".tartalom").html(`<table class="table table-striped"><tr>
       <th>Iranyítószám</th>
@@ -104,6 +107,8 @@ class AdminRendelesView {
   rendelesReszletesMegjelEltunt(){
     this.modal.hide();
   }
+
+
   rendelesAllapotMod(){
     $(`#${this.#obj.rendeles_szam}Mod`).on('click', () => {
       $(`#${this.#obj.rendeles_szam}rendeles>#${this.#obj.rendeles_szam}allapot`).html(this.allapotok())
@@ -123,6 +128,8 @@ class AdminRendelesView {
       })
     })
   }
+
+
   rendelesTor(){
     $(`#${this.#obj.rendeles_szam}Tor`).on("click",()=>{
       this.sajatEvent("rendelesTorles")

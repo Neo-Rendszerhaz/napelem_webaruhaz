@@ -9,7 +9,6 @@ class AdminTermekek {
         <th>Gyártói cikkszám</th>
         <th>Márka</th>
         <th>Garancia(hónap)</th>
-        <th>Leírás</th>
         </tr></table>`);
 
         this.tablaelem = szuloElem.children("table:last-child")

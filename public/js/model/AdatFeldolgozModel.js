@@ -66,22 +66,22 @@ class AdatFeldolgozModel {
     adatModosit(vegpont, adat, id) {
         vegpont += "/" + id;
         fetch(vegpont,
+        {
+            method: "PUT",
+            headers:
             {
-                method: "PUT",
-                headers:
-                {
-                    "content-type": "application/json",
-                    "X-CSRF-TOKEN": this.token,
-                },
-                body: JSON.stringify(adat),
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Sikeres módosítás" + data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                "content-type": "application/json",
+                "X-CSRF-TOKEN": this.token,
+            },
+            body: JSON.stringify(adat),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Sikeres módosítás" + data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
     }
 
     felhasznaloCimModosit(vegpont, adat) {

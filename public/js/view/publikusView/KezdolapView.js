@@ -7,6 +7,7 @@ class KezdolapView {
     constructor(elem, szuloElem) {
         this.#elem = elem;
         this.#menny = 1;
+
         szuloElem.append(`
         <div class="termek">
             <div id="${elem.id}" class="kattintasiFelulet">
@@ -30,8 +31,7 @@ class KezdolapView {
             <div>
                 <button id="gomb${elem.id}" class="kosarGomb">Kosárba</button>
             </div>
-        </div>
-            `);
+        </div>`);
             
         $(`#gomb${elem.id}`).on("click", () => {
             this.kattintas("kosar");

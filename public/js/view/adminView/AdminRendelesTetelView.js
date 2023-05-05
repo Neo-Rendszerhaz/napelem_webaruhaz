@@ -33,14 +33,12 @@ class AdminRendTetelV{
             <th>Gyártói cikkszám</th>
             <th>Márka</th>
             <th>Garancia</th>
-            <th>Leíras</th>
             </tr>
             <tr id="rt${this.#obj.rendeles_szam}${this.#obj.termek_id}">
                 <td>${this.#obj.cikkszam}</td>
                 <td>${this.#obj.gyartoi_cikkszam}</td>
                 <td>${this.#obj.marka}</td>
                 <td>${this.#obj.garancia}</td>
-                <td>${this.#obj.leiras}</td>
                 </tr>`)
                 this.gombAllapotAktiv=false
         }

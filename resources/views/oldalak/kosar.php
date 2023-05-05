@@ -35,7 +35,7 @@
             <i class="fa fa-bars"></i>
         </label>
         <ul>
-            <li><a href="/dashboard">Profil</a></li>
+            <li><a href="/dashboard">Fiókom</a></li>
             <li><a href="/">Kezdőlap</a></li>
         </ul>
     </nav>

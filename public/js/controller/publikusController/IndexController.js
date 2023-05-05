@@ -1,5 +1,5 @@
 import AdatFeldolgozModel from "../../model/AdatFeldolgozModel.js";
-import KezdoLapokView from "../../view/publikusView/KezdoLapokView.js";
+import KezdoLapokView from "../../view/publikusView/KezdolapokView.js";
 import NavigacioView from "../../view/publikusView/NavigacioView.js";
 
 class IndexController {
@@ -13,6 +13,8 @@ class IndexController {
         const adatFeldolgozModel = new AdatFeldolgozModel(token);
         this.vegpont = "../js/termekek.json";
         adatFeldolgozModel.adatBe(this.vegpont, this.kezdolapAdatok);
+
+
         adatFeldolgozModel.adatBe("akt_felhasznalo", this.navigacio)
         $(window).on("kosar", (event) => {
             this.termekekKosarba(event.detail);
@@ -33,6 +35,7 @@ class IndexController {
     navigacio(aktualisFelhasznalo) {
         new NavigacioView(aktualisFelhasznalo)
     }
+    
     kezdolapAdatok(tomb) {
         let tombTermekek = tomb.termekek;
         const szuloelem = $("article");

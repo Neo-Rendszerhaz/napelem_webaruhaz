@@ -8,7 +8,6 @@ class AdminTermekView {
         <td>${elem.gyartoi_cikkszam}</td>
         <td>${elem.marka}</td>
         <td>${elem.garancia} hónap</td>
-        <td>${elem.leiras}</td>
         </tr>`);
     }
 }

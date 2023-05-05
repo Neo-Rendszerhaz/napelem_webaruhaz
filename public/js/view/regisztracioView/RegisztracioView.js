@@ -3,8 +3,8 @@ class RegisztracioView {
     #regisztraciosAdatok = {};
     constructor(elem, szuloElem) {
         this.#elem = elem;
-        this.#regisztraciosAdatok = { vezeteknev: "", keresztnev: "", email: "", jelszo: "", telefonszam: "", jogosultsag: "" };
 
+        this.#regisztraciosAdatok = { vezeteknev: "", keresztnev: "", email: "", jelszo: "", telefonszam: "", jogosultsag: "" };
         szuloElem.append(`
         <form id="regisztracio">
             <div class"row align-items-center">
@@ -40,15 +40,12 @@ class RegisztracioView {
             </div>
         </form>
         `)
-
         this.regisztralas = $("#regisztralas");
-
         this.regisztralas.on("click", () => {
             this.regisztracioMent();
             this.kattintasTrigger("regisztralas")
         });
     }
-
     regisztracioMent() {
         this.#regisztraciosAdatok.vezeteknev = $("#vezeteknev").val();
         this.#regisztraciosAdatok.keresztnev = $("#keresztnev").val();
@@ -57,7 +54,6 @@ class RegisztracioView {
         this.#regisztraciosAdatok.telefonszam = $("#telefonszam").val();
         this.#regisztraciosAdatok.jogosultsag = $("#jogosultsag").find(":selected").val();
     }
-
     kattintasTrigger(esemenyNeve) {
         const esemeny = new CustomEvent(esemenyNeve, { detail: this.#regisztraciosAdatok });
         window.dispatchEvent(esemeny);
