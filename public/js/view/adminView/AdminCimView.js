@@ -4,6 +4,13 @@ class AdminCimView
     constructor(elem, szuloElem)
     {
         this.#elem=elem;
+
+        for (const key in elem) {
+            if (elem[key] == null) {
+                elem[key] = "";
+            }
+        }
+        
         szuloElem.append(`
         <tr>
             <td>${elem.iranyitoszam}</td>

@@ -1,6 +1,13 @@
 class AdminFelhasznaloView {
     #elem
     constructor(elem, szuloElem) {
+
+        for (const key in elem) {
+            if (elem[key] == null) {
+                elem[key] = "";
+            }
+        }
+
         this.#elem = elem;
         $(szuloElem).append(`<tr id="felhasznalo${elem.felhasznalo_id}">
         <td>${elem.vezeteknev + " " + elem.keresztnev}</td>

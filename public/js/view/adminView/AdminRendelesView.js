@@ -2,6 +2,13 @@ class AdminRendelesView {
   #obj
   constructor(obj, szuloElem) {
     this.#obj = obj
+
+    for (const key in obj) {
+      if (obj[key] == null) {
+          obj[key] = "";
+      }
+  }
+
     $(szuloElem).append(`
         <tr id='${this.#obj.rendeles_szam}rendeles'>
         <td>${this.#obj.rendeles_szam}</td>

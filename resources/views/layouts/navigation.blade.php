@@ -19,6 +19,9 @@
                     <x-nav-link :href="route('kezdolap')">
                         {{ __('Kezdőlap') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('kosar')">
+                        {{ __('Kosár') }}
+                    </x-nav-link>
                     @if(Auth::user()->jogosultsag === 'R' or Auth::user()->jogosultsag === 'A')
                     <x-nav-link :href="route('admin_felulet')">
                         {{ __('Admin Felület') }}
@@ -79,9 +82,14 @@
             <x-responsive-nav-link :href="route('kezdolap')">
                 {{ __('Kezdőlap') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('kosar')">
+                {{ __('Kosár') }}
+            </x-responsive-nav-link>
+            @if(Auth::user()->jogosultsag === 'R' or Auth::user()->jogosultsag === 'A')
             <x-responsive-nav-link :href="route('admin_felulet')">
                 {{ __('Admin Felület') }}
             </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

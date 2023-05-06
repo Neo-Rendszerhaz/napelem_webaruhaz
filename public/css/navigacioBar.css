@@ -39,6 +39,7 @@ nav {
     grid-area: n;
     width: 100%;
     height: 50px;
+    padding: 5px 0px;
     background-color: rgba(62, 142, 195);
     position: sticky;
     top: 0;
@@ -47,6 +48,7 @@ nav {
 
 nav ul {
     display: flex;
+    height: 100%;
     margin: 0px 50px;
     justify-content: space-evenly;
     align-items: center;
@@ -55,7 +57,6 @@ nav ul {
 
 nav ul li {
     list-style-type: none;
-    margin: 0 5px;
 }
 
 nav ul li a {
@@ -63,11 +64,13 @@ nav ul li a {
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    line-height: 50px;
+    /* line-height: 50px; */
+    font-size: 12pt;
 }
 
 nav ul li a:hover {
     color: white;
+    text-decoration: none;
 }
 
 .checkBtn {
@@ -94,8 +97,6 @@ nav ul li a:hover {
     }
 
     nav ul {
-        align-content: flex-end;
-        flex-direction: column;
         margin: 0px;
         position: absolute;
         width: 300px;
@@ -105,8 +106,11 @@ nav ul li a:hover {
         top: 50px;
         right: -200%;
         text-align: center;
-        flex-wrap: wrap;
         transition: all 0.8s;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-content: center;
+        align-items: flex-end;
     }
 
     nav ul li a {

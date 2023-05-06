@@ -248,15 +248,6 @@ class KosarakView {
             new KosarView(adat, this.divElem);
         });
 
-        // $(window).on("toroltTermek", (event) => {
-        //     for (let i = 0; i < tomb.length; i++) {
-        //         if (tomb[i].id === event.detail.id) {
-        //             delete tomb[i];
-        //         }
-        //     }
-        //     console.log(tomb);
-        // });
-
         this.tombMentes = this.objektbe(tomb);
 
         $(`#rendelesLeadasGomb`).on("click", () => {
