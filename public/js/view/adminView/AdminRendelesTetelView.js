@@ -11,7 +11,6 @@ class AdminRendTetelV{
         <td>${(this.#obj.ar/this.#obj.mennyiseg).toFixed()} Ft</td>
         <td>${parseInt(this.#obj.ar)} Ft</td>
         <td><button id=MegJel${this.#obj.rendeles_szam}${this.#obj.termek_id}>Megjelenít</button></td>
-        <td><button id=RTtor${this.#obj.rendeles_szam}${this.#obj.termek_id}>Törlés</button></td>
         </tr>`);
         
             this.modal = $(".overlay");
@@ -19,9 +18,6 @@ class AdminRendTetelV{
         
         $(`#MegJel${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
                 this.rendelesTetelReszMut()
-        })
-        $(`#RTtor${this.#obj.rendeles_szam}${this.#obj.termek_id}`).on("click",()=>{
-            this.sajatEsemeny("RTtorles")
         })
     
     }
