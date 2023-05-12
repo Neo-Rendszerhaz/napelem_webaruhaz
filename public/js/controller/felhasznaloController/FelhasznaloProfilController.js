@@ -15,6 +15,7 @@ class FelhasznaloProfilController {
         adatFeldolgozModel.adatBe(this.felhasznaloRendelesek, this.profilRendelesek);
 
         $(window).on("profilAdatok", (event) => {
+            console.log(event.detail);
             adatFeldolgozModel.adatModosit("/felhasznalok", event.detail.profilAdatok, event.detail.profilAdatok.felhasznalo_id);
             adatFeldolgozModel.adatModosit("/cimek", event.detail.szamlazasiCim, event.detail.szamlazasiCim.cim_id);
             adatFeldolgozModel.adatModosit("/cimek", event.detail.szallitasiCim, event.detail.szallitasiCim.cim_id);

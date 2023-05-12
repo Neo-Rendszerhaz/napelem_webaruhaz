@@ -57,7 +57,7 @@ class ProfilokView {
             $(".overlay").show();
             $("#profilAdatokModositas").on("click", () => {
                 this.szemelyesAdatokModosit();
-                this.kattintasTrigger("profilAdatokGomb");
+                this.kattintasTrigger("profilAdatok");
                 location.reload();
                 $(".overlay").hide();
             });
@@ -176,6 +176,7 @@ class ProfilokView {
         this.szamlazasiCim.keresztnev = $("#keresztnev").val();
         this.szamlazasiCim.email = $("#email").val();
         this.szamlazasiCim.telefonszam = $("#telefonszam").val();
+        // this.szamlazasiCim.telefonszam = $("#jelszo").val();
     }
 
     szamlazasiCimAdatokModosit() {
